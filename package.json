@@ -1,0 +1,30 @@
+{
+  "name": "first",
+  "version": "1.0.0",
+  "description": "htmlacademy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack",
+    "start": "webpack-dev-server --host 0.0.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaximShmatov/first.git"
+  },
+  "author": "MaximShmatov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaximShmatov/first/issues"
+  },
+  "homepage": "https://github.com/MaximShmatov/first#readme",
+  "devDependencies": {
+    "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^4.2.0",
+    "pug": "^2.0.4",
+    "pug-loader": "^2.4.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
+}

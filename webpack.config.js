@@ -1,6 +1,5 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const webpack = require("webpack");
 
 module.exports = {
     entry: "./src/index.js",
@@ -9,7 +8,7 @@ module.exports = {
         filename: "./index.js"
     },
     devServer: {
-        contentBase: path.join(__dirname, "src"),
+        contentBase: path.join(__dirname, "/src"),
         compress: true,
         port: 9000,
         watchContentBase: true,
@@ -20,11 +19,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/index.pug',
-        }),
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery'
+            template: 'src/index.pug',
         })
     ],
     module: {

@@ -3,8 +3,6 @@ include ../select/select
 
 style
     include form-search-number.scss
-style
-    include _text-display-block.scss
 
 form.form-search-number
     h2.block Найдем номер под ваши пожелания
@@ -15,5 +13,5 @@ form.form-search-number
         label.block(for="date-checkout") Выезд
         input(type="date" id="date-checkout")
     label.block Гости
-    +select("Сколько гостей")
+    +select
     +button("Подобрать номер")

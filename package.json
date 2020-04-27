@@ -1,23 +1,13 @@
 {
-  "name": "first",
+  "name": "toxin",
   "version": "1.0.0",
-  "description": "htmlacademy",
-  "main": "index.js",
+  "description": "Project TOXIN",
+  "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack",
-    "start": "webpack-dev-server --host 0.0.0.0"
+    "start": "webpack-dev-server --host 0.0.0.0",
+    "dev": "webpack"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MaximShmatov/first.git"
-  },
-  "author": "MaximShmatov",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/MaximShmatov/first/issues"
-  },
-  "homepage": "https://github.com/MaximShmatov/first#readme",
   "devDependencies": {
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.2.0",
@@ -27,7 +17,14 @@
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
   },
-  "dependencies": {
-    "jquery": "^3.5.0"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaximShmatov/toxin.git"
+  },
+  "author": "Maxim Shmatov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaximShmatov/toxin/issues"
+  },
+  "homepage": "https://maximshmatov.github.io/toxin/"
 }

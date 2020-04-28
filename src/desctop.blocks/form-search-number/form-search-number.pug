@@ -1,9 +1,6 @@
 include ../button/button
 include ../select/select
 
-style
-    include form-search-number.scss
-
 form.form-search-number
     h2.block Найдем номер под ваши пожелания
     div.date-in
@@ -12,6 +9,5 @@ form.form-search-number
     div.date-out
         label.block(for="date-checkout") Выезд
         input(type="date" id="date-checkout")
-    label.block Гости
     +select
     +button("Подобрать номер")

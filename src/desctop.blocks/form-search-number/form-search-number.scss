@@ -1,10 +1,10 @@
 .form-search-number {
   background-color: #ffffff;
-  max-width: 380px;
+  width: 380px;
   padding: 30px;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   color: blue;
 }
@@ -13,4 +13,13 @@
 }
 .date-out {
   float: right;
+}
+.block {
+  display: block;
+  vertical-align: middle;
+}
+.form-search-number>label::before {
+  content: "";
+  display: table;
+  clear: both;
 }

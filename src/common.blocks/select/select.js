@@ -1,2 +1,0 @@
-//$(function(){ alert('jQuery работает'); });
-

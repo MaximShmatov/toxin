@@ -1,10 +1,6 @@
-style
-    include select.scss
-script
-    include select.js
 mixin select
-    select.select
+    label.block(for="guests") Гости
+    select.select(id="guests")
         option(value="1") Взрослые
         option(value="2") Дети
         option(value="3") Младенцы
-        option(selected) Сколько гостей

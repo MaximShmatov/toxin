@@ -1,3 +1,1 @@
-document.write('TOXIN');
-import "./index.scss";
-import "./index.pug";
+document.write("INDEX")

@@ -1,2 +1,1 @@
-import "button.css";
-import "button.pug";
+document.write("BUTTON")

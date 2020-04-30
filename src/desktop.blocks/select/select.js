@@ -2,4 +2,5 @@
 //document.write("select");
 //jQuery(function(){ alert('jQuery работает'); });
 //jQuery.alert("xzcascascasc");
-document.write("SELECT")
+import("./select.scss")
+import("./select.pug")

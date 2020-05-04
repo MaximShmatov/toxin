@@ -1,63 +1,56 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const HtmlWebpackPlugin = require("html-webpack-plugin")
-const {CleanWebpackPlugin} = require("clean-webpack-plugin")
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const ManifestPlugin = require('webpack-manifest-plugin')
+const webpack = require('webpack')
 
 module.exports = {
-    mode: "none",
+    mode: 'none',
     entry: {
-        main: path.resolve(__dirname, "src/index.js")
+        index: path.resolve(__dirname, 'src/index.js')
     },
     output: {
-        filename: "script.[hash].js",
-        path: path.resolve(__dirname, "dist"),
-        chunkFilename: "[id].script.[hash].js",
+        filename: '[name].[hash].js',
+        path: path.resolve(__dirname, 'dist'),
+        chunkFilename: '[name].[hash].js',
     },
+    optimization: {
+        splitChunks: {
+            chunks: 'all'
+        }
+    },
+    devtool: 'inline-source-map',
     plugins: [
+        new ManifestPlugin(),
+        new webpack.ProvidePlugin({
+            $: 'jquery'
+        }),
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, "src/index.pug"),
-            filename: "index.html",
+            template: path.resolve(__dirname, 'src/index.pug'),
+            filename: 'index.html',
         }),
         new MiniCssExtractPlugin({
-            filename: "styles.[hash].css",
-            chunkFilename: "[id].styles.[hash].css",
+            filename: '[name].[hash].css',
+            chunkFilename: '[name].[hash].css',
             ignoreOrder: false,
         }),
-        new ManifestPlugin({
-            filename: "manifest.json",
-            basePath: path.resolve(__dirname, "dist"),
+        new CleanWebpackPlugin({
+            cleanOnceBeforeBuildPatterns: [
+                '**/*',
+                '!fonts/*',
+                '!img/*',
+                '!fonts',
+                '!img'
+            ],
         }),
-        new CleanWebpackPlugin(),
     ],
-    devtool: "inline-source-map",
     module: {
         rules: [
             {
-                test: /\.pug$/,
-                use: {
-                    loader: "pug-loader",
-                    options: {
-                        pretty: true
-                    }
-                }
-            },
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: "babel-loader",
-                    options: {
-                        presets: [
-                            "@babel/env"
-                        ]
-                    }
-                }
-            },
-            {
-                test: /\.scss$/,
+                test: /\.(scss|css)$/,
                 use: [
-                    "style-loader",
+                    'style-loader',
                     {
 
                         loader: MiniCssExtractPlugin.loader,
@@ -67,22 +60,22 @@ module.exports = {
                         }
                     },
                     {
-                        loader: "css-loader",
+                        loader: 'css-loader',
                         options: {
                             sourceMap: true,
                         }
                     },
                     {
-                        loader: "postcss-loader",
+                        loader: 'postcss-loader',
                         options: {
                             sourceMap: true,
                             config: {
-                                path: path.resolve(__dirname, "postcss.config.js"),
+                                path: path.resolve(__dirname, 'postcss.config.js'),
                             }
                         }
                     },
                     {
-                        loader: "sass-loader",
+                        loader: 'sass-loader',
                         options: {
                             sourceMap: true,
                         }
@@ -90,13 +83,34 @@ module.exports = {
                 ]
             },
             {
+                test: /\.pug$/,
+                use: {
+                    loader: 'pug-loader',
+                    options: {
+                        pretty: true
+                    }
+                }
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            '@babel/env'
+                        ]
+                    }
+                }
+            },
+            {
                 test: /\.(ttf|woff|svg)$/,
                 include: /fonts/,
                 use: {
-                    loader: "file-loader",
+                    loader: 'file-loader',
                     options: {
-                        name: "[name].[ext]",
-                        outputPath: "fonts"
+                        name: '[name].[ext]',
+                        outputPath: 'fonts'
                     }
                 }
             },
@@ -104,23 +118,23 @@ module.exports = {
                 test: /\.(ico|png|jpg|gif|svg)$/,
                 exclude: /fonts/,
                 use: {
-                    loader: "file-loader",
+                    loader: 'file-loader',
                     options: {
-                        name: "[name].[ext]",
-                        outputPath: "img"
+                        name: '[name].[ext]',
+                        outputPath: 'img'
                     }
                 }
             },
         ]
     },
     devServer: {
-        //contentBase: path.resolve(__dirname, "dist"),
+        //contentBase: path.resolve(__dirname, 'dist'),
         //compress: true,
-        //host: "0.0.0.0",
+        //host: '0.0.0.0',
         port: 9000,
         watchContentBase: true,
         progress: true,
-        //stats: "errors-only",
+        //stats: 'errors-only',
         hot: true,
         //hotOnly: true,
         historyApiFallback: true,
@@ -128,5 +142,5 @@ module.exports = {
             warnings: true,
             errors: true
         }
-    }
+    },
 }

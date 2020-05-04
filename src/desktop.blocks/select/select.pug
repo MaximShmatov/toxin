@@ -1,6 +1,17 @@
-mixin select
+mixin quantity-select
     label.block(for="guests") Гости
-    select.select(id="guests")
-        option(value="1") Взрослые
-        option(value="2") Дети
-        option(value="3") Младенцы
+    div.iqdropdown
+        p.iqdropdown-selection
+        div.iqdropdown-menu
+            div.iqdropdown-menu-option
+                div
+                    p.iqdropdown-item Взрослые
+                    p.iqdropdown-description Сколько взрослых?
+            div.iqdropdown-menu-option
+                div
+                    p.iqdropdown-item Дети
+                    p.iqdropdown-description Сколько детей?
+            div.iqdropdown-menu-option
+                div
+                    p.iqdropdown-item Младенцы
+                    p.iqdropdown-description Сколько младенцев?

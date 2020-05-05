@@ -1,9 +1,10 @@
-const path = require('path')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const {CleanWebpackPlugin} = require('clean-webpack-plugin')
-const ManifestPlugin = require('webpack-manifest-plugin')
-const webpack = require('webpack')
+'use strict'
+const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const ManifestPlugin = require('webpack-manifest-plugin');
+const webpack = require('webpack');
 
 module.exports = {
     mode: 'none',
@@ -13,7 +14,7 @@ module.exports = {
     output: {
         filename: '[name].[hash].js',
         path: path.resolve(__dirname, 'dist'),
-        chunkFilename: '[name].[hash].js',
+        chunkFilename: '[name].[hash].js'
     },
     optimization: {
         splitChunks: {
@@ -28,12 +29,12 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/index.pug'),
-            filename: 'index.html',
+            filename: 'index.html'
         }),
         new MiniCssExtractPlugin({
             filename: '[name].[hash].css',
             chunkFilename: '[name].[hash].css',
-            ignoreOrder: false,
+            ignoreOrder: false
         }),
         new CleanWebpackPlugin({
             cleanOnceBeforeBuildPatterns: [
@@ -42,8 +43,8 @@ module.exports = {
                 '!img/*',
                 '!fonts',
                 '!img'
-            ],
-        }),
+            ]
+        })
     ],
     module: {
         rules: [
@@ -62,7 +63,7 @@ module.exports = {
                     {
                         loader: 'css-loader',
                         options: {
-                            sourceMap: true,
+                            sourceMap: true
                         }
                     },
                     {
@@ -70,14 +71,14 @@ module.exports = {
                         options: {
                             sourceMap: true,
                             config: {
-                                path: path.resolve(__dirname, 'postcss.config.js'),
+                                path: path.resolve(__dirname, 'postcss.config.js')
                             }
                         }
                     },
                     {
                         loader: 'sass-loader',
                         options: {
-                            sourceMap: true,
+                            sourceMap: true
                         }
                     }
                 ]
@@ -124,7 +125,7 @@ module.exports = {
                         outputPath: 'img'
                     }
                 }
-            },
+            }
         ]
     },
     devServer: {
@@ -142,5 +143,5 @@ module.exports = {
             warnings: true,
             errors: true
         }
-    },
+    }
 }

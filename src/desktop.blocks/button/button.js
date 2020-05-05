@@ -1,1 +1,2 @@
-import("./button.scss")
+'use strict'
+import('./button.scss')

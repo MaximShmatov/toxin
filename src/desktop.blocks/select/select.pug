@@ -1,17 +1,12 @@
 mixin quantity-select
     label.block(for="guests") Гости
-    div.iqdropdown
-        p.iqdropdown-selection
-        div.iqdropdown-menu
-            div.iqdropdown-menu-option
-                div
-                    p.iqdropdown-item Взрослые
-                    p.iqdropdown-description Сколько взрослых?
-            div.iqdropdown-menu-option
-                div
-                    p.iqdropdown-item Дети
-                    p.iqdropdown-description Сколько детей?
-            div.iqdropdown-menu-option
-                div
-                    p.iqdropdown-item Младенцы
-                    p.iqdropdown-description Сколько младенцев?
+    select.custom-select
+        div.custom-select__group-button
+            option +
+            option -
+            option +
+            option -
+            option +
+            option -
+            option.quantity-continue Применить
+            option.quantity-clear Очитить

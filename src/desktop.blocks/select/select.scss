@@ -1,1 +1,104 @@
-@import "../../../node_modules/item-quantity-dropdown/lib/item-quantity-dropdown.min.css";
+@import '~jquery-custom-select';
+.custom-select__option--value {
+  width: 100%;
+  height: 44px;
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  border-radius: 2px;
+}
+.custom-select__dropdown {
+  position: absolute;
+  width: 100%;
+  height: 159px;
+  background-color: #ffffff;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  border: 1px solid rgba(31, 32, 65, 0.5);
+}
+.custom-select__dropdown .custom-select__option {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  text-align: center;
+  color: rgba(31, 32, 65, 0.5);
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 22px;
+}
+.custom-select__dropdown .quantity-continue, .custom-select__dropdown .quantity-clear {
+  width: auto;
+  height: auto;
+  border: none;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.custom-select__dropdown .quantity-continue {
+  right: 7px;
+  bottom: 13px;
+  color: #BC9CFF;
+}
+.custom-select__dropdown .quantity-clear {
+  left: 15px;
+  bottom: 13px;
+  color: rgba(31, 32, 65, 0.5);
+}
+.custom-select__dropdown .custom-select__option:nth-of-type(1) {
+  top: 7px;
+  right: 7px;
+}
+.custom-select__dropdown .custom-select__option:nth-of-type(2) {
+  top: 7px;
+  right:69px;
+}
+.custom-select__dropdown .custom-select__option:nth-of-type(3) {
+  top: 44px;
+  right: 7px;
+}
+.custom-select__dropdown .custom-select__option:nth-of-type(4) {
+  top: 44px;
+  right:69px;
+}
+.custom-select__dropdown .custom-select__option:nth-of-type(5) {
+  top: 81px;
+  right: 7px;
+}
+.custom-select__dropdown .custom-select__option:nth-of-type(6) {
+  top: 81px;
+  right: 69px;
+}
+.custom-select__dropdown .quantity {
+  font: inherit;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #1F2041;
+  display: block;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+}
+.custom-select__dropdown .quantity-adult {
+  top: 13px;
+  right: 50px;
+}
+.custom-select__dropdown .quantity-child {
+  top: 50px;
+  right: 50px;
+}
+.custom-select__dropdown .quantity-baby {
+  top: 87px;
+  right: 50px;
+}
+.custom-select__dropdown .for-quantity-adult {
+  top: 13px;
+  left: 15px;
+}
+.custom-select__dropdown .for-quantity-child {
+  top: 50px;
+  left: 15px;
+}
+.custom-select__dropdown .for-quantity-baby {
+  top: 87px;
+  left: 15px;
+}

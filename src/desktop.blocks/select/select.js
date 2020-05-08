@@ -1,7 +1,4 @@
 'use strict'
-import('./select.scss');
-require('jquery-custom-select');
-
 
 $(function(){
     $('.custom-select').customSelect({

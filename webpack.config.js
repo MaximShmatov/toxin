@@ -1,4 +1,5 @@
 'use strict'
+
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -9,7 +10,7 @@ const webpack = require('webpack');
 module.exports = {
     mode: 'none',
     entry: {
-        index: path.resolve(__dirname, 'src/index.js')
+        index: path.resolve(__dirname, 'src/desktop.blocks/desktop.blocks.js')
     },
     output: {
         filename: '[name].[hash].js',
@@ -28,7 +29,7 @@ module.exports = {
             $: 'jquery'
         }),
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, 'src/index.pug'),
+            template: path.resolve(__dirname, 'src/desktop.blocks/desktop.blocks.pug'),
             filename: 'index.html'
         }),
         new MiniCssExtractPlugin({
@@ -56,8 +57,6 @@ module.exports = {
 
                         loader: MiniCssExtractPlugin.loader,
                         options: {
-                            //hmr: process.env.NODE_ENV === "development",
-                            //reloadAll: true,
                         }
                     },
                     {
@@ -106,7 +105,7 @@ module.exports = {
             },
             {
                 test: /\.(ttf|woff|svg)$/,
-                include: /fonts/,
+                include: /_fonts/,
                 use: {
                     loader: 'file-loader',
                     options: {
@@ -117,7 +116,7 @@ module.exports = {
             },
             {
                 test: /\.(ico|png|jpg|gif|svg)$/,
-                exclude: /fonts/,
+                exclude: /_fonts/,
                 use: {
                     loader: 'file-loader',
                     options: {
@@ -130,14 +129,11 @@ module.exports = {
     },
     devServer: {
         //contentBase: path.resolve(__dirname, 'dist'),
-        //compress: true,
-        //host: '0.0.0.0',
         port: 9000,
         watchContentBase: true,
         progress: true,
         //stats: 'errors-only',
         hot: true,
-        //hotOnly: true,
         historyApiFallback: true,
         overlay: {
             warnings: true,

@@ -1,0 +1,29 @@
+<svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+    <linearGradient id="desktop.blocks__logo_circle">
+        <stop offset="0%" stop-color="#BC9CFF"/>
+        <stop offset="100%" stop-color="#8BA4F9"/>
+    </linearGradient>
+    <linearGradient id="desktop.blocks__logo_circle-right">
+        <stop offset="0%" stop-color="#6FCF97"/>
+        <stop offset="100%" stop-color="#66D2EA"/>
+    </linearGradient>
+    <circle r="47%" cx="50%" cy="50%"
+            stroke="url(#desktop.blocks__logo_circle)"
+            fill-opacity="0"
+            stroke-width="6%"/>
+    <path d="M 10 15 A 10 10, 0, 0, 1, 20 25"
+          fill-opacity="0"
+          stroke-width="6%"
+          stroke="url(#desktop.blocks__logo_circle)"
+          stroke-linecap="round"/>
+    <path d="M 30 15 A 10 10, 0, 0, 0, 22 20"
+          fill-opacity="0"
+          stroke-width="6%"
+          stroke="url(#desktop.blocks__logo_circle-right)"
+          stroke-linecap="round"/>
+    <path d="M 17 14 A 10 10, 0, 0, 1, 23 25"
+          fill-opacity="0"
+          stroke-width="6%"
+          stroke="url(#desktop.blocks__logo_circle)"
+          stroke-linecap="round"/>
+</svg>

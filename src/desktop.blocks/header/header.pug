@@ -1,0 +1,29 @@
+include ../button/button
+
+mixin header
+    header.header
+        img.header__logo(src="img/desktop.blocks__logo.svg")
+        nav.header__main-menu
+            ul
+                li
+                    a(href="#") О нас
+                li
+                    a(href="#") Услуги
+                ul.header__submenu
+                    li
+                        a(href="#") Услуга 1
+                    li
+                        a(href="#") Услуга 2
+                li
+                    a(href="#") Вакансии
+                li
+                    a(href="#") Новости
+                li
+                    a(href="#") Соглашения
+                ul.header__submenu
+                    li
+                        a(href="#") Соглашение 1
+                    li
+                        a(href="#") Соглашение 2
+            +button("Войти", "87px", "34px")
+            +button("Регистрация", "196px", "34px")

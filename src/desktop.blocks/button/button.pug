@@ -1,2 +1,6 @@
-mixin button(caption)
-    button.button(type="submit")=caption
+mixin button(caption, width, height, mode, arrow)
+    button.button(class=mode type="submit" style="width: " + width +"; height: " + height + ";")
+        span.button__caption=caption
+            if arrow
+                div.button__arrow
+

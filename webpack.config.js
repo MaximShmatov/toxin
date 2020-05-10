@@ -4,13 +4,13 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-const ManifestPlugin = require('webpack-manifest-plugin');
 const webpack = require('webpack');
 
 module.exports = {
     mode: 'none',
+    context: path.resolve(__dirname, 'src/desktop.blocks'),
     entry: {
-        index: path.resolve(__dirname, 'src/desktop.blocks/desktop.blocks.js')
+        index: './desktop.blocks.js'
     },
     output: {
         filename: '[name].[hash].js',
@@ -24,7 +24,6 @@ module.exports = {
     },
     devtool: 'inline-source-map',
     plugins: [
-        new ManifestPlugin(),
         new webpack.ProvidePlugin({
             $: 'jquery'
         }),

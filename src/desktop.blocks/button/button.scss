@@ -1,25 +1,18 @@
 .button {
-  background-color: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
   position: relative;
-  padding: 2px;
   border-radius: 22px;
   border: none;
+}
+.button__caption {
   font: inherit;
   color: #BC9CFF;
   font-weight: bold;
   font-size: 12px;
   line-height: 15px;
   text-transform: uppercase;
-}
-.button__caption {
-  position: absolute;
-  height: 15px;
-  margin: auto;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-.button {
-  border: 1px solid blue;
+  z-index: 1;
 }

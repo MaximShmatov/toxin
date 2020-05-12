@@ -1,0 +1,25 @@
+.button_of-arrow {
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+}
+.button_of-arrow .button__caption {
+  color: white;
+}
+.button_of-arrow::before, .button_of-arrow::after {
+  content: "";
+  font-size: 0;
+  display: block;
+  position: absolute;
+  right: 15px;
+}
+.button_of-arrow::before {
+  border: 1px solid white;
+  width: 12px;
+  height: 0px;
+}
+.button_of-arrow::after {
+  border-top: 2px solid white;
+  border-right: 2px solid white;
+  width: 8px;
+  height: 8px;
+  transform: rotate(45deg);
+}

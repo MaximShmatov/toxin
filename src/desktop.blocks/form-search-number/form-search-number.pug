@@ -1,13 +1,13 @@
 include ../button/button
 include ../select/select
 
-form.form-search-number
-    h2.block Найдем номер под ваши пожелания
-    div.date-in
-        label.block(for="date-entry") Прибытие
-        input(type="date" id="date-entry")
-    div.date-out
-        label.block(for="date-checkout") Выезд
-        input(type="date" id="date-checkout")
-    +quantity-select
-    +button("Подобрать номер")
+mixin form-search-number
+    form.form-search-number
+        h2.form-search-number__title Найдём номер под<br> ваши пожелания
+        div.form-search-number__date-in
+            label.form-search-number_display-block(for="date-entry") Прибытие
+            input(type="date" id="date-entry")
+        div.form-search-number__date-out
+            label.form-search-number_display-block(for="date-checkout") Выезд
+            input(type="date" id="date-checkout")
+        +button("Подобрать номер", "320px", "44px", "button_of-arrow")

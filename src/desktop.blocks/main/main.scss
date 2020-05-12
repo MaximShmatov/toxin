@@ -1,4 +1,23 @@
 .main__page-landing {
   background-image: url('main.png');
-  height: 190px;
+  background-position: bottom, right;
+  padding-top: 70px;
+}
+.main__page-landing-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1160px;
+  margin: 0 auto;
+  min-height: 760px;
+}
+.main__page-landing-form-registration {
+  align-self: flex-start;
+}
+.main__page-landing-caption {
+  align-self: flex-end;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: right;
+  color: rgba(31, 32, 65, 0.75);
 }

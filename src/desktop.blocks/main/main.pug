@@ -1,3 +1,8 @@
+include ../form-search-number/form-search-number
+
 mixin main
     main.main__page-landing
-        p Лучшие номера для вашей работы,<br>отдыха и просто вдохновения
+        div.main__page-landing-content
+            div.main__page-landing-form-registration
+                +form-search-number
+            p.main__page-landing-caption Лучшие номера для вашей работы,<br>отдыха и просто вдохновения

@@ -1,4 +1,4 @@
 'use strict'
 
 import('./form-search-number.scss')
-import('../select/select')
+import('../quantity-select/quantity-select')

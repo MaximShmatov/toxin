@@ -1,0 +1,31 @@
+include ../button/button
+
+mixin quantity-select(id, width, height)
+    div.quantity-select
+        div.quantity-select__dropdown-group(id=id style="width: " + width + "; height: " + height + ";")
+            button(type="button").quantity-select__selected Сколько гостей
+            button(type="button").quantity-select__dropdown
+        div.quantity-select__dropdown-items(style="width: " + width + ";" tabindex="-1")
+            div.quantity-select__dropdown-item
+                label.quantity-select__caption Взрослые
+                div.quantity-select__quantity-group
+                    button.quantity-select__quantity-group-minus -
+                    span.quantity-select__quantity 0
+                    button.quantity-select__quantity-group-plus +
+            div.quantity-select__dropdown-item
+                label.quantity-select__caption Дети
+                div.quantity-select__quantity-group
+                    button.quantity-select__quantity-group-minus -
+                    span.quantity-select__quantity 0
+                    button.quantity-select__quantity-group-plus +
+            div.quantity-select__dropdown-item
+                label.quantity-select__caption Младенцы
+                div.quantity-select__quantity-group
+                    button.quantity-select__quantity-group-minus -
+                    span.quantity-select__quantity 0
+                    button.quantity-select__quantity-group-plus +
+            div.quantity-select__dropdown-item
+                div.quantity-select__clear
+                    +button("Очистить")
+                div.quantity-select__submit
+                    +button("Применить")

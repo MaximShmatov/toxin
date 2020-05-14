@@ -1,15 +1,11 @@
 include ../button/button
 include ../quantity-select/quantity-select
+include ../date-range/date-range
 
 mixin form-search-number
     form.form-search-number
         h2.form-search-number__title Найдём номер под<br> ваши пожелания
-        div.form-search-number__date-in
-            label.form-search-number_display-block(for="form-search-number__date-in") Прибытие
-            input(type="date" id="form-search-number__date-in")
-        div.form-search-number__date-out
-            label.form-search-number_display-block(for="form-search-number__date-out") Выезд
-            input(type="date" id="form-search-number__date-out")
+            +date-range("320px", "44px")
         div.form-search-number__guests
             label(for="form-search-number__guests") Гости
             +quantity-select("form-search-number__guests", "320px", "44px")

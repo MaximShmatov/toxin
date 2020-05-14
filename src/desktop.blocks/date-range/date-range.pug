@@ -1,0 +1,35 @@
+mixin date-range(width, height)
+    div.date-range
+        div.date-range__body(style="width: " + width + ";")
+            div
+                label(for="date-range__entry").date-range__body-date-title Прибытие
+                div.date-range__entry(id="date-range__entry" style="height: " + height + ";")
+                    input.date-range__input-entry(type="text")
+                    button.date-range__dropdown-entry(type="button")
+            div
+                label(for="date-range__check-out").date-range__body-date-title Выезд
+                div.date-range__check-out(id="date-range__check-out" style="height: " + height + ";")
+                    input.date-range__input-check-out(type="text")
+                    button.date-range__dropdown-check-out(type="button")
+        div.date-range__picker(style="width: " + width + ";")
+            div.date-range__picker-header
+                button.date-range__list-left
+                h3.date-range__picker-title
+                button.date-range__list-right
+            div.date-range__date-title
+                h5.date-range__week-title Пн
+                h5.date-range__week-title Вт
+                h5.date-range__week-title Ср
+                h5.date-range__week-title Чт
+                h5.date-range__week-title Пт
+                h5.date-range__week-title Сб
+                h5.date-range__week-title Вс
+            div.date-range__picker-body
+                - let i = 35;
+                while i !==0
+                    button.date-range__date(type="button")=i--
+            div.date-range__picker-footer
+                div.date-range__clear
+                    +button("Очистить")
+                div.date-range__submit
+                    +button("Применить")

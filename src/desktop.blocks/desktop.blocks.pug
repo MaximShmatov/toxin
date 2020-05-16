@@ -1,14 +1,17 @@
 include header/header
 include footer/footer
-include main/main
+include page-landing/page-landing
 
 doctype html
 html(lang="ru" dir="ltr")
-    head
-        meta(charset="utf-8")
-        link(rel="shortcut icon" type="image/svg" href='img/desktop.blocks__favicon.svg')
-        title TOXIN
-    body
-        +header
-        +main
-        +footer
+  head
+    meta(charset="utf-8")
+    link(rel="shortcut icon" type="image/svg" href='img/desktop.blocks__favicon.svg')
+    title TOXIN
+  body
+    header
+      +header
+    main
+      +page-landing
+    footer
+      +footer

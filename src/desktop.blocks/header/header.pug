@@ -1,34 +1,33 @@
 include ../button/button
 
 mixin header
-    header.header
-        div.header__content
-            img.header__logo(src="img/desktop.blocks__logo.svg")
-            nav.header__main-menu
-                ul.header__main-menu-items
-                    li.header__main-menu-item
-                        a.header__main-menu-ref(href="#") О нас
-                    li.header__main-menu-item.header__main-menu_item-margin
-                        a.header__main-menu-ref(href="#") Услуги
-                    li.header__main-menu-item.header__submenu-dropdown
-                        ul.header__submenu-dropdown-items
-                            li.header__submenu-dropdown-item
-                                a.header__main-menu-ref(href="#") Услуга 1
-                            li.header__submenu-dropdown-item
-                                a.header__main-menu-ref(href="#") Услуга 2
-                    li.header__main-menu-item.header__main-menu_dropdown-margin
-                        a.header__main-menu-ref(href="#") Вакансии
-                    li.header__main-menu-item.header__main-menu_item-margin
-                        a.header__main-menu-ref(href="#") Новости
-                    li.header__main-menu-item.header__main-menu_item-margin
-                        a.header__main-menu-ref(href="#") Соглашения
-                    li.header__main-menu-item.header__submenu-dropdown
-                        ul.header__submenu-dropdown-items
-                            li.header__submenu-dropdown-item
-                                a.header__main-menu-ref(href="#") Соглашение 1
-                            li.header__submenu-dropdown-item
-                                a.header__main-menu-ref(href="#") Соглашение 2
-                div.header__main-menu_button-margin-left
-                    +button("Войти", "87px", "34px", "button_come-in")
-                div.header__main-menu_button-margin-left
-                    +button("Регистрация", "196px", "34px", "button_registration")
+    div.header__content
+        img.header__logo(src="img/desktop.blocks__logo.svg")
+        nav.header__main-menu
+            ul.header__main-menu-items
+                li.header__main-menu-item
+                    a.header__main-menu-ref(href="#") О нас
+                li.header__main-menu-item.header__main-menu_item-margin
+                    a.header__main-menu-ref(href="#") Услуги
+                li.header__main-menu-item.header__submenu-dropdown
+                    ul.header__submenu-dropdown-items
+                        li.header__submenu-dropdown-item
+                            a.header__main-menu-ref(href="#") Услуга 1
+                        li.header__submenu-dropdown-item
+                            a.header__main-menu-ref(href="#") Услуга 2
+                li.header__main-menu-item.header__main-menu_dropdown-margin
+                    a.header__main-menu-ref(href="#") Вакансии
+                li.header__main-menu-item.header__main-menu_item-margin
+                    a.header__main-menu-ref(href="#") Новости
+                li.header__main-menu-item.header__main-menu_item-margin
+                    a.header__main-menu-ref(href="#") Соглашения
+                li.header__main-menu-item.header__submenu-dropdown
+                    ul.header__submenu-dropdown-items
+                        li.header__submenu-dropdown-item
+                            a.header__main-menu-ref(href="#") Соглашение 1
+                        li.header__submenu-dropdown-item
+                            a.header__main-menu-ref(href="#") Соглашение 2
+            div.header__main-menu_button-margin-left
+                +button("Войти", "87px", "34px", "button_come-in")
+            div.header__main-menu_button-margin-left
+                +button("Регистрация", "196px", "34px", "button_registration")

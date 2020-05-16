@@ -1,4 +1,15 @@
-mixin button(caption, width, height, mode)
-    button.button(class=mode type="submit" style="width: " + width +"; height: " + height + ";")
-        span.button__caption=caption
-
+mixin button(btn)
+  case btn.mode
+    when 'picker'
+      button.button(type= btn.type class= `button_${btn.mode}`)
+        span.button__caption= btn.text
+    when 'width-arrow'
+      button.button(type= btn.type class= `button_${btn.mode}`)
+        span.button__caption= btn.text
+        div.button__width-arrow
+    when 'come-in'
+      button.button(type= btn.type class= `button_${btn.mode}`)
+        span.button__caption= btn.text
+    default
+      button.button(type= btn.type)
+        span.button__caption= btn.text

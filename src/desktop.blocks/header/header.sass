@@ -1,0 +1,65 @@
+.header
+  display: flex
+  justify-content: space-between
+  align-items: center
+  max-width: 1160px
+  flex-grow: 1
+  flex-wrap: wrap
+  &__main-menu
+    display: flex
+    justify-content: flex-end
+    align-items: center
+    flex-wrap: wrap
+    flex-grow: 1
+    font-size: 0
+    &-items
+      display: flex
+      justify-content: center
+      align-items: center
+      padding: 0
+      margin: 0
+    &-item
+      font-size: 14px
+      list-style: none
+      margin-left: 20px
+    &-ref
+      color: rgba(31, 32, 65, 0.5)
+      text-decoration: none
+  &__submenu
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 24px
+    height: 21px
+    margin-left: 0
+    &::before
+      content: ''
+      display: block
+      width: 7px
+      height: 7px
+      border-right: 2px solid rgba(31, 32, 65, 0.5)
+      border-bottom: 2px solid rgba(31, 32, 65, 0.5)
+      transform: rotate(45deg)
+      margin-bottom: 3px
+    &-items
+      visibility: hidden
+      position: absolute
+      list-style: none
+      padding: 0
+      top: 21px
+      left: 0
+      background-color: white
+      border: 1px solid rgba(31, 32, 65, 0.5)
+      z-index: 1
+    &-item
+      white-space: nowrap
+      padding: 5px 15px
+  &__button-come-in
+    width: 87px
+    height: 34px
+    margin-left: 20px
+  &__button-registration
+    width: 196px
+    height: 34px
+    margin-left: 20px

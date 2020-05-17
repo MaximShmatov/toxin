@@ -1,7 +1,7 @@
 'use strict'
 
-import('./desktop.blocks.scss');
-import('./desktop.blocks__favicon.svg');
+import('./favicon/favicon');
+import('./desktop.blocks.sass');
 import('./desktop.blocks__logo.svg')
 import('./header/header');
 import('./page-landing/page-landing');

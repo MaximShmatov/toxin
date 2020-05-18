@@ -6,10 +6,13 @@ mixin button(btn)
     when 'width-arrow'
       button.button(type= btn.type class= `button_${btn.mode}`)
         span.button__caption= btn.text
-        div.button__width-arrow
+        div.button__arrow
     when 'come-in'
       button.button(type= btn.type class= `button_${btn.mode}`)
         span.button__caption= btn.text
+    when 'arrow'
+      button.button(type= btn.type class= `button_${btn.mode}`)
+        div.button__arrow
     default
       button.button(type= btn.type)
         span.button__caption= btn.text

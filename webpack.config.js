@@ -103,8 +103,8 @@ module.exports = {
                 }
             },
             {
-                test: /\.(ttf|woff|svg)$/,
-                include: /_fonts/,
+                test: /\.(eot|ttf|woff|woff2|svg)$/,
+                include: /fonts/,
                 use: {
                     loader: 'file-loader',
                     options: {
@@ -115,7 +115,7 @@ module.exports = {
             },
             {
                 test: /\.(ico|png|jpg|gif|svg)$/,
-                exclude: /_fonts/,
+                exclude: /fonts/,
                 use: {
                     loader: 'file-loader',
                     options: {

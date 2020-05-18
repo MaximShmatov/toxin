@@ -1,0 +1,50 @@
+include ../button/button
+
+mixin footer-menu
+  nav.footer-menu
+    ul.footer-menu__column-items
+      li.footer-menu__item
+        img(alt="logo" src="img/desktop.blocks__logo.svg")
+      li.footer-menu__item
+        p.footer-menu__paragraph Бронирование номера в лучшем отеле 2019 года по версии ассоциации "Отельные взгляды"
+    ul.footer-menu__column-items
+      li.footer-menu__item
+        h4.footer-menu__column-title Навигация
+      li.footer-menu__item
+        a.footer-menu__ref(href="http://undefined.ru") О нас
+      li.footer-menu__item
+        a.footer-menu__ref(href="http://undefined.ru") Новости
+      li.footer-menu__item
+        a.footer-menu__ref(href="http://undefined.ru") Служба поддержки
+      li.footer-menu__item
+        a.footer-menu__ref(href="http://undefined.ru") Услуги
+    ul.footer-menu__column-items
+      li.footer-menu__item
+        h4.footer-menu__column-title О нас
+      li.footer-menu__item
+        a.footer-menu__ref(href="http://undefined.ru") О сервисе
+      li.footer-menu__item
+        a.footer-menu__ref(href="http://undefined.ru") Наша команда
+      li.footer-menu__item
+        a.footer-menu__ref(href="http://undefined.ru") Вакансии
+      li.footer-menu__item
+        a.footer-menu__ref(href="http://undefined.ru") Инвесторы
+    ul.footer-menu__column-items
+      li.footer-menu__item
+        h4.footer-menu__column-title Служба поддержки
+      li.footer-menu__item
+        a.footer-menu__ref(href="http://undefined.ru") Соглашения
+      li.footer-menu__item
+        a.footer-menu__ref(href="http://undefined.ru") Сообщества
+      li.footer-menu__item
+        a.footer-menu__ref(href="http://undefined.ru") Связь с нами
+    ul.footer-menu__column-items
+      li.footer-menu__item
+        h4.footer-menu__column-title Подписка
+      li.footer-menu__item
+        p.footer-menu__paragraph Получайте специальные предложения и новости сервиса
+      li.footer-menu__item
+        form.footer-menu__email-form
+          input.footer-menu__email-form-input(type="email" value="Email" name="Email")
+          div.footer-menu__email-form-button
+            +button({type: 'submit', mode: 'arrow'})

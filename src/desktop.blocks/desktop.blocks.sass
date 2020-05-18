@@ -1,14 +1,15 @@
 @font-face
   font-family: 'Montserrat'
-  src: url('_fonts/desktop.blocks_fonts_montserrat-v14-latin-cyrillic-regular.woff') format('woff')
-  src: url('_fonts/desktop.blocks_fonts_montserrat-v14-latin-cyrillic-regular.ttf') format('truetype')
-  src: url('_fonts/desktop.blocks_fonts_montserrat-v14-latin-cyrillic-regular.svg') format('svg')
-  font-weight: normal
   font-style: normal
+  font-weight: normal
+  src: url('./fonts/montserrat-v14-cyrillic-700.woff') format('woff') /* Modern Browsers */
+  src: url('./fonts/montserrat-v14-cyrillic-700.ttf') format('truetype') /* Safari, Android, iOS */
+  src: url('./fonts/montserrat-v14-cyrillic-700.svg#Montserrat') format('svg') /* Legacy iOS */
 html
-  font-family: 'Montserrat'
+  font-family: Montserrat, sans-serif
   font-style: normal
   font-weight: normal
+  letter-spacing: 1px
   font-size: 14px
   line-height: 17px
   color: rgba(31, 32, 65, 0.5)
@@ -19,7 +20,7 @@ html
     flex-direction: column
     height: 100%
     margin: 0 auto
-    background-color: #BC9CFF
+    background: #E5E5E5
     header
       display: flex
       justify-content: center
@@ -30,3 +31,14 @@ html
       justify-content: space-between
       flex-grow: 1
       background: url('page-landing.png') no-repeat bottom right
+    .footer
+      background-color: white
+      &__footer-menu
+        max-width: 1160px
+        margin: 0 auto
+        padding: 100px 0
+      &__separator
+        border-top: 1px solid #E5E5E5
+      &__footer-copyright
+        max-width: 1160px
+        margin: 0 auto

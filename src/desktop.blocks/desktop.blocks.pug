@@ -1,6 +1,7 @@
 include header/header
-include footer/footer
 include page-landing/page-landing
+include footer-menu/footer-menu
+include footer-copyright/footer-copyright
 
 doctype html
 html(lang="ru" dir="ltr")
@@ -15,5 +16,10 @@ html(lang="ru" dir="ltr")
       +header
     main
       +page-landing
-    footer
-      +footer
+    footer.footer
+      div.footer__footer-menu
+        +footer-menu
+      div.footer__separator
+      div.footer__footer-copyright
+        +footer-copyright
+

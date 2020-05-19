@@ -1,18 +1,24 @@
 mixin button(btn)
-  case btn.mode
-    when 'picker'
-      button.button(type= btn.type class= `button_${btn.mode}`)
-        span.button__caption= btn.text
-    when 'width-arrow'
-      button.button(type= btn.type class= `button_${btn.mode}`)
-        span.button__caption= btn.text
-        div.button__arrow
-    when 'come-in'
-      button.button(type= btn.type class= `button_${btn.mode}`)
-        span.button__caption= btn.text
-    when 'arrow'
-      button.button(type= btn.type class= `button_${btn.mode}`)
-        div.button__arrow
-    default
-      button.button(type= btn.type)
-        span.button__caption= btn.text
+	case btn.mode
+		when 'picker'
+			button.button(type= btn.type class= `button_${btn.mode}`)
+				span.button__caption= btn.text
+		when 'width-arrow'
+			button.button(type= btn.type class= `button_${btn.mode}`)
+				span.button__caption= btn.text
+				div.button__arrow
+		when 'come-in'
+			button.button(type= btn.type class= `button_${btn.mode}`)
+				span.button__caption= btn.text
+		when 'arrow-gradient'
+			button.button(type= btn.type class= `button_${btn.mode}`)
+				div.button__arrow
+		when 'arrow-left'
+			button.button(type= btn.type class= `button_${btn.mode}`)
+				div.button__arrow
+		when 'arrow-right'
+			button.button(type= btn.type class= `button_${btn.mode}`)
+				div.button__arrow
+		default
+			button.button(type= btn.type)
+				span.button__caption= btn.text

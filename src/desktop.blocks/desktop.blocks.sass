@@ -1,3 +1,6 @@
+@mixin center-fix
+  max-width: 1160px
+  margin: 0 auto
 @font-face
   font-family: 'Montserrat'
   font-style: normal
@@ -14,31 +17,36 @@ html
   line-height: 17px
   color: rgba(31, 32, 65, 0.5)
   height: 100%
-  body
+
+  .body
     max-width: 1440px
     display: flex
     flex-direction: column
     height: 100%
     margin: 0 auto
     background: #E5E5E5
-    header
-      display: flex
-      justify-content: center
-      padding: 15px 0
+
+    .header
       background-color: white
-    main
+      box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05)
+      &__header-main
+        @include center-fix
+        padding: 15px 0
+
+    .main
       display: flex
-      justify-content: space-between
       flex-grow: 1
-      background: url('page-landing.png') no-repeat bottom right
+      background-color: white
+
     .footer
       background-color: white
+
       &__footer-menu
-        max-width: 1160px
-        margin: 0 auto
+        @include center-fix
         padding: 100px 0
+
       &__separator
         border-top: 1px solid #E5E5E5
+
       &__footer-copyright
-        max-width: 1160px
-        margin: 0 auto
+        @include center-fix

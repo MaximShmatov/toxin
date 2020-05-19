@@ -3,8 +3,15 @@ include ../quantity-select/quantity-select
 include ../date-range/date-range
 
 mixin form-search-number
-  form.form-search-number
-    h2.form-search-number__title Найдём номер под ваши пожелания
-    div.form-search-number__submit
-      +button({type: 'button', mode: 'width-arrow', text: 'Перейти к оплате'})
+  div.form-search-number
+    form.form-search-number__form
+      h2.form-search-number__title Найдём номер под ваши пожелания
+      div.form-search-number__date-range
+        +date-range({height: '44px'})
+      label.form-search-number__quantity-select-title Гости
+        div.form-search-number__quantity-select
+          +quantity-select
+      div.form-search-number__submit
+        +button({type: 'submit', mode: 'width-arrow', text: 'Перейти к оплате'})
+
 

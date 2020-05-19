@@ -1,4 +1,4 @@
 'use strict'
 
-import('./header.sass');
+import('./header-main.sass');
 import('../button/button');

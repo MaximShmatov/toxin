@@ -1,0 +1,33 @@
+include ../button/button
+
+mixin header-main
+	div.header-main
+		img.header-main__logo(src="img/desktop.blocks__logo.svg")
+		nav.header-main__menu
+			ul.header-main__menu-items
+				li.header-main__menu-item
+					a.header-main__menu-ref(href="http://undefined.html") О нас
+				li.header-main__menu-item
+					a.header-main__menu-ref(href="http://undefined.html") Услуги
+				li.header-main__menu-item.header-main__submenu
+					ul.header-main__submenu-items
+						li.header-main__submenu-item
+							a.header-main__menu-ref(href="http://undefined.html") Услуга 1
+						li.header-main__submenu-item
+							a.header-main__menu-ref(href="http://undefined.html") Услуга 2
+				li.header-main__menu-item
+					a.header-main__menu-ref(href="http://undefined.html") Вакансии
+				li.header-main__menu-item
+					a.header-main__menu-ref(href="http://undefined.html") Новости
+				li.header-main__menu-item
+					a.header-main__menu-ref(href="http://undefined.html") Соглашения
+				li.header-main__menu-item.header-main__submenu
+					ul.header-main__submenu-items
+						li.header-main__submenu-item
+							a.header-main__menu-ref(href="http://undefined.html") Соглашение 1
+						li.header-main__submenu-item
+							a.header-main__menu-ref(href="http://undefined.html") Соглашение 2
+		div.header-main__button-come-in
+			+button({type: 'button', mode: 'come-in', text: 'Войти'})
+		div.header-main__button-registration
+			+button({type: 'button', mode: 'registration', text: 'Зарегистрироваться'})

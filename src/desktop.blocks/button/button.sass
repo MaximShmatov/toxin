@@ -30,6 +30,7 @@
   border: none
   width: 100%
   height: 100%
+
   &__caption
     font: inherit
     font-weight: bold
@@ -39,12 +40,23 @@
     text-transform: uppercase
 
   &_arrow
-    background: white
-    .button__arrow
-      @include arrow(black)
-      &::before, &::after
-        border-image-source: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
-        border-image-slice: 2
+    &-left
+      .button__arrow
+        @include arrow(#BC9CFF)
+        &::after
+          transform: rotate(225deg)
+
+    &-right
+      .button__arrow
+        @include arrow(#BC9CFF)
+
+    &-gradient
+      background: white
+      .button__arrow
+        @include arrow(black)
+        &::before, &::after
+          border-image-source: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+          border-image-slice: 2
 
   &_come-in
     .button__caption
@@ -63,9 +75,11 @@
 
   &_picker
     background: white
+
     .button__caption
       color: #BC9CFF
 
   &_width-arrow
     .button__arrow
       @include arrow(white)
+      right: 22px

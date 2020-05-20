@@ -1,77 +1,182 @@
 'use strict'
 
-import('./quantity-select.sass');
 import('../button/button');
+import('./quantity-select.sass');
 
-$(function(){
+
+;(function ($) {
+  $.fn.quantitySelect = function () {
+
     let $quantitySelect = $('.quantity-select');
     let selected = $quantitySelect.find('.quantity-select__selected');
     let dropdown = $quantitySelect.find('.quantity-select__dropdown');
-    let dropdownItems = $quantitySelect.find('.quantity-select__picker');
-    let quantityGroupMinus = $quantitySelect.find('.quantity-select__picker-minus');
-    let quantityGroupPlus = $quantitySelect.find('.quantity-select__picker-plus');
-    let quantity = $quantitySelect.find('.quantity-select__quantity');
+    let picker = $quantitySelect.find('.quantity-select__picker');
+    let minus = $quantitySelect.find('.quantity-select__picker-minus');
+    let plus = $quantitySelect.find('.quantity-select__picker-plus');
+    let quantityGuests = $quantitySelect.find('.quantity-select__picker-quantity');
     let clear = $quantitySelect.find('.quantity-select__clear');
     let submit = $quantitySelect.find('.quantity-select__submit');
 
-    function toggleItemsDisplay() {
-        if(dropdownItems.css('visibility') === 'hidden') {
-            dropdownItems.css('visibility', 'visible');
-        } else dropdownItems.css('visibility', 'hidden');
-    }
-    function setSelectedCaption() {
-        let guestsQuantity = Number($(quantity[0]).text()) + Number($(quantity[1]).text());
-        let selectedMessage = '';
-        if(guestsQuantity) selectedMessage = guestsQuantity + ' гостя';
-        if(Number($(quantity[2]).text())) selectedMessage = selectedMessage + ', ' + $(quantity[2]).text() + ' младенец'
-        selected.text(selectedMessage);
+    let guests = {
+      adults: Number($(quantityGuests[0]).text()),
+      children: Number($(quantityGuests[1]).text()),
+      babies: Number($(quantityGuests[2]).text()),
+      isAdult: undefined,
+      isChild: undefined,
+      isBaby: undefined
+    };
+
+    function clearPicker() {
+      guests.adults = 0;
+      guests.children = 0;
+      guests.babies = 0;
+      setCaption();
     }
 
-    dropdown.on('click', function(){
-        toggleItemsDisplay();
-    });
+    function setValidGuests() {
+      let adultsAndChildren = guests.adults + guests.children;
+      switch (guests.isAdult) {
+        case true:
+          if (adultsAndChildren < 5) guests.adults++;
+          break;
+        case undefined:
+          break;
+        case false:
+          if (guests.adults > 0) guests.adults--;
+      }
+      adultsAndChildren = guests.adults + guests.children;
+      switch (guests.isChild) {
+        case true:
+          if (adultsAndChildren < 5) guests.children++;
+          break;
+        case undefined:
+          break;
+        case false:
+          if (guests.children > 0) guests.children--;
+      }
+      adultsAndChildren = guests.adults + guests.children;
+      if (adultsAndChildren > 0) {
+        switch (guests.isBaby) {
+          case true:
+            if (guests.babies < 5) guests.babies++;
+            break;
+          case undefined:
+            break;
+          case false:
+            if (guests.babies !== 0) guests.babies--;
+        }
+      } else guests.babies = 0;
+      guests.isAdult = undefined;
+      guests.isChild = undefined;
+      guests.isBaby = undefined;
+    }
 
-    clear.on('click', function(){
-        $(quantity[0]).text('0');
-        $(quantity[1]).text('0');
-        $(quantity[2]).text('0');
+    function setCaption() {
+      let selectedMessage = '';
+      let adultsAndChildren = guests.adults + guests.children;
+      $(quantityGuests[0]).text(guests.adults);
+      $(quantityGuests[1]).text(guests.children);
+      $(quantityGuests[2]).text(guests.babies);
+      switch (adultsAndChildren) {
+        case 0:
+          clear.css('visibility', 'hidden');
+          selectedMessage = 'Сколько гостей';
+          break;
+        case 1:
+          clear.css('visibility', 'visible');
+          selectedMessage = `${adultsAndChildren} гость`;
+          break;
+        case 2:
+        case 3:
+        case 4:
+          selectedMessage = `${adultsAndChildren} гостя`;
+          break;
+        case 5:
+          selectedMessage = `${adultsAndChildren} гостей`;
+      }
+      switch (guests.babies) {
+        case 1:
+          selectedMessage = selectedMessage + `, ${guests.babies} младенец`;
+          break;
+        case 2:
+        case 3:
+        case 4:
+          selectedMessage = selectedMessage + `, ${guests.babies} младенца`;
+          break;
+        case 5:
+          selectedMessage = selectedMessage + `, ${guests.babies} младенцев`;
+      }
+      selected.val(selectedMessage);
+    }
+
+    function togglePicker() {
+      if (picker.css('visibility') === 'hidden') {
+        picker.css('visibility', 'visible');
+        clear.css('visibility', 'visible');
+      } else {
+        picker.css('visibility', 'hidden');
         clear.css('visibility', 'hidden');
-        selected.text('Сколько гостей');
-    });
-    submit.on('click', function(){
-        dropdownItems.css('visibility', 'hidden');
-    });
+      }
+    }
 
-    $(quantityGroupMinus[0]).on('click', function(){
-        Number($(quantity[0]).text()) ? $(quantity[0]).text(Number(Number($(quantity[0]).text())-1)) : clear.css('visibility', 'hidden');
-        setSelectedCaption();
-    });
-    $(quantityGroupMinus[1]).on('click', function(){
-        Number($(quantity[1]).text()) ? $(quantity[1]).text(Number(Number($(quantity[1]).text())-1)) : clear.css('visibility', 'hidden');
-        setSelectedCaption()
-    });
-    $(quantityGroupMinus[2]).on('click', function(){
-        Number($(quantity[2]).text()) ? $(quantity[2]).text(Number(Number($(quantity[2]).text())-1)) : clear.css('visibility', 'hidden');
-        setSelectedCaption()
-    });
-    $(quantityGroupPlus[0]).on('click', function(){
-       $(quantity[0]).text(Number(Number($(quantity[0]).text())+1));
-        clear.css('visibility', 'visible');
-        setSelectedCaption()
-    });
-    $(quantityGroupPlus[1]).on('click', function(){
-        $(quantity[1]).text(Number(Number($(quantity[1]).text())+1));
-        clear.css('visibility', 'visible');
-        setSelectedCaption()
-    });
-    $(quantityGroupPlus[2]).on('click', function(){
-        $(quantity[2]).text(Number(Number($(quantity[2]).text())+1));
-        clear.css('visibility', 'visible');
-        setSelectedCaption()
-    });
+    function elsePickerHidden(evt) {
+      if (picker.has(evt.target).length === 0) {
+        picker.css('visibility', 'hidden');
+        clear.css('visibility', 'hidden');
+      }
+    }
 
-    dropdownItems.on('blur', function(){
-        dropdownItems.css('visibility', 'hidden');
-        console.log('dropdown blur');
-    });
-});
+    function adultAdd() {
+      guests.isAdult = false;
+      setValidGuests();
+      setCaption();
+    }
+
+    function adultDel() {
+      guests.isChild = false;
+      setValidGuests();
+      setCaption();
+    }
+
+    function childrenAdd() {
+      guests.isBaby = false;
+      setValidGuests();
+      setCaption();
+    }
+
+    function childrenDel() {
+      guests.isAdult = true;
+      setValidGuests();
+      setCaption();
+    }
+
+    function babyAdd() {
+      guests.isChild = true;
+      setValidGuests();
+      setCaption();
+    }
+
+    function babyDel() {
+      guests.isBaby = true;
+      setValidGuests();
+      setCaption();
+    }
+
+    dropdown.on('click', togglePicker);
+    clear.on('click', clearPicker);
+    submit.on('click', togglePicker);
+    $(minus[0]).on('click', adultAdd);
+    $(minus[1]).on('click', adultDel);
+    $(minus[2]).on('click', childrenAdd);
+    $(plus[0]).on('click', childrenDel);
+    $(plus[1]).on('click', babyAdd);
+    $(plus[2]).on('click', babyDel);
+
+    document.addEventListener('mouseup', elsePickerHidden);
+
+    return this;
+
+  }
+})($);
+
+$().quantitySelect();

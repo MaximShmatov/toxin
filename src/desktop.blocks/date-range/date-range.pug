@@ -1,14 +1,18 @@
+include ../button/button
+
 mixin date-range(props)
 	-let week = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс']
 	div.date-range
 		label.date-range__title Прибытие
-			div(style=`height: ${props.height}`).date-range__entry
-				input(type="text").date-range__input
-				button(type="button").date-range__dropdown
+			div.date-range__entry
+				input(type="text" value="дд.мм.гггг" style=`height: ${props.height}`).date-range__input
+				div(style=`min-width: ${props.height}`).date-range__dropdown
+					+button({type: 'button', mode: 'dropdown'})
 		label.date-range__title Выезд
-			div(style=`height: ${props.height}`).date-range__entry
-				input(type="text").date-range__input
-				button(type="button").date-range__dropdown
+			div.date-range__entry
+				input(type="text" value="дд.мм.гггг" style=`height: ${props.height}`).date-range__input
+				div(style=`min-width: ${props.height}`).date-range__dropdown
+					+button({type: 'button', mode: 'dropdown'})
 		div.date-range__picker
 			div.date-range__picker-header
 				div.date-range__picker-list
@@ -22,11 +26,11 @@ mixin date-range(props)
 						each vol in week
 							th= vol
 				tbody
-					-for(let i=0; i<5; i++)
+					-for(let i=1; i<6; i++)
 						tr
-							-for(let j=0; j<7; j++)
+							-for(let j=1; j<8; j++)
 								td
-									button(type="button")= j
+									button(type="button").date-range__picker-table-date= i*j
 			div.date-range__picker-footer
 				div.date-range__picker-button
 					+button({type: 'button', mode: 'picker', text: 'Очистить'})

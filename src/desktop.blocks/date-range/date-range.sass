@@ -2,33 +2,34 @@
   display: flex
   justify-content: space-between
   position: relative
+  &__title
+    line-height: 15px
 
   &__entry
     display: flex
     border: 1px solid rgba(31, 32, 65, 0.25)
     box-sizing: border-box
-    height: 100%
     max-width: 150px
     border-radius: 4px
+    margin-top: 5px
 
   &__input
     width: 100%
+    color: rgba(31, 32, 65, 0.75)
+    line-height: 18px
+    text-transform: uppercase
     border: none
     outline: none
     margin-left: 15px
 
-  &__dropdown
-    background: url("quantity-select__expand-icon-grey.png") no-repeat 50% 50%
-    border: none
-    min-width: 42px
-
   &__picker
-    visibility: visible
+    visibility: hidden
     position: absolute
     border: 1px solid rgba(31, 32, 65, 0.25)
+    box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05)
     border-radius: 4px
     box-sizing: border-box
-    background-color: white
+    background: white
     z-index: 1
     width: 100%
     top: 64px
@@ -39,23 +40,40 @@
       justify-content: space-between
 
     &-list
-      width: 40px
+      width: 24px
+      height: 24px
+      margin: 20px
+
+    &-button
+      margin: 20px
 
     &-title
       white-space: nowrap
 
     &-table
-      margin: auto
+      margin: 10px auto 0 auto
+      border-collapse: collapse
+      &-date
+        border-radius: 22px
+        width: 40px
+        height: 40px
+        border: none
+        font-size: 12px
+        line-height: 15px
+        color: rgba(31, 32, 65, 0.5)
+        background-color: white
+        outline: none
       th
+        max-width: 40px
+        max-height: 40px
         color: #BC9CFF
       td
         padding: 0
-        button
-          border-radius: 22px
-          width: 40px
-          height: 40px
-          border: none
-      border-collapse: collapse
+
+      &-date:focus
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+        font-weight: bold
+        color: white
 
     &-footer
       display: flex

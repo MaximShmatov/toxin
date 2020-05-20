@@ -41,12 +41,14 @@
 
   &_arrow
     &-left
+      background: white
       .button__arrow
         @include arrow(#BC9CFF)
         &::after
           transform: rotate(225deg)
 
     &-right
+      background: white
       .button__arrow
         @include arrow(#BC9CFF)
 
@@ -83,3 +85,15 @@
     .button__arrow
       @include arrow(white)
       right: 22px
+
+  &_dropdown
+    background: white
+    &::before
+      content: ''
+      display: block
+      width: 7px
+      height: 7px
+      border-right: 2px solid rgba(31, 32, 65, 0.5)
+      border-bottom: 2px solid rgba(31, 32, 65, 0.5)
+      transform: rotate(45deg)
+      margin-bottom: 4px

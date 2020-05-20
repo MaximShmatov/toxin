@@ -1,13 +1,14 @@
 .quantity-select
   background-color: white
-  height: 100%
-  display: flex
-  justify-content: space-between
   position: relative
-  box-sizing: border-box
-  border-radius: 4px
-  border: 1px solid rgba(31, 32, 65, 0.5)
-  height: 100%
+
+  &__body
+    display: flex
+    justify-content: space-between
+    box-sizing: border-box
+    border: 1px solid rgba(31, 32, 65, 0.25)
+    border-radius: 4px
+    margin-top: 5px
 
   &__selected
     border: none
@@ -20,33 +21,35 @@
     background-color: white
 
   &__dropdown
-    background: url("quantity-select__expand-icon-grey.png") no-repeat 50% 50%
     border: none
-    width: 42px
 
   &__picker
     visibility: hidden
-    display: flex
-    flex-direction: column
     position: absolute
+    top: 95%
     width: 100%
     background-color: white
     z-index: 1
-    border: 1px solid rgba(31, 32, 65, 0.5)
+    border: 1px solid rgba(31, 32, 65, 0.25)
     box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05)
-    tab-index: 1
-    margin-top: 40px
-    margin-left: -1px
+    box-sizing: border-box
+    border-radius: 0 0 4px 4px
 
     &-item
       display: flex
       align-items: center
-      margin: 7px 7px 0 15px
       justify-content: space-between
+      margin: 7px 7px 0 15px
 
     &-item:last-of-type
       margin-top: 19px
       margin-bottom: 13px
+
+    &-caption
+      display: flex
+      justify-content: space-between
+      align-items: center
+      width: 100%
 
     &-quantity-group
       display: flex
@@ -63,3 +66,5 @@
       background-color: white
       border: 1px solid rgba(31, 32, 65, 0.5)
       border-radius: 50%
+  &__clear
+    visibility: hidden

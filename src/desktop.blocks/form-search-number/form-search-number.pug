@@ -6,12 +6,10 @@ mixin form-search-number
   div.form-search-number
     form.form-search-number__form
       h2.form-search-number__title Найдём номер под ваши пожелания
-      div.form-search-number__date-range
-        +date-range({height: '44px'})
-      label.form-search-number__quantity-select-title Гости
-        div.form-search-number__quantity-select
-          +quantity-select
+      +date-range({height: '44px'})
+      div.form-search-number__quantity-select
+        +quantity-select({height: '44px'})
       div.form-search-number__submit
-        +button({type: 'submit', mode: 'width-arrow', text: 'Перейти к оплате'})
+        +button({type: 'submit', mode: 'width-arrow', text: 'Подобрать номер'})
 
 

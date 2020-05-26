@@ -1,0 +1,76 @@
+.date-picker
+  border: 1px solid rgba(31, 32, 65, 0.25)
+  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05)
+  border-radius: 4px
+  box-sizing: border-box
+  background: white
+  width: 100%
+
+  &_visibility
+    display: none
+
+  &__header
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin: 20px 0 30px
+
+  &__list-left, &__list-right
+    width: 24px
+    height: 24px
+    margin: 0 20px
+
+  &__clear, &__submit
+    margin: 20px
+
+  &__title
+    font-family: 'Open Sans', sans-serif
+    font-weight: bold
+    font-size: 19px
+    line-height: 24px
+    text-transform: none
+    color: #1F2041
+    white-space: nowrap
+    margin: 0
+
+  &__table
+    font-family: Montserrat, sans-serif
+    font-size: 12px
+    line-height: 15px
+    text-transform: none
+    margin: 10px auto 0 auto
+    border-collapse: collapse
+    & th
+      width: 40px
+      height: 40px
+      color: #BC9CFF
+    & td
+      padding: 0
+
+    &-date
+      border-radius: 22px
+      width: 40px
+      height: 40px
+      border: none
+      background-color: white
+      outline: none
+
+      &_month-current
+        color: rgba(31, 32, 65, 0.5)
+
+      &_month-other
+        color: rgba(31, 32, 65, 0.25)
+
+      &_selected
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+        font-weight: bold
+        color: white
+
+      &_current
+        color: white
+        font-weight: bold
+        background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)
+
+  &__footer
+    display: flex
+    justify-content: space-between

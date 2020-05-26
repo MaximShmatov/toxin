@@ -96,7 +96,12 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: [
-              '@babel/env'
+              '@babel/preset-env',
+              {
+                plugins: [
+                  '@babel/plugin-proposal-class-properties'
+                ]
+              }
             ]
           }
         }
@@ -107,7 +112,7 @@ module.exports = {
         use: {
           loader: 'file-loader',
           options: {
-            name: '[name].[ext]',
+            name: '[path][name].[ext]',
             outputPath: 'fonts'
           }
         }

@@ -1,18 +1,14 @@
 @mixin center-fix
+  display: flex
+  justify-content: space-between
+  align-items: center
   max-width: 1160px
   margin: 0 auto
-@font-face
-  font-family: 'Montserrat'
-  font-style: normal
-  font-weight: normal
-  src: url('./fonts/montserrat-v14-cyrillic-700.woff') format('woff') /* Modern Browsers */
-  src: url('./fonts/montserrat-v14-cyrillic-700.ttf') format('truetype') /* Safari, Android, iOS */
-  src: url('./fonts/montserrat-v14-cyrillic-700.svg#Montserrat') format('svg') /* Legacy iOS */
+
 html
-  font-family: Montserrat, sans-serif
+  font-family: 'Montserrat', sans-serif
   font-style: normal
   font-weight: normal
-  letter-spacing: 1px
   font-size: 14px
   line-height: 17px
   color: rgba(31, 32, 65, 0.5)
@@ -29,6 +25,7 @@ html
     .header
       background-color: white
       box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05)
+
       &__header-main
         @include center-fix
         padding: 15px 0
@@ -43,10 +40,14 @@ html
 
       &__footer-menu
         @include center-fix
-        padding: 100px 0
+        box-shadow: 0 1px 0 rgba(31, 32, 65, 0.1)
+        min-height: 372px
 
       &__separator
-        border-top: 1px solid #E5E5E5
+        border-top: 1px solid #D5D5D5
 
       &__footer-copyright
         @include center-fix
+        box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05)
+        min-height: 70px
+        padding-right: 2px

@@ -13,14 +13,14 @@ import('./quantity-select.sass');
     let picker = $quantitySelect.find('.quantity-select__picker');
     let minus = $quantitySelect.find('.quantity-select__picker-minus');
     let plus = $quantitySelect.find('.quantity-select__picker-plus');
-    let quantityGuests = $quantitySelect.find('.quantity-select__picker-quantity');
+    let pickerQuantity = $quantitySelect.find('.quantity-select__picker-quantity');
     let clear = $quantitySelect.find('.quantity-select__clear');
     let submit = $quantitySelect.find('.quantity-select__submit');
 
     let guests = {
-      adults: Number($(quantityGuests[0]).text()),
-      children: Number($(quantityGuests[1]).text()),
-      babies: Number($(quantityGuests[2]).text()),
+      adults: Number($(pickerQuantity[0]).text()),
+      children: Number($(pickerQuantity[1]).text()),
+      babies: Number($(pickerQuantity[2]).text()),
       isAdult: undefined,
       isChild: undefined,
       isBaby: undefined
@@ -74,9 +74,9 @@ import('./quantity-select.sass');
     function setCaption() {
       let selectedMessage = '';
       let adultsAndChildren = guests.adults + guests.children;
-      $(quantityGuests[0]).text(guests.adults);
-      $(quantityGuests[1]).text(guests.children);
-      $(quantityGuests[2]).text(guests.babies);
+      $(pickerQuantity[0]).text(guests.adults);
+      $(pickerQuantity[1]).text(guests.children);
+      $(pickerQuantity[2]).text(guests.babies);
       switch (adultsAndChildren) {
         case 0:
           clear.css('visibility', 'hidden');
@@ -110,20 +110,15 @@ import('./quantity-select.sass');
     }
 
     function togglePicker() {
-      if (picker.css('visibility') === 'hidden') {
-        picker.css('visibility', 'visible');
-        clear.css('visibility', 'visible');
+      if (picker.css('display') === 'none') {
+        picker.css('display', 'block');
       } else {
-        picker.css('visibility', 'hidden');
-        clear.css('visibility', 'hidden');
+        picker.css('display', 'none');
       }
     }
 
-    function elsePickerHidden(evt) {
-      if (picker.has(evt.target).length === 0) {
-        picker.css('visibility', 'hidden');
-        clear.css('visibility', 'hidden');
-      }
+    function pickerHidden(evt) {
+      if (picker.has(evt.target).length === 0) picker.css('display', 'none');
     }
 
     function adultAdd() {
@@ -172,7 +167,7 @@ import('./quantity-select.sass');
     $(plus[1]).on('click', babyAdd);
     $(plus[2]).on('click', babyDel);
 
-    document.addEventListener('mouseup', elsePickerHidden);
+    document.addEventListener('mouseup', pickerHidden);
 
     return this;
 

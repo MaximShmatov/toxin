@@ -1,18 +1,18 @@
 include ../button/button
 include ../date-picker/date-picker
 
-mixin date-range(props)
+mixin date-range
 	div.date-range
-		div.date-range__date-dropdown
+		div.date-range__date
 			label Прибытие
-				div.date-range__date-dropdown-in
-					input(type="text" value="дд.мм.гггг").date-range__date-dropdown-input
-					div.date-range__date-dropdown-button
+				div.date-range__date-dropdown
+					input(type="text").date-range__date-dropdown-input
+					div.date-range__date-dropdown-in
 						+button({type: 'button', mode: 'dropdown'})
 			label Выезд
-				div.date-range__date-dropdown-out
-					input(type="text" value="дд.мм.гггг").date-range__date-dropdown-input
-					div.date-range__date-dropdown-button
+				div.date-range__date-dropdown
+					input(type="text").date-range__date-dropdown-output
+					div.date-range__date-dropdown-out
 						+button({type: 'button', mode: 'dropdown'})
 		div.date-range__date-picker
 			+date-picker

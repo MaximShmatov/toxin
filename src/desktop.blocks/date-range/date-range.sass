@@ -2,11 +2,11 @@
   background-color: white
   position: relative
 
-  &__date-dropdown
+  &__date
     display: flex
     justify-content: space-between
 
-    &-in, &-out
+    &-dropdown
       display: flex
       justify-content: space-between
       border: 1px solid rgba(31, 32, 65, 0.25)
@@ -15,19 +15,19 @@
       height: 44px
       max-width: 150px
 
-    &-input
-      width: 100%
-      color: rgba(31, 32, 65, 0.75)
-      font-family: Montserrat, sans-serif
-      font-size: 14px
-      line-height: 18px
-      text-transform: uppercase
-      border: none
-      outline: none
-      margin-left: 14px
+      &-in, &-out
+        min-width: 44px
 
-    &-button
-      min-width: 44px
+      &-input, &-output
+        width: 100%
+        color: rgba(31, 32, 65, 0.75)
+        font-family: Montserrat, sans-serif
+        font-size: 14px
+        line-height: 18px
+        text-transform: uppercase
+        border: none
+        outline: none
+        margin-left: 14px
 
   &__date-picker
     display: block
@@ -36,3 +36,17 @@
     margin-top: 5px
     z-index: 1
 
+    &_range
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+      opacity: 0.25
+
+      &-first
+        border-radius: 22px 0 0 22px
+
+      &-last
+        border-radius: 0 22px 22px 0
+        & .date-picker__table-date
+          background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+          //opacity: 1
+          //font-weight: bold
+          //color: white

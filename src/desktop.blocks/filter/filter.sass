@@ -1,0 +1,247 @@
+@mixin title
+  font-weight: bold
+  font-size: 12px
+  line-height: 15px
+  text-transform: uppercase
+  color: #1F2041
+
+@mixin info
+  font-size: 12px
+  line-height: 14px
+
+@mixin availability-font
+  font-weight: bold
+  color: rgba(31, 32, 65, 0.75)
+
+@mixin flex-column
+  display: flex
+  flex-direction: column
+
+@mixin label-checkbox
+  display: flex
+  flex-direction: row-reverse
+  align-items: center
+  position: relative
+  & input:checked + div
+    border: 1px solid #BC9CFF
+
+    &::before, &::after
+      content: ''
+      display: block
+      transform: rotate(45deg)
+      position: absolute
+      width: 6px
+      height: 8px
+      top: 0
+      bottom: 0
+      left: 0
+      right: 0
+      margin: auto
+
+    &::before
+      background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+
+    &::after
+      background-color: white
+      padding: 0 4px 4px 0
+      background-clip: content-box
+
+@mixin check
+  position: relative
+  min-width: 20px
+  min-height: 20px
+  box-sizing: border-box
+  border: 1px solid rgba(31, 32, 65, 0.25)
+  border-radius: 4px
+  margin: 5px 10px 5px 0
+
+@mixin checkbox
+  position: absolute
+  left: 0
+  z-index: -1
+  opacity: 0
+
+.filter
+  @include flex-column
+  max-width: 266px
+  line-height: 18px
+
+  &__date-range
+    &-label
+      @include title
+
+      &-date
+        margin-top: 5px
+
+  &__quantity-select
+    &-label
+      @include title
+
+      &-guests
+        margin-top: 5px
+
+  &__price-range
+    @include flex-column
+
+    &-result
+      &-span
+        @include title
+
+      &-label
+        font-size: 12px
+        line-height: 15px
+        text-align: right
+        text-transform: uppercase
+        float: right
+        width: 100%
+
+        &-price
+
+    &-info
+      @include info
+
+  &__checkbox
+    @include flex-column
+    align-items: flex-start
+
+    &-title
+      @include title
+
+    &-smoke-label
+      @include label-checkbox
+
+      &-input
+        @include checkbox
+
+      &-check
+        @include check
+
+    &-pet-label
+      @include label-checkbox
+
+      &-input
+        @include checkbox
+
+      &-check
+        @include check
+
+    &-guests-label
+      @include label-checkbox
+      align-items: flex-start
+      margin-top: 5px
+
+      &-input
+        @include checkbox
+
+      &-check
+        @include check
+        margin-top: 0
+
+  &__availability
+    @include flex-column
+    align-items: flex-start
+
+    &-title
+      @include title
+
+    &-corridor-label
+      @include availability-font
+      @include label-checkbox
+
+      &-input
+        @include checkbox
+
+      &-check
+        @include check
+
+    &-corridor-info
+      @include info
+
+    &-assistant-label
+      @include availability-font
+      @include label-checkbox
+
+      &-input
+        @include checkbox
+
+      &-check
+        @include check
+
+    &-assistant-info
+      @include info
+
+  &__select-room
+    &-label
+      @include title
+
+      &-select
+
+  &__additionally
+    &-dropdown
+      display: flex
+      justify-content: space-between
+
+      &-title
+        @include title
+
+      &-button
+        width: 44px
+        height: 44px
+
+    &-checkbox
+      @include flex-column
+      align-items: flex-start
+
+      &-breackfast-label
+        @include label-checkbox
+
+        &-input
+          @include checkbox
+
+        &-check
+          @include check
+
+      &-table-label
+        @include label-checkbox
+
+        &-input
+          @include checkbox
+
+        &-check
+          @include check
+
+      &-chair-label
+        @include label-checkbox
+
+        &-input
+          @include checkbox
+
+        &-check
+          @include check
+
+      &-crib-label
+        @include label-checkbox
+
+        &-input
+          @include checkbox
+
+        &-check
+          @include check
+
+      &-tv-label
+        @include label-checkbox
+
+        &-input
+          @include checkbox
+
+        &-check
+          @include check
+
+      &-shampoo-label
+        @include label-checkbox
+
+        &-input
+          @include checkbox
+
+        &-check
+          @include check

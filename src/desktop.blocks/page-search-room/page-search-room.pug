@@ -1,0 +1,10 @@
+include ../filter/filter
+
+mixin page-search-room
+	div.page-search-room
+		section.page-search-room__filter
+			+filter
+		div.page-search-room__cards
+			h2.page-search-room__cards-title Номера, которые мы для вас подобрали
+			div.page-search-room__cards-area
+				div.page-search-room__pagination

@@ -1,5 +1,6 @@
 include header-main/header-main
 include page-landing/page-landing
+include page-search-room/page-search-room
 include footer-menu/footer-menu
 include footer-copyright/footer-copyright
 
@@ -16,7 +17,8 @@ html(lang="ru" dir="ltr")
 			div.header__header-main
 				+header-main
 		main.main
-			+page-landing
+			//+page-landing
+			+page-search-room
 		footer.footer
 			div.footer__footer-menu
 				+footer-menu

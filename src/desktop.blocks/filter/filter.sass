@@ -4,10 +4,12 @@
   line-height: 15px
   text-transform: uppercase
   color: #1F2041
+  margin: 0
 
 @mixin info
   font-size: 12px
   line-height: 14px
+  margin: 0
 
 @mixin availability-font
   font-weight: bold
@@ -16,15 +18,30 @@
 @mixin flex-column
   display: flex
   flex-direction: column
+  justify-content: space-between
 
-@mixin label-checkbox
+@mixin flex-row-reverse
   display: flex
   flex-direction: row-reverse
   align-items: center
   position: relative
-  & input:checked + div
-    border: 1px solid #BC9CFF
 
+@mixin false-checkbox
+  position: relative
+  min-width: 20px
+  min-height: 20px
+  box-sizing: border-box
+  border: 1px solid rgba(31, 32, 65, 0.25)
+  border-radius: 4px
+  margin-right: 10px
+
+@mixin checkbox
+  position: absolute
+  left: 0
+  z-index: -1
+  opacity: 0
+  &:checked + div
+    border: 1px solid #BC9CFF
     &::before, &::after
       content: ''
       display: block
@@ -37,211 +54,172 @@
       left: 0
       right: 0
       margin: auto
-
     &::before
       background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
-
     &::after
       background-color: white
       padding: 0 4px 4px 0
       background-clip: content-box
 
-@mixin check
-  position: relative
-  min-width: 20px
-  min-height: 20px
-  box-sizing: border-box
-  border: 1px solid rgba(31, 32, 65, 0.25)
-  border-radius: 4px
-  margin: 5px 10px 5px 0
-
-@mixin checkbox
-  position: absolute
-  left: 0
-  z-index: -1
-  opacity: 0
-
 .filter
   @include flex-column
   max-width: 266px
   line-height: 18px
-
-  &__date-range
-    &-label
-      @include title
-
-      &-date
-        margin-top: 5px
-
-  &__quantity-select
-    &-label
-      @include title
-
-      &-guests
-        margin-top: 5px
-
-  &__price-range
+  &__date
     @include flex-column
+    min-height: 64px
+    margin-bottom: 22px
+    &-title
+      @include title
+    &-dropdown
 
-    &-result
-      &-span
-        @include title
+  &__guests
+    @include flex-column
+    min-height: 64px
+    margin-bottom: 30px
+    &-title
+      @include title
+    &-dropdown
 
-      &-label
-        font-size: 12px
-        line-height: 15px
-        text-align: right
-        text-transform: uppercase
-        float: right
-        width: 100%
-
-        &-price
-
+  &__price
+    @include flex-column
+    min-height: 72px
+    position: relative
+    margin-bottom: 29px
+    &-title
+      @include title
+      position: absolute
+      left: 0
+    &-range
+      font-size: 12px
+      line-height: 15px
+      text-align: right
+      text-transform: uppercase
+      &-slider
+        height: 6px
+        border: 1px solid rgba(31, 32, 65, 0.25)
+        box-sizing: border-box
+        border-radius: 3px
+        margin-top: 23px
     &-info
       @include info
 
-  &__checkbox
+  &__permission
     @include flex-column
     align-items: flex-start
-
+    min-height: 130px
+    max-width: 240px
+    margin-bottom: 30px
     &-title
       @include title
-
-    &-smoke-label
-      @include label-checkbox
-
-      &-input
+      padding-bottom: 5px
+    &-smoke
+      @include flex-row-reverse
+      &-checkbox
         @include checkbox
-
-      &-check
-        @include check
-
-    &-pet-label
-      @include label-checkbox
-
-      &-input
+      &-false-checkbox
+        @include false-checkbox
+    &-pet
+      @include flex-row-reverse
+      &-checkbox
         @include checkbox
-
-      &-check
-        @include check
-
-    &-guests-label
-      @include label-checkbox
-      align-items: flex-start
-      margin-top: 5px
-
-      &-input
+      &-false-checkbox
+        @include false-checkbox
+    &-guests
+      @include flex-row-reverse
+      max-width: 240px
+      &-checkbox
         @include checkbox
-
-      &-check
-        @include check
-        margin-top: 0
+      &-false-checkbox
+        @include false-checkbox
+        align-self: flex-start
 
   &__availability
     @include flex-column
     align-items: flex-start
-
+    justify-content: flex-start
+    min-height: 145px
+    margin-bottom: 31px
     &-title
       @include title
-
-    &-corridor-label
+      padding-bottom: 16px
+    &-corridor
       @include availability-font
-      @include label-checkbox
-
-      &-input
+      @include flex-row-reverse
+      &-checkbox
         @include checkbox
-
-      &-check
-        @include check
-
+      &-false-checkbox
+        @include false-checkbox
     &-corridor-info
       @include info
-
-    &-assistant-label
+      margin: 4px 30px 10px 30px
+    &-assistant
       @include availability-font
-      @include label-checkbox
-
-      &-input
+      @include flex-row-reverse
+      &-checkbox
         @include checkbox
-
-      &-check
-        @include check
-
+      &-false-checkbox
+        @include false-checkbox
     &-assistant-info
       @include info
+      margin: 4px 10px 0 30px
 
-  &__select-room
-    &-label
+  &__room
+    @include flex-column
+    min-height: 64px
+    margin-bottom: 14px
+    &-title
       @include title
-
-      &-select
+      &-dropdown
 
   &__additionally
     &-dropdown
       display: flex
       justify-content: space-between
-
+      align-items: center
       &-title
         @include title
-
       &-button
         width: 44px
         height: 44px
-
-    &-checkbox
+    &-picker
       @include flex-column
       align-items: flex-start
-
-      &-breackfast-label
-        @include label-checkbox
-
-        &-input
+      margin-top: 4px
+      min-height: 170px
+      &-breackfast
+        @include flex-row-reverse
+        &-checkbox
           @include checkbox
-
-        &-check
-          @include check
-
-      &-table-label
-        @include label-checkbox
-
-        &-input
+        &-false-checkbox
+          @include false-checkbox
+      &-table
+        @include flex-row-reverse
+        &-checkbox
           @include checkbox
-
-        &-check
-          @include check
-
-      &-chair-label
-        @include label-checkbox
-
-        &-input
+        &-false-checkbox
+          @include false-checkbox
+      &-chair
+        @include flex-row-reverse
+        &-checkbox
           @include checkbox
-
-        &-check
-          @include check
-
-      &-crib-label
-        @include label-checkbox
-
-        &-input
+        &-false-checkbox
+          @include false-checkbox
+      &-crib
+        @include flex-row-reverse
+        &-checkbox
           @include checkbox
-
-        &-check
-          @include check
-
-      &-tv-label
-        @include label-checkbox
-
-        &-input
+        &-false-checkbox
+          @include false-checkbox
+      &-tv
+        @include flex-row-reverse
+        &-checkbox
           @include checkbox
-
-        &-check
-          @include check
-
-      &-shampoo-label
-        @include label-checkbox
-
-        &-input
+        &-false-checkbox
+          @include false-checkbox
+      &-shampoo
+        @include flex-row-reverse
+        &-checkbox
           @include checkbox
-
-        &-check
-          @include check
+        &-false-checkbox
+          @include false-checkbox

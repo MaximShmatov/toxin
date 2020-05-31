@@ -10,7 +10,8 @@ module.exports = {
   mode: 'none',
   context: path.resolve(__dirname, 'src/desktop.blocks'),
   entry: {
-    index: './desktop.blocks.js'
+    index: './page-landing/page-landing.js',
+    searchNumber: './page-search-room/page-search-room.js'
   },
   output: {
     filename: '[name].[hash].js',
@@ -28,7 +29,11 @@ module.exports = {
       $: 'jquery'
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/desktop.blocks/desktop.blocks.pug'),
+      template: path.resolve(__dirname, 'src/desktop.blocks/page-search-room/page-search-room.pug'),
+      filename: 'searchRoom.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src/desktop.blocks/page-landing/page-landing.pug'),
       filename: 'index.html'
     }),
     new MiniCssExtractPlugin({

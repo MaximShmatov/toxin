@@ -1,0 +1,25 @@
+include ../header-main/header-main
+include ../footer-menu/footer-menu
+include ../footer-copyright/footer-copyright
+
+doctype html
+html(lang="ru" dir="ltr")
+	head
+		meta(charset="utf-8")
+		link(rel="icon" type="images/ico" href="img/favicon.ico")
+		link(rel="icon" type="images/png" sizes="16x16" href="img/favicon-16x16.png")
+		link(rel="icon" type="images/png" sizes="32x32" href="img/favicon-32x32.png")
+	title TOXIN
+	body.body
+		header.header
+			div.header__header-main
+				+header-main
+		main.main
+			block page
+		footer.footer
+			div.footer__footer-menu
+				+footer-menu
+			div.footer__separator
+			div.footer__footer-copyright
+				+footer-copyright
+

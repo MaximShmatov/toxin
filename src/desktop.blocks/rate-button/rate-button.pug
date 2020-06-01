@@ -1,0 +1,5 @@
+mixin rate-button
+	div.rate-button
+		-for (let i = 5; i >= 1; i--)
+			input(type="radio" name="rate-button__star" id=`rate-button__star-${i}` value=`${i}`).rate-button__radio
+			label(for=`rate-button__star-${i}`).rate-button__star

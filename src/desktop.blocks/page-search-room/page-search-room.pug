@@ -1,6 +1,7 @@
 extends ../template-main/template-main
 include ../filter/filter
-include ../rate-button/rate-button
+include ../card-room/card-room
+
 block page
 	div.page-search-room
 		section.page-search-room__filter
@@ -8,5 +9,7 @@ block page
 		div.page-search-room__cards
 			h2.page-search-room__cards-title Номера, которые мы для вас подобрали
 			div.page-search-room__cards-area
-				+rate-button
-				div.page-search-room__pagination
+				-for (let i = 0; i < 12; i++)
+					div.page-search-room__cards-area-room
+						+card-room
+			div.page-search-room__pagination

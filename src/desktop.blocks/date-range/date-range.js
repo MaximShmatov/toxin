@@ -1,6 +1,6 @@
 'use strict'
 
-import {DatePicker} from "../date-picker/date-picker";
+import {DatePicker} from '../date-picker/date-picker';
 
 import('./date-range.sass');
 import('../button/button');

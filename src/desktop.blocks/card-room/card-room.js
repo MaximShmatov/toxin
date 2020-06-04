@@ -46,8 +46,8 @@ export class CardRoom {
   listRight() {
     for(let i = 0; i <5; i++) {
       if($(this.#$radio[i]).prop('checked')) {
-        $(this.#$radio[i+1]).attr('checked', 'checked');
-        console.log(i);
+        $(this.#$radio[i-1]).prop('checked', true);
+        $(this.#$radio[i-1]).attr('data-dir', 'r')
         break;
       }
     }
@@ -55,8 +55,8 @@ export class CardRoom {
   listLeft() {
     for(let i = 0; i <5; i++) {
       if($(this.#$radio[i]).prop('checked')) {
-        $(this.#$radio[i-1]).attr('checked', 'checked');
-        console.log(i);
+        $(this.#$radio[i+1]).prop('checked', true);
+        $(this.#$radio[i+1]).attr('data-dir', 'l');
         break;
       }
     }
@@ -64,3 +64,6 @@ export class CardRoom {
 }
 
 new CardRoom(room, $($('.card-room')[0]));
+new CardRoom(room, $($('.card-room')[1]));
+new CardRoom(room, $($('.card-room')[2]));
+new CardRoom(room, $($('.card-room')[3]));

@@ -5,5 +5,5 @@ import('../fonts/fonts.sass');
 import('../header-main/header-main');
 import('../footer-menu/footer-menu');
 import('../footer-copyright/footer-copyright');
-import('../images/logo.png');
+import('../resources/logo.png');
 import('./template-main.sass');

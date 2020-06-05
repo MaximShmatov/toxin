@@ -2,5 +2,5 @@
 
 import('../template-main/template-main');
 import('../filter/filter');
-import('../card-room/card-room')
+import('../pagination/pagination');
 import('./page-search-room.sass');

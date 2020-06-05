@@ -118,7 +118,7 @@ module.exports = {
         use: {
           loader: 'file-loader',
           options: {
-            name: '[path][name].[ext]',
+            name: '[name].[ext]',
             outputPath: 'fonts'
           }
         }
@@ -141,7 +141,7 @@ module.exports = {
     port: 9000,
     watchContentBase: true,
     progress: true,
-    //stats: 'errors-only',
+    stats: 'errors-only',
     hot: true,
     historyApiFallback: true,
     overlay: {

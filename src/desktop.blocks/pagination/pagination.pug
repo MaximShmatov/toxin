@@ -1,0 +1,18 @@
+include ../card-room/card-room
+
+mixin pagination
+	div.pagination
+		div.pagination__content
+			h2.pagination__content-title Номера, которые мы для вас подобрали
+			-for (let i = 0; i < 12; i++)
+				aside.pagination__content-card
+					+card-room
+		form.pagination__control
+			button(type="button").pagination__control-first 1
+			button(type="button").pagination__control-second 2
+			button(type="button").pagination__control-third 3
+			button(type="button").pagination__control-intermediate ...
+			button(type="button").pagination__control-last 15
+			div.pagination__control-next
+				button(type="button").pagination__control-next-button
+			label.pagination__control-result 1 - 12 из 100+ вариантов аренды

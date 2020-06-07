@@ -9,10 +9,10 @@ mixin registration
 			input(type="text" value="Имя").registration__name
 			input(type="text" value="Фамилия").registration__family
 			div.registration__mw
-				label.registration__mw-caption Мужчина
-					+radio({name: "registration__mw-radio", value: "m", checked: "true"}).registration__mw-radio
-				label.registration__mw-caption Женщина
-					+radio({name: "registration__mw-radio", value: "w"}).registration__mw-radio
+				div.registration__mw-radio
+					+radio({name: "registration__mw-radio", value: "m", caption: "Мужчина", checked: "true"})
+				div.registration__mw-radio
+					+radio({name: "registration__mw-radio", value: "w", caption: "Женщина"})
 			label.registration__birth
 				h3.registration__birth-title Дата рождения
 				input(type="text" value="дд.мм.гггг").registration__birth-date

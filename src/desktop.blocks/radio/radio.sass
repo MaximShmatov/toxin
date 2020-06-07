@@ -1,5 +1,6 @@
 .radio
-  display: block
+  display: flex
+  align-items: center
 
   &__check
     display: none
@@ -13,6 +14,8 @@
         height: 100%
         border-radius: 10px
         background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+      & + .radio__caption
+        color: rgba(31, 32, 65, 0.75)
 
   &__checkbox
     width: 20px
@@ -21,3 +24,7 @@
     box-sizing: border-box
     border-radius: 10px
     padding: 4px
+    margin-right: 10px
+
+  &__caption
+    color: rgba(31, 32, 65, 0.5)

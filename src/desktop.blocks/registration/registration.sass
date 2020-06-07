@@ -31,19 +31,21 @@
     margin-top: 10px
 
   &__mw
+    display: flex
     margin-top: 10px
-
     &-caption
-
+      display: flex
+      flex-direction: row-reverse
+      justify-content: flex-end
+      align-items: center
     &-radio
+      margin-right: 10px
 
   &__birth
     display: block
     margin-top: 20px
-
     &-title
       margin: 0
-
     &-date
       @include input
       margin-top: 5px
@@ -51,14 +53,11 @@
   &__data-come-in
     display: block
     margin-top: 20px
-
     &-title
       margin: 0
-
     &-email
       @include input
       margin-top: 5px
-
     &-pass
       @include input
       margin-top: 10px
@@ -69,7 +68,6 @@
     justify-content: flex-end
     align-items: center
     margin-top: 10px
-
     &-toggle
       margin-right: 10px
 
@@ -79,12 +77,10 @@
 
   &__come-in
     margin: 30px 0
-
     &-caption
       display: flex
       justify-content: space-between
       align-items: center
-
     &-button
       width: 99px
       height: 44px

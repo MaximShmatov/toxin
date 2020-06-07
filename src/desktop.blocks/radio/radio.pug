@@ -1,0 +1,7 @@
+mixin radio(props)
+	label.radio
+		if(props.checked)
+			input(type="radio", name= props.name, value= props.value, checked).radio__check
+		else
+			input(type="radio", name= props.name, value= props.value).radio__check
+		div.radio__checkbox

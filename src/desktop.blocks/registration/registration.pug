@@ -1,5 +1,6 @@
 include ../button/button
 include ../toggle/toggle
+include ../radio/radio
 
 mixin registration
 	form.registration
@@ -9,9 +10,9 @@ mixin registration
 			input(type="text" value="Фамилия").registration__family
 			div.registration__mw
 				label.registration__mw-caption Мужчина
-					input(type="radio" name=".page-registration__mw-radio" value="m").registration__mw-radio
+					+radio({name: "registration__mw-radio", value: "m", checked: "true"}).registration__mw-radio
 				label.registration__mw-caption Женщина
-					input(type="radio" name=".page-registration__mw-radio" value="w").registration__mw-radio
+					+radio({name: "registration__mw-radio", value: "w"}).registration__mw-radio
 			label.registration__birth
 				h3.registration__birth-title Дата рождения
 				input(type="text" value="дд.мм.гггг").registration__birth-date

@@ -11,7 +11,8 @@ module.exports = {
   context: path.resolve(__dirname, 'src/desktop.blocks'),
   entry: {
     index: './page-landing/page-landing.js',
-    searchNumber: './page-search-room/page-search-room.js'
+    searchNumber: './page-search-room/page-search-room.js',
+    pageRegistration: './page-registration/page-registration.js'
   },
   output: {
     filename: '[name].[hash].js',

@@ -1,0 +1,87 @@
+@mixin input
+  border: 1px solid rgba(31, 32, 65, 0.25)
+  box-sizing: border-box
+  border-radius: 4px
+  font: inherit
+  line-height: 18px
+  color: rgba(31, 32, 65, 0.25)
+  width: 100%
+  height: 44px
+
+.registration
+  background: white
+  border: 1px solid rgba(0, 0, 0, 0.12)
+  box-sizing: border-box
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2)
+  border-radius: 4px
+
+  &__wrapper
+    max-width: 320px
+    margin: 0 auto
+
+  &__title
+    margin: 40px 0 0 0
+
+  &__name
+    @include input
+    margin-top: 20px
+
+  &__family
+    @include input
+    margin-top: 10px
+
+  &__mw
+    margin-top: 10px
+
+    &-caption
+
+    &-radio
+
+  &__birth
+    display: block
+    margin-top: 20px
+
+    &-title
+      margin: 0
+
+    &-date
+      @include input
+      margin-top: 5px
+
+  &__data-come-in
+    display: block
+    margin-top: 20px
+
+    &-title
+      margin: 0
+
+    &-email
+      @include input
+      margin-top: 5px
+
+    &-pass
+      @include input
+      margin-top: 10px
+
+  &__subscription
+    margin-top: 10px
+
+    &-caption
+
+    &-check
+
+  &__pay
+    height: 44px
+    margin-top: 20px
+
+  &__come-in
+    margin: 30px 0
+
+    &-caption
+      display: flex
+      justify-content: space-between
+      align-items: center
+
+    &-button
+      width: 99px
+      height: 44px

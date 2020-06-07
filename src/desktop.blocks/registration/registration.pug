@@ -1,0 +1,29 @@
+include ../button/button
+
+mixin registration
+	form.registration
+		div.registration__wrapper
+			h1.input(type="text").registration__title Регистрация аккаунта
+			input(type="text" value="Имя").registration__name
+			input(type="text" value="Фамилия").registration__family
+			div.registration__mw
+				label.registration__mw-caption Мужчина
+					input(type="radio" name=".page-registration__mw-radio" value="m").registration__mw-radio
+				label.registration__mw-caption Женщина
+					input(type="radio" name=".page-registration__mw-radio" value="w").registration__mw-radio
+			label.registration__birth
+				h3.registration__birth-title Дата рождения
+				input(type="text" value="дд.мм.гггг").registration__birth-date
+			label.registration__data-come-in
+				h3.registration__data-come-in-title Данные для входа в сервис
+				input(type="text" value="Email").registration__data-come-in-email
+				input(type="text" value="Пароль").registration__data-come-in-pass
+			div.registration__subscription
+				label.registration__subscription-caption Получать спецпредложения
+					input(type="checkbox").registration__subscription-check
+			div.registration__pay
+				+button({type: 'submit', mode: 'width-arrow', text: 'Перейти к оплате'})
+			div.registration__come-in
+				label.registration__come-in-caption Уже есть аккаунт на Toxin
+					div.registration__come-in-button
+						+button({type: 'button', mode: 'come-in', text: 'Войти'})

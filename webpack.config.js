@@ -36,6 +36,10 @@ module.exports = {
       template: path.resolve(__dirname, 'src/desktop.blocks/page-landing/page-landing.pug'),
       filename: 'index.html'
     }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src/desktop.blocks/page-registration/page-registration.pug'),
+      filename: 'pageRegistration.html'
+    }),
     new MiniCssExtractPlugin({
       filename: '[name].[hash].css',
       chunkFilename: '[name].[hash].css',

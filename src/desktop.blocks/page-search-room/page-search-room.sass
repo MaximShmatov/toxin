@@ -3,15 +3,18 @@
   justify-content: space-between
   flex-grow: 1
   max-width: 1160px
-  margin: 30px auto 0
+  margin: 29px auto 0
+  flex-wrap: wrap
 
   &__filter
+    float: left
     max-width: 266px
 
   &__pagination
-    display: flex
-    flex-direction: column
-    justify-content: space-between
+    float: right
     max-width: 834px
 
-
+  &__separator
+    width: 100%
+    margin-top: 70px
+    border-top: 1px solid rgba(31, 32, 65, 0.25)

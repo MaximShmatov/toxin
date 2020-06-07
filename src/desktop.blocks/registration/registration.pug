@@ -1,4 +1,5 @@
 include ../button/button
+include ../toggle/toggle
 
 mixin registration
 	form.registration
@@ -18,9 +19,9 @@ mixin registration
 				h3.registration__data-come-in-title Данные для входа в сервис
 				input(type="text" value="Email").registration__data-come-in-email
 				input(type="text" value="Пароль").registration__data-come-in-pass
-			div.registration__subscription
-				label.registration__subscription-caption Получать спецпредложения
-					input(type="checkbox").registration__subscription-check
+			label.registration__subscription Получать спецпредложения
+				div.registration__subscription-toggle
+					+toggle
 			div.registration__pay
 				+button({type: 'submit', mode: 'width-arrow', text: 'Перейти к оплате'})
 			div.registration__come-in

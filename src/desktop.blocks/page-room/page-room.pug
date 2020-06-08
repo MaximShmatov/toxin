@@ -1,58 +1,47 @@
 extends ../template-main/template-main
 include ../diagram/diagram
+include ../review/review
 
 block page
 	article.page-room
 		section.page-room__preview
 		div.page-room-wrapper
 			section.page-room__details
-				article.page-room__info
-					h2.page-room__info-title Сведения о номере
-					ul.page-room__info-items
-						li.page-room__info-item
-							div.page-room__info-item-icon
-							dl.page-room__info-item-list
-								dt.page-room__info-item-term Комфорт
-								dd.page-room__info-item-define Шумопоглощающие стены
-						li.page-room__info-item
-							div.page-room__info-item-icon
-							dl.page-room__info-item-list
-								dt.page-room__info-item-term Удобство
-								dd.page-room__info-item-define Окно в каждой из спален
-						li.page-room__info-item
-							div.page-room__info-item-icon
-							dl.page-room__info-item-list
-								dt.page-room__info-item-term Уют
-								dd.page-room__info-item-define Номер оснащен камином
+				article.page-room__details-info
+					h2.page-room__details-info-title Сведения о номере
+					ul.page-room__details-info-items
+						li.page-room__details-info-items-item
+							div.page-room__details-info-items-item-icon
+							dl.page-room__details-info-items-item-list
+								dt.page-room__details-info-items-item-list-term Комфорт
+								dd.page-room__details-info-items-item-list-define Шумопоглощающие стены
+						li.page-room__details-info-items-item
+							div.page-room__details-info-items-item-icon
+							dl.page-room__details-info-items-item-list
+								dt.page-room__details-info-items-item-list-term Удобство
+								dd.page-room__details-info-items-item-list-define Окно в каждой из спален
+						li.page-room__details-info-items-item
+							div.page-room__details-info-items-item-icon
+							dl.page-room__details-info-items-item-list
+								dt.page-room__details-info-items-item-list-term Уют
+								dd.page-room__details-info-items-item-list-define Номер оснащен камином
 				article.page-room__effect
 					h2.page-room__effect-title Впечатления от номера
 					div.page-room__effect-diagram
 						+diagram
 				article.page-room__reviews
 					h2.page-room__reviews-title Отзывы посетителей номера
-					bloquote.page-room__reviews-item
-						cite
-							div.page-room__reviews-avatar
-							b Мурад Сарафанов
-							p 5 дней назад
-						p
-						|Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.
-						|И стены, действительно шумоподавляющие. Выкрикивал комплименты повару - никто
-						|не жаловался из соседей.
-					bloquote.page-room__reviews-item
-						cite
-							div.page-room__reviews-avatar
-							b Патрисия Стёклышкова
-							p Неделю назад
-						p
-						|Обслуживание на высоте! Все аккуратно, чисто. Завтраки в номер советую заказать,
-						|каждый день новое блюдо и десерт как комплимент
+						span.page-room__reviews-title-quantity 2 отзыва
+					div.page-room__reviews-item
+						+review
+					div.page-room__reviews-item
+						+review
 				article.page-room__rules
 					h2.page-room__rules-title Правила
-					ul
-						li Нельзя с питомцами
-						li Без вечеринок и мероприятий
-						li Время прибытия - после 13:00, а выезд до 12:00
+					ul.page-room__rules-items
+						li.page-room__rules-items-item Нельзя с питомцами
+						li.page-room__rules-items-item Без вечеринок и мероприятий
+						li.page-room__rules-items-item Время прибытия &mdash; после 13:00, а выезд до 12:00
 				article.page-room__cancel
 					h2.page-room__cancel-title Отмена
 					p.page-room__cancel-text

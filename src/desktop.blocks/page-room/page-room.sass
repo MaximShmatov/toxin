@@ -1,0 +1,67 @@
+article
+  border: 1px solid black
+section
+  border: 1px solid yellow
+.page-room
+  flex-grow: 1
+
+  &-wrapper
+    display: flex
+    justify-content: space-between
+    max-width: 1160px
+    margin: 70px auto
+
+  &__preview
+    background-image: url('page-room__img3.jpg'), url('page-room__img2.jpg'), url('page-room__img1.jpg')
+    background-repeat: no-repeat
+    background-position: bottom right, top right, bottom left
+    height: 485px
+
+  &__details
+    max-width: 710px
+    display: flex
+    flex-wrap: wrap
+
+  &__info
+    flex-grow: 1
+    max-width: 280px
+    &-title
+      margin: 0 0 20px 0
+    &-items
+      list-style: none
+      margin: 0
+      padding: 0
+    &-item
+      &:not(:last-child)::after
+        content: ''
+        display: block
+        width: 100%
+        height: 1px
+        background-color: rgba(31, 32, 65, 0.1)
+        margin: 20px 0
+      &-icon
+        width: 48px
+        height: 48px
+        float: left
+        margin-right: 10px
+      &:nth-child(1) &-icon
+        background: url('page-room__ico1.svg') no-repeat center center
+      &:nth-child(2) &-icon
+        background: url('page-room__ico2.svg') no-repeat center center
+      &:nth-child(3) &-icon
+        background: url('page-room__ico3.svg') no-repeat center center
+      //&-list
+      &-term
+        font-weight: bold
+        color: rgba(31, 32, 65, 0.75)
+      //&-define
+
+  &__effect
+    //flex-grow: 1
+    &-title
+      margin: 0 0 20px 0
+
+
+  &__reservation
+    max-width: 380px
+    width: 100%

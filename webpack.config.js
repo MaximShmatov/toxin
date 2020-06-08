@@ -12,7 +12,8 @@ module.exports = {
   entry: {
     index: './page-landing/page-landing.js',
     searchNumber: './page-search-room/page-search-room.js',
-    pageRegistration: './page-registration/page-registration.js'
+    pageRegistration: './page-registration/page-registration.js',
+    pageRoom: './page-room/page-room.js'
   },
   output: {
     filename: '[name].[hash].js',
@@ -30,16 +31,20 @@ module.exports = {
       $: 'jquery'
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/desktop.blocks/page-search-room/page-search-room.pug'),
-      filename: 'searchRoom.html'
-    }),
-    new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/desktop.blocks/page-landing/page-landing.pug'),
       filename: 'index.html'
     }),
     new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src/desktop.blocks/page-search-room/page-search-room.pug'),
+      filename: 'pageSearchRoom.html'
+    }),
+    new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/desktop.blocks/page-registration/page-registration.pug'),
       filename: 'pageRegistration.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src/desktop.blocks/page-room/page-room.pug'),
+      filename: 'pageRoom.html'
     }),
     new MiniCssExtractPlugin({
       filename: '[name].[hash].css',

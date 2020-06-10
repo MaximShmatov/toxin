@@ -1,17 +1,17 @@
 include ../button/button
 include ../date-range/date-range
-include ../quantity-select/quantity-select
+include ../dropdown/dropdown
 
 mixin filter
 	form.filter
 		div.filter__date
 			h4.filter__date-title Даты пребывания в отеле
 			div.filter__date-dropdown
-				+quantity-select({height: '44px'})
+				+dropdown
 		div.filter__guests
 			h4.filter__guests-title Гости
 			div.filter__guests-dropdown
-				+quantity-select({height: '44px'})
+				//+dropdown
 		div.filter__price
 			h4.filter__price-title Диапазон цены
 			label.filter__price-range 5 000p - 10 000p
@@ -41,7 +41,7 @@ mixin filter
 		div.filter__room
 				h4.filter__room-title Удобства номера
 				div.filter__room-select-dropdown
-					+quantity-select({height: '44px'})
+					//+dropdown
 		div.filter__additionally
 			div.filter__additionally-dropdown
 				h4.filter__additionally-dropdown-title Дополнительные удобства

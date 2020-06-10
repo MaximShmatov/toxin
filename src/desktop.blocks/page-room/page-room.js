@@ -5,6 +5,7 @@ import('../diagram/diagram');
 import {Review as Review} from '../review/review';
 import('../resources/review/review');
 import reviews from './page-room__reviews.json';
+import('../reservation/reservation');
 
 
 let r = $('.review');

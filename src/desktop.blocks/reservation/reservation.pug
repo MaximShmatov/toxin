@@ -1,0 +1,20 @@
+include ../date-range/date-range
+include ../dropdown/dropdown
+include ../button/button
+
+mixin reservation
+	form.reservation
+		div.reservation__room
+			h3 &#8470;&#160;
+			h1.reservation__room-number
+			h3.reservation__room-level
+		output.reservation__price &#8381 в сутки
+			h3.reservation__price-amount
+		div.reservation__date
+			+date-range
+		div.reservation__guests
+			//+dropdown
+		div.reservation__total
+			output.reservation__total-days
+			output.reservation__total-amount
+

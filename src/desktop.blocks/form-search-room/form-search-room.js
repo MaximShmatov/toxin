@@ -2,12 +2,13 @@
 
 import('../button/button');
 import('../date-range/date-range');
-import('../quantity-select/quantity-select');
-import('./search-number.sass');
+import('../dropdown/dropdown');
+import('./form-search-room.sass');
 
-$('.search-number__form-submit').on('click', formOk);
+$('.form-search-room__submit').on('click', formOk);
 
 function formOk (evt) {
   evt.preventDefault();
   location.href = 'pageSearchRoom.html';
 }
+//console.log(import.meta.url);

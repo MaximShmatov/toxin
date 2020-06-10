@@ -1,0 +1,26 @@
+include ../button/button
+include ../dropdown/dropdown
+include ../date-range/date-range
+
+mixin form-search-room
+    form.form-search-room
+      fieldset.form-search-room__fieldset
+        legend
+          h1 Найдём номера под ваши пожелания
+        div.form-search-room__date
+          label
+            h3 Прибытие
+            div.form-search-room__date-dropdown
+          label
+            h3 Выезд
+            div.form-search-room__date-dropdown
+          //+date-range({height: '44px'})
+        div.form-search-room__guests
+          label
+            h3 Гости
+            div.form-search-room__guests-dropdown
+              +dropdown
+        div.form-search-room__submit
+          +button({type: 'submit', mode: 'width-arrow', text: 'Подобрать номер'})
+
+

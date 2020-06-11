@@ -3,10 +3,10 @@ include ../button/button
 mixin date-picker
 	div.date-picker
 		div.date-picker__header
-			div.date-picker__list-left
+			div.date-picker__header-list-left
 				+button({type: 'button', mode: 'arrow-left'})
-			h3.date-picker__title
-			div.date-picker__list-right
+			h2.date-picker__header-title
+			div.date-picker__header-list-right
 				+button({type: 'button', mode: 'arrow-right'})
 		table.date-picker__table
 			thead
@@ -17,10 +17,9 @@ mixin date-picker
 				-for (let i = 1; i < 6; i++)
 					tr
 						-for (let j = 1; j < 8; j++)
-							td
-								button(type="button").date-picker__table-date
+							td(tabindex="0").date-picker__table-date
 		div.date-picker__footer
-			div.date-picker__clear
+			div.date-picker__footer-clear
 				+button({type: 'button', mode: 'picker-grey', text: 'Очистить'})
-			div.date-picker__submit
+			div.date-picker__footer-submit
 				+button({type: 'button', mode: 'picker', text: 'Применить'})

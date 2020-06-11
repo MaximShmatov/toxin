@@ -22,7 +22,7 @@ guests = {
   isAdult: undefined,
   isChild: undefined,
   isBaby: undefined,
-};
+}
 
 function setValidGuests() {
   let adultsAndChildren = guests.adults + guests.children;

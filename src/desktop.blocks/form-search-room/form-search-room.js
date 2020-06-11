@@ -11,4 +11,3 @@ function formOk (evt) {
   evt.preventDefault();
   location.href = 'pageSearchRoom.html';
 }
-//console.log(import.meta.url);

@@ -2,51 +2,31 @@
   background-color: white
   position: relative
 
-  &__date
+  &__head
     display: flex
     justify-content: space-between
 
-    &-dropdown
+    &-in, &-out
       display: flex
       justify-content: space-between
+      align-items: center
+      width: 150px
+      height: 44px
       border: 1px solid rgba(31, 32, 65, 0.25)
       box-sizing: border-box
       border-radius: 4px
-      height: 44px
-      max-width: 150px
+      margin-top: 5px
 
-      &-in, &-out
-        min-width: 44px
-
-      &-input, &-output
-        width: 100%
-        color: rgba(31, 32, 65, 0.75)
-        font-family: Montserrat, sans-serif
-        font-size: 14px
-        line-height: 18px
+      &-date
         text-transform: uppercase
-        border: none
-        outline: none
         margin-left: 14px
 
-  &__date-picker
+      &-button
+        width: 44px
+
+  &__picker
     display: block
     width: 100%
     position: absolute
     margin-top: 5px
     z-index: 1
-
-    &_range
-      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
-      opacity: 0.25
-
-      &-first
-        border-radius: 22px 0 0 22px
-
-      &-last
-        border-radius: 0 22px 22px 0
-        & .date-picker__table-date
-          background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
-          //opacity: 1
-          //font-weight: bold
-          //color: white

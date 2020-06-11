@@ -2,17 +2,19 @@ include ../button/button
 include ../date-picker/date-picker
 
 mixin date-range
-	div.date-range
-		div.date-range__date
-			label Прибытие
-				div.date-range__date-dropdown
-					input(type="text").date-range__date-dropdown-input
-					div.date-range__date-dropdown-in
-						+button({type: 'button', mode: 'dropdown'})
-			label Выезд
-				div.date-range__date-dropdown
-					input(type="text").date-range__date-dropdown-output
-					div.date-range__date-dropdown-out
-						+button({type: 'button', mode: 'dropdown'})
-		div.date-range__date-picker
-			+date-picker
+  div.date-range
+    div.date-range__head
+      label
+        h3 Прибытие
+        div.date-range__head-in
+          output.date-range__head-in-date дд.мм.гггг
+          div.date-range__head-in-button
+            +button({type: 'button', mode: 'dropdown'})
+      label
+        h3 Выезд
+        div.date-range__head-out
+          output.date-range__head-out-date дд.мм.гггг
+          div.date-range__head-out-button
+            +button({type: 'button', mode: 'dropdown'})
+    div.date-range__picker
+      +date-picker

@@ -3,127 +3,126 @@
 import('./date-picker.sass');
 import('../button/button');
 
-export class DatePicker {
-  #date;
-  #currentDate = new Date();
-  week = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
-  month = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябр', 'Октябрь', 'Ноябрь', 'Декабрь'];
-  #days = [];
-  #day;
-  #datePicker = $('.date-picker');
-  #listLeft = this.#datePicker.find('.date-picker__list-left');
-  #listRight = this.#datePicker.find('.date-picker__list-right');
-  #title = this.#datePicker.find('.date-picker__title');
-  #tableHeader = this.#datePicker.find('.date-picker__table-header');
-  #tableDate = this.#datePicker.find('.date-picker__table-date');
-  #clear = this.#datePicker.find('.date-picker__clear');
-  #submit = this.#datePicker.find('.date-picker__submit');
+export let dateComeIn;
+export let dateCheckOut;
 
-  constructor(date) {
-    if (date) {
-      this.#date = date;
-      this.#currentDate.setTime(date.getTime());
-    } else this.#date = new Date();
+let date = new Date();
+let currentDate = new Date();
+let week = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+let month = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябр', 'Октябрь', 'Ноябрь', 'Декабрь'];
+let days = [];
+let day;
+let counter = 0;
 
-    for (let i = 0; i < 35; i++) {
-      this.#days[i] = $(this.#tableDate[i]);
-    }
+let $datePicker = $('.date-picker');
+let $listLeft = $datePicker.find('.date-picker__header-list-left');
+let $listRight = $datePicker.find('.date-picker__header-list-right');
+let $title = $datePicker.find('.date-picker__header-title');
+let $tableHeader = $datePicker.find('.date-picker__table-header');
+let $tableDate = $datePicker.find('.date-picker__table-date');
+let $clear = $datePicker.find('.date-picker__footer-clear');
+let $submit = $datePicker.find('.date-picker__footer-submit');
 
-    for (let i = 0; i < 7; i++) {
-      $(this.#tableHeader[i]).text(this.week[i]);
-    }
+dateComeIn = date.getTime();
+dateCheckOut = date.getTime();
 
-    for (let i = 0; i < 35; i++) {
-      this.#days[i].on('focus', this.#selectedDate.bind(this));
-      this.#days[i].on('blur', this.#unselectedDate.bind(this));
-    }
-    this.#listLeft.on('click', this.#listLeftDate.bind(this));
-    this.#listRight.on('click', this.#listRightDate.bind(this));
-    this.#clear.on('click', this.#clearPicker.bind(this));
-    this.#submit.on('click', this.togglePicker.bind(this));
+for (let i = 0; i < 35; i++) {
+  days[i] = $($tableDate[i]);
+}
 
-    this.#setTitle();
-    this.#setDatePicker();
-    document.addEventListener('mouseup', this.#hiddenPicker.bind(this));
+for (let i = 0; i < 7; i++) {
+  $($tableHeader[i]).text(week[i]);
+}
+
+for (let i = 0; i < 35; i++) days[i].on('focus', selectedDate);
+$listLeft.on('click', listLeftDate);
+$listRight.on('click', listRightDate);
+$clear.on('click', clearPicker);
+$submit.on('click', datePickerToggle);
+
+setTitle();
+setDatePicker();
+
+export function datePickerToggle() {
+  $datePicker.toggleClass('date-picker_hidden');
+}
+
+function setTitle() {
+  $title.text(`${month[currentDate.getMonth()]} ${currentDate.getFullYear()}`);
+}
+
+function listLeftDate() {
+  currentDate.setMonth(currentDate.getMonth() - 1);
+  setTitle(currentDate);
+  setDatePicker();
+}
+
+function listRightDate() {
+  currentDate.setMonth(currentDate.getMonth() + 1);
+  setTitle(currentDate);
+  setDatePicker();
+}
+
+function clearPicker() {
+  currentDate.setTime(date.getTime());
+  setTitle();
+  setDatePicker();
+  $datePicker.trigger('date-picker_clear');
+}
+
+function selectedDate(evt) {
+  counter++;
+  let selected = $(evt.currentTarget)
+  switch (counter) {
+    case 1:
+      dateComeIn = selected.attr('data-timestamp');
+      selected.addClass('date-picker__table-date_selected-in');
+      $datePicker.trigger('date-picker_selected-in');
+      break;
+    case 2:
+      dateCheckOut = selected.attr('data-timestamp');
+      selected.addClass('date-picker__table-date_selected-out');
+      dateRange();
+      $datePicker.trigger('date-picker_selected-out');
+      break;
+    case 3:
+      counter = 0;
+      dateComeIn = date.getTime();
+      dateCheckOut = date.getTime();
+      setDatePicker();
   }
+}
 
-  togglePicker() {
-    this.#datePicker.toggleClass('date-picker_visibility');
+function dateRange() {
+  for (let i = 0; i < 35; i++) {
+    let timeStamp = days[i].attr('data-timestamp');
+    if (timeStamp >= dateComeIn && timeStamp <= dateCheckOut) days[i].addClass('date-picker__table-date_range');
   }
+}
 
-  get selectedDate() {
-    return this.#currentDate;
+function setDatePicker() {
+  let currentYear = currentDate.getFullYear();
+  let currentMonth = currentDate.getMonth();
+  let currentDay = currentDate.getDate();
+  currentDate.setDate(1);
+  let weekDay = currentDate.getDay();
+  if (weekDay === 0) weekDay = 7;
+  currentDate.setDate(-weekDay + 1);
+  for (let i = 0; i < 35; i++) {
+    currentDate.setDate(currentDate.getDate() + 1);
+    if (currentDate.getMonth() === currentMonth) {
+      days[i].addClass('date-picker__table-date_month-current');
+      if (currentDate.getTime() === date.getTime()) {
+        days[i].addClass('date-picker__table-date_current');
+        day = days[i];
+      }
+    } else days[i].removeClass('date-picker__table-date_month-current');
+    days[i].attr('data-timestamp', currentDate.getTime());
+    days[i].text(currentDate.getDate());
+    days[i].removeClass('date-picker__table-date_selected-in');
+    days[i].removeClass('date-picker__table-date_selected-out');
+    days[i].removeClass('date-picker__table-date_range');
   }
-
-  get date() {
-    return this.#date;
-  }
-
-  get days() {
-    return this.#days;
-  }
-
-  #hiddenPicker(evt) {
-    if (this.#datePicker.has(evt.target).length === 0) this.#datePicker.addClass('date-picker_visibility');
-  }
-
-  #setTitle() {
-    this.#title.text(`${this.month[this.#currentDate.getMonth()]} ${this.#currentDate.getFullYear()}`);
-  }
-
-  #listLeftDate() {
-    this.#currentDate.setMonth(this.#currentDate.getMonth() - 1);
-    this.#setTitle(this.#currentDate);
-    this.#setDatePicker();
-  }
-
-  #listRightDate() {
-    this.#currentDate.setMonth(this.#currentDate.getMonth() + 1);
-    this.#setTitle(this.#currentDate);
-    this.#setDatePicker();
-    this.#datePicker.trigger('date_list');
-  }
-
-  #clearPicker() {
-    this.#currentDate.setTime(this.#date.getTime());
-    this.#setTitle();
-    this.#setDatePicker();
-    this.#datePicker.trigger('date_clear');
-
-  }
-
-  #selectedDate(evt) {
-    this.#currentDate.setTime($(evt.currentTarget).attr('data-timestamp'));
-    $(evt.currentTarget).addClass('date-picker__table-date_selected');
-    this.#datePicker.trigger('date_selected');
-  }
-
-  #unselectedDate(evt) {
-    $(evt.currentTarget).removeClass('date-picker__table-date_selected');
-  }
-
-  #setDatePicker() {
-    let currentYear = this.#currentDate.getFullYear();
-    let currentMonth = this.#currentDate.getMonth();
-    let currentDay = this.#currentDate.getDate();
-    this.#currentDate.setDate(1);
-    let weekDay = this.#currentDate.getDay();
-    if (weekDay === 0) weekDay = 7;
-    this.#currentDate.setDate(-weekDay + 1);
-    for (let i = 0; i < 35; i++) {
-      this.#currentDate.setDate(this.#currentDate.getDate() + 1);
-      if (this.#currentDate.getMonth() === currentMonth) {
-        this.#days[i].addClass('date-picker__table-date_month-current');
-        let isCurrentDate = this.#currentDate.getDate() === this.#date.getDate() && currentMonth === this.#date.getMonth() && currentYear === this.#date.getFullYear();
-        if (isCurrentDate) {
-          this.#days[i].addClass('date-picker__table-date_current');
-          this.#day = this.#days[i];
-        }
-      } else this.#days[i].removeClass('date-picker__table-date_month-current');
-      this.#days[i].attr('data-timestamp', this.#currentDate.getTime());
-      this.#days[i].text(this.#currentDate.getDate());
-    }
-    if (currentMonth !== this.#date.getMonth()) this.#day.removeClass('date-picker__table-date_current');
-    this.#currentDate.setFullYear(currentYear, currentMonth, currentDay);
-  }
+  if (currentMonth !== date.getMonth()) day.removeClass('date-picker__table-date_current');
+  currentDate.setFullYear(currentYear, currentMonth, currentDay);
 }

@@ -2,34 +2,36 @@ include ../button/button
 
 mixin dropdown
 	div.dropdown
-		div.dropdown__head
-			output(name="dropdown__head-out").dropdown__head-out Сколько гостей
-			div.dropdown__head-button
-				+button({type: 'button', mode: 'dropdown'})
-		div.dropdown__picker
-			div.dropdown__picker-item
-				h3 Взрослые
-				div.dropdown__picker-item-quantity
-					button(type="button" disabled).dropdown__picker-item-quantity-minus -
-					h3
-						output.dropdown__picker-item-quantity-amount 0
-					button(type="button").dropdown__picker-item-quantity-plus +
-			div.dropdown__picker-item
-				h3 Дети
-				div.dropdown__picker-item-quantity
-					button(type="button" disabled).dropdown__picker-item-quantity-minus -
-					h3
-						output.dropdown__picker-item-quantity-amount 0
-					button(type="button").dropdown__picker-item-quantity-plus +
-			div.dropdown__picker-item
-				h3 Младенцы
-				div.dropdown__picker-item-quantity
-					button(type="button" disabled).dropdown__picker-item-quantity-minus -
-					h3
-						output.dropdown__picker-item-quantity-amount 0
-					button(type="button").dropdown__picker-item-quantity-plus +
-			div.dropdown__picker-item
-				div.dropdown__picker-item-clear
-					+button({type:'button', mode: 'picker-grey', text: 'Очистить'})
-				div.dropdown__picker-item-submit
-					+button({type:'button', mode: 'picker', text: 'Применить'})
+		label
+			h3 Гости
+			div.dropdown__head
+				output(name="dropdown__head-out").dropdown__head-out Сколько гостей
+				div.dropdown__head-button
+					+button({type: 'button', mode: 'dropdown'})
+			div.dropdown__picker
+				div.dropdown__picker-item
+					h3 Взрослые
+					div.dropdown__picker-item-quantity
+						button(type="button" disabled).dropdown__picker-item-quantity-minus -
+						h3
+							output.dropdown__picker-item-quantity-amount 0
+						button(type="button").dropdown__picker-item-quantity-plus +
+				div.dropdown__picker-item
+					h3 Дети
+					div.dropdown__picker-item-quantity
+						button(type="button" disabled).dropdown__picker-item-quantity-minus -
+						h3
+							output.dropdown__picker-item-quantity-amount 0
+						button(type="button").dropdown__picker-item-quantity-plus +
+				div.dropdown__picker-item
+					h3 Младенцы
+					div.dropdown__picker-item-quantity
+						button(type="button" disabled).dropdown__picker-item-quantity-minus -
+						h3
+							output.dropdown__picker-item-quantity-amount 0
+						button(type="button").dropdown__picker-item-quantity-plus +
+				div.dropdown__picker-item
+					div.dropdown__picker-item-clear
+						+button({type:'button', mode: 'picker-grey', text: 'Очистить'})
+					div.dropdown__picker-item-submit
+						+button({type:'button', mode: 'picker', text: 'Применить'})

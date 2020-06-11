@@ -6,7 +6,7 @@
   background: white
   width: 100%
 
-  &_visibility
+  &_hidden
     display: none
 
   &__header
@@ -15,23 +15,10 @@
     justify-content: space-between
     margin: 20px 0 30px
 
-  &__list-left, &__list-right
-    width: 24px
-    height: 24px
-    margin: 0 20px
-
-  &__clear, &__submit
-    margin: 20px
-
-  &__title
-    font-family: 'Open Sans', sans-serif
-    font-weight: bold
-    font-size: 19px
-    line-height: 24px
-    text-transform: none
-    color: #1F2041
-    white-space: nowrap
-    margin: 0
+    &-list-left, &-list-right
+      width: 24px
+      height: 24px
+      margin: 0 20px
 
   &__table
     font-family: Montserrat, sans-serif
@@ -40,38 +27,59 @@
     text-transform: none
     margin: 10px auto 0 auto
     border-collapse: collapse
-    & th
+
+    &-header, &-date
       width: 40px
       height: 40px
-      color: #BC9CFF
-      padding: 0
-    & td
       padding: 0
 
+    &-header
+      color: #BC9CFF
+
     &-date
-      border-radius: 22px
-      width: 40px
-      height: 40px
-      border: none
-      padding: 0
-      background-color: transparent
+      cursor: pointer
       outline: none
+      text-align: center
       color: rgba(31, 32, 65, 0.25)
+
+      &_range
+        position: relative
+        &::before
+          content: ''
+          display: block
+          position: absolute
+          top: 0
+          right: 0
+          width: 40px
+          height: 40px
+          background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+          opacity: 0.25
 
       &_month-current
         color: rgba(31, 32, 65, 0.5)
 
-      &_selected
+      &_selected-in, &_selected-out
         background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+        border-radius: 22px
         font-weight: bold
         color: white
-
+      &_selected-in
+        &::before
+          width: 20px
+      &_selected-out
+        &::before
+          left: 0
+          width: 20px
 
       &_current
         color: white
         font-weight: bold
         background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)
+        border-radius: 22px
 
   &__footer
     display: flex
     justify-content: space-between
+
+    &-clear, &-submit
+      margin: 20px

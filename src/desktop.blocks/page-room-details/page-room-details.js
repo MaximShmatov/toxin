@@ -1,10 +1,10 @@
 'use strict'
 
-import('./page-room.sass');
+import('./page-room-details.sass');
 import('../diagram/diagram');
 import {Review as Review} from '../review/review';
 import('../resources/review/review');
-import reviews from './page-room__reviews.json';
+import reviews from './page-room-details__reviews.json';
 import('../reservation/reservation');
 
 

@@ -1,68 +1,43 @@
-include ../button/button
-include ../date-range/date-range
+include __date/__date
+include __comfort/__comfort
+include __checkbox/__checkbox
+include __room/__room
 include ../dropdown/dropdown
 
 mixin filter
 	form.filter
-		div.filter__date
-			h4.filter__date-title Даты пребывания в отеле
-			div.filter__date-dropdown
-				+dropdown
-		div.filter__guests
-			h4.filter__guests-title Гости
-			div.filter__guests-dropdown
-				//+dropdown
+		div.filter__date-range
+			+filter__date
+		div.filter__guests-quantity
+			+dropdown
 		div.filter__price
-			h4.filter__price-title Диапазон цены
-			label.filter__price-range 5 000p - 10 000p
-				div.filter__price-range-slider
+			div.filter__price-header
+				h3 Диапазон цены
+				output.filter__price-header-range 5 000p - 10 000p
+			div.filter__price-slider
 			p.filter__price-info Стоимость за сутки пребывания в номере
 		div.filter__permission
-			h4.filter__permission-title Checkbox Buttons
-			label.filter__permission-smoke Можно курить
-				input(type="checkbox" name="smoke").filter__permission-smoke-checkbox
-				div.filter__permission-smoke-false-checkbox
-			label.filter__permission-pet Можно с питомцами
-				input(type="checkbox" name="pet" checked).filter__permission-pet-checkbox
-				div.filter__permission-pet-false-checkbox
-			label.filter__permission-guests Можно пригласить гостей (до 10 человек)
-				input(type="checkbox" name="guests" checked).filter__permission-guests-checkbox
-				div.filter__permission-guests-false-checkbox
+			h3 Checkbox Buttons
+			label.filter__permission-item Можно курить
+				div.filter__permission-checkbox
+					+filter__checkbox({name: 'smoke'})
+			label.filter__permission-item Можно с питомцами
+				div.filter__permission-checkbox
+					+filter__checkbox({name: 'smoke', checked: 'checked'})
+			label.filter__permission-item Можно пригласить гостей (до 10 человек)
+				div.filter__permission-checkbox
+					+filter__checkbox({name: 'smoke', checked: 'checked'})
 		div.filter__availability
-			h4.filter__availability-title Доступность
-			label.filter__availability-corridor Широкий коридор
-				input(type="checkbox" name="corridor").filter__availability-corridor-checkbox
-				div.filter__availability-corridor-false-checkbox
-			p.filter__availability-corridor-info Ширина коридоров в номере не менее 91 см.
-			label.filter__availability-assistant Помошник для инвалидов
-				input(type="checkbox" name="assistant").filter__availability-assistant-checkbox
-				div.filter__availability-assistant-false-checkbox
-			p.filter__availability-assistant-info На 1 этаже вас встретит специалист и проводит до номера.
-		div.filter__room
-				h4.filter__room-title Удобства номера
-				div.filter__room-select-dropdown
-					//+dropdown
-		div.filter__additionally
-			div.filter__additionally-dropdown
-				h4.filter__additionally-dropdown-title Дополнительные удобства
-				div.filter__additionally-dropdown-button
-					+button({type: 'button', mode: 'dropdown'})
-			div.filter__additionally-picker
-				label.filter__additionally-picker-breackfast Завтрак
-					input(type="checkbox" name="breakfast").filter__additionally-picker-breackfast-checkbox
-					div.filter__additionally-picker-breackfast-false-checkbox
-				label.filter__additionally-picker-table Письменный стол
-					input(type="checkbox" name="table" checked).filter__additionally-picker-table-checkbox
-					div.filter__additionally-picker-table-false-checkbox
-				label.filter__additionally-picker-chair Стул для кормления
-					input(type="checkbox" name="chair" checked).filter__additionally-picker-chair-checkbox
-					div.filter__additionally-picker-chair-false-checkbox
-				label.filter__additionally-picker-crib Кроватка
-					input(type="checkbox" name="crib" checked).filter__additionally-picker-crib-checkbox
-					div.filter__additionally-picker-crib-false-checkbox
-				label.filter__additionally-picker-tv Телевизор
-					input(type="checkbox" name="tv").filter__additionally-picker-tv-checkbox
-					div.filter__additionally-picker-tv-false-checkbox
-				label.filter__additionally-picker-shampoo Шампунь
-					input(type="checkbox" name="shampoo").filter__additionally-picker-shampoo-checkbox
-					div.filter__additionally-picker-shampoo-false-checkbox
+			h3 Доступность
+			label.filter__availability-item Широкий коридор
+				div.filter__availability-checkbox
+					+filter__checkbox({name: 'corridor'})
+			p.filter__availability-info Ширина коридоров в номере не менее 91 см.
+			label.filter__availability-item Помошник для инвалидов
+				div.filter__availability-checkbox
+					+filter__checkbox({name: 'assistant'})
+			p.filter__availability-info На 1 этаже вас встретит специалист и проводит до номера.
+		div.filter__comfort-room
+			+filter__room
+		div.filter__comfort-additionally
+			+filter__comfort

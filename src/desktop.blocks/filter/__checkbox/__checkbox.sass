@@ -1,0 +1,30 @@
+.filter__checkbox-true
+    display: none
+    &:checked + .filter__checkbox-false
+      border: 1px solid #BC9CFF
+      &::before, &::after
+        content: ''
+        display: block
+        transform: rotate(45deg)
+        position: absolute
+        width: 6px
+        height: 8px
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        margin: auto
+      &::before
+        background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+      &::after
+        background-color: white
+        padding: 0 4px 4px 0
+        background-clip: content-box
+
+.filter__checkbox-false
+    position: relative
+    min-width: 20px
+    min-height: 20px
+    box-sizing: border-box
+    border: 1px solid rgba(31, 32, 65, 0.25)
+    border-radius: 4px

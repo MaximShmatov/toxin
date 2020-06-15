@@ -1,228 +1,81 @@
-@mixin title
-  font-weight: bold
-  font-size: 12px
-  line-height: 15px
-  text-transform: uppercase
-  color: #1F2041
-  margin: 0
-
 @mixin info
   font-size: 12px
   line-height: 14px
   margin: 0
 
-@mixin availability-font
-  font-weight: bold
-  color: rgba(31, 32, 65, 0.75)
-
-@mixin flex-column
+.filter
   display: flex
   flex-direction: column
-  justify-content: space-between
-
-@mixin flex-row-reverse
-  display: flex
-  flex-direction: row-reverse
-  align-items: center
-  position: relative
-
-@mixin false-checkbox
-  position: relative
-  min-width: 20px
-  min-height: 20px
-  box-sizing: border-box
-  border: 1px solid rgba(31, 32, 65, 0.25)
-  border-radius: 4px
-  margin-right: 10px
-
-@mixin checkbox
-  position: absolute
-  left: 0
-  z-index: -1
-  opacity: 0
-  &:checked + div
-    border: 1px solid #BC9CFF
-    &::before, &::after
-      content: ''
-      display: block
-      transform: rotate(45deg)
-      position: absolute
-      width: 6px
-      height: 8px
-      top: 0
-      bottom: 0
-      left: 0
-      right: 0
-      margin: auto
-    &::before
-      background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
-    &::after
-      background-color: white
-      padding: 0 4px 4px 0
-      background-clip: content-box
-
-.filter
-  @include flex-column
   max-width: 266px
   line-height: 18px
-  &__date
-    @include flex-column
-    min-height: 64px
-    margin-bottom: 22px
-    &-title
-      @include title
-    &-dropdown
-      height: 44px
+  &__date-range
+    //margin-top: 21px
 
-  &__guests
-    @include flex-column
-    min-height: 64px
-    margin-bottom: 30px
-    &-title
-      @include title
-    &-dropdown
-      height: 44px
+  &__guests-quantity
+    margin-top: 21px
 
   &__price
-    @include flex-column
+    display: flex
+    flex-direction: column
+    justify-content: space-between
     min-height: 72px
-    position: relative
-    margin-bottom: 29px
-    &-title
-      @include title
-      position: absolute
-      left: 0
-    &-range
-      font-size: 12px
-      line-height: 15px
-      text-align: right
-      text-transform: uppercase
-      &-slider
-        height: 6px
-        border: 1px solid rgba(31, 32, 65, 0.25)
-        box-sizing: border-box
-        border-radius: 3px
-        margin-top: 23px
+    margin-top: 30px
+    &-header
+      display: flex
+      justify-content: space-between
+      align-items: center
+      &-range
+        font-size: 12px
+        line-height: 15px
+        text-transform: uppercase
+    &-slider
+      height: 6px
+      border: 1px solid rgba(31, 32, 65, 0.25)
+      box-sizing: border-box
+      border-radius: 3px
+      margin-top: 10px
     &-info
       @include info
 
   &__permission
-    @include flex-column
+    display: flex
+    flex-direction: column
+    justify-content: space-between
     align-items: flex-start
     min-height: 130px
     max-width: 240px
-    margin-bottom: 30px
-    &-title
-      @include title
-      padding-bottom: 5px
-    &-smoke
-      @include flex-row-reverse
-      &-checkbox
-        @include checkbox
-      &-false-checkbox
-        @include false-checkbox
-    &-pet
-      @include flex-row-reverse
-      &-checkbox
-        @include checkbox
-      &-false-checkbox
-        @include false-checkbox
-    &-guests
-      @include flex-row-reverse
-      max-width: 240px
-      &-checkbox
-        @include checkbox
-      &-false-checkbox
-        @include false-checkbox
-        align-self: flex-start
+    margin-top: 30px
+    &-item
+      display: flex
+      flex-direction: row-reverse
+      align-items: flex-start
+      &:first-of-type
+        margin-top: 10px
+    &-checkbox
+      margin-right: 10px
 
   &__availability
-    @include flex-column
-    align-items: flex-start
-    justify-content: flex-start
-    min-height: 145px
-    margin-bottom: 31px
-    &-title
-      @include title
-      padding-bottom: 16px
-    &-corridor
-      @include availability-font
-      @include flex-row-reverse
-      &-checkbox
-        @include checkbox
-      &-false-checkbox
-        @include false-checkbox
-    &-corridor-info
-      @include info
-      margin: 4px 30px 10px 30px
-    &-assistant
-      @include availability-font
-      @include flex-row-reverse
-      &-checkbox
-        @include checkbox
-      &-false-checkbox
-        @include false-checkbox
-    &-assistant-info
+    margin-top: 30px
+    &-item
+      display: flex
+      flex-direction: row-reverse
+      align-items: flex-start
+      justify-content: flex-end
+      font-weight: bold
+      color: rgba(31, 32, 65, 0.75)
+      margin-bottom: 5px
+      &:first-of-type
+        margin-top: 16px
+      &:last-of-type
+        margin-top: 10px
+    &-checkbox
+      margin-right: 10px
+    &-info
       @include info
       margin: 4px 10px 0 30px
 
-  &__room
-    @include flex-column
-    min-height: 64px
-    margin-bottom: 14px
-    &-title
-      @include title
-      &-dropdown
-        height: 44px
+  &__comfort-room
+    margin-top: 30px
 
-  &__additionally
-    &-dropdown
-      display: flex
-      justify-content: space-between
-      align-items: center
-      &-title
-        @include title
-      &-button
-        width: 44px
-        height: 44px
-    &-picker
-      @include flex-column
-      align-items: flex-start
-      margin-top: 4px
-      min-height: 170px
-      &-breackfast
-        @include flex-row-reverse
-        &-checkbox
-          @include checkbox
-        &-false-checkbox
-          @include false-checkbox
-      &-table
-        @include flex-row-reverse
-        &-checkbox
-          @include checkbox
-        &-false-checkbox
-          @include false-checkbox
-      &-chair
-        @include flex-row-reverse
-        &-checkbox
-          @include checkbox
-        &-false-checkbox
-          @include false-checkbox
-      &-crib
-        @include flex-row-reverse
-        &-checkbox
-          @include checkbox
-        &-false-checkbox
-          @include false-checkbox
-      &-tv
-        @include flex-row-reverse
-        &-checkbox
-          @include checkbox
-        &-false-checkbox
-          @include false-checkbox
-      &-shampoo
-        @include flex-row-reverse
-        &-checkbox
-          @include checkbox
-        &-false-checkbox
-          @include false-checkbox
+  &__comfort-additionally
+    margin-top: 16px

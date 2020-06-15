@@ -2,5 +2,5 @@
 
 import('../button/button');
 import('../toggle/toggle');
-import('../radio/radio')
+import('../radio/radio');
 import('./registration.sass');

@@ -3,22 +3,20 @@
 import('../button/button');
 import('./dropdown.sass');
 
-export let guests = {};
-
 let $dropdown = $('.dropdown');
-let headOut = $dropdown.find('.dropdown__head-out');
-let HeadButton = $dropdown.find('.dropdown__head-button');
-let picker = $dropdown.find('.dropdown__picker');
-let minus = $dropdown.find('.dropdown__picker-item-quantity-minus');
-let plus = $dropdown.find('.dropdown__picker-item-quantity-plus');
-let amount = $dropdown.find('.dropdown__picker-item-quantity-amount');
-let clear = $dropdown.find('.dropdown__picker-item-clear');
-let submit = $dropdown.find('.dropdown__picker-item-submit');
+let $headOut = $dropdown.find('.dropdown__head-out');
+let $HeadButton = $dropdown.find('.dropdown__head-button');
+let $picker = $dropdown.find('.dropdown__picker');
+let $minus = $dropdown.find('.dropdown__picker-item-quantity-minus');
+let $plus = $dropdown.find('.dropdown__picker-item-quantity-plus');
+let $amount = $dropdown.find('.dropdown__picker-item-quantity-amount');
+let $clear = $dropdown.find('.dropdown__picker-item-clear');
+let $submit = $dropdown.find('.dropdown__picker-item-submit');
 
-guests = {
-  adults: Number($(amount[0]).text()),
-  children: Number($(amount[1]).text()),
-  babies: Number($(amount[2]).text()),
+let guests = {
+  adults: Number($($amount[0]).text()),
+  children: Number($($amount[1]).text()),
+  babies: Number($($amount[2]).text()),
   isAdult: undefined,
   isChild: undefined,
   isBaby: undefined,
@@ -65,16 +63,16 @@ function setValidGuests() {
 function setCaption() {
   let selectedMessage = '';
   let adultsAndChildren = guests.adults + guests.children;
-  $(amount[0]).text(guests.adults);
-  $(amount[1]).text(guests.children);
-  $(amount[2]).text(guests.babies);
+  $($amount[0]).text(guests.adults);
+  $($amount[1]).text(guests.children);
+  $($amount[2]).text(guests.babies);
   switch (adultsAndChildren) {
     case 0:
-      clear.css('visibility', 'hidden');
+      $clear.css('visibility', 'hidden');
       selectedMessage = 'Сколько гостей';
       break;
     case 1:
-      clear.css('visibility', 'visible');
+      $clear.css('visibility', 'visible');
       selectedMessage = `${adultsAndChildren} гость`;
       break;
     case 2:
@@ -97,30 +95,30 @@ function setCaption() {
     case 5:
       selectedMessage = selectedMessage + `, ${guests.babies} младенцев`;
   }
-  headOut.val(selectedMessage);
+  $headOut.val(selectedMessage);
 }
 
 function setDisabledMinus() {
   switch (guests.adults) {
     case 0:
-      $(minus[0]).prop('disabled', true);
+      $($minus[0]).prop('disabled', true);
       break;
     case 1:
-      $(minus[0]).prop('disabled', false);
+      $($minus[0]).prop('disabled', false);
   }
   switch (guests.children) {
     case 0:
-      $(minus[1]).prop('disabled', true);
+      $($minus[1]).prop('disabled', true);
       break;
     case 1:
-      $(minus[1]).prop('disabled', false);
+      $($minus[1]).prop('disabled', false);
   }
   switch (guests.babies) {
     case 0:
-      $(minus[2]).prop('disabled', true);
+      $($minus[2]).prop('disabled', true);
       break;
     case 1:
-      $(minus[2]).prop('disabled', false);
+      $($minus[2]).prop('disabled', false);
   }
 }
 
@@ -174,29 +172,36 @@ function clearPicker() {
   setDisabledMinus();
 }
 
-function togglePicker() {
-  if (picker.css('display') === 'none') {
-    picker.addClass('dropdown__picker_display');
+function setGuestsSessionStorage() {
+  sessionStorage.setItem('guests', $headOut.val());
+  guestsPickerToggle();
+}
+
+function guestsPickerToggle() {
+  if ($picker.css('display') === 'none') {
+    $picker.addClass('dropdown__picker_display');
     $('.dropdown__head').addClass('dropdown__head_border-color');
   } else {
-    picker.removeClass('dropdown__picker_display');
+    $picker.removeClass('dropdown__picker_display');
     $('.dropdown__head').removeClass('dropdown__head_border-color');
   }
 }
 
 function pickerHidden(evt) {
-  if (picker.has(evt.target).length === 0) picker.removeClass('dropdown__picker_display');
+  if ($picker.has(evt.target).length === 0) $picker.removeClass('dropdown__picker_display');
   $('.dropdown__head').removeClass('dropdown__head_border-color');
 }
 
-HeadButton.on('click', togglePicker);
-clear.on('click', clearPicker);
-submit.on('click', togglePicker);
-$(minus[0]).on('click', adultDel);
-$(minus[1]).on('click', childrenDel);
-$(minus[2]).on('click', babyDel);
-$(plus[0]).on('click', adultAdd);
-$(plus[1]).on('click', childrenAdd);
-$(plus[2]).on('click', babyAdd);
+$HeadButton.on('click', guestsPickerToggle);
+$clear.on('click', clearPicker);
+$submit.on('click', setGuestsSessionStorage);
+$($minus[0]).on('click', adultDel);
+$($minus[1]).on('click', childrenDel);
+$($minus[2]).on('click', babyDel);
+$($plus[0]).on('click', adultAdd);
+$($plus[1]).on('click', childrenAdd);
+$($plus[2]).on('click', babyAdd);
 
 document.addEventListener('mouseup', pickerHidden);
+
+export {guests};

@@ -9,5 +9,5 @@ $('.form-search-room__submit').on('click', formOk);
 
 function formOk (evt) {
   evt.preventDefault();
-  location.href = 'pageSearchRoom.html';
+  location.href = 'page_room_search.html';
 }

@@ -1,8 +1,8 @@
 'use strict'
 
-import('./date-range.sass');
 import('../button/button');
 import {dateComeIn, dateCheckOut, datePickerToggle} from '../date-picker/date-picker';
+import('./date-range.sass');
 
 
 let $dateRange = $('.date-range');
@@ -18,8 +18,6 @@ $outButton.on('click', datePickerToggle);
 $dateRange.on('date-picker_selected-in', setDateIn)
 $dateRange.on('date-picker_selected-out', setDateOut)
 $dateRange.on('date-picker_clear', setDefaultDate)
-
-datePickerToggle();
 
 function setDateIn() {
   date.setTime(dateComeIn);

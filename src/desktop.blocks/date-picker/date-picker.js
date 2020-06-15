@@ -3,9 +3,6 @@
 import('./date-picker.sass');
 import('../button/button');
 
-export let dateComeIn;
-export let dateCheckOut;
-
 let date = new Date();
 let currentDate = new Date();
 let week = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
@@ -23,8 +20,8 @@ let $tableDate = $datePicker.find('.date-picker__table-date');
 let $clear = $datePicker.find('.date-picker__footer-clear');
 let $submit = $datePicker.find('.date-picker__footer-submit');
 
-dateComeIn = date.getTime();
-dateCheckOut = date.getTime();
+let dateComeIn = date.getTime();
+let dateCheckOut = date.getTime();
 
 for (let i = 0; i < 35; i++) {
   days[i] = $($tableDate[i]);
@@ -38,13 +35,19 @@ for (let i = 0; i < 35; i++) days[i].on('focus', selectedDate);
 $listLeft.on('click', listLeftDate);
 $listRight.on('click', listRightDate);
 $clear.on('click', clearPicker);
-$submit.on('click', datePickerToggle);
+$submit.on('click', setDateSessionStorage);
 
 setTitle();
 setDatePicker();
 
-export function datePickerToggle() {
-  $datePicker.toggleClass('date-picker_hidden');
+function setDateSessionStorage() {
+  sessionStorage.setItem('dateComeIn', dateComeIn);
+  sessionStorage.setItem('dateCheckOut', dateCheckOut);
+  datePickerToggle();
+}
+
+function datePickerToggle() {
+  $datePicker.toggleClass('date-picker_visible');
 }
 
 function setTitle() {
@@ -75,6 +78,9 @@ function selectedDate(evt) {
   let selected = $(evt.currentTarget)
   switch (counter) {
     case 1:
+      dateComeIn = date.getTime();
+      dateCheckOut = date.getTime();
+      setDatePicker();
       dateComeIn = selected.attr('data-timestamp');
       selected.addClass('date-picker__table-date_selected-in');
       $datePicker.trigger('date-picker_selected-in');
@@ -84,12 +90,7 @@ function selectedDate(evt) {
       selected.addClass('date-picker__table-date_selected-out');
       dateRange();
       $datePicker.trigger('date-picker_selected-out');
-      break;
-    case 3:
       counter = 0;
-      dateComeIn = date.getTime();
-      dateCheckOut = date.getTime();
-      setDatePicker();
   }
 }
 
@@ -126,3 +127,5 @@ function setDatePicker() {
   if (currentMonth !== date.getMonth()) day.removeClass('date-picker__table-date_current');
   currentDate.setFullYear(currentYear, currentMonth, currentDay);
 }
+
+export {dateComeIn, dateCheckOut, datePickerToggle};

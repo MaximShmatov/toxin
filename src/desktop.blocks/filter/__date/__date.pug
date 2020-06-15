@@ -1,0 +1,13 @@
+include ../../button/button
+include ../../date-picker/date-picker
+
+mixin filter__date
+	div.filter__date
+		label
+			h3 Даты пребывания в отеле
+			div.filter__date-head
+				output(name="filter__date-head-output").filter__date-head-output
+				div.filter__date-head-button
+					+button({type: 'button', mode: 'dropdown'})
+			div.filter__date-picker
+				+date-picker

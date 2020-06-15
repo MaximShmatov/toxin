@@ -1,0 +1,49 @@
+.filter__comfort
+  &-head
+    display: flex
+    justify-content: space-between
+    align-items: center
+    &-button
+      display: block
+      width: 44px
+      height: 44px
+      &-true
+        display: none
+        &:checked + .filter__comfort-head-button-false::before
+          margin-top: 4px
+          transform: rotate(-135deg)
+
+
+      &-false
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 100%
+        height: 100%
+        &::before
+          content: ''
+          display: block
+          width: 7px
+          height: 7px
+          margin-top: -4px
+          border-right: 2px solid rgba(31, 32, 65, 0.5)
+          border-bottom: 2px solid rgba(31, 32, 65, 0.5)
+          transform: rotate(45deg)
+
+  &-picker
+    flex-direction: column
+    justify-content: space-between
+    align-items: flex-start
+    margin-top: 4px
+    min-height: 170px
+    display: none
+
+    &_visible
+      display: flex
+
+    &-item
+      display: flex
+      flex-direction: row-reverse
+      align-items: center
+      &-checkbox
+        margin-right: 10px

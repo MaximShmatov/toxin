@@ -10,10 +10,7 @@ module.exports = {
   mode: 'none',
   context: path.resolve(__dirname, 'src/desktop.blocks'),
   entry: {
-    index: './page-landing/page-landing.js',
-    searchNumber: './page-search-room/page-search-room.js',
-    pageRegistration: './page-registration/page-registration.js',
-    pageRoom: './page-room/page-room.js'
+    index: './template-main/template-main.js'
   },
   output: {
     filename: '[name].[hash].js',
@@ -35,16 +32,16 @@ module.exports = {
       filename: 'index.html'
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/desktop.blocks/page-search-room/page-search-room.pug'),
-      filename: 'pageSearchRoom.html'
+      template: path.resolve(__dirname, 'src/desktop.blocks/page-room-search/page-room-search.pug'),
+      filename: 'page_room_search.html'
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/desktop.blocks/page-registration/page-registration.pug'),
-      filename: 'pageRegistration.html'
+      filename: 'page_registration.html'
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/desktop.blocks/page-room/page-room.pug'),
-      filename: 'pageRoom.html'
+      template: path.resolve(__dirname, 'src/desktop.blocks/page-room-details/page-room-details.pug'),
+      filename: 'page_room_details.html'
     }),
     new MiniCssExtractPlugin({
       filename: '[name].[hash].css',

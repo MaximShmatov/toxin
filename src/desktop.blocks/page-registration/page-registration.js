@@ -1,5 +1,5 @@
 'use strict'
 
 import('../template-main/template-main');
-import('../registration/registration');
+import('../form-registration/form-registration');
 import('./page-registration.sass');

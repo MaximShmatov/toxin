@@ -36,7 +36,7 @@ module.exports = {
       filename: 'page_room_search.html'
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/desktop.blocks/page-registration/page-registration.pug'),
+      template: path.resolve(__dirname, 'src/desktop.blocks/page-form-registration/page-form-form-registration.pug'),
       filename: 'page_registration.html'
     }),
     new HtmlWebpackPlugin({

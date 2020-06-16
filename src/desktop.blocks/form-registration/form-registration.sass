@@ -9,7 +9,7 @@
   height: 44px
   padding-left: 15px
 
-.registration
+.form-registration
   background: white
   border: 1px solid rgba(0, 0, 0, 0.12)
   box-sizing: border-box
@@ -18,10 +18,7 @@
 
   &__wrapper
     max-width: 320px
-    margin: 0 auto
-
-  &__title
-    margin: 40px 0 0 0
+    margin: 40px auto 30px
 
   &__name
     @include input
@@ -40,8 +37,7 @@
   &__birth
     display: block
     margin-top: 20px
-    &-title
-      margin: 0
+
     &-date
       @include input
       margin-top: 5px
@@ -49,8 +45,7 @@
   &__data-come-in
     display: block
     margin-top: 20px
-    &-title
-      margin: 0
+
     &-email
       @include input
       margin-top: 5px
@@ -72,7 +67,7 @@
     margin-top: 20px
 
   &__come-in
-    margin: 30px 0
+    margin-top: 30px
     &-caption
       display: flex
       justify-content: space-between

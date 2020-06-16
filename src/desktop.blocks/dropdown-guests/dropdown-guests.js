@@ -4,14 +4,14 @@ import('../button/button');
 import('./dropdown-guest.sass');
 
 let $dropdown = $('.dropdown-guests');
-let $headOut = $dropdown.find('.dropdown__head-out');
-let $HeadButton = $dropdown.find('.dropdown__head-button');
-let $picker = $dropdown.find('.dropdown__picker');
-let $minus = $dropdown.find('.dropdown__picker-item-quantity-minus');
-let $plus = $dropdown.find('.dropdown__picker-item-quantity-plus');
-let $amount = $dropdown.find('.dropdown__picker-item-quantity-amount');
-let $clear = $dropdown.find('.dropdown__picker-item-clear');
-let $submit = $dropdown.find('.dropdown__picker-item-submit');
+let $headOut = $dropdown.find('.dropdown-guests__head-out');
+let $HeadButton = $dropdown.find('.dropdown-guests__head-button');
+let $picker = $dropdown.find('.dropdown-guests__picker');
+let $minus = $dropdown.find('.dropdown-guests__picker-item-quantity-minus');
+let $plus = $dropdown.find('.dropdown-guests__picker-item-quantity-plus');
+let $amount = $dropdown.find('.dropdown-guests__picker-item-quantity-amount');
+let $clear = $dropdown.find('.dropdown-guests__picker-item-clear');
+let $submit = $dropdown.find('.dropdown-guests__picker-item-submit');
 
 let guests = {
   adults: Number($($amount[0]).text()),
@@ -179,17 +179,17 @@ function setGuestsSessionStorage() {
 
 function guestsPickerToggle() {
   if ($picker.css('display') === 'none') {
-    $picker.addClass('dropdown__picker_display');
-    $('.dropdown__head').addClass('dropdown__head_border-color');
+    $picker.addClass('dropdown-guests__picker_display');
+    $('.dropdown__head').addClass('dropdown-guests__head_border-color');
   } else {
-    $picker.removeClass('dropdown__picker_display');
-    $('.dropdown__head').removeClass('dropdown__head_border-color');
+    $picker.removeClass('dropdown-guests__picker_display');
+    $('.dropdown__head').removeClass('dropdown-guests__head_border-color');
   }
 }
 
 function pickerHidden(evt) {
-  if ($picker.has(evt.target).length === 0) $picker.removeClass('dropdown__picker_display');
-  $('.dropdown__head').removeClass('dropdown__head_border-color');
+  if ($picker.has(evt.target).length === 0) $picker.removeClass('dropdown-guests__picker_display');
+  $('.dropdown__head').removeClass('dropdown-guests__head_border-color');
 }
 
 $HeadButton.on('click', guestsPickerToggle);
@@ -203,5 +203,3 @@ $($plus[1]).on('click', childrenAdd);
 $($plus[2]).on('click', babyAdd);
 
 document.addEventListener('mouseup', pickerHidden);
-
-export {guests};

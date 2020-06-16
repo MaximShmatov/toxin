@@ -1,9 +1,9 @@
 'use strict'
 
 import('../button/button');
-import('./dropdown.sass');
+import('./dropdown-guest.sass');
 
-let $dropdown = $('.dropdown');
+let $dropdown = $('.dropdown-guests');
 let $headOut = $dropdown.find('.dropdown__head-out');
 let $HeadButton = $dropdown.find('.dropdown__head-button');
 let $picker = $dropdown.find('.dropdown__picker');

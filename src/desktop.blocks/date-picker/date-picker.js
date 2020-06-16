@@ -35,14 +35,13 @@ for (let i = 0; i < 35; i++) days[i].on('focus', selectedDate);
 $listLeft.on('click', listLeftDate);
 $listRight.on('click', listRightDate);
 $clear.on('click', clearPicker);
-$submit.on('click', setDateSessionStorage);
+$submit.on('click', submitPicker);
 
 setTitle();
 setDatePicker();
 
-function setDateSessionStorage() {
-  sessionStorage.setItem('dateComeIn', dateComeIn);
-  sessionStorage.setItem('dateCheckOut', dateCheckOut);
+function submitPicker() {
+  $datePicker.trigger('date-picker_submit');
   datePickerToggle();
 }
 

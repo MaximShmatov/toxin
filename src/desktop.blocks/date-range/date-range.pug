@@ -7,14 +7,14 @@ mixin date-range
       label
         h3 Прибытие
         div.date-range__head-in
-          output.date-range__head-in-date дд.мм.гггг
+          output.date-range__head-in-date
           div.date-range__head-in-button
-            +button({type: 'button', mode: 'dropdown'})
+            +button({type: 'button', mode: 'dropdown-guests'})
       label
         h3 Выезд
         div.date-range__head-out
-          output.date-range__head-out-date дд.мм.гггг
+          output.date-range__head-out-date
           div.date-range__head-out-button
-            +button({type: 'button', mode: 'dropdown'})
+            +button({type: 'button', mode: 'dropdown-guests'})
     div.date-range__picker
       +date-picker

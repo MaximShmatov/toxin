@@ -1,0 +1,95 @@
+@mixin info
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 20px
+  height: 20px
+  font-size: 12px
+  font-weight: bold
+  color: rgba(31, 32, 65, 0.25)
+  vertical-align: text-top
+  border: 1px solid rgba(31, 32, 65, 0.25)
+  box-sizing: border-box
+  border-radius: 50% 50%
+
+.form-reservation
+  background: white
+  border: 1px solid rgba(0, 0, 0, 0.12)
+  box-sizing: border-box
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2)
+  border-radius: 4px
+  max-width: 380px
+
+  &__wrapper
+    max-width: 320px
+    margin: 40px auto 30px
+
+  &__room
+    display: flex
+    align-items: baseline
+    justify-content: space-between
+
+    &-info
+      display: flex
+      align-items: baseline
+
+      &-level
+        margin-left: 5px
+        color: #BC9CFF
+
+    &-price
+      color: rgba(31, 32, 65, 0.5)
+
+      &-amount, &-amount + span
+        font-weight: bold
+
+      &-amount + span + span
+        font-size: 12px
+
+  &__date
+    margin-top: 19px
+
+  &__guests
+    margin-top: 20px
+
+  &__pay
+    display: grid
+    grid-auto-rows: 34px 34px 34px
+    grid-template-columns: 69% 10% 21%
+    margin-top: 20px
+    line-height: 18px
+
+    &-days
+      grid-column: 1/3
+      grid-row: 1/2
+    &-amount
+      text-align: right
+
+    &-services
+      &-info
+        @include info
+
+      &-amount
+        text-align: right
+
+    &-additionally
+      &-info
+        @include info
+
+      &-amount
+        text-align: right
+
+  &__total
+    display: flex
+    justify-content: space-between
+    align-items: baseline
+    margin-top: 30px
+
+    &-separator
+      flex-grow: 1
+      border-bottom: 1px dotted rgba(31, 32, 65, 0.25)
+      box-sizing: border-box
+
+  &__submit
+    height: 44px
+    margin-top: 20px

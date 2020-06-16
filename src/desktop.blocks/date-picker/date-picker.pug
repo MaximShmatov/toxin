@@ -5,7 +5,8 @@ mixin date-picker
 		div.date-picker__header
 			div.date-picker__header-list-left
 				+button({type: 'button', mode: 'arrow-left'})
-			h2.date-picker__header-title
+			h2
+				output.date-picker__header-title
 			div.date-picker__header-list-right
 				+button({type: 'button', mode: 'arrow-right'})
 		table.date-picker__table

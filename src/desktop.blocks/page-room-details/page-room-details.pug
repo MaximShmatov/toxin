@@ -6,47 +6,47 @@ include ../form-reservation/form-reservation
 block page
 	article.page-room
 		section.page-room__preview
-		div.page-room-wrapper
-			section.page-room__details
-				article.page-room__details-info
-					h2.page-room__details-info-title Сведения о номере
-					ul.page-room__details-info-items
-						li.page-room__details-info-items-item
-							div.page-room__details-info-items-item-icon
-							dl.page-room__details-info-items-item-list
-								dt.page-room__details-info-items-item-list-term Комфорт
-								dd.page-room__details-info-items-item-list-define Шумопоглощающие стены
-						li.page-room__details-info-items-item
-							div.page-room__details-info-items-item-icon
-							dl.page-room__details-info-items-item-list
-								dt.page-room__details-info-items-item-list-term Удобство
-								dd.page-room__details-info-items-item-list-define Окно в каждой из спален
-						li.page-room__details-info-items-item
-							div.page-room__details-info-items-item-icon
-							dl.page-room__details-info-items-item-list
-								dt.page-room__details-info-items-item-list-term Уют
-								dd.page-room__details-info-items-item-list-define Номер оснащен камином
-				article.page-room__effect
-					h2.page-room__effect-title Впечатления от номера
-					div.page-room__effect-diagram
-						+diagram
-				article.page-room__reviews
-					h2.page-room__reviews-title Отзывы посетителей номера
-						span.page-room__reviews-title-quantity 2 отзыва
-					div.page-room__reviews-item
-						+review
-					div.page-room__reviews-item
-						+review
-				article.page-room__rules
-					h2.page-room__rules-title Правила
-					ul.page-room__rules-items
-						li.page-room__rules-items-item Нельзя с питомцами
-						li.page-room__rules-items-item Без вечеринок и мероприятий
-						li.page-room__rules-items-item Время прибытия &mdash; после 13:00, а выезд до 12:00
-				article.page-room__cancel
-					h2.page-room__cancel-title Отмена
-					p.page-room__cancel-text
-					|Бесплатная отмена в течении 48 ч. После этого при отмене не позднее чем за 5 дн. до
-					|прибытия вы получите полный возврат за вычетом сбора за услуги.
-			section.page-room__reservation
+		section.page-room__details
+			article.page-room__details-info
+				h2 Сведения о номере
+				ul.page-room__details-info-items
+					li.page-room__details-info-items-item
+						div.page-room__details-info-items-item-icon
+						dl.page-room__details-info-items-item-list
+							dt Комфорт
+							dd Шумопоглощающие стены
+					li.page-room__details-info-items-item
+						div.page-room__details-info-items-item-icon
+						dl.page-room__details-info-items-item-list
+							dt Удобство
+							dd Окно в каждой из спален
+					li.page-room__details-info-items-item
+						div.page-room__details-info-items-item-icon
+						dl.page-room__details-info-items-item-list
+							dt Уют
+							dd Номер оснащен камином
+			article.page-room__details-effect
+				h2 Впечатления от номера
+				div.page-room__details-effect-diagram
+					+diagram
+			article.page-room__details-reviews
+				div.page-room__details-reviews-header
+					h2 Отзывы посетителей номера
+					span 2 отзыва
+				div.page-room__details-reviews-item
+					+review
+				div.page-room__details-reviews-item
+					+review
+			article.page-room__details-rules
+				h2.page-room__details-rules-title Правила
+				ul.page-room__details-rules-items
+					li.page-room__details-rules-items-item Нельзя с питомцами
+					li.page-room__details-rules-items-item Без вечеринок и мероприятий
+					li.page-room__details-rules-items-item Время прибытия &mdash; после 13:00, а выезд до 12:00
+			article.page-room__details-cancel
+				h2 Отмена
+				p
+				|Бесплатная отмена в течении 48 ч. После этого при отмене не позднее чем за 5 дн. до
+				|прибытия вы получите полный возврат за вычетом сбора за услуги.
+			article.page-room__details-reservation
 				+form-reservation

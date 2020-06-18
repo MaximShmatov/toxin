@@ -1,12 +1,6 @@
-doctype html
-html(lang="ru" dir="ltr")
-	head
-		meta(charset="utf-8")
-		meta(name="viewport" content="width=device-width")
-		link(rel="icon" type="resources/ico" href="img/favicon.ico")
-		link(rel="icon" type="resources/png" sizes="16x16" href="img/favicon-16x16.png")
-		link(rel="icon" type="resources/png" sizes="32x32" href="img/favicon-32x32.png")
-	title TOXIN
+extends ../template-main/template-main
+
+block page
 	body.uikit
 		img.uikit__logo(src="img/template-uikit__logo.svg" alt="logo")
-		block page
+		block page-uikit

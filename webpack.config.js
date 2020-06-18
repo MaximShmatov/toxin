@@ -10,8 +10,7 @@ module.exports = {
   mode: 'none',
   context: path.resolve(__dirname, 'src/desktop.blocks'),
   entry: {
-    index: './page-index/page-index.js',
-    site: './template-main/template-main.js'
+    index: './page-index/page-index.js'
   },
   output: {
     filename: '[name].[hash].js',
@@ -33,8 +32,8 @@ module.exports = {
       filename: 'index.html'
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/desktop.blocks/page-ui-colors/page-ui-colors.pug'),
-      filename: 'ui_colors.html'
+      template: path.resolve(__dirname, 'src/desktop.blocks/page-uikit-colors/page-uikit-colors.pug'),
+      filename: 'uikit_colors.html'
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/desktop.blocks/page-landing/page-landing.pug'),

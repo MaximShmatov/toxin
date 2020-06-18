@@ -1,0 +1,138 @@
+@mixin color($color)
+  display: flex
+  align-items: center
+  &::before
+    content: ''
+    display: inline-block
+    width: 70px
+    height: 70px
+    border-radius: 6px
+    background: $color
+    margin-right: 40px
+
+@mixin type
+  display: block
+  height: 100%
+  width: 70px
+  text-align: right
+  color: rgba(31, 32, 65, 0.25)
+  float: left
+  margin-right: 30px
+
+h1, h2
+  font-family: Quicksand, sans-serif
+  font-style: normal
+  font-weight: bold
+  color: #1F2041
+  margin: 0
+
+h1
+  font-size: 24px
+  line-height: 30px
+
+h2
+  font-size: 19px
+  line-height: 24px
+
+H3
+  font-family: Montserrat, sans-serif
+  font-style: normal
+  font-weight: bold
+  font-size: 12px
+  line-height: 15px
+  text-transform: uppercase
+  color: #1F2041
+  margin: 0
+
+body
+  font-family: Montserrat, sans-serif
+  font-style: normal
+  font-weight: normal
+  font-size: 14px
+  line-height: 24px
+  color: rgba(31, 32, 65, 0.75)
+
+.uikit-colors
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+  max-width: 1140px
+  margin: 144px auto
+
+  &__color-wrapper
+    display: flex
+    flex-direction: column
+    height: 610px
+    justify-content: space-between
+
+  &__color:nth-of-type(1)
+    @include color(rgba(31, 32, 65, 1))
+
+  &__color:nth-of-type(2)
+    @include color(rgba(31, 32, 65, 0.75))
+
+  &__color:nth-of-type(3)
+    @include color(rgba(31, 32, 65, 0.50))
+
+  &__color:nth-of-type(4)
+    @include color(rgba(31, 32, 65, 0.25))
+
+  &__color:nth-of-type(5)
+    @include color(rgba(31, 32, 65, 0.05))
+
+  &__color:nth-of-type(6)
+    @include color(#BC9CFF)
+
+  &__color:nth-of-type(7)
+    @include color(#6FCF97)
+
+  &__color span
+    font-family: Quicksand, sans-serif
+    font-size: 19px
+    display: block
+    margin-top: 5px
+    color: #1F2041
+
+  &__type-wrapper
+    display: flex
+    flex-direction: column
+    max-width: 450px
+    margin-right: 27px
+
+
+  &__type:not(:first-of-type)
+    margin-top: 50px
+
+  &__type:nth-of-type(1)
+
+    &::before
+      content: 'H1'
+      display: block
+      font-size: 24px
+      line-height: 29px
+      @include type
+
+  &__type:nth-of-type(2)
+
+    &::before
+      content: 'H2'
+      display: block
+      font-size: 19px
+      line-height: 23px
+      @include type
+
+  &__type:nth-of-type(3)
+
+    &::before
+      content: 'H3'
+      display: block
+      font-size: 12px
+      line-height: 15px
+      @include type
+
+  &__type:nth-of-type(4)
+    max-width: 410px
+    margin-top: 47px
+    &::before
+      content: 'Body'
+      @include type

@@ -1,0 +1,19 @@
+extends ../template-main/template-main
+
+include ../header-main/header-main
+include ../footer-menu/footer-menu
+include ../footer-copyright/footer-copyright
+
+block page
+	body
+		header.header
+			div.header__header-main
+				+header-main
+		main.main
+			block page-site
+		footer.footer
+			div.footer__footer-menu
+				+footer-menu
+			div.footer__separator
+			div.footer__footer-copyright
+				+footer-copyright

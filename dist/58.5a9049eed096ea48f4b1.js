@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[58],{25:function(i,n,o){"use strict";o.r(n),n.default=o.p+"img/favicon.ico"}}]);
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9mYXZpY29uL2Zhdmljb24uaWNvIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiIwRkFBQSxPQUFlLGNBQTBCIiwiZmlsZSI6IjU4LjVhOTA0OWVlZDA5NmVhNDhmNGIxLmpzIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGRlZmF1bHQgX193ZWJwYWNrX3B1YmxpY19wYXRoX18gKyBcImltZy9mYXZpY29uLmljb1wiOyJdLCJzb3VyY2VSb290IjoiIn0=

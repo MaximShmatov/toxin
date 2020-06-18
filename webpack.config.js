@@ -10,7 +10,8 @@ module.exports = {
   mode: 'none',
   context: path.resolve(__dirname, 'src/desktop.blocks'),
   entry: {
-    index: './template-main/template-main.js'
+    index: './page-index/page-index.js',
+    site: './template-main/template-main.js'
   },
   output: {
     filename: '[name].[hash].js',
@@ -28,20 +29,28 @@ module.exports = {
       $: 'jquery'
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/desktop.blocks/page-landing/page-landing.pug'),
+      template: path.resolve(__dirname, 'src/desktop.blocks/page-index/page-index.pug'),
       filename: 'index.html'
     }),
     new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src/desktop.blocks/page-ui-colors/page-ui-colors.pug'),
+      filename: 'ui_colors.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src/desktop.blocks/page-landing/page-landing.pug'),
+      filename: 'landing.html'
+    }),
+    new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/desktop.blocks/page-room-search/page-room-search.pug'),
-      filename: 'page_room_search.html'
+      filename: 'room_search.html'
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/desktop.blocks/page-registration/page-registration.pug'),
-      filename: 'page_registration.html'
+      filename: 'registration.html'
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/desktop.blocks/page-room-details/page-room-details.pug'),
-      filename: 'page_room_details.html'
+      filename: 'room_details.html'
     }),
     new MiniCssExtractPlugin({
       filename: '[name].[hash].css',

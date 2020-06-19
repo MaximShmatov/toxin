@@ -36,6 +36,10 @@ module.exports = {
       filename: 'uikit_colors.html'
     }),
     new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src/desktop.blocks/page-uikit-form/page-uikit-form.pug'),
+      filename: 'uikit_form.html'
+    }),
+    new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/desktop.blocks/page-landing/page-landing.pug'),
       filename: 'landing.html'
     }),

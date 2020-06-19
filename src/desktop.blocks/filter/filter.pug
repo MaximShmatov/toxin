@@ -1,4 +1,4 @@
-include __date/__date
+include ../date-filter/date-filter
 include __comfort/__comfort
 include __checkbox/__checkbox
 include __room/__room
@@ -7,7 +7,7 @@ include ../dropdown-guests/dropdown-guests
 mixin filter
 	form.filter
 		div.filter__date-range
-			+filter__date
+			+date-filter
 		div.filter__guests-quantity
 			+dropdown-guests
 		div.filter__price

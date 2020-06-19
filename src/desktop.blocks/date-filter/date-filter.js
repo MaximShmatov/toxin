@@ -1,9 +1,9 @@
 'use strict'
 
-import('../../button/button');
-import {dateComeIn, dateCheckOut, datePickerToggle} from "../../date-picker/date-picker";
+import('../button/button');
+import {dateComeIn, dateCheckOut, datePickerToggle} from "../date-picker/date-picker";
 
-import('./__date.sass');
+import('./date-filter.sass');
 
 let $filterDate = $('.filter__date');
 let $filterDateOutput = $filterDate.find('.filter__date-head-output');

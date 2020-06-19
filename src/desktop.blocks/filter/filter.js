@@ -1,6 +1,6 @@
 'use strict'
 
-import('./__date/__date');
+import('../date-filter/date-filter');
 import('./__comfort/__comfort');
 import('./__checkbox/__checkbox');
 import('./__room/__room');

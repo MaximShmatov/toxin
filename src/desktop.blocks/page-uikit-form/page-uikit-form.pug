@@ -4,12 +4,13 @@ include ../text-field/text-field
 include ../dropdown-guests/dropdown-guests
 include ../date-range/date-range
 include ../date-filter/date-filter
+include ../subscription/subscription
 
 block page-uikit
   article.uikit-elements
     aside.uikit-elements__sect1
       label Default
-        +text-field("Email", "Text field", "Email")
+        +text-field("email", "Text field", "Email")
       label Hover/Focus
         +text-field("text", "Text field", "Имя")
       label Default
@@ -21,4 +22,4 @@ block page-uikit
       div
         +date-filter
       label
-        h3 Subscription text field
+        +subscription

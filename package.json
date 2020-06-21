@@ -50,6 +50,7 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
-    "jquery": "^3.5.0"
+    "jquery": "^3.5.1",
+    "jquery.maskedinput": "^1.4.1"
   }
 }

@@ -1,22 +1,12 @@
 'use strict'
 
-import('./text-field.sass');
+import './text-field.sass';
+import 'jquery.maskedinput/src/jquery.maskedinput';
 
-$('.text-field__input').each(setEvents);
+$('.text-field').each(setEvents);
 
 function setEvents(index, item) {
-  $(item).on('mouseover', setValueMouseover);
-  $(item).on('mouseout', setValueMouseout);
-  $(item).on('focus', setValueMouseover);
-  $(item).on('blur', setValueMouseout);
-}
-
-function setValueMouseover() {
-  $(this).val('This is pretty awesome');
-}
-
-function setValueMouseout() {
-  if (!$(this).is(':focus')) {
-    $(this).val('Email');
+  if ($(item).attr('data-mask')) {
+    $(item).mask($(item).attr('data-mask'), {placeholder: "дд.мм.гггг"});
   }
 }

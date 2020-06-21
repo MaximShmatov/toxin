@@ -7,16 +7,15 @@ include ../date-filter/date-filter
 
 block page-uikit
   article.uikit-elements
-    aside.uikit-elements-sect1
+    aside.uikit-elements__sect1
       label Default
-        +text-field('Text field')
+        +text-field("Email", "Text field", "Email")
       label Hover/Focus
-        +text-field('Text field')
+        +text-field("text", "Text field", "Имя")
       label Default
         +dropdown-guests
       label Default
-        h3 Masked text field
-        input(type="email" value="дд.мм.гггг")
+        +text-field("text", "Masked text field", "дд.мм.гггг", "99.99.9999")
       div
         +date-range
       div

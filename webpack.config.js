@@ -17,11 +17,6 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     chunkFilename: '[name].[hash].js'
   },
-  optimization: {
-    splitChunks: {
-      chunks: 'all'
-    }
-  },
   devtool: 'inline-source-map',
   plugins: [
     new webpack.ProvidePlugin({

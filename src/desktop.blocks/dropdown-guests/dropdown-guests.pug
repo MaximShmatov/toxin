@@ -1,13 +1,12 @@
 include ../button/button
 
-mixin dropdown-guests
+mixin dropdown-guests(caption)
 	div.dropdown-guests
 		label
-			h3 Гости
+			h3= caption
 			div.dropdown-guests__head
 				output(name="dropdown__head-out").dropdown-guests__head-out Сколько гостей
-				div.dropdown-guests__head-button
-					+button({type: 'button', mode: 'dropdown'})
+				button(type="button").dropdown-guests__head-button
 			div.dropdown-guests__picker
 				div.dropdown-guests__picker-item
 					h3 Взрослые

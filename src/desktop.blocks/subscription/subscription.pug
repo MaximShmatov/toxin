@@ -1,4 +1,6 @@
-mixin subscription
-	form.subscription
-		input(type="email" placeholder="Email").subscription__input
-		button(type="submit" value="subscription").subscription__button
+mixin subscription(caption)
+		label
+			h3= caption
+			form.subscription
+				input(type="email" placeholder="Email").subscription__input
+				button(type="submit" value="subscription").subscription__button

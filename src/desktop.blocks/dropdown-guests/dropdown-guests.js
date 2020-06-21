@@ -172,29 +172,21 @@ function clearPicker() {
   setDisabledMinus();
 }
 
-function setGuestsSessionStorage() {
-  sessionStorage.setItem('guests', $headOut.val());
-  guestsPickerToggle();
-}
-
 function guestsPickerToggle() {
   if ($picker.css('display') === 'none') {
     $picker.addClass('dropdown-guests__picker_display');
-    $('.dropdown__head').addClass('dropdown-guests__head_border-color');
   } else {
     $picker.removeClass('dropdown-guests__picker_display');
-    $('.dropdown__head').removeClass('dropdown-guests__head_border-color');
   }
 }
 
 function pickerHidden(evt) {
   if ($picker.has(evt.target).length === 0) $picker.removeClass('dropdown-guests__picker_display');
-  $('.dropdown__head').removeClass('dropdown-guests__head_border-color');
 }
 
 $HeadButton.on('click', guestsPickerToggle);
 $clear.on('click', clearPicker);
-$submit.on('click', setGuestsSessionStorage);
+$submit.on('click', guestsPickerToggle());
 $($minus[0]).on('click', adultDel);
 $($minus[1]).on('click', childrenDel);
 $($minus[2]).on('click', babyDel);

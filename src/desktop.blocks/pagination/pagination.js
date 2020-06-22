@@ -1,9 +1,9 @@
 'use strict'
 
 import {CardRoom as cardRoom} from '../card-room/card-room';
-import('../resources/resources');
+import '../resources/resources';
 import roomsData from '../../request/pagination__rooms.json';
-import('./pagination.sass');
+import './pagination.sass';
 
 let rooms = $('.card-room');
 

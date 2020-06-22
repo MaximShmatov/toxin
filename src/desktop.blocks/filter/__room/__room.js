@@ -1,7 +1,7 @@
 'use strict'
 
-import('./__room.sass');
-import('../../button/button');
+import './__room.sass';
+import '../../button/button';
 
 let $filterRoom = $('.filter__room');
 let $headOut = $filterRoom.find('.filter__room-head-out');

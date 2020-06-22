@@ -1,7 +1,7 @@
 'use strict'
 
-import('../rate-button/rate-button');
-import('./card-room.sass');
+import '../rate-button/rate-button';
+import './card-room.sass';
 
 export class CardRoom {
   #$radio = [];

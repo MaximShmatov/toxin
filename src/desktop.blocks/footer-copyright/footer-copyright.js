@@ -1,3 +1,3 @@
 'use strict'
 
-import('./footer-copyright.sass');
+import './footer-copyright.sass';

@@ -1,3 +1,3 @@
 'use strict'
 
-import('./radio.sass');
+import './radio.sass' ;

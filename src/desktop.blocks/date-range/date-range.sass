@@ -2,6 +2,12 @@
   background-color: white
   position: relative
 
+  &:hover &__head-in, &:hover &__head-out
+    border-color: rgba(31, 32, 65, 0.5)
+
+  &:hover &__head-in-button:before, &:hover &__head-out-button:before
+    color: rgba(31, 32, 65, 0.75)
+
   &__head
     display: flex
     justify-content: space-between
@@ -22,7 +28,17 @@
         margin-left: 14px
 
       &-button
+        border: none
+        outline: none
+        background: transparent
         width: 44px
+
+        &::before
+          display: block
+          font-family: "Material Icons", sans-serif
+          content: '\e313'
+          font-size: 24px
+          color: rgba(31, 32, 65, 0.5)
 
   &__picker
     display: block

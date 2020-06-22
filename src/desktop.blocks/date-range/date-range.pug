@@ -1,20 +1,17 @@
-include ../button/button
 include ../date-picker/date-picker
 
-mixin date-range
+mixin date-range(caption1, caption2)
   div.date-range
     div.date-range__head
       label
-        h3 Прибытие
+        h3= caption1
         div.date-range__head-in
-          output.date-range__head-in-date
-          div.date-range__head-in-button
-            +button({type: 'button', mode: 'dropdown'})
+          output.date-range__head-in-date дд.мм.гггг
+          button(type="button").date-range__head-in-button
       label
-        h3 Выезд
+        h3= caption2
         div.date-range__head-out
-          output.date-range__head-out-date
-          div.date-range__head-out-button
-            +button({type: 'button', mode: 'dropdown'})
+          output.date-range__head-out-date дд.мм.гггг
+          button(type="button").date-range__head-out-button
     div.date-range__picker
       +date-picker

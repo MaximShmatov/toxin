@@ -1,11 +1,11 @@
 'use strict'
 
-import('./page-room-details.sass');
-import('../diagram/diagram');
+import './page-room-details.sass';
+import '../diagram/diagram';
 import {Review as Review} from '../review/review';
-import('../resources/review/review');
+import '../resources/review/review';
 import reviews from '../../request/page-room-details__reviews.json';
-import('../form-reservation/form-reservation');
+//import '../form-reservation/form-reservation';
 
 
 let r = $('.review');

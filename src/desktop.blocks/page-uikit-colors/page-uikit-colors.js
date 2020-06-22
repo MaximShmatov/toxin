@@ -1,3 +1,3 @@
 'use strict'
 
-import('./page-uikit-colors.sass');
+import './page-uikit-colors.sass';

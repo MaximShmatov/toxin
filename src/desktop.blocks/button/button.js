@@ -1,3 +1,3 @@
 'use strict'
 
-import('./button.sass');
+import './button.sass';

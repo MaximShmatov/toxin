@@ -1,3 +1,3 @@
 'use strict'
 
-import('./diagram.sass');
+import './diagram.sass';

@@ -1,6 +1,6 @@
 'use strict'
 
-import('./review.sass');
+import './review.sass';
 
 export class Review {
   constructor (review, $review) {

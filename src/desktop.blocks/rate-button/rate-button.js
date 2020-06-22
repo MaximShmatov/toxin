@@ -1,3 +1,3 @@
 'use strict'
 
-import('./rate-button.sass');
+import './rate-button.sass';

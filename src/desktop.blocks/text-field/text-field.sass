@@ -3,7 +3,7 @@
   font-size: 14px
   color: rgba(31, 32, 65, 0.25)
 
-.text-field, .text-field, .text-field
+.text-field
   @include font
   padding-left: 14px
   box-sizing: border-box
@@ -12,6 +12,7 @@
   width: 100%
   height: 44px
   margin-top: 5px
+  outline: none
 
   &::-webkit-input-placeholder
     @include font
@@ -20,7 +21,6 @@
     @include font
 
   &:hover, &:focus
-    outline: none
     color: rgba(31, 32, 65, 0.75)
     border: 1px solid rgba(31, 32, 65, 0.5)
 

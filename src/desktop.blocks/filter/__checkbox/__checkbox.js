@@ -1,3 +1,3 @@
 'use strict'
 
-import('./__checkbox.sass');
+import './__checkbox.sass';

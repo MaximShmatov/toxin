@@ -1,7 +1,7 @@
 'use strict'
 
-import('./header-main.sass');
-import('../button/button');
+import './header-main.sass';
+import '../button/button';
 
 $('.header-main__button-form-registration button').on('click', formOk);
 

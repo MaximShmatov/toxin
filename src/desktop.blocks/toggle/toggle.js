@@ -1,3 +1,3 @@
 'use strict'
 
-import('./toggle.sass');
+import './toggle.sass';

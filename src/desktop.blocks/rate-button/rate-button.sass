@@ -1,15 +1,22 @@
 .rate-button
-  display: flex
-  justify-content: center
+  max-width: 120px
+  font-size: 0
+  line-height: 0
   &__star
-    display: block
-    position: relative
-    background: url('rate-button__star.svg') no-repeat center center
+    display: inline-block
     width: 24px
     height: 24px
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+    &::before
+      font-family: "Material Icons", sans-serif
+      font-size: 24px
+      line-height: 24px
+      background: white
+      color: black
+      content: '\e838'
+      mix-blend-mode: lighten
   &__radio
-    position: absolute
-    z-index: -1
-    opacity: 0
+    display: none
   &__radio:checked + &__star ~ &__star
-    background: url('rate-button__star-border.svg') no-repeat center center
+    &::before
+      content: '\e83a'

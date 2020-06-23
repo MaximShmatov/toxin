@@ -9,6 +9,7 @@ include ../checkbox/checkbox
 include ../radio/radio
 include ../toggle/toggle
 include ../like/like
+include ../rate-button/rate-button
 
 block page-uikit
   article.uikit-elements
@@ -61,3 +62,17 @@ block page-uikit
           +like("checked")
       div.uikit-elements__sect2-element
         h3 Rate button
+        div.uikit-elements__sect2-element-rate
+          +rate-button("2", "0")
+        div.uikit-elements__sect2-element-rate
+          +rate-button("1", "1")
+
+    aside.uikit-elements__sect3
+      div.uikit-elements__sect3-element
+        h3 Range slider
+
+      div.uikit-elements__sect3-element
+        h3 Buttons
+
+      div.uikit-elements__sect3-element
+        h3 Pagination

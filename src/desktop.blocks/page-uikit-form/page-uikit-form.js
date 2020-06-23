@@ -10,6 +10,7 @@ import '../checkbox/checkbox';
 import '../radio/radio';
 import '../toggle/toggle';
 import {Like} from '../like/like';
+import '../rate-button/rate-button';
 
 new DropdownGuests($($('.dropdown-guests')[0]));
 new DateRange($($('.date-range')[0]));

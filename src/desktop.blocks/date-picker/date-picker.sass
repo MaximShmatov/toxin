@@ -22,7 +22,19 @@
     &-list-left, &-list-right
       width: 24px
       height: 24px
+      padding: 0
+      border: none
+      outline: none
+      background: transparent
       margin: 0 20px
+      &::before
+        font-family: "Material Icons", sans-serif
+        font-size: 24px
+        color: #BC9CFF
+    &-list-left::before
+      content: '\e5c4'
+    &-list-right::before
+      content: '\e5c8'
 
   &__table
     font-family: Montserrat, sans-serif

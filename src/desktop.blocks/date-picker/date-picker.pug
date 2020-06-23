@@ -3,12 +3,10 @@ include ../button/button
 mixin date-picker
 	div.date-picker
 		div.date-picker__header
-			div.date-picker__header-list-left
-				+button({type: 'button', mode: 'arrow-left'})
+			button(type="button").date-picker__header-list-left
 			h2
 				output.date-picker__header-title
-			div.date-picker__header-list-right
-				+button({type: 'button', mode: 'arrow-right'})
+			button(type="button").date-picker__header-list-right
 		table.date-picker__table
 			thead
 				tr

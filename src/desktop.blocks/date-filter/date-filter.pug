@@ -1,13 +1,12 @@
 include ../button/button
 include ../date-picker/date-picker
 
-mixin date-filter
-	div.filter__date
+mixin date-filter(caption)
+	div.date-filter
 		label
-			h3 Даты пребывания в отеле
-			div.filter__date-head
-				output(name="filter__date-head-output").filter__date-head-output
-				div.filter__date-head-button
-					+button({type: 'button', mode: 'dropdown-guests'})
-			div.filter__date-picker
+			h3= caption
+			div.date-filter__head
+				output(name="filter__date-head-output").date-filter__head-output
+				button(type="button").date-filter__head-button
+			div.date-filter__picker
 				+date-picker

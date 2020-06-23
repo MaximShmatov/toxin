@@ -1,0 +1,36 @@
+.like
+  &__true
+    display: none
+
+    &:checked + .like__false
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+      color: #BC9CFF
+
+      & .like__false-quantity::before
+        content: '\e87d'
+
+  &__false
+    background: rgba(31, 32, 65, 0.25)
+    color: rgba(31, 32, 65, 0.25)
+    box-sizing: border-box
+    border-radius: 10px
+    padding: 1px
+    width: 40px
+    height: 20px
+    font-size: 10px
+    line-height: 100%
+
+    &-quantity
+      display: flex
+      align-items: center
+      background: white
+      border-radius: 10px
+      width: 100%
+      height: 100%
+
+      &::before
+        font-family: "Material Icons", sans-serif
+        content: '\e87e'
+        margin-left: 5px
+        margin-right: 5px
+

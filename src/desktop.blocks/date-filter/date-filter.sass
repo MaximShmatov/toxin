@@ -1,6 +1,9 @@
-.filter__date
+.date-filter
   position: relative
-  &-head
+  &:hover &__head
+    border-color: rgba(31, 32, 65, 0.75)
+
+  &__head
     display: flex
     justify-content: space-between
     align-items: center
@@ -10,12 +13,26 @@
     height: 44px
     margin-top: 5px
 
-    &-output
-      padding-left: 15px
-    &-button
-      width: 44px
 
-  &-picker
+    &-output
+      padding-left: 14px
+
+    &-button
+      outline: none
+      border: none
+      background: transparent
+      width: 44px
+      height: 100%
+
+      &::before
+        display: block
+        font-family: "Material Icons", sans-serif
+        content: '\e313'
+        font-size: 24px
+        color: rgba(31, 32, 65, 0.5)
+
+  &__picker
+    width: 100%
     position: absolute
     z-index: 1
     top: 96%

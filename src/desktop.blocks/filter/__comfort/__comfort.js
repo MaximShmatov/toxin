@@ -1,7 +1,7 @@
 'use strict'
 
 import './__comfort.sass';
-import '../__checkbox/__checkbox';
+import '../../checkbox/checkbox';
 
 let $comfort = $('.filter__comfort');
 let $comfortHeadButton = $comfort.find('.filter__comfort-head-button-false');

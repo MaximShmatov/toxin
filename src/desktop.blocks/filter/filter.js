@@ -2,7 +2,7 @@
 
 import '../date-filter/date-filter';
 import './__comfort/__comfort';
-import './__checkbox/__checkbox';
+import '../checkbox/checkbox';
 import './__room/__room';
 import '../dropdown-guests/dropdown-guests';
 import './filter.sass';

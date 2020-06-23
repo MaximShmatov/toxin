@@ -1,4 +1,4 @@
-mixin toggle
-	label.toggle
-		input(type="checkbox").toggle__check
-		div.toggle__checkbox
+mixin toggle(caption, checked)
+	label.toggle= caption
+		input(type="checkbox" checked= checked).toggle__true
+		div.toggle__false

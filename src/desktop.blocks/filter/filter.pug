@@ -1,6 +1,6 @@
 include ../date-filter/date-filter
 include __comfort/__comfort
-include __checkbox/__checkbox
+include ../checkbox/checkbox
 include __room/__room
 include ../dropdown-guests/dropdown-guests
 
@@ -20,22 +20,22 @@ mixin filter
 			h3 Checkbox Buttons
 			label.filter__permission-item Можно курить
 				div.filter__permission-checkbox
-					+filter__checkbox({name: 'smoke'})
+					+checkbox({name: 'smoke'})
 			label.filter__permission-item Можно с питомцами
 				div.filter__permission-checkbox
-					+filter__checkbox({name: 'smoke', checked: 'checked'})
+					+checkbox({name: 'smoke', checked: 'checked'})
 			label.filter__permission-item Можно пригласить гостей (до 10 человек)
 				div.filter__permission-checkbox
-					+filter__checkbox({name: 'smoke', checked: 'checked'})
+					+checkbox({name: 'smoke', checked: 'checked'})
 		div.filter__availability
 			h3 Доступность
 			label.filter__availability-item Широкий коридор
 				div.filter__availability-checkbox
-					+filter__checkbox({name: 'corridor'})
+					+checkbox({name: 'corridor'})
 			p.filter__availability-info Ширина коридоров в номере не менее 91 см.
 			label.filter__availability-item Помошник для инвалидов
 				div.filter__availability-checkbox
-					+filter__checkbox({name: 'assistant'})
+					+checkbox({name: 'assistant'})
 			p.filter__availability-info На 1 этаже вас встретит специалист и проводит до номера.
 		div.filter__comfort-room
 			+filter__room

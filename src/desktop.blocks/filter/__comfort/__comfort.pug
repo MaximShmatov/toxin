@@ -1,5 +1,5 @@
 include ../../button/button
-include ../__checkbox/__checkbox
+include ../../checkbox/checkbox
 
 mixin filter__comfort
 	div.filter__comfort
@@ -11,19 +11,19 @@ mixin filter__comfort
 		div.filter__comfort-picker
 			label.filter__comfort-picker-item Завтрак
 				div.filter__comfort-picker-item-checkbox
-					+filter__checkbox({name: 'breakfast'})
+					+checkbox({name: 'breakfast'})
 			label.filter__comfort-picker-item Письменный стол
 				div.filter__comfort-picker-item-checkbox
-					+filter__checkbox({name: 'table', checked: 'checked'})
+					+checkbox({name: 'table', checked: 'checked'})
 			label.filter__comfort-picker-item Стул для кормления
 				div.filter__comfort-picker-item-checkbox
-					+filter__checkbox({name: 'chair', checked: 'checked'})
+					+checkbox({name: 'chair', checked: 'checked'})
 			label.filter__comfort-picker-item Кроватка
 				div.filter__comfort-picker-item-checkbox
-					+filter__checkbox({name: 'bed', checked: 'checked'})
+					+checkbox({name: 'bed', checked: 'checked'})
 			label.filter__comfort-picker-item Телевизор
 				div.filter__comfort-picker-item-checkbox
-					+filter__checkbox({name: 'tv'})
+					+checkbox({name: 'tv'})
 			label.filter__comfort-picker-item Шампунь
 				div.filter__comfort-picker-item-checkbox
-					+filter__checkbox({name: 'shampoo'})
+					+checkbox({name: 'shampoo'})

@@ -1,6 +1,12 @@
-.filter__checkbox-true
+.checkbox
+  display: flex
+  flex-direction: row-reverse
+  align-items: flex-start
+  justify-content: flex-end
+
+  &__true
     display: none
-    &:checked + .filter__checkbox-false
+    &:checked + .checkbox__false
       border: 1px solid #BC9CFF
       &::before, &::after
         content: ''
@@ -21,10 +27,12 @@
         padding: 0 4px 4px 0
         background-clip: content-box
 
-.filter__checkbox-false
+  &__false
     position: relative
+    width: 20px
     min-width: 20px
-    min-height: 20px
+    height: 20px
     box-sizing: border-box
     border: 1px solid rgba(31, 32, 65, 0.25)
     border-radius: 4px
+    margin-right: 10px

@@ -1,31 +1,34 @@
 'use strict'
 
 import '../button/button';
-//import {dateComeIn, dateCheckOut, datePickerToggle} from "../date-picker/date-picker";
-
+import {DatePicker} from "../date-picker/date-picker";
 import './date-filter.sass';
 
-let $filterDate = $('.filter__date');
-let $filterDateOutput = $filterDate.find('.filter__date-head-output');
-let $filterDateButton = $filterDate.find('.filter__date-head-button');
+export class DateFilter extends DatePicker {
+  #$filter;
+  #$filterDateOutput;
+  #$filterDateButton;
+  #month = ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'];
+  #date = new Date();
 
-let month = ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'];
-let date = new Date();
+  constructor($dateFilter) {
+    super($($dateFilter.find('.date-picker')));
+    this.#$filter = $dateFilter;
+    this.#$filterDateOutput = $dateFilter.find('.date-filter__head-output');
+    this.#$filterDateButton = $dateFilter.find('.date-filter__head-button');
+    this.#$filterDateButton.on('click', this.datePickerToggle.bind(this));
+    $dateFilter.on('date-picker_selected-out', this.#setDateRange.bind(this));
+    this.#setDateRange();
+  }
 
-date.setTime(Number(sessionStorage.getItem('dateComeIn')));
-let fromDate = `${date.getDate()} ${month[date.getMonth()]} `;
-date.setTime(Number(sessionStorage.getItem('dateCheckOut')));
-let toDate = `${date.getDate()} ${month[date.getMonth()]}`;
-$filterDateOutput.text(`${fromDate} - ${toDate}`);
-
-function setDateRange() {
-  date.setTime(dateComeIn);
-  let fromDate = `${date.getDate()} ${month[date.getMonth()]} `;
-  date.setTime(dateCheckOut);
-  let toDate = `${date.getDate()} ${month[date.getMonth()]}`;
-  $filterDateOutput.text(`${fromDate} - ${toDate}`);
-  datePickerToggle();
+  #setDateRange() {
+    this.#date.setTime(this.dateComeIn);
+    let fromDate = `${this.#date.getDate()} ${this.#month[this.#date.getMonth()]} `;
+    this.#date.setTime(this.dateCheckOut);
+    let toDate = `${this.#date.getDate()} ${this.#month[this.#date.getMonth()]}`;
+    this.#$filterDateOutput.text(`${fromDate} - ${toDate}`);
+  }
 }
 
-$filterDateButton.on('click', datePickerToggle);
-$filterDate.on('date-picker_selected-out', setDateRange)
+
+

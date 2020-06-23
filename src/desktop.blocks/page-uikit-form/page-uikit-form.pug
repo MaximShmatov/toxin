@@ -5,21 +5,59 @@ include ../dropdown-guests/dropdown-guests
 include ../date-range/date-range
 include ../date-filter/date-filter
 include ../subscription/subscription
+include ../checkbox/checkbox
+include ../radio/radio
+include ../toggle/toggle
+include ../like/like
 
 block page-uikit
   article.uikit-elements
     aside.uikit-elements__sect1
-      label Default
+      div.uikit-elements__sect1-element
+        span.uikit-elements__sect1-element-caption Default
         +text-field("email", "Text field", "Email")
-      label Hover/Focus
+      div.uikit-elements__sect1-element
+        span.uikit-elements__sect1-element-caption Hover / Focus
         +text-field("text", "Text field", "Имя")
-      label Default
+      div.uikit-elements__sect1-element
+        span.uikit-elements__sect1-element-caption Default
         +dropdown-guests("Dropdown")
-      label Default
+      div.uikit-elements__sect1-element
+        span.uikit-elements__sect1-element-caption Default
         +text-field("text", "Masked text field", "дд.мм.гггг", "99.99.9999")
-      div
+      div.uikit-elements__sect1-element
         +date-range("Date dropdown", "Date dropdown")
-      div
-        //+date-filter
-      div
+      div.uikit-elements__sect1-element
+        +date-filter("Filter date dropdown")
+      div.uikit-elements__sect1-element
         +subscription("Subscription text field")
+
+    aside.uikit-elements__sect2
+      div.uikit-elements__sect2-element
+        h3 Checkbox buttons
+        div.uikit-elements__sect2-element-checkbox
+          +checkbox("smoke", "Можно курить")
+        div.uikit-elements__sect2-element-checkbox
+          +checkbox("pet", "Можно с питомцами", "checked")
+        div.uikit-elements__sect2-element-checkbox
+          +checkbox("guests", "Можно пригласить гостей (до 10 человек)", "checked")
+      div.uikit-elements__sect2-element
+        h3 Radio buttons
+        div.uikit-elements__sect2-element-radio
+          +radio({name: "registration__mw-radio", value: "m", caption: "Мужчина", checked: "true"})
+        div.uikit-elements__sect2-element-radio
+          +radio({name: "registration__mw-radio", value: "w", caption: "Женщина"})
+      div.uikit-elements__sect2-element
+        h3 Toggle
+        div.uikit-elements__sect2-element-toggle
+          +toggle("Получать спецпредложения", "checked")
+        div.uikit-elements__sect2-element-toggle
+          +toggle("Получать спецпредложения")
+      div.uikit-elements__sect2-element
+        h3 Like button
+        div.uikit-elements__sect2-element-like
+          +like
+        div.uikit-elements__sect2-element-like
+          +like("checked")
+      div.uikit-elements__sect2-element
+        h3 Rate button

@@ -189,7 +189,6 @@ export class DropdownGuests {
   }
 
   guestsPickerToggle() {
-    console.log(this);
     if (this.#$picker.css('display') === 'none') {
       this.#$picker.addClass('dropdown-guests__picker_display');
     } else {

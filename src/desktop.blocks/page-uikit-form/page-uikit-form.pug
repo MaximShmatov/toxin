@@ -10,6 +10,8 @@ include ../radio/radio
 include ../toggle/toggle
 include ../like/like
 include ../rate-button/rate-button
+include ../range-slider/range-slider
+include ../button/button
 
 block page-uikit
   article.uikit-elements
@@ -70,9 +72,25 @@ block page-uikit
     aside.uikit-elements__sect3
       div.uikit-elements__sect3-element
         h3 Range slider
-
+        +range-slider
       div.uikit-elements__sect3-element
         h3 Buttons
-
+        div.uikit-elements__sect3-element-group1
+          div.uikit-elements__sect3-element-group1-button
+            +button({type: "button", text: "Click me", mode: "registration"})
+          div.uikit-elements__sect3-element-group1-button
+            +button({type: "button", text: "Click me", mode: "registration", disabled: "true"})
+        div.uikit-elements__sect3-element-group2
+          div.uikit-elements__sect3-element-group2-button
+            +button({type: "button", text: "Click me", mode: "come-in"})
+          div.uikit-elements__sect3-element-group2-button
+            +button({type: "button", text: "Click me", mode: "come-in", disabled: "true"})
+        div.uikit-elements__sect3-element-group3
+          div.uikit-elements__sect3-element-group3-button
+            +button({type: "button", text: "Click me", mode: "picker"})
+          div.uikit-elements__sect3-element-group3-button
+            +button({type: "button", text: "Click me", mode: "picker-grey"})
+        div.uikit-elements__sect3-element-button
+          +button({type: "button", text: "Перейти к оплате", mode: "forward"})
       div.uikit-elements__sect3-element
         h3 Pagination

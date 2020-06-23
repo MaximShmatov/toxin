@@ -11,6 +11,8 @@ import '../radio/radio';
 import '../toggle/toggle';
 import {Like} from '../like/like';
 import '../rate-button/rate-button';
+import '../range-slider/range-slider';
+import '../button/button';
 
 new DropdownGuests($($('.dropdown-guests')[0]));
 new DateRange($($('.date-range')[0]));

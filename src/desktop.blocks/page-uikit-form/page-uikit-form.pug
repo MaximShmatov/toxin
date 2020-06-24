@@ -1,7 +1,7 @@
 extends ../template-uikit/template-uikit
 
 include ../text-field/text-field
-include ../dropdown-guests/dropdown-guests
+include ../dropdown-quantity/dropdown-quantity
 include ../date-range/date-range
 include ../date-filter/date-filter
 include ../subscription/subscription
@@ -12,6 +12,7 @@ include ../like/like
 include ../rate-button/rate-button
 include ../range-slider/range-slider
 include ../button/button
+include ../pagination/pagination
 
 block page-uikit
   article.uikit-elements
@@ -24,7 +25,7 @@ block page-uikit
         +text-field("text", "Text field", "Имя")
       div.uikit-elements__sect1-element
         span.uikit-elements__sect1-element-caption Default
-        +dropdown-guests("Dropdown")
+        +dropdown-quantity("Dropdown")
       div.uikit-elements__sect1-element
         span.uikit-elements__sect1-element-caption Default
         +text-field("text", "Masked text field", "дд.мм.гггг", "99.99.9999")
@@ -72,7 +73,8 @@ block page-uikit
     aside.uikit-elements__sect3
       div.uikit-elements__sect3-element
         h3 Range slider
-        +range-slider
+        div.uikit-elements__sect3-element-range
+          +range-slider
       div.uikit-elements__sect3-element
         h3 Buttons
         div.uikit-elements__sect3-element-group1
@@ -94,3 +96,21 @@ block page-uikit
           +button({type: "button", text: "Перейти к оплате", mode: "forward"})
       div.uikit-elements__sect3-element
         h3 Pagination
+        div.uikit-elements__sect3-element-pagination
+          +pagination
+
+    aside.uikit-elements__sect4
+      div.uikit-elements__sect4-element
+        span.uikit-elements__sect4-element-caption Default
+        div.uikit-elements__sect4-element-comfort
+          +dropdown-quantity("Dropdown")
+      div.uikit-elements__sect4-element
+        span.uikit-elements__sect4-element-caption Expanded
+        div.uikit-elements__sect4-element-comfort
+          +dropdown-quantity("Dropdown")
+      div.uikit-elements__sect4-element
+        h3 Expandable checkbox list
+        //+dropdown-guests("Dropdown")
+      div.uikit-elements__sect4-element
+        h3 Expandable checkbox list
+        //+text-field("text", "Masked text field", "дд.мм.гггг", "99.99.9999")

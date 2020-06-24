@@ -1,5 +1,5 @@
 include ../button/button
-include ../dropdown-guests/dropdown-guests
+include ../dropdown-quantity/dropdown-quantity
 include ../date-range/date-range
 
 mixin form-search-room
@@ -10,7 +10,7 @@ mixin form-search-room
         div.form-search-room__date
           +date-range
         div.form-search-room__guests
-          +dropdown-guests
+          +dropdown-quantity
         div.form-search-room__submit
           +button({type: 'submit', mode: 'width-arrow', text: 'Подобрать номер'})
 

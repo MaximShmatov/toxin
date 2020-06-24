@@ -2,14 +2,14 @@ include ../date-filter/date-filter
 include __comfort/__comfort
 include ../checkbox/checkbox
 include __room/__room
-include ../dropdown-guests/dropdown-guests
+include ../dropdown-quantity/dropdown-quantity
 
 mixin filter
 	form.filter
 		div.filter__date-range
 			+date-filter
 		div.filter__guests-quantity
-			+dropdown-guests
+			+dropdown-quantity
 		div.filter__price
 			div.filter__price-header
 				h3 Диапазон цены

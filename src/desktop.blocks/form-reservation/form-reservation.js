@@ -4,7 +4,7 @@ import reservation from "../../request/page-room-details__form-reservation.json"
 import {getDaysRange} from "../date-range/date-range";
 
 import './form-reservation.sass';
-import '../dropdown-guests/dropdown-guests';
+import '../dropdown-quantity/dropdown-quantity';
 import '../button/button';
 
 let $formReservation = $('.form-reservation');

@@ -4,8 +4,8 @@ import '../date-filter/date-filter';
 import './__comfort/__comfort';
 import '../checkbox/checkbox';
 import './__room/__room';
-import '../dropdown-guests/dropdown-guests';
+import '../dropdown-quantity/dropdown-quantity';
 import './filter.sass';
 
-let $dropdownOut = $('.dropdown-guests').find('.dropdown__head-out');
+let $dropdownOut = $('.dropdown-quantity').find('.dropdown__head-out');
 $dropdownOut.val(sessionStorage.getItem('guests'));

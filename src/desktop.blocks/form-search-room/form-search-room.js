@@ -2,7 +2,7 @@
 
 import '../button/button';
 import '../date-range/date-range';
-import '../dropdown-guests/dropdown-guests';
+import '../dropdown-quantity/dropdown-quantity';
 import './form-search-room.sass';
 
 $('.form-search-room__submit').on('click', formOk);

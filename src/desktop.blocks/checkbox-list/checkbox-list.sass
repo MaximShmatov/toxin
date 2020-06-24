@@ -1,0 +1,37 @@
+.checkbox-list
+  &__head
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    &-checkbox-true
+      display: none
+
+      &:checked + ::before
+        content: '\e316'
+
+    &-checkbox-false
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 44px
+      height: 44px
+
+      &::before
+        font-family: "Material Icons", sans-serif
+        content: '\e313'
+        font-size: 24px
+        line-height: 24px
+        color: rgba(31, 32, 65, 0.5)
+
+  &__picker
+    display: none
+
+    &_visible
+      display: block
+
+    &-item
+      margin-top: 10px
+
+      &:first-of-type
+        margin-top: 3px

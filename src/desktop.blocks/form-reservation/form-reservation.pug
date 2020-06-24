@@ -17,7 +17,7 @@ mixin form-reservation
 					span &#x20bd;&#8194;
 					span в сутки
 			div.form-reservation__date
-				+date-range
+				+date-range({in: "", out: ""})
 			div.form-reservation__guests
 				+dropdown-quantity
 

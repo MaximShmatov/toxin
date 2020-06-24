@@ -21,9 +21,8 @@ mixin form-registration
 				h3 Данные для входа в сервис
 				input(type="text" value="Email").form-registration__data-come-in-email
 				input(type="text" value="Пароль").form-registration__data-come-in-pass
-			label.form-registration__subscription Получать спецпредложения
-				div.form-registration__subscription-toggle
-					+toggle
+			div.form-registration__subscription-toggle
+				+toggle({caption: "Получать спецпредложения"})
 			div.form-registration__pay
 				+button({type: 'submit', mode: 'width-arrow', text: 'Перейти к оплате'})
 			div.form-registration__come-in

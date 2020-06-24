@@ -13,24 +13,25 @@ include ../rate-button/rate-button
 include ../range-slider/range-slider
 include ../button/button
 include ../pagination/pagination
+include ../checkbox-list/checkbox-list
 
 block page-uikit
   article.uikit-elements
     aside.uikit-elements__sect1
       div.uikit-elements__sect1-element
         span.uikit-elements__sect1-element-caption Default
-        +text-field("email", "Text field", "Email")
+        +text-field({type: "email", caption: "Text field", value: "Email"})
       div.uikit-elements__sect1-element
         span.uikit-elements__sect1-element-caption Hover / Focus
-        +text-field("text", "Text field", "Имя")
+        +text-field({type: "text", caption: "Text field", value: "Имя"})
       div.uikit-elements__sect1-element
         span.uikit-elements__sect1-element-caption Default
         +dropdown-quantity("Dropdown")
       div.uikit-elements__sect1-element
         span.uikit-elements__sect1-element-caption Default
-        +text-field("text", "Masked text field", "дд.мм.гггг", "99.99.9999")
+        +text-field({type: "text", caption: "Masked text field", value: "дд.мм.гггг", mask: "99.99.9999"})
       div.uikit-elements__sect1-element
-        +date-range("Date dropdown", "Date dropdown")
+        +date-range({in: "Date dropdown", out: "Date dropdown"})
       div.uikit-elements__sect1-element
         +date-filter("Filter date dropdown")
       div.uikit-elements__sect1-element
@@ -40,11 +41,11 @@ block page-uikit
       div.uikit-elements__sect2-element
         h3 Checkbox buttons
         div.uikit-elements__sect2-element-checkbox
-          +checkbox("smoke", "Можно курить")
+          +checkbox({name: "smoke", caption: "Можно курить"})
         div.uikit-elements__sect2-element-checkbox
-          +checkbox("pet", "Можно с питомцами", "checked")
+          +checkbox({name: "pet", caption: "Можно с питомцами", checked: "checked"})
         div.uikit-elements__sect2-element-checkbox
-          +checkbox("guests", "Можно пригласить гостей (до 10 человек)", "checked")
+          +checkbox({name: "guests", caption: "Можно пригласить гостей (до 10 человек)", checked: "checked"})
       div.uikit-elements__sect2-element
         h3 Radio buttons
         div.uikit-elements__sect2-element-radio
@@ -54,9 +55,9 @@ block page-uikit
       div.uikit-elements__sect2-element
         h3 Toggle
         div.uikit-elements__sect2-element-toggle
-          +toggle("Получать спецпредложения", "checked")
+          +toggle({caption: "Получать спецпредложения", checked: "checked"})
         div.uikit-elements__sect2-element-toggle
-          +toggle("Получать спецпредложения")
+          +toggle({caption: "Получать спецпредложения"})
       div.uikit-elements__sect2-element
         h3 Like button
         div.uikit-elements__sect2-element-like
@@ -66,9 +67,9 @@ block page-uikit
       div.uikit-elements__sect2-element
         h3 Rate button
         div.uikit-elements__sect2-element-rate
-          +rate-button("2", "0")
+          +rate-button({star: "2", uid: "0"})
         div.uikit-elements__sect2-element-rate
-          +rate-button("1", "1")
+          +rate-button({star: "1", uid: "1"})
 
     aside.uikit-elements__sect3
       div.uikit-elements__sect3-element
@@ -109,8 +110,6 @@ block page-uikit
         div.uikit-elements__sect4-element-comfort
           +dropdown-quantity("Dropdown")
       div.uikit-elements__sect4-element
-        h3 Expandable checkbox list
-        //+dropdown-guests("Dropdown")
+        +checkbox-list("Expandable checkbox list")
       div.uikit-elements__sect4-element
-        h3 Expandable checkbox list
-        //+text-field("text", "Masked text field", "дд.мм.гггг", "99.99.9999")
+        +checkbox-list("Expandable checkbox list")

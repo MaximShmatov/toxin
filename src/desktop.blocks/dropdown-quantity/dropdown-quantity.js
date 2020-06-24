@@ -56,7 +56,7 @@ export class DropdownQuantity {
   }
 
   #initRoomMode() {
-    $(this.#$picker).find('.dropdown-quantity__picker-item:last-of-type').addClass('dropdown-quantity__picker-item_hidden');
+    this.#$picker.find('.dropdown-quantity__picker-item:last-of-type').addClass('dropdown-quantity__picker-item_hidden');
     this.#$headOut.text('Удобства номера');
     this.#$picker.find('.dropdown-quantity__picker-item:nth-child(1) > h3').text('Спальни');
     this.#$picker.find('.dropdown-quantity__picker-item:nth-child(2) > h3').text('Кровати');

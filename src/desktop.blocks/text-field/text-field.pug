@@ -1,4 +1,4 @@
-mixin text-field(type, caption, value, mask)
+mixin text-field(props)
 	label
-		h3= caption
-		input(type=type placeholder=value data-mask=mask).text-field
+		h3= props.caption
+		input(type=props.type placeholder=props.value data-mask=props.mask).text-field

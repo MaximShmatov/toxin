@@ -1,4 +1,4 @@
-mixin toggle(caption, checked)
-	label.toggle= caption
-		input(type="checkbox" checked= checked).toggle__true
+mixin toggle(props)
+	label.toggle= props.caption
+		input(type="checkbox" checked= props.checked).toggle__true
 		div.toggle__false

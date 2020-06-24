@@ -1,8 +1,9 @@
-mixin rate-button(star, uid)
+mixin rate-button(props)
 	div.rate-button
+		-let star = Number(props.star)
 		-for (let i = 5; i >= 1; i--)
-			if(star == i)
-				input(type="radio" name=`rate-button__star-${uid}` id=`rate-button__star-${i}-${uid}` value=`${i}` checked).rate-button__radio
+			if(star === i)
+				input(type="radio" name=`rate-button__star-${props.uid}` id=`rate-button__star-${i}-${props.uid}` value=`${i}` checked).rate-button__radio
 			else
-				input(type="radio" name=`rate-button__star-${uid}` id=`rate-button__star-${i}-${uid}` value=`${i}`).rate-button__radio
-			label(for=`rate-button__star-${i}-${uid}`).rate-button__star
+				input(type="radio" name=`rate-button__star-${props.uid}` id=`rate-button__star-${i}-${props.uid}` value=`${i}`).rate-button__radio
+			label(for=`rate-button__star-${i}-${props.uid}`).rate-button__star

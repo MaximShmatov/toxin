@@ -16,6 +16,7 @@ import '../button/button';
 import '../pagination/pagination';
 import {CheckboxList} from "../checkbox-list/checkbox-list";
 import '../checkbox-rich/checkbox-rich';
+import '../bullet-list/bullet-list';
 
 new DropdownQuantity($($('.dropdown-quantity')[0]));
 new DateRange($($('.date-range')[0]));

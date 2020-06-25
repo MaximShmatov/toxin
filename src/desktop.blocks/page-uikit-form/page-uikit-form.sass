@@ -1,24 +1,37 @@
 .uikit-elements
-  display: flex
-  justify-content: space-between
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr
   max-width: 1160px
   margin: 140px auto
-  flex-wrap: wrap
 
   &__sect1
     max-width: 320px
     width: 100%
+    &-element > label > h3
+      margin-bottom: 5px
+    &-element > h3
+      margin-bottom: 5px
     &-element-caption
       text-transform: uppercase
       font-size: 12px
       line-height: 15px
-      float: right
-      margin-bottom: -15px
+      position: absolute
+      top: 0
+      right: 0
+    &-element-title-dropdown
+      display: flex
+      justify-content: space-between
+      margin: 0 32px 5px 0
+    &-element:nth-of-type(1)
+      position: relative
     &-element:nth-of-type(2)
+      position: relative
       margin-top: 20.5px
     &-element:nth-of-type(3)
+      position: relative
       margin-top: 20px
     &-element:nth-of-type(4)
+      position: relative
       margin-top: 22.5px
     &-element:nth-of-type(5)
       margin-top: 40px
@@ -111,7 +124,45 @@
     max-width: 266px
     margin-top: 100px
     width: 100%
-    &-element:nth-of-type(3)
-      margin-top: 160px
-    &-element:nth-of-type(4)
+    &-element > h3
+      margin-bottom: 5px
+    &-element-caption
+      text-transform: uppercase
+      font-size: 12px
+      line-height: 15px
+      position: absolute
+      right: 0
+      top: 0
+    &-element:nth-of-type(1)
+      position: relative
+    &-element:nth-of-type(2)
+      position: relative
       margin-top: 20px
+
+  &__sect5
+    max-width: 320px
+    margin-top: 100px
+    width: 100%
+    & h3
+      margin-bottom: 5px
+
+  &__sect6
+    max-width: 320px
+    margin-top: 100px
+    width: 100%
+    & h3
+      margin-bottom: 5px
+
+  &__sect7
+    max-width: 266px
+    margin-top: 158px
+    &-element:nth-of-type(2)
+      margin-top: 20px
+
+  &__sect8
+    max-width: 266px
+    margin-top: 158px
+    & h3
+      line-height: 44px
+    &-element:nth-of-type(2)
+      //margin-top: 20px

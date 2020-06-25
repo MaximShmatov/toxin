@@ -1,0 +1,10 @@
+include ../checkbox/checkbox
+
+mixin checkbox-rich
+	div.checkbox-rich
+		div.checkbox-rich__checkbox
+			+checkbox({name: "corridor", caption: "Широкий коридор"})
+		p.checkbox-rich__info Ширина коридоров в номере <br> не менее 91 см.
+		div.checkbox-rich__checkbox
+			+checkbox({name: "assistant", caption: "Помошник для инвалидов"})
+		p.checkbox-rich__info На 1 этаже вас встретит специалист <br> и проводит до номера

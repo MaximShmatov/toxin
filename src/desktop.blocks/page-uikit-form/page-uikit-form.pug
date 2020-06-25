@@ -14,28 +14,42 @@ include ../range-slider/range-slider
 include ../button/button
 include ../pagination/pagination
 include ../checkbox-list/checkbox-list
+include ../checkbox-rich/checkbox-rich
 
 block page-uikit
   article.uikit-elements
     aside.uikit-elements__sect1
       div.uikit-elements__sect1-element
+        label
+          span.uikit-elements__sect1-element-caption Default
+          h3 Text field
+          +text-field({type: "email", value: "Email"})
+      div.uikit-elements__sect1-element
+        label
+          span.uikit-elements__sect1-element-caption Hover / Focus
+          h3 Text field
+          +text-field({type: "text", value: "Имя"})
+      div.uikit-elements__sect1-element
         span.uikit-elements__sect1-element-caption Default
-        +text-field({type: "email", caption: "Text field", value: "Email"})
+        h3 Dropdown
+        +dropdown-quantity
       div.uikit-elements__sect1-element
-        span.uikit-elements__sect1-element-caption Hover / Focus
-        +text-field({type: "text", caption: "Text field", value: "Имя"})
+        label
+          span.uikit-elements__sect1-element-caption Default
+          h3 Masked text field
+          +text-field({type: "text", value: "дд.мм.гггг", mask: "99.99.9999"})
       div.uikit-elements__sect1-element
-        span.uikit-elements__sect1-element-caption Default
-        +dropdown-quantity("Dropdown")
+        div.uikit-elements__sect1-element-title-dropdown
+          h3 Date dropdown
+          h3 Date dropdown
+        +date-range
       div.uikit-elements__sect1-element
-        span.uikit-elements__sect1-element-caption Default
-        +text-field({type: "text", caption: "Masked text field", value: "дд.мм.гггг", mask: "99.99.9999"})
+          h3 Filter date dropdown
+          +date-filter
       div.uikit-elements__sect1-element
-        +date-range({in: "Date dropdown", out: "Date dropdown"})
-      div.uikit-elements__sect1-element
-        +date-filter("Filter date dropdown")
-      div.uikit-elements__sect1-element
-        +subscription("Subscription text field")
+        label
+          h3 Subscription text field
+          +subscription
 
     aside.uikit-elements__sect2
       div.uikit-elements__sect2-element
@@ -103,13 +117,27 @@ block page-uikit
     aside.uikit-elements__sect4
       div.uikit-elements__sect4-element
         span.uikit-elements__sect4-element-caption Default
-        div.uikit-elements__sect4-element-comfort
-          +dropdown-quantity("Dropdown")
+        h3 Dropdown
+        +dropdown-quantity
       div.uikit-elements__sect4-element
         span.uikit-elements__sect4-element-caption Expanded
-        div.uikit-elements__sect4-element-comfort
-          +dropdown-quantity("Dropdown")
-      div.uikit-elements__sect4-element
+        h3 Dropdown
+        +dropdown-quantity
+
+    aside.uikit-elements__sect5
+      h3 Dropdown
+      +dropdown-quantity
+
+    aside.uikit-elements__sect6
+      h3 Dropdown
+      +dropdown-quantity
+
+    aside.uikit-elements__sect7
+      div.uikit-elements__sect7-element
         +checkbox-list("Expandable checkbox list")
-      div.uikit-elements__sect4-element
+      div.uikit-elements__sect7-element
         +checkbox-list("Expandable checkbox list")
+
+    aside.uikit-elements__sect8
+      h3 Rich checkbox buttons
+      +checkbox-rich

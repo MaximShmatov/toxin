@@ -1,36 +1,34 @@
 include ../button/button
 
-mixin dropdown-quantity(caption)
+mixin dropdown-quantity
 	div.dropdown-quantity
-		label
-			h3= caption
-			div.dropdown-quantity__head
-				output(name="dropdown__head-out").dropdown-quantity__head-out
-				button(type="button").dropdown-quantity__head-button
-			div.dropdown-quantity__picker
-				div.dropdown-quantity__picker-item
+		div.dropdown-quantity__head
+			output(name="dropdown__head-out").dropdown-quantity__head-out
+			button(type="button").dropdown-quantity__head-button
+		div.dropdown-quantity__picker
+			div.dropdown-quantity__picker-item
+				h3
+				div.dropdown-quantity__picker-item-quantity
+					button(type="button" disabled).dropdown-quantity__picker-item-quantity-minus -
 					h3
-					div.dropdown-quantity__picker-item-quantity
-						button(type="button" disabled).dropdown-quantity__picker-item-quantity-minus -
-						h3
-							output.dropdown-quantity__picker-item-quantity-amount 0
-						button(type="button").dropdown-quantity__picker-item-quantity-plus +
-				div.dropdown-quantity__picker-item
+						output.dropdown-quantity__picker-item-quantity-amount 0
+					button(type="button").dropdown-quantity__picker-item-quantity-plus +
+			div.dropdown-quantity__picker-item
+				h3
+				div.dropdown-quantity__picker-item-quantity
+					button(type="button" disabled).dropdown-quantity__picker-item-quantity-minus -
 					h3
-					div.dropdown-quantity__picker-item-quantity
-						button(type="button" disabled).dropdown-quantity__picker-item-quantity-minus -
-						h3
-							output.dropdown-quantity__picker-item-quantity-amount 0
-						button(type="button").dropdown-quantity__picker-item-quantity-plus +
-				div.dropdown-quantity__picker-item
+						output.dropdown-quantity__picker-item-quantity-amount 0
+					button(type="button").dropdown-quantity__picker-item-quantity-plus +
+			div.dropdown-quantity__picker-item
+				h3
+				div.dropdown-quantity__picker-item-quantity
+					button(type="button" disabled).dropdown-quantity__picker-item-quantity-minus -
 					h3
-					div.dropdown-quantity__picker-item-quantity
-						button(type="button" disabled).dropdown-quantity__picker-item-quantity-minus -
-						h3
-							output.dropdown-quantity__picker-item-quantity-amount 0
-						button(type="button").dropdown-quantity__picker-item-quantity-plus +
-				div.dropdown-quantity__picker-item
-					div.dropdown-quantity__picker-item-clear
-						+button({type:'button', mode: 'picker-grey', text: 'Очистить'})
-					div.dropdown-quantity__picker-item-submit
-						+button({type:'button', mode: 'picker', text: 'Применить'})
+						output.dropdown-quantity__picker-item-quantity-amount 0
+					button(type="button").dropdown-quantity__picker-item-quantity-plus +
+			div.dropdown-quantity__picker-item
+				div.dropdown-quantity__picker-item-clear
+					+button({type:'button', mode: 'picker-grey', text: 'Очистить'})
+				div.dropdown-quantity__picker-item-submit
+					+button({type:'button', mode: 'picker', text: 'Применить'})

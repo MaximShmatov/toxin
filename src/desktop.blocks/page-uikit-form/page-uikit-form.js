@@ -15,6 +15,7 @@ import '../range-slider/range-slider';
 import '../button/button';
 import '../pagination/pagination';
 import {CheckboxList} from "../checkbox-list/checkbox-list";
+import '../checkbox-rich/checkbox-rich';
 
 new DropdownQuantity($($('.dropdown-quantity')[0]));
 new DateRange($($('.date-range')[0]));
@@ -24,4 +25,6 @@ new Like($($('.like')[1]));
 new DropdownQuantity($($('.dropdown-quantity')[1]), 'room');
 new DropdownQuantity($($('.dropdown-quantity')[2]), 'room').quantityPickerToggle();
 new CheckboxList($($('.checkbox-list')[0]));
-new CheckboxList($($('.checkbox-list')[1])).toggleCheckboxList();
+new CheckboxList($($('.checkbox-list')[1])).checkboxListToggle();
+new DropdownQuantity($($('.dropdown-quantity')[3])).quantityPickerToggle();
+new DropdownQuantity($($('.dropdown-quantity')[4])).quantityPickerToggle();

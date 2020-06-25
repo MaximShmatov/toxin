@@ -12,12 +12,12 @@ export class CheckboxList {
     this.#$list = $checkboxList;
     this.#$listDropdown = $checkboxList.find('.checkbox-list__head-checkbox-true');
     this.#$listPicker = $checkboxList.find('.checkbox-list__picker');
-    this.#$listDropdown.on('change', this.toggleCheckboxList.bind(this));
+    this.#$listDropdown.on('change', this.checkboxListToggle.bind(this));
   }
 
-  toggleCheckboxList() {
-    console.log(this);
+  checkboxListToggle() {
     this.#$listPicker.toggleClass('checkbox-list__picker_visible');
-    this.#$listDropdown.prop('checked', true);
+    if(this.#$listPicker.hasClass('checkbox-list__picker_visible')) this.#$listDropdown.prop('checked', true);
+      else this.#$listDropdown.prop('checked', false);
   }
 }

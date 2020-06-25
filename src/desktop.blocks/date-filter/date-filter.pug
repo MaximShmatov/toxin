@@ -1,10 +1,8 @@
 include ../button/button
 include ../date-picker/date-picker
 
-mixin date-filter(caption)
+mixin date-filter
 	div.date-filter
-		label
-			h3= caption
 			div.date-filter__head
 				output(name="filter__date-head-output").date-filter__head-output
 				button(type="button").date-filter__head-button

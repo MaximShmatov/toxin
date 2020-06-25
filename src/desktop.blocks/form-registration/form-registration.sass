@@ -1,31 +1,19 @@
-@mixin input
-  border: 1px solid rgba(31, 32, 65, 0.25)
-  box-sizing: border-box
-  border-radius: 4px
-  font: inherit
-  line-height: 18px
-  color: rgba(31, 32, 65, 0.25)
-  width: 100%
-  height: 44px
-  padding-left: 15px
-
 .form-registration
   background: white
   border: 1px solid rgba(0, 0, 0, 0.12)
   box-sizing: border-box
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.2)
   border-radius: 4px
+  max-width: 380px
 
   &__wrapper
     max-width: 320px
     margin: 40px auto 30px
 
   &__name
-    @include input
     margin-top: 20px
 
   &__family
-    @include input
     margin-top: 10px
 
   &__mw
@@ -39,7 +27,6 @@
     margin-top: 20px
 
     &-date
-      @include input
       margin-top: 5px
 
   &__data-come-in
@@ -47,20 +34,12 @@
     margin-top: 20px
 
     &-email
-      @include input
       margin-top: 5px
     &-pass
-      @include input
       margin-top: 10px
 
   &__subscription
-    display: flex
-    flex-direction: row-reverse
-    justify-content: flex-end
-    align-items: center
     margin-top: 10px
-    &-toggle
-      margin-right: 10px
 
   &__pay
     height: 44px

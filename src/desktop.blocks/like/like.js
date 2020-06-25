@@ -10,7 +10,6 @@ export class Like {
 
   constructor($element) {
     this.#$like = $element;
-    this.#likes = $element.text();
     this.#$checkbox = $element.find('.like__true');
     this.#$outLike = $element.find('.like__false-quantity');
     $(this.#$checkbox).on('change', this.#addLike.bind(this));
@@ -29,5 +28,6 @@ export class Like {
   }
   set likes(likes) {
     this.#likes = likes;
+    this.#$outLike.text(this.#likes);
   }
 }

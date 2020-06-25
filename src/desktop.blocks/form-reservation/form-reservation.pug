@@ -17,8 +17,12 @@ mixin form-reservation
 					span &#x20bd;&#8194;
 					span в сутки
 			div.form-reservation__date
-				+date-range({in: "", out: ""})
+				div.form-reservation__date-title
+					h3 Прибытие
+					h3 Выезд
+				+date-range
 			div.form-reservation__guests
+				h3 Гости
 				+dropdown-quantity
 
 			div.form-reservation__pay
@@ -56,4 +60,4 @@ mixin form-reservation
 						output.form-reservation__total-amount
 						span &#x20bd;
 			div.form-reservation__submit
-				+button({type: 'submit', mode: 'width-arrow', text: 'Забронировать'})
+				+button({type: "button", text: "Забронировать", mode: "forward"})

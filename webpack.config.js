@@ -31,25 +31,29 @@ module.exports = {
       filename: 'uikit_colors.html'
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/desktop.blocks/page-uikit-form/page-uikit-form.pug'),
-      filename: 'uikit_form.html'
+      template: path.resolve(__dirname, 'src/desktop.blocks/page-uikit-elements/page-uikit-elements.pug'),
+      filename: 'uikit_elements.html'
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/desktop.blocks/page-landing/page-landing.pug'),
-      filename: 'landing.html'
+      template: path.resolve(__dirname, 'src/desktop.blocks/page-uikit-cards/page-uikit-cards.pug'),
+      filename: 'uikit_cards.html'
     }),
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/desktop.blocks/page-room-search/page-room-search.pug'),
-      filename: 'room_search.html'
-    }),
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/desktop.blocks/page-registration/page-registration.pug'),
-      filename: 'registration.html'
-    }),
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/desktop.blocks/page-room-details/page-room-details.pug'),
-      filename: 'room_details.html'
-    }),
+    //new HtmlWebpackPlugin({
+    //  template: path.resolve(__dirname, 'src/desktop.blocks/page-landing/page-landing.pug'),
+    //  filename: 'landing.html'
+    //}),
+    //new HtmlWebpackPlugin({
+    //  template: path.resolve(__dirname, 'src/desktop.blocks/page-room-search/page-room-search.pug'),
+    //  filename: 'room_search.html'
+    //}),
+    //new HtmlWebpackPlugin({
+    //  template: path.resolve(__dirname, 'src/desktop.blocks/page-registration/page-registration.pug'),
+    //  filename: 'registration.html'
+    //}),
+    //new HtmlWebpackPlugin({
+    //  template: path.resolve(__dirname, 'src/desktop.blocks/page-room-details/page-room-details.pug'),
+    //  filename: 'room_details.html'
+    //}),
     new MiniCssExtractPlugin({
       filename: '[name].[hash].css',
       chunkFilename: '[name].[hash].css',

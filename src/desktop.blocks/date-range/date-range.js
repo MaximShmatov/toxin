@@ -44,4 +44,10 @@ export class DateRange extends DatePicker {
     this.#$range.find('.date-range__head-out-date').text(this.#defaultDate);
 
   }
+  getDateRange() {
+    let dateIn = new Date();
+    let dateOut = new Date();
+    this.#date.setTime(dateOut.setTime(this.dateCheckOut) - dateIn.setTime(this.dateComeIn));
+    return (this.#date.getDate() - 1);
+  }
 }

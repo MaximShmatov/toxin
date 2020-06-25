@@ -1,14 +1,17 @@
 include ../button/button
 include ../toggle/toggle
 include ../radio/radio
+include ../text-field/text-field
 
 mixin form-registration
 	form.form-registration
 		fieldset.form-registration__wrapper
-			h1
-				legend Регистрация аккаунта
-			input(type="text" value="Имя").form-registration__name
-			input(type="text" value="Фамилия").form-registration__family
+			legend
+				h1 Регистрация аккаунта
+			div.form-registration__name
+				+text-field({type: "text", value: "Имя"})
+			div.form-registration__family
+				+text-field({type: "text", value: "Фамилия"})
 			div.form-registration__mw
 				div.form-registration__mw-radio
 					+radio({name: "registration__mw-radio", value: "m", caption: "Мужчина", checked: "true"})
@@ -16,16 +19,19 @@ mixin form-registration
 					+radio({name: "registration__mw-radio", value: "w", caption: "Женщина"})
 			label.form-registration__birth
 				h3 Дата рождения
-				input(type="text" value="дд.мм.гггг").form-registration__birth-date
+				div.form-registration__birth-date
+					+text-field({type: "text", value: "дд.мм.гггг", mask: "99.99.9999"})
 			label.form-registration__data-come-in
 				h3 Данные для входа в сервис
-				input(type="text" value="Email").form-registration__data-come-in-email
-				input(type="text" value="Пароль").form-registration__data-come-in-pass
-			div.form-registration__subscription-toggle
+				div.form-registration__data-come-in-email
+					+text-field({type: "email", value: "Email"})
+				div.form-registration__data-come-in-pass
+					+text-field({type: "password", value: "Пароль"})
+			div.form-registration__subscription
 				+toggle({caption: "Получать спецпредложения"})
 			div.form-registration__pay
-				+button({type: 'submit', mode: 'width-arrow', text: 'Перейти к оплате'})
+				+button({type: "button", text: "Перейти к оплате", mode: "forward"})
 			div.form-registration__come-in
 				label.form-registration__come-in-caption Уже есть аккаунт на Toxin
 					div.form-registration__come-in-button
-						+button({type: 'button', mode: 'come-in', text: 'Войти'})
+						+button({type: 'button', text: 'Войти', mode: 'come-in'})

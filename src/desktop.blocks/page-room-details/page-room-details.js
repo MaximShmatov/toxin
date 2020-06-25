@@ -4,7 +4,7 @@ import './page-room-details.sass';
 import '../diagram/diagram';
 import {Review as Review} from '../review/review';
 import '../resources/review/review';
-import reviews from '../../request/page-room-details__reviews.json';
+import reviews from '../../request/reviews.json';
 //import '../form-reservation/form-reservation';
 
 

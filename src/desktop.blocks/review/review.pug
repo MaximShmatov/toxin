@@ -1,8 +1,11 @@
+include ../like/like
+
 mixin review
 	bloquote.review
 		div.review__avatar
 			img.review__avatar-portrait
 			div.review__avatar-like
+				+like
 		div.review__quote
 			cite.review__quote-author
 				span.review__quote-author-name

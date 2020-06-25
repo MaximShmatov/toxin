@@ -1,0 +1,20 @@
+extends ../template-uikit/template-uikit
+
+include ../form-search-room/form-search-room
+include ../form-reservation/form-reservation
+include ../date-picker/date-picker
+include ../form-registration/form-registration
+
+block page-uikit
+	article.uikit-cards
+		asside.uikit-cards__form
+			+form-search-room
+		asside.uikit-cards__form
+			+form-reservation
+		asside.uikit-cards__form
+			+date-picker
+		asside.uikit-cards__form
+			+form-registration
+		asside.uikit-cards__form
+		asside.uikit-cards__form
+		asside.uikit-cards__form

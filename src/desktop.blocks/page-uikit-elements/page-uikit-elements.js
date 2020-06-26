@@ -19,8 +19,7 @@ import '../checkbox-rich/checkbox-rich';
 import '../bullet-list/bullet-list';
 import '../info/info';
 import {Review} from '../review/review';
-import review from '../../request/reviews.json';
-import '../resources/review/review';
+import {review} from '../../resources/review/review';
 
 let $uikitElements = $('.uikit-elements');
 let $dropdownQuantity = $uikitElements.find('.dropdown-quantity');

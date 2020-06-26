@@ -12,3 +12,5 @@ import './856/card-room__856-4.jpg';
 import './888/card-room__888-4.jpg';
 import './980/card-room__980-4.jpg';
 import './982/card-room__982-4.jpg';
+
+export {default as cardRoom} from './card-room.json';

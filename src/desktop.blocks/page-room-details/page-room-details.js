@@ -3,8 +3,8 @@
 import './page-room-details.sass';
 import '../diagram/diagram';
 import {Review as Review} from '../review/review';
-import '../resources/review/review';
-import reviews from '../../request/reviews.json';
+import '../../resources/review/review';
+import reviews from '../../resources/review/review.json';
 //import '../form-reservation/form-reservation';
 
 

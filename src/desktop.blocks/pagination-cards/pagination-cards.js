@@ -2,7 +2,7 @@
 
 import {CardRoom as cardRoom} from '../card-room/card-room';
 import '../resources/resources';
-import roomsData from '../../request/pagination__rooms.json';
+import roomsData from '../../resources/card-room/card-room.json';
 import './pagination-cards.sass';
 
 let rooms = $('.card-room');

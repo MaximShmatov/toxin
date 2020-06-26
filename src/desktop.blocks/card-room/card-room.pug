@@ -21,13 +21,17 @@ mixin card-room
 				div.card-room__slider-control-right
 					button(type="button").card-room__slider-control-right-button
 		div.card-room__price
-			span &#8470;&#160;
-			a(href="page_room_details.html").card-room__price-number
-			span.card-room__price-level
-			span &#8381 в сутки
-			strong.card-room__price-amount
+			div.card-room__price-room
+				h3 &#8470;&#x2002;
+				h2
+					output.card-room__price-number
+				h3
+					output.card-room__price-level
+			div.card-room__price-pay
+				output.card-room__price-pay-amount
+				span &#x20bd;&#8194;
+				span в сутки
 		div.card-room__review
-			div.card-room__review-rate-button
-				+rate-button
-			strong.card-room__review-quantity
+			+rate-button({star: "1", uid: "2"})
+			output.card-room__review-quantity
 			span &#160;Отзывов

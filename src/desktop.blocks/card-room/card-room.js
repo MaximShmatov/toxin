@@ -6,7 +6,7 @@ import './card-room.sass';
 export class CardRoom {
   #$radio = [];
 
-  constructor(room, $card) {
+  constructor($card, room) {
     this.#$radio = $card.find('.card-room__slider-radio').text(room.review);
 
     let $images = $card.find('.card-room__slider-img');
@@ -16,7 +16,7 @@ export class CardRoom {
     $($images[3]).attr('src', room.img4);
     $card.find('.card-room__price-number').text(room.number);
     $card.find('.card-room__price-level').text(room.level);
-    $card.find('.card-room__price-amount').text(room.amount);
+    $card.find('.card-room__price-pay-amount').text(room.amount);
     $card.find('.card-room__review-quantity').text(room.review);
     $card.find('.card-room__slider-control-right-button').on('click', this.listRight.bind(this));
     $card.find('.card-room__slider-control-left-button').on('click', this.listLeft.bind(this));

@@ -1,7 +1,7 @@
 'use strict'
 
 import './form-reservation.sass';
-import reservation from '../../request/page-room-details__form-reservation.json';
+import reservation from '../../resources/form-reservation/form-reservation.json';
 import {DateRange} from '../date-range/date-range';
 import {DropdownQuantity} from '../dropdown-quantity/dropdown-quantity';
 import '../button/button';

@@ -1,0 +1,18 @@
+include ../button/button
+include ../text-field/text-field
+
+mixin form-come-in
+	form.form-come-in
+		fieldset.form-come-in__wrapper
+			legend
+				h1 Войти
+			div.form-come-in__email
+				+text-field({type: "email", value: "Email"})
+			div.form-come-in__pass
+				+text-field({type: "password", value: "Пароль"})
+			div.form-come-in__come
+				+button({type: "button", text: "Войти", mode: "forward"})
+			div.form-come-in__reg
+				label.form-come-in__reg-caption Нет аккаунта на Toxin?
+					div.form-come-in__reg-button
+						+button({type: 'button', text: 'Создать', mode: 'come-in'})

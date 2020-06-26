@@ -38,6 +38,10 @@ module.exports = {
       template: path.resolve(__dirname, 'src/desktop.blocks/page-uikit-cards/page-uikit-cards.pug'),
       filename: 'uikit_cards.html'
     }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src/desktop.blocks/page-uikit-headers-footers/page-uikit-headers-footers.pug'),
+      filename: 'uikit_headers_footers.html'
+    }),
     //new HtmlWebpackPlugin({
     //  template: path.resolve(__dirname, 'src/desktop.blocks/page-landing/page-landing.pug'),
     //  filename: 'landing.html'

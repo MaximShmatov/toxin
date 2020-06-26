@@ -1,6 +1,6 @@
 'use strict'
 
-import '../rate-button/rate-button';
+import {RateButton} from "../rate-button/rate-button";
 import './card-room.sass';
 
 export class CardRoom {
@@ -10,6 +10,9 @@ export class CardRoom {
     this.#$radio = $card.find('.card-room__slider-radio').text(room.review);
 
     let $images = $card.find('.card-room__slider-img');
+    let $rate = $card.find('.rate-button');
+
+    new RateButton($rate, room.rate);
     $($images[0]).attr('src', room.img1);
     $($images[1]).attr('src', room.img2);
     $($images[2]).attr('src', room.img3);

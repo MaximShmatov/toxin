@@ -1,7 +1,7 @@
 include ../rate-button/rate-button
 
 mixin card-room
-	form.card-room
+	div.card-room
 		div.card-room__slider
 			input(type="radio" name="card-room__slider-radio" value="1" data-dir="").card-room__slider-radio
 			div.card-room__slider-item
@@ -32,6 +32,6 @@ mixin card-room
 				span &#x20bd;&#8194;
 				span в сутки
 		div.card-room__review
-			+rate-button({star: "1", uid: "2"})
+			+rate-button
 			output.card-room__review-quantity
 			span &#160;Отзывов

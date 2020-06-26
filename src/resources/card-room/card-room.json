@@ -11,7 +11,8 @@
     "number": 888,
     "level": "люкс",
     "amount": "9 990",
-    "review": "145"
+    "review": 145,
+    "rate": 5
   },
   {
     "img1": "img/card-room__350-4.jpg",
@@ -25,7 +26,8 @@
     "number": 840,
     "level": "",
     "amount": "9 900",
-    "review": "65"
+    "review": 65,
+    "rate": 4
   },
   {
     "img1": "img/card-room__840-4.jpg",
@@ -39,7 +41,8 @@
     "number": 980,
     "level": "люкс",
     "amount": "8 500",
-    "review": "35"
+    "review": 35,
+    "rate": 3
   },
   {
     "img1": "img/card-room__840-4.jpg",
@@ -53,7 +56,8 @@
     "number": 856,
     "level": "",
     "amount": "7 300",
-    "review": "19"
+    "review": 19,
+    "rate": 5
   },
   {
     "img1": "img/card-room__980-4.jpg",
@@ -67,7 +71,8 @@
     "number": 740,
     "level": "",
     "amount": "6 000",
-    "review": "44"
+    "review": 44,
+    "rate": 4
   },
   {
     "img1": "img/card-room__840-4.jpg",
@@ -81,7 +86,8 @@
     "number": 982,
     "level": "",
     "amount": "5 800",
-    "review": "56"
+    "review": 56,
+    "rate": 3
   },
   {
     "img1": "img/card-room__740-4.jpg",
@@ -95,7 +101,8 @@
     "number": 678,
     "level": "",
     "amount": "5 500",
-    "review": "45"
+    "review": 45,
+    "rate": 5
   },
   {
     "img1": "img/card-room__678-4.jpg",
@@ -109,7 +116,8 @@
     "number": 450,
     "level": "",
     "amount": "5 300",
-    "review": "39"
+    "review": 39,
+    "rate": 4
   },
   {
     "img1": "img/card-room__450-4.jpg",
@@ -123,7 +131,8 @@
     "number": 350,
     "level": "",
     "amount": "5 000",
-    "review": "77"
+    "review": 77,
+    "rate": 3
   },
   {
     "img1": "img/card-room__980-4.jpg",
@@ -137,7 +146,8 @@
     "number": 666,
     "level": "",
     "amount": "5 000",
-    "review": "25"
+    "review": 25,
+    "rate": 5
   },
   {
     "img1": "img/card-room__352-4.jpg",
@@ -151,7 +161,8 @@
     "number": 444,
     "level": "",
     "amount": "5 000",
-    "review": "15"
+    "review": 15,
+    "rate": 4
   },
   {
     "img1": "img/card-room__980-4.jpg",
@@ -165,6 +176,7 @@
     "number": 352,
     "level": "",
     "amount": "5 000",
-    "review": "55"
+    "review": 55,
+    "rate": 3
   }
 ]

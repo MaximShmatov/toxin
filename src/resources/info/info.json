@@ -1,0 +1,20 @@
+[
+  {
+    "img": "img/info__ico1.svg",
+    "alt": "Комфорт",
+    "term": "Комфорт",
+    "definition": "Шумопоглощающие стены"
+  },
+  {
+    "img": "img/info__ico2.svg",
+    "alt": "Удобство",
+    "term": "Удобство",
+    "definition": "Окно в каждой из спален"
+  },
+  {
+    "img": "img/info__ico3.svg",
+    "alt": "Уют",
+    "term": "Уют",
+    "definition": "Номер оснащен камином"
+  }
+]

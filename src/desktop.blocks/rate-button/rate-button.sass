@@ -1,12 +1,17 @@
 .rate-button
   max-width: 120px
-  font-size: 0
-  line-height: 0
+  display: flex
+  justify-content: center
+
   &__star
-    display: inline-block
+    display: block
     width: 24px
     height: 24px
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+
+    &:hover
+      opacity: 0.5
+
     &::before
       font-family: "Material Icons", sans-serif
       font-size: 24px
@@ -15,8 +20,10 @@
       color: black
       content: '\e838'
       mix-blend-mode: lighten
+
   &__radio
     display: none
+
   &__radio:checked + &__star ~ &__star
     &::before
       content: '\e83a'

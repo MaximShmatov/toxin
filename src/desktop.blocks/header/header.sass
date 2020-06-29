@@ -2,31 +2,39 @@
   display: flex
   justify-content: space-between
   align-items: center
-  flex-grow: 1
   flex-wrap: wrap
   max-width: 1160px
+  width: 100%
   margin: 0 auto
 
   &__menu
     display: flex
     justify-content: flex-end
-    align-items: center
+    align-items: baseline
     flex-wrap: wrap
     flex-grow: 1
-    font-size: 0
 
     &-items
       display: flex
-      justify-content: center
-      align-items: center
       flex-wrap: wrap
+      line-height: 17px
       padding: 0
       margin: 0
 
     &-item
-      font-size: 14px
       list-style: none
       margin-left: 20px
+
+    &-item:nth-of-type(1)
+      font-weight: bold
+
+    &-item:nth-of-type(2)
+      position: relative
+      display: flex
+
+    &-item:nth-of-type(5)
+      position: relative
+      display: flex
 
     &-ref
       color: rgba(31, 32, 65, 0.5)
@@ -39,7 +47,9 @@
     padding: 0
     width: 24px
     height: 21px
-    vertical-align: bottom
+
+    &:active + &-items
+      display: block
 
     &::before
       font-family: "Material Icons", sans-serif
@@ -49,12 +59,12 @@
       color: rgba(31, 32, 65, 0.5)
 
     &-items
-      visibility: hidden
+      display: none
       position: absolute
       list-style: none
       padding: 0
-      top: 21px
-      left: 0
+      top: 100%
+      right: 0
       background-color: white
       border: 1px solid rgba(31, 32, 65, 0.5)
       z-index: 1

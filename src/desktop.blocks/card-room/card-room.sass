@@ -8,7 +8,7 @@
 
   &__slider
     position: relative
-    height: 152px
+    height: 151px
     border-radius: 4px 4px 0 0
     overflow: hidden
     margin-bottom: 20px
@@ -29,9 +29,11 @@
     & :checked[data-dir="r"] + &-item + &-img ~ &-img
       transform: translateX(100%)
       transition: .8s
+
     & :checked[data-dir="l"] + &-item + &-img
       transform: translateX(0)
       transition: .8s
+
       & ~ img
         transform: translateX(100%)
 

@@ -1,12 +1,12 @@
 'use strict'
 
-import {CardRoom as cardRoom} from '../card-room/card-room';
-import '../resources/resources';
-import roomsData from '../../resources/card-room/card-room.json';
 import './pagination-cards.sass';
+import {CardRoom} from '../card-room/card-room';
+import {cardRoom} from '../../resources/card-room/card-room';
 
-let rooms = $('.card-room');
+let $paginationCards = $('.pagination-cards');
+let $cardRoom = $paginationCards.find('.card-room');
 
 for(let i = 0; i < 12; i++) {
-  new cardRoom(roomsData[i], $(rooms[i]));
+  new CardRoom($($cardRoom[i]), cardRoom[i]);
 }

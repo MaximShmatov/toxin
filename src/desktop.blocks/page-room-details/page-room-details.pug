@@ -1,30 +1,23 @@
-extends ../template-main/template-main
+extends ../template-site/template-site
+
+include ../info/info
 include ../diagram/diagram
 include ../review/review
+include ../bullet-list/bullet-list
 include ../form-reservation/form-reservation
 
-block page
+block page-site
 	article.page-room
 		section.page-room__preview
 		section.page-room__details
 			article.page-room__details-info
-				h2 Сведения о номере
-				ul.page-room__details-info-items
-					li.page-room__details-info-items-item
-						div.page-room__details-info-items-item-icon
-						dl.page-room__details-info-items-item-list
-							dt Комфорт
-							dd Шумопоглощающие стены
-					li.page-room__details-info-items-item
-						div.page-room__details-info-items-item-icon
-						dl.page-room__details-info-items-item-list
-							dt Удобство
-							dd Окно в каждой из спален
-					li.page-room__details-info-items-item
-						div.page-room__details-info-items-item-icon
-						dl.page-room__details-info-items-item-list
-							dt Уют
-							dd Номер оснащен камином
+				h2.page-room__details-info-title Сведения о номере
+				div.page-room__details-info-item
+					+info
+				div.page-room__details-info-item
+					+info
+				div.page-room__details-info-item
+					+info
 			article.page-room__details-effect
 				h2 Впечатления от номера
 				div.page-room__details-effect-diagram
@@ -39,10 +32,7 @@ block page
 					+review
 			article.page-room__details-rules
 				h2.page-room__details-rules-title Правила
-				ul.page-room__details-rules-items
-					li.page-room__details-rules-items-item Нельзя с питомцами
-					li.page-room__details-rules-items-item Без вечеринок и мероприятий
-					li.page-room__details-rules-items-item Время прибытия &mdash; после 13:00, а выезд до 12:00
+				+bullet-list
 			article.page-room__details-cancel
 				h2 Отмена
 				p

@@ -1,18 +1,19 @@
 include ../rate-button/rate-button
 
 mixin card-room
+	-let name = Math.random();
 	div.card-room
 		div.card-room__slider
-			input(type="radio" name="card-room__slider-radio" value="1" data-dir="").card-room__slider-radio
+			input(type="radio" name=name value="1" data-dir="").card-room__slider-radio
 			div.card-room__slider-item
 			img(src="" alt="").card-room__slider-img
-			input(type="radio" name="card-room__slider-radio" value="2" data-dir="").card-room__slider-radio
+			input(type="radio" name=name value="2" data-dir="").card-room__slider-radio
 			div.card-room__slider-item
 			img(src="" alt="").card-room__slider-img
-			input(type="radio" name="card-room__slider-radio" value="3" data-dir="").card-room__slider-radio
+			input(type="radio" name=name value="3" data-dir="").card-room__slider-radio
 			div.card-room__slider-item
 			img(src="" alt="").card-room__slider-img
-			input(type="radio" name="card-room__slider-radio" value="4" data-dir="" checked).card-room__slider-radio
+			input(type="radio" name=name value="4" data-dir="" checked).card-room__slider-radio
 			div.card-room__slider-item
 			img(src="" alt="").card-room__slider-img
 			div.card-room__slider-control

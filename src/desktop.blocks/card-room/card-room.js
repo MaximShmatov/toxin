@@ -7,7 +7,7 @@ export class CardRoom {
   #$radio = [];
 
   constructor($card, room) {
-    this.#$radio = $card.find('.card-room__slider-radio').text(room.review);
+    this.#$radio = $card.find('.card-room__slider-radio');
 
     let $images = $card.find('.card-room__slider-img');
     let $rate = $card.find('.rate-button');

@@ -1,15 +1,20 @@
 extends ../template-uikit/template-uikit
 
-include ../header-main/header-main
+include ../header/header
+include ../footer/footer
+include ../copyright/copyright
 
 block page-uikit
 	div.uikit-headers-footers__wrapper
 		article.uikit-headers-footers
 			header.uikit-headers-footers__header
-				+header-main
+				+header
 			header.uikit-headers-footers__header
-
+				+header("Юлий Цезарь")
 			footer.uikit-headers-footers__footer
-
+				+footer
 			footer.uikit-headers-footers__footer
+				+copyright
+			footer.uikit-headers-footers__footer
+				+copyright("copyright_tablet")
 

@@ -1,69 +1,49 @@
-.footer-menu
+.footer
   display: flex
   justify-content: space-between
-  align-items: flex-start
+  max-width: 1160px
   flex-wrap: wrap
-  flex-grow: 1
+  margin: 0 auto
+  padding: 100px 0
+
+  &__wrapper
+    background-color: white
+    box-shadow: 0 1px 0 rgba(31, 32, 65, 0.1)
 
   &__logo
+    width: 260px
     margin-right: 40px
 
-  &__navigation
-    display: flex
-    justify-content: space-between
-    flex-wrap: wrap
+    &-caption
+      margin-top: 10px
+
+  &__nav
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr
     flex-grow: 1
     margin-top: 0
 
-  &__column-items
-    list-style: none
-    margin: 0
-    padding: 0
-    width: 200px
+    &-items
+      list-style: none
+      margin: 0
+      padding: 0
 
-  &__column-title
-    font-weight: bold
-    font-size: 12px
-    line-height: 15px
-    text-transform: uppercase
-    color: #1F2041
-    margin: 4px 0 21px 0
+      &-title
+        margin: 4px 0 1px
 
-  &__item
-    margin-top: 20px
+      &-item
+        line-height: 18px
+        margin-top: 20px
 
-  &__ref
-    text-decoration: none
-    line-height: 18px
-    color: rgba(31, 32, 65, 0.5)
+        &-ref
+          text-decoration: none
+          color: rgba(31, 32, 65, 0.5)
 
-  &__paragraph
-    max-width: 260px
-    line-height: 24px
-    color: rgba(31, 32, 65, 0.75)
+  &__subscription
+    width: 260px
 
-  &__logo &__paragraph
-    margin-top: 13px
+    &-title
+      margin-top: 4px
 
-  &__column-title ~ &__paragraph
-    margin: -3px 0 23px
-
-  &__email-form
-    display: flex
-    justify-content: space-between
-    max-width: 260px
-    height: 44px
-    border: 1px solid rgba(31, 32, 65, 0.25)
-    border-radius: 4px
-    box-sizing: border-box
-
-
-    &-input
-      font: inherit
-      margin-left: 15px
-      color: rgba(31, 32, 65, 0.25)
-      border: none
-      flex-grow: 1
-
-    &-button
-      min-width: 42px
+    &-caption
+      margin: 18px 0 23px

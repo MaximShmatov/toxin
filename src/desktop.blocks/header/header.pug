@@ -1,33 +1,38 @@
 include ../button/button
 
-mixin header-main
-	div.header-main
-		img.header-main__logo(src="img/template-main__logo.png")
-		nav.header-main__menu
-			ul.header-main__menu-items
-				li.header-main__menu-item
-					a.header-main__menu-ref(href="http://undefined.html") О нас
-				li.header-main__menu-item
-					a.header-main__menu-ref(href="http://undefined.html") Услуги
-					button(type="button").header-main__submenu
-					ul.header-main__submenu-items
-						li.header-main__submenu-item
-							a.header-main__menu-ref(href="http://undefined.html") Услуга 1
-						li.header-main__submenu-item
-							a.header-main__menu-ref(href="http://undefined.html") Услуга 2
-				li.header-main__menu-item
-					a.header-main__menu-ref(href="http://undefined.html") Вакансии
-				li.header-main__menu-item
-					a.header-main__menu-ref(href="http://undefined.html") Новости
-				li.header-main__menu-item
-					a.header-main__menu-ref(href="http://undefined.html") Соглашения
-					button(type="button").header-main__submenu
-					ul.header-main__submenu-items
-						li.header-main__submenu-item
-							a.header-main__menu-ref(href="http://undefined.html") Соглашение 1
-						li.header-main__submenu-item
-							a.header-main__menu-ref(href="http://undefined.html") Соглашение 2
-			div.header-main__button-come-in
-				+button({type: 'button', mode: 'come-in', text: 'Войти'})
-			div.header-main__button-registration
-				+button({type: 'button', mode: 'registration', text: 'Зарегистрироваться'})
+mixin header(name)
+	div.header__wrapper
+		div.header
+			img.header__logo(src="img/template-main__logo.png")
+			nav.header__menu
+				ul.header__menu-items
+					li.header__menu-item
+						a.header__menu-ref(href="http://undefined.html") О нас
+					li.header__menu-item
+						a.header__menu-ref(href="http://undefined.html") Услуги
+						button(type="button").header__submenu
+						ul.header__submenu-items
+							li.header__submenu-item
+								a.header__menu-ref(href="http://undefined.html") Услуга 1
+							li.header__submenu-item
+								a.header__menu-ref(href="http://undefined.html") Услуга 2
+					li.header__menu-item
+						a.header__menu-ref(href="http://undefined.html") Вакансии
+					li.header__menu-item
+						a.header__menu-ref(href="http://undefined.html") Новости
+					li.header__menu-item
+						a.header__menu-ref(href="http://undefined.html") Соглашения
+						button(type="button").header__submenu
+						ul.header__submenu-items
+							li.header__submenu-item
+								a.header__menu-ref(href="http://undefined.html") Соглашение 1
+							li.header__submenu-item
+								a.header__menu-ref(href="http://undefined.html") Соглашение 2
+			if(name)
+				div.header__menu-separator
+				output.header__menu-user= name
+			else
+				div.header__button-come-in
+					+button({type: 'button', mode: 'come-in', text: 'Войти'})
+				div.header__button-registration
+					+button({type: 'button', mode: 'registration', text: 'Зарегистрироваться'})

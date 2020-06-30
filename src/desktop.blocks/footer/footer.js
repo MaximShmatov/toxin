@@ -1,4 +1,4 @@
 'use strict'
 
-import './footer-menu.sass';
-import '../button/button';
+import './footer.sass';
+import '../subscription/subscription';

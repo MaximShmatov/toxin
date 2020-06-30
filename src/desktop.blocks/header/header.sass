@@ -1,23 +1,27 @@
-.header-main
+.header
   display: flex
   justify-content: space-between
   align-items: center
   flex-wrap: wrap
+
   max-width: 1160px
   width: 100%
   margin: 0 auto
+  padding: 15px 0
+
+  &__wrapper
+    background-color: white
+    box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05)
 
   &__menu
     display: flex
     justify-content: flex-end
-    align-items: baseline
     flex-wrap: wrap
     flex-grow: 1
 
     &-items
       display: flex
       flex-wrap: wrap
-      line-height: 17px
       padding: 0
       margin: 0
 
@@ -25,7 +29,8 @@
       list-style: none
       margin-left: 20px
 
-    &-item:nth-of-type(1)
+    &-item:nth-of-type(1) > a
+      color: rgba(31, 32, 65, 0.75)
       font-weight: bold
 
     &-item:nth-of-type(2)
@@ -40,13 +45,23 @@
       color: rgba(31, 32, 65, 0.5)
       text-decoration: none
 
+    &-separator
+      height: 30px
+      width: 1px
+      margin: 0 20px
+      background: rgba(31, 32, 65, 0.1)
+
+    &-user
+      color: rgba(31, 32, 65, 0.5)
+
   &__submenu
     border: none
     outline: none
     background: transparent
     padding: 0
-    width: 24px
-    height: 21px
+    display: flex
+    align-items: flex-end
+    margin-left: 1px
 
     &:active + &-items
       display: block

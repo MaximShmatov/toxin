@@ -1,11 +1,11 @@
 extends ../template-site/template-site
 include ../filter/filter
-include ../pagination/pagination
+include ../pagination-cards/pagination-cards
 
 block page-site
 	article.page-search-room
 		section.page-search-room__filter
 			+filter
 		section.page-search-room__pagination
-			+pagination
+			+pagination-cards
 	div.page-search-room__separator

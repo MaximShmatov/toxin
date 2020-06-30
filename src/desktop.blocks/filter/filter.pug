@@ -1,43 +1,34 @@
 include ../date-filter/date-filter
-include __comfort/__comfort
-include ../checkbox/checkbox
-include __room/__room
 include ../dropdown-quantity/dropdown-quantity
+include ../checkbox/checkbox
+include ../checkbox-rich/checkbox-rich
+include ../checkbox-list/checkbox-list
 
 mixin filter
-	form.filter
+	div.filter
+		h3.filter__date-range-title Даты пребывания в отеле
 		div.filter__date-range
 			+date-filter
+		h3.filter__guests-quantity-title Гости
 		div.filter__guests-quantity
 			+dropdown-quantity
 		div.filter__price
-			div.filter__price-header
-				h3 Диапазон цены
-				output.filter__price-header-range 5 000p - 10 000p
+			h3 Диапазон цены
 			div.filter__price-slider
 			p.filter__price-info Стоимость за сутки пребывания в номере
+		h3.filter__permission-title Checkbox Buttons
 		div.filter__permission
-			h3 Checkbox Buttons
-			label.filter__permission-item Можно курить
-				div.filter__permission-checkbox
-					+checkbox({name: 'smoke'})
-			label.filter__permission-item Можно с питомцами
-				div.filter__permission-checkbox
-					+checkbox({name: 'smoke', checked: 'checked'})
-			label.filter__permission-item Можно пригласить гостей (до 10 человек)
-				div.filter__permission-checkbox
-					+checkbox({name: 'smoke', checked: 'checked'})
+			div.filter__permission-checkbox
+				+checkbox({name: "smoke", caption: "Можно курить"})
+			div.filter__permission-checkbox
+				+checkbox({name: "pet", caption: "Можно с питомцами", checked: "checked"})
+			div.filter__permission-checkbox
+				+checkbox({name: "guests", caption: "Можно пригласить гостей (до 10 человек)", checked: "checked"})
+		h3.filter__availability-title Доступность
 		div.filter__availability
-			h3 Доступность
-			label.filter__availability-item Широкий коридор
-				div.filter__availability-checkbox
-					+checkbox({name: 'corridor'})
-			p.filter__availability-info Ширина коридоров в номере не менее 91 см.
-			label.filter__availability-item Помошник для инвалидов
-				div.filter__availability-checkbox
-					+checkbox({name: 'assistant'})
-			p.filter__availability-info На 1 этаже вас встретит специалист и проводит до номера.
+			+checkbox-rich
+		h3.filter__comfort-room-title Удобства номера
 		div.filter__comfort-room
-			+filter__room
+			+dropdown-quantity("room")
 		div.filter__comfort-additionally
-			+filter__comfort
+			+checkbox-list("Дополнительные удобства")

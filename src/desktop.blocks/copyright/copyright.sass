@@ -1,27 +1,57 @@
-.footer-copyright
+.copyright
   display: flex
   justify-content: space-between
   align-items: center
   flex-grow: 1
   flex-wrap: wrap
-  line-height: 18px
-  color: rgba(31, 32, 65, 0.75)
+  max-width: 1160px
+  margin: 0 auto
+  padding: 23px 0
+  background-color: white
 
-  &__social-icons
+  &__wrapper
+    background-color: white
+    box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05)
+
+  &__logo
+    display: none
+
+  &__caption
+    line-height: 17px
+    margin: 0
+
+  &__social
     display: flex
     max-width: 112px
+    width: 100%
     justify-content: space-between
-    flex-grow: 1
 
-  &__social-icon
-    width: 24px
-    height: 24px
+    &-icon
+      width: 24px
+      height: 24px
 
-  &__social-icon:nth-child(1)
-    background: url('footer-copyright__twitter.png') no-repeat center center
+    &-icon:nth-child(1)
+      background: url('copyright__twitter.png') no-repeat center center
 
-  &__social-icon:nth-child(2)
-    background: url('footer-copyright__facebook.png') no-repeat center center
+    &-icon:nth-child(2)
+      background: url('copyright__facebook.png') no-repeat center center
 
-  &__social-icon:nth-child(3)
-    background: url('footer-copyright__instagram.png') no-repeat center center
+    &-icon:nth-child(3)
+      background: url('copyright__instagram.png') no-repeat center center
+
+  &_tablet
+    background-color: transparent
+    box-shadow: none
+
+    .copyright
+      flex-direction: column
+      max-width: 768px
+      padding: 120px 0
+      box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05)
+
+    .copyright__logo
+      display: block
+
+    .copyright__caption
+      text-align: center
+      margin: 21px 0 25px

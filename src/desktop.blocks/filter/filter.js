@@ -1,11 +1,20 @@
 'use strict'
 
-import '../date-filter/date-filter';
-import './__comfort/__comfort';
-import '../checkbox/checkbox';
-import './__room/__room';
-import '../dropdown-quantity/dropdown-quantity';
 import './filter.sass';
+import {DateFilter} from "../date-filter/date-filter";
+import {DropdownQuantity} from "../dropdown-quantity/dropdown-quantity";
+import '../checkbox/checkbox';
+import '../checkbox-rich/checkbox-rich';
+import {CheckboxList} from "../checkbox-list/checkbox-list";
 
-let $dropdownOut = $('.dropdown-quantity').find('.dropdown__head-out');
-$dropdownOut.val(sessionStorage.getItem('guests'));
+
+
+let $filter = $('.filter');
+let $dateFilter = $filter.find('.date-filter');
+let $dropdownQuantity = $filter.find('.dropdown-quantity');
+let $checkboxList = $filter.find('.checkbox-list');
+
+new DateFilter($($dateFilter[0]));
+new DropdownQuantity($($dropdownQuantity[0]));
+new DropdownQuantity($($dropdownQuantity[1]), 'room');
+new CheckboxList($($checkboxList[0]));

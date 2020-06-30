@@ -1,43 +1,42 @@
-include ../button/button
+include ../subscription/subscription
 
-mixin footer-menu
-	div.footer-menu
-		section.footer-menu__logo
-			img(alt="logo" src="img/template-main__logo.png")
-			p.footer-menu__paragraph Бронирование номеров в лучшем отеле 2019 года по версии ассоциации &laquo;Отельные взгляды&raquo;
-		nav.footer-menu__navigation
-			ul.footer-menu__column-items
-				h4.footer-menu__column-title Навигация
-				li.footer-menu__item
-					a.footer-menu__ref(href="http://undefined.ru") О нас
-				li.footer-menu__item
-					a.footer-menu__ref(href="http://undefined.ru") Новости
-				li.footer-menu__item
-					a.footer-menu__ref(href="http://undefined.ru") Служба поддержки
-				li.footer-menu__item
-					a.footer-menu__ref(href="http://undefined.ru") Услуги
-			ul.footer-menu__column-items
-				h4.footer-menu__column-title О нас
-				li.footer-menu__item
-					a.footer-menu__ref(href="http://undefined.ru") О сервисе
-				li.footer-menu__item
-					a.footer-menu__ref(href="http://undefined.ru") Наша команда
-				li.footer-menu__item
-					a.footer-menu__ref(href="http://undefined.ru") Вакансии
-				li.footer-menu__item
-					a.footer-menu__ref(href="http://undefined.ru") Инвесторы
-			ul.footer-menu__column-items
-				h4.footer-menu__column-title Служба поддержки
-				li.footer-menu__item
-					a.footer-menu__ref(href="http://undefined.ru") Соглашения
-				li.footer-menu__item
-					a.footer-menu__ref(href="http://undefined.ru") Сообщества
-				li.footer-menu__item
-					a.footer-menu__ref(href="http://undefined.ru") Связь с нами
-		section.footer-menu__subscription
-			h4.footer-menu__column-title Подписка
-			p.footer-menu__paragraph Получайте специальные предложения и новости сервиса
-			form.footer-menu__email-form
-				input.footer-menu__email-form-input(type="email" value="Email" name="Email")
-				div.footer-menu__email-form-button
-					+button({type: 'submit', mode: 'arrow-gradient'})
+mixin footer
+	div.footer__wrapper
+		div.footer
+			section.footer__logo
+				img(alt="logo" src="img/template-main__logo.png")
+				p.footer__logo-caption Бронирование номеров в лучшем отеле 2019 года по версии ассоциации &laquo;Отельные взгляды&raquo;
+			nav.footer__nav
+				h3.footer__nav-items-title Навигация
+				h3.footer__nav-items-title О нас
+				h3.footer__nav-items-title Служба поддержки
+				ul.footer__nav-items
+					li.footer__nav-items-item
+						a.footer__nav-items-item-ref(href="http://undefined.ru") О нас
+					li.footer__nav-items-item
+						a.footer__nav-items-item-ref(href="http://undefined.ru") Новости
+					li.footer__nav-items-item
+						a.footer__nav-items-item-ref(href="http://undefined.ru") Служба поддержки
+					li.footer__nav-items-item
+						a.footer__nav-items-item-ref(href="http://undefined.ru") Услуги
+				ul.footer__nav-items
+					li.footer__nav-items-item
+						a.footer__nav-items-item-ref(href="http://undefined.ru") О сервисе
+					li.footer__nav-items-item
+						a.footer__nav-items-item-ref(href="http://undefined.ru") Наша команда
+					li.footer__nav-items-item
+						a.footer__nav-items-item-ref(href="http://undefined.ru") Вакансии
+					li.footer__nav-items-item
+						a.footer__nav-items-item-ref(href="http://undefined.ru") Инвесторы
+				ul.footer__nav-items
+					li.footer__nav-items-item
+						a.footer__nav-items-item-ref(href="http://undefined.ru") Соглашения
+					li.footer__nav-items-item
+						a.footer__nav-items-item-ref(href="http://undefined.ru") Сообщества
+					li.footer__nav-items-item
+						a.footer__nav-items-item-ref(href="http://undefined.ru") Связь с нами
+			usection.footer__subscription
+				h3.footer__subscription-title Подписка
+				p.footer__subscription-caption Получайте специальные предложения и новости сервиса
+				div.footer__subscription-form
+					+subscription

@@ -1,81 +1,54 @@
-@mixin info
-  font-size: 12px
-  line-height: 14px
-  margin: 0
-
 .filter
-  display: flex
-  flex-direction: column
   max-width: 266px
   line-height: 18px
+
   &__date-range
-    //margin-top: 21px
+    margin-top: 5px
 
   &__guests-quantity
-    margin-top: 21px
+    margin-top: 5px
+    &-title
+      margin-top: 20px
 
   &__price
-    display: flex
-    flex-direction: column
-    justify-content: space-between
-    min-height: 72px
     margin-top: 30px
-    &-header
-      display: flex
-      justify-content: space-between
-      align-items: center
-      &-range
-        font-size: 12px
-        line-height: 15px
-        text-transform: uppercase
+
     &-slider
       height: 6px
       border: 1px solid rgba(31, 32, 65, 0.25)
       box-sizing: border-box
       border-radius: 3px
-      margin-top: 10px
+      margin: 23px 0 14px
+
     &-info
-      @include info
+      font-size: 12px
+      line-height: 14px
+      color: rgba(31, 32, 65, 0.5)
+      margin: 0
 
   &__permission
-    display: flex
-    flex-direction: column
-    justify-content: space-between
-    align-items: flex-start
-    min-height: 130px
-    max-width: 240px
-    margin-top: 30px
-    &-item
-      display: flex
-      flex-direction: row-reverse
-      align-items: flex-start
-      &:first-of-type
-        margin-top: 10px
+    margin-top: 5px
+    max-width: 222px
+
+    &-title
+      margin: 30px 0 16px
+
     &-checkbox
-      margin-right: 10px
+      color: rgba(31, 32, 65, 0.5)
+      margin-top: 10px
 
   &__availability
-    margin-top: 30px
-    &-item
-      display: flex
-      flex-direction: row-reverse
-      align-items: flex-start
-      justify-content: flex-end
-      font-weight: bold
-      color: rgba(31, 32, 65, 0.75)
-      margin-bottom: 5px
-      &:first-of-type
-        margin-top: 16px
-      &:last-of-type
-        margin-top: 10px
-    &-checkbox
-      margin-right: 10px
-    &-info
-      @include info
-      margin: 4px 10px 0 30px
+    margin-top: 5px
+
+    &-title
+      margin: 31px 0 16px
+
 
   &__comfort-room
-    margin-top: 30px
+    margin-top: 5px
+
+    &-title
+      margin-top: 30px
 
   &__comfort-additionally
     margin-top: 16px

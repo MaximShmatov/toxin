@@ -1,4 +1,5 @@
 mixin checkbox(props)
-	label.checkbox= props.caption
-		input(type="checkbox" name= props.name checked= props.checked).checkbox__true
+	-let {caption = '', name = '', checked = ''} = props
+	label.checkbox= caption
+		input(type="checkbox" name= name checked= checked).checkbox__true
 		div.checkbox__false

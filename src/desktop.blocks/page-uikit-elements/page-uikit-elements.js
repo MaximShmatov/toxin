@@ -1,6 +1,7 @@
 'use strict'
 
 import './page-uikit-elements.sass';
+import {RangeSlider} from '../range-slider/range-slider';
 import {DropdownQuantity} from '../dropdown-quantity/dropdown-quantity';
 import {DateRange} from '../date-range/date-range';
 import {DateFilter} from '../date-filter/date-filter';
@@ -11,7 +12,6 @@ import '../radio/radio';
 import '../toggle/toggle';
 import {Like} from '../like/like';
 import {RateButton} from '../rate-button/rate-button';
-import '../range-slider/range-slider';
 import '../button/button';
 import '../pagination/pagination';
 import {CheckboxList} from '../checkbox-list/checkbox-list';
@@ -24,6 +24,7 @@ import {review} from '../../resources/review/review';
 
 
 let $uikitElements = $('.uikit-elements');
+let $rangeSlider = $uikitElements.find('.range-slider');
 let $dropdownQuantity = $uikitElements.find('.dropdown-quantity');
 let $like = $uikitElements.find('.like');
 let $rate = $uikitElements.find('.rate-button');
@@ -33,6 +34,13 @@ let $dateFilter = $uikitElements.find('.date-filter');
 let $info = $uikitElements.find('.info');
 let $review = $uikitElements.find('.review');
 
+new RangeSlider($rangeSlider);
+let $rangeSliderTitle = $uikitElements.find('.range-slider__title');
+let $rangeSliderPrice = $uikitElements.find('.range-slider__range');
+let $rangeSliderInfo = $uikitElements.find('.range-slider__info');
+$rangeSliderInfo.css('visibility', 'hidden');
+$rangeSliderTitle.text('Range slider');
+$rangeSliderTitle.append($rangeSliderPrice);
 
 new DropdownQuantity($($dropdownQuantity[0]));
 new DateRange($dateRange);

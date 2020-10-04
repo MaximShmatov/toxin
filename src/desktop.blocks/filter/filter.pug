@@ -1,34 +1,33 @@
 include ../date-filter/date-filter
+include ../range-slider/range-slider
 include ../dropdown-quantity/dropdown-quantity
 include ../checkbox/checkbox
 include ../checkbox-rich/checkbox-rich
 include ../checkbox-list/checkbox-list
 
 mixin filter
-	div.filter
-		h3.filter__date-range-title Даты пребывания в отеле
-		div.filter__date-range
-			+date-filter
-		h3.filter__guests-quantity-title Гости
-		div.filter__guests-quantity
-			+dropdown-quantity
-		div.filter__price
-			h3 Диапазон цены
-			div.filter__price-slider
-			p.filter__price-info Стоимость за сутки пребывания в номере
-		h3.filter__permission-title Checkbox Buttons
-		div.filter__permission
-			div.filter__permission-checkbox
-				+checkbox({name: "smoke", caption: "Можно курить"})
-			div.filter__permission-checkbox
-				+checkbox({name: "pet", caption: "Можно с питомцами", checked: "checked"})
-			div.filter__permission-checkbox
-				+checkbox({name: "guests", caption: "Можно пригласить гостей (до 10 человек)", checked: "checked"})
-		h3.filter__availability-title Доступность
-		div.filter__availability
-			+checkbox-rich
-		h3.filter__comfort-room-title Удобства номера
-		div.filter__comfort-room
-			+dropdown-quantity("room")
-		div.filter__comfort-additionally
-			+checkbox-list("Дополнительные удобства")
+  div.filter
+    h3.filter__date-range-title Даты пребывания в отеле
+    div.filter__date-range
+      +date-filter
+    h3.filter__guests-quantity-title Гости
+    div.filter__guests-quantity
+      +dropdown-quantity
+    div.filter__price
+      +range-slider
+    h3.filter__permission-title Checkbox Buttons
+    div.filter__permission
+      div.filter__permission-checkbox
+        +checkbox({name: "smoke", caption: "Можно курить"})
+      div.filter__permission-checkbox
+        +checkbox({name: "pet", caption: "Можно с питомцами", checked: "checked"})
+      div.filter__permission-checkbox
+        +checkbox({name: "guests", caption: "Можно пригласить гостей (до 10 человек)", checked: "checked"})
+    h3.filter__availability-title Доступность
+    div.filter__availability
+      +checkbox-rich
+    h3.filter__comfort-room-title Удобства номера
+    div.filter__comfort-room
+      +dropdown-quantity("room")
+    div.filter__comfort-additionally
+      +checkbox-list("Дополнительные удобства")

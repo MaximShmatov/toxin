@@ -1,2 +1,6 @@
 mixin range-slider
-	div.range-slider
+  div.range-slider
+    h3.range-slider__title Диапазон цены
+      output.range-slider__range(form="price" name="price-range")
+    div(data-on-range="true", data-min-value="0", data-max-value="15000", data-value-from="5000", data-value-to="10000").range-slider__plugin
+    p.range-slider__info Стоимость за сутки пребывания в номере

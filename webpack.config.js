@@ -20,7 +20,8 @@ module.exports = {
   devtool: 'inline-source-map',
   plugins: [
     new webpack.ProvidePlugin({
-      $: 'jquery'
+      $: 'jquery',
+      jQuery: 'jquery'
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/desktop.blocks/page-index/page-index.pug'),

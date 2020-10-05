@@ -19,7 +19,6 @@ export class DropdownQuantity {
   #setCaption;
 
   constructor($dropdown, mode) {
-
     this.#$dropdown = $dropdown;
     this.#$headOut = $dropdown.find('.dropdown-quantity__head-out');
     this.#$headButton = $dropdown.find('.dropdown-quantity__head-button');
@@ -30,8 +29,8 @@ export class DropdownQuantity {
     this.#$clear = $dropdown.find('.dropdown-quantity__picker-item-clear');
     this.#$submit = $dropdown.find('.dropdown-quantity__picker-item-submit');
 
-    if(mode === 'room') this.#initRoomMode();
-      else this.#initGuestsMode();
+    if (mode === 'room') this.#initRoomMode();
+    else this.#initGuestsMode();
 
     this.#quantity = {
       firstItem: Number($(this.#$amount[0]).text()),

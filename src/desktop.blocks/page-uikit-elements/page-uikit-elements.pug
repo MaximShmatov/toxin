@@ -33,12 +33,10 @@ block page-uikit
           h3 Text field
           +text-field({type: "text", value: "Имя"})
       div.uikit-elements__sect1-element
-        span.uikit-elements__sect1-element-caption Default
         h3 Dropdown
         +dropdown-quantity
       div.uikit-elements__sect1-element
         label
-          span.uikit-elements__sect1-element-caption Default
           h3 Masked text field
           +text-field({type: "text", value: "дд.мм.гггг", mask: "99.99.9999"})
       div.uikit-elements__sect1-element
@@ -58,15 +56,16 @@ block page-uikit
       div.uikit-elements__sect2-element
         h3 Checkbox buttons
         div.uikit-elements__sect2-element-checkbox
-          +checkbox({name: "smoke", caption: "Можно курить"})
+          +checkbox({name: "smoke", caption: "Можно курить", checked: false})
         div.uikit-elements__sect2-element-checkbox
-          +checkbox({name: "pet", caption: "Можно с питомцами", checked: "checked"})
+          +checkbox({name: "pet", caption: "Можно с питомцами", checked: true})
         div.uikit-elements__sect2-element-checkbox
-          +checkbox({name: "guests", caption: "Можно пригласить гостей (до 10 человек)", checked: "checked"})
+          +checkbox({name: "guests", caption: "Можно пригласить гостей", checked: true})
+          spa.uikit-elements__sect2-element-checkbox-note (до 10 человек)
       div.uikit-elements__sect2-element
         h3 Radio buttons
         div.uikit-elements__sect2-element-radio
-          +radio({name: "registration__mw-radio", value: "m", caption: "Мужчина", checked: "true"})
+          +radio({name: "registration__mw-radio", value: "m", caption: "Мужчина", checked: true})
         div.uikit-elements__sect2-element-radio
           +radio({name: "registration__mw-radio", value: "w", caption: "Женщина"})
       div.uikit-elements__sect2-element
@@ -97,12 +96,12 @@ block page-uikit
           div.uikit-elements__sect3-element-group1-button
             +button({type: "button", text: "Click me", mode: "registration"})
           div.uikit-elements__sect3-element-group1-button
-            +button({type: "button", text: "Click me", mode: "registration", disabled: "true"})
+            +button({type: "button", text: "Click me", mode: "registration", disabled: true})
         div.uikit-elements__sect3-element-group2
           div.uikit-elements__sect3-element-group2-button
             +button({type: "button", text: "Click me", mode: "come-in"})
           div.uikit-elements__sect3-element-group2-button
-            +button({type: "button", text: "Click me", mode: "come-in", disabled: "true"})
+            +button({type: "button", text: "Click me", mode: "come-in", disabled: true})
         div.uikit-elements__sect3-element-group3
           div.uikit-elements__sect3-element-group3-button
             +button({type: "button", text: "Click me", mode: "picker"})

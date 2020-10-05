@@ -1,6 +1,7 @@
 'use strict'
 
 import './pagination-cards.sass';
+import '../pagination/pagination';
 import {CardRoom} from '../card-room/card-room';
 import {cardRoom} from '../../resources/card-room/card-room';
 

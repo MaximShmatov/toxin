@@ -2,9 +2,9 @@ include ../button/button
 include ../date-picker/date-picker
 
 mixin date-filter
-	div.date-filter
-			div.date-filter__head
-				output(name="filter__date-head-output").date-filter__head-output
-				button(type="button").date-filter__head-button
-			div.date-filter__picker
-				+date-picker
+  div.date-filter
+    div.date-filter__head
+      output.date-filter__head-output(name="filter__date-head-output")
+      button.date-filter__head-button(type="button")
+    div.date-filter__picker
+      +date-picker

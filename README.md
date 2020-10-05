@@ -1,1 +1,3 @@
-https://maximshmatov.github.io/toxin/dist/index.html
+#Project TOXIN
+
+[Демонстрация](https://maximshmatov.github.io/toxin/dist/)

@@ -18,6 +18,7 @@ export class DateFilter extends DatePicker {
     this.#$filterDateButton = $dateFilter.find('.date-filter__head-button');
     this.#$filterDateButton.on('click', this.datePickerToggle.bind(this));
     $dateFilter.on('date-picker_selected-out', this.#setDateRange.bind(this));
+    $dateFilter.on('date-picker_submit', this.datePickerToggle.bind(this));
     this.#setDateRange();
   }
 

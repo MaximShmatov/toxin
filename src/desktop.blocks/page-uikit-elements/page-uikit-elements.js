@@ -34,7 +34,8 @@ let $dateFilter = $uikitElements.find('.date-filter');
 let $info = $uikitElements.find('.info');
 let $review = $uikitElements.find('.review');
 
-new RangeSlider($rangeSlider);
+let $slider = new RangeSlider($rangeSlider).$slider;
+$slider.slider('maxValue', 15900);
 let $rangeSliderTitle = $uikitElements.find('.range-slider__title');
 let $rangeSliderPrice = $uikitElements.find('.range-slider__range');
 let $rangeSliderInfo = $uikitElements.find('.range-slider__info');
@@ -45,7 +46,7 @@ $rangeSliderTitle.append($rangeSliderPrice);
 new DropdownQuantity($($dropdownQuantity[0]));
 new DateRange($dateRange);
 new DateFilter($dateFilter);
-new Like($($like[0])).likes = 12;
+new Like($($like[0])).likes = 2;
 new Like($($like[1])).likes = 12;
 new RateButton($($rate[0]), 4);
 new RateButton($($rate[1]), 5);

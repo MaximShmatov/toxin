@@ -3,19 +3,19 @@ include ../dropdown-quantity/dropdown-quantity
 include ../date-range/date-range
 
 mixin form-search-room
-    form.form-search-room
-      fieldset.form-search-room__fieldset
-        legend
-          h1 Найдём номера под ваши пожелания
-        div.form-search-room__date
-          div.form-search-room__date-title
-            h3 Прибытие
-            h3 Выезд
-          +date-range
-        div.form-search-room__guests
-          h3.form-search-room__guests-title гости
-          +dropdown-quantity
-        div.form-search-room__submit
-          +button({type: "button", text: "Подобрать номер", mode: "forward"})
+  form.form-search-room
+    fieldset.form-search-room__fieldset
+      legend
+        h1 Найдём номера под ваши пожелания
+      div.form-search-room__date
+        div.form-search-room__date-title
+          h3 Прибытие
+          h3 Выезд
+        +date-range
+      div.form-search-room__guests
+        h3.form-search-room__guests-title гости
+        +dropdown-quantity
+      div.form-search-room__submit
+        +button({type: "button", text: "Подобрать номер", mode: "forward"})
 
 

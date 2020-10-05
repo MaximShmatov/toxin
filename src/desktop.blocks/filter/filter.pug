@@ -18,11 +18,12 @@ mixin filter
     h3.filter__permission-title Checkbox Buttons
     div.filter__permission
       div.filter__permission-checkbox
-        +checkbox({name: "smoke", caption: "Можно курить"})
+        +checkbox({name: "smoke", caption: "Можно курить", checked: false})
       div.filter__permission-checkbox
-        +checkbox({name: "pet", caption: "Можно с питомцами", checked: "checked"})
+        +checkbox({name: "pet", caption: "Можно с питомцами", checked: true})
       div.filter__permission-checkbox
-        +checkbox({name: "guests", caption: "Можно пригласить гостей (до 10 человек)", checked: "checked"})
+        +checkbox({name: "guests", caption: "Можно пригласить гостей", checked: true})
+        span.filter__permission-checkbox-note (до 10 человек)
     h3.filter__availability-title Доступность
     div.filter__availability
       +checkbox-rich

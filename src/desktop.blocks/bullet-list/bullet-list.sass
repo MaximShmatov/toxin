@@ -6,7 +6,9 @@
   &__item
     display: flex
     align-items: baseline
-    margin-bottom: 10px
+
+    &:not(:last-of-type)
+      margin-bottom: 10px
 
     &::before
       content: ''

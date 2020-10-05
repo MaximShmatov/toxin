@@ -7,10 +7,10 @@ mixin form-reservation
 		fieldset.form-reservation__wrapper
 			div.form-reservation__room
 				div.form-reservation__room-info
-					h3 &#8470;&nbsp;&nbsp;
-					h1
+					h3.form-reservation__room-info-header &#8470;&nbsp;&nbsp;
+					h1.form-reservation__room-info-number-header
 						output.form-reservation__room-info-number
-					h3
+					h3.form-reservation__room-info-level-header
 						output.form-reservation__room-info-level
 				div.form-reservation__room-price
 					output.form-reservation__room-price-amount
@@ -18,15 +18,14 @@ mixin form-reservation
 					span в сутки
 			div.form-reservation__date
 				div.form-reservation__date-title
-					h3 Прибытие
-					h3 Выезд
+					h3.form-reservation__date-title-in Прибытие
+					h3.form-reservation__date-title-out Выезд
 				+date-range
 			div.form-reservation__guests
-				h3 Гости
+				h3.form-reservation__guests-header Гости
 				+dropdown-quantity
 
 			div.form-reservation__pay
-
 				div.form-reservation__pay-days
 					output.form-reservation__pay-days-price
 					span &#x20bd; x
@@ -53,10 +52,10 @@ mixin form-reservation
 					span &#x20bd;
 
 			div.form-reservation__total
-				h2 Итого
+				h2.form-reservation__total-header Итого
 				div.form-reservation__total-separator
 				div.form-reservation__total-amount
-					h2
+					h2.form-reservation__total-amount-header
 						output.form-reservation__total-amount
 						span &#x20bd;
 			div.form-reservation__submit

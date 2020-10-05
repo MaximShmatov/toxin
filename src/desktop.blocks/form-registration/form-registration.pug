@@ -7,7 +7,7 @@ mixin form-registration
 	form.form-registration
 		fieldset.form-registration__wrapper
 			legend
-				h1 Регистрация аккаунта
+				h1.form-registration-header Регистрация аккаунта
 			div.form-registration__name
 				+text-field({type: "text", value: "Имя"})
 			div.form-registration__family
@@ -18,11 +18,11 @@ mixin form-registration
 				div.form-registration__mw-radio
 					+radio({name: "registration__mw-radio", value: "w", caption: "Женщина"})
 			label.form-registration__birth
-				h3 Дата рождения
+				h3.form-registration__birth-header Дата рождения
 				div.form-registration__birth-date
 					+text-field({type: "text", value: "дд.мм.гггг", mask: "99.99.9999"})
 			label.form-registration__data-come-in
-				h3 Данные для входа в сервис
+				h3.form-registration__data-come-in-header Данные для входа в сервис
 				div.form-registration__data-come-in-email
 					+text-field({type: "email", value: "Email"})
 				div.form-registration__data-come-in-pass

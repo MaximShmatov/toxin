@@ -3,30 +3,30 @@ include ../button/button
 mixin dropdown-quantity
 	div.dropdown-quantity
 		div.dropdown-quantity__head
-			output(name="dropdown__head-out").dropdown-quantity__head-out
-			button(type="button").dropdown-quantity__head-button
+			output.dropdown-quantity__head-out(name="dropdown__head-out")
+			button.dropdown-quantity__head-button(type="button")
 		div.dropdown-quantity__picker
 			div.dropdown-quantity__picker-item
-				h3
+				h3.dropdown-quantity__picker-item-header
 				div.dropdown-quantity__picker-item-quantity
-					button(type="button" disabled).dropdown-quantity__picker-item-quantity-minus -
-					h3
+					button.dropdown-quantity__picker-item-quantity-minus(type="button" disabled) -
+					h3.dropdown-quantity__picker-item-quantity-amount-header
 						output.dropdown-quantity__picker-item-quantity-amount 0
-					button(type="button").dropdown-quantity__picker-item-quantity-plus +
+					button.dropdown-quantity__picker-item-quantity-plus(type="button") +
 			div.dropdown-quantity__picker-item
-				h3
+				h3.dropdown-quantity__picker-item-header
 				div.dropdown-quantity__picker-item-quantity
-					button(type="button" disabled).dropdown-quantity__picker-item-quantity-minus -
-					h3
+					button.dropdown-quantity__picker-item-quantity-minus(type="button" disabled) -
+					h3.dropdown-quantity__picker-item-quantity-amount-header
 						output.dropdown-quantity__picker-item-quantity-amount 0
-					button(type="button").dropdown-quantity__picker-item-quantity-plus +
+					button.dropdown-quantity__picker-item-quantity-plus(type="button") +
 			div.dropdown-quantity__picker-item
-				h3
+				h3.dropdown-quantity__picker-item-header
 				div.dropdown-quantity__picker-item-quantity
-					button(type="button" disabled).dropdown-quantity__picker-item-quantity-minus -
-					h3
+					button.dropdown-quantity__picker-item-quantity-minus(type="button" disabled) -
+					h3.dropdown-quantity__picker-item-quantity-amount-header
 						output.dropdown-quantity__picker-item-quantity-amount 0
-					button(type="button").dropdown-quantity__picker-item-quantity-plus +
+					button.dropdown-quantity__picker-item-quantity-plus(type="button") +
 			div.dropdown-quantity__picker-item
 				div.dropdown-quantity__picker-item-clear
 					+button({type:"button", mode: "picker-grey", text: "Очистить"})

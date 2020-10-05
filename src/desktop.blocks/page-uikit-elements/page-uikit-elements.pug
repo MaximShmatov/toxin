@@ -23,38 +23,38 @@ block page-uikit
   article.uikit-elements
     aside.uikit-elements__sect1
       div.uikit-elements__sect1-element
-        label
+        label.uikit-elements__sect1-element-label
           span.uikit-elements__sect1-element-caption Default
-          h3 Text field
+          h3.uikit-elements__sect1-element-title Text field
           +text-field({type: "email", value: "Email"})
       div.uikit-elements__sect1-element
-        label
+        label.uikit-elements__sect1-element-label
           span.uikit-elements__sect1-element-caption Hover / Focus
-          h3 Text field
+          h3.uikit-elements__sect1-element-title Text field
           +text-field({type: "text", value: "Имя"})
       div.uikit-elements__sect1-element
-        h3 Dropdown
+        h3.uikit-elements__sect1-element-title Dropdown
         +dropdown-quantity
       div.uikit-elements__sect1-element
-        label
-          h3 Masked text field
+        label.uikit-elements__sect1-element-label
+          h3.uikit-elements__sect1-element-title Masked text field
           +text-field({type: "text", value: "дд.мм.гггг", mask: "99.99.9999"})
       div.uikit-elements__sect1-element
         div.uikit-elements__sect1-element-title-dropdown
-          h3 Date dropdown
-          h3 Date dropdown
+          h3.uikit-elements__sect1-element-title-in Date dropdown
+          h3.uikit-elements__sect1-element-title-out Date dropdown
         +date-range
       div.uikit-elements__sect1-element
-          h3 Filter date dropdown
+          h3.uikit-elements__sect1-element-title Filter date dropdown
           +date-filter
       div.uikit-elements__sect1-element
-        label
-          h3 Subscription text field
+        label.uikit-elements__sect1-element-label
+          h3.uikit-elements__sect1-element-title Subscription text field
           +subscription
 
     aside.uikit-elements__sect2
       div.uikit-elements__sect2-element
-        h3 Checkbox buttons
+        h3.uikit-elements__sect2-element-title Checkbox buttons
         div.uikit-elements__sect2-element-checkbox
           +checkbox({name: "smoke", caption: "Можно курить", checked: false})
         div.uikit-elements__sect2-element-checkbox
@@ -63,25 +63,25 @@ block page-uikit
           +checkbox({name: "guests", caption: "Можно пригласить гостей", checked: true})
           spa.uikit-elements__sect2-element-checkbox-note (до 10 человек)
       div.uikit-elements__sect2-element
-        h3 Radio buttons
+        h3.uikit-elements__sect2-element-title Radio buttons
         div.uikit-elements__sect2-element-radio
           +radio({name: "registration__mw-radio", value: "m", caption: "Мужчина", checked: true})
         div.uikit-elements__sect2-element-radio
           +radio({name: "registration__mw-radio", value: "w", caption: "Женщина"})
       div.uikit-elements__sect2-element
-        h3 Toggle
+        h3.uikit-elements__sect2-element-title Toggle
         div.uikit-elements__sect2-element-toggle
           +toggle({caption: "Получать спецпредложения", checked: "checked"})
         div.uikit-elements__sect2-element-toggle
           +toggle({caption: "Получать спецпредложения"})
       div.uikit-elements__sect2-element
-        h3 Like button
+        h3.uikit-elements__sect2-element-title Like button
         div.uikit-elements__sect2-element-like
           +like
         div.uikit-elements__sect2-element-like
           +like("checked")
       div.uikit-elements__sect2-element
-        h3 Rate button
+        h3.uikit-elements__sect2-element-title Rate button
         div.uikit-elements__sect2-element-rate
           +rate-button
         div.uikit-elements__sect2-element-rate
@@ -91,7 +91,7 @@ block page-uikit
       div.uikit-elements__sect3-element
         +range-slider
       div.uikit-elements__sect3-element
-        h3 Buttons
+        h3.uikit-elements__sect3-element-title Buttons
         div.uikit-elements__sect3-element-group1
           div.uikit-elements__sect3-element-group1-button
             +button({type: "button", text: "Click me", mode: "registration"})
@@ -110,26 +110,26 @@ block page-uikit
         div.uikit-elements__sect3-element-button
           +button({type: "button", text: "Перейти к оплате", mode: "forward"})
       div.uikit-elements__sect3-element
-        h3 Pagination
+        h3.uikit-elements__sect3-element-title Pagination
         div.uikit-elements__sect3-element-pagination
           +pagination
 
     aside.uikit-elements__sect4
       div.uikit-elements__sect4-element
         span.uikit-elements__sect4-element-caption Default
-        h3 Dropdown
+        h3.uikit-elements__sect4-element-title Dropdown
         +dropdown-quantity
       div.uikit-elements__sect4-element
         span.uikit-elements__sect4-element-caption Expanded
-        h3 Dropdown
+        h3.uikit-elements__sect4-element-title Dropdown
         +dropdown-quantity
 
     aside.uikit-elements__sect5
-      h3 Dropdown
+      h3.uikit-elements__sect5-element-title Dropdown
       +dropdown-quantity
 
     aside.uikit-elements__sect6
-      h3 Dropdown
+      h3.uikit-elements__sect6-element-title Dropdown
       +dropdown-quantity
 
     aside.uikit-elements__sect7
@@ -139,11 +139,11 @@ block page-uikit
         +checkbox-list("Expandable checkbox list")
 
     aside.uikit-elements__sect8
-      h3 Rich checkbox buttons
+      h3.uikit-elements__sect8-element-title Rich checkbox buttons
       +checkbox-rich
 
     aside.uikit-elements__sect9
-      h3 Bullet list
+      h3.uikit-elements__sect9-element-title Bullet list
       +bullet-list
 
     aside.uikit-elements__sect10

@@ -2,5 +2,5 @@ mixin rate-button
 	form.rate-button
 		-let random = Math.random()
 		-for (let i = 5; i >= 1; i--)
-			input(type="radio" name = `${random}` id = `${random}-${i}` value = `${i}`).rate-button__radio
-			label(for = `${random}-${i}`).rate-button__star
+			input.rate-button__radio(type="radio" name = `${random}` id = `${random}-${i}` value = `${i}`)
+			label.rate-button__star(for = `${random}-${i}`)

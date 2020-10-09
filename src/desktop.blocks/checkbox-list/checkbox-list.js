@@ -1,7 +1,8 @@
 'use strict'
 
-import './checkbox-list.sass';
 import '../checkbox/checkbox';
+import './checkbox-list.sass';
+
 
 export class CheckboxList {
   #$list;
@@ -17,7 +18,10 @@ export class CheckboxList {
 
   checkboxListToggle() {
     this.#$listPicker.toggleClass('checkbox-list__picker_visible');
-    if(this.#$listPicker.hasClass('checkbox-list__picker_visible')) this.#$listDropdown.prop('checked', true);
-      else this.#$listDropdown.prop('checked', false);
+    if (this.#$listPicker.hasClass('checkbox-list__picker_visible')) {
+      this.#$listDropdown.prop('checked', true);
+    } else {
+      this.#$listDropdown.prop('checked', false);
+    }
   }
 }

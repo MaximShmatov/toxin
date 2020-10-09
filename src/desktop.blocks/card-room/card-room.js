@@ -8,11 +8,10 @@ export class CardRoom {
 
   constructor($card, room) {
     this.#$radio = $card.find('.card-room__slider-radio');
-
     let $images = $card.find('.card-room__slider-img');
     let $rate = $card.find('.rate-button');
-
     new RateButton($rate, room.rate);
+
     $($images[0]).attr('src', room.img1);
     $($images[1]).attr('src', room.img2);
     $($images[2]).attr('src', room.img3);
@@ -26,19 +25,20 @@ export class CardRoom {
   }
 
   listRight() {
-    for(let i = 0; i <5; i++) {
-      if($(this.#$radio[i]).prop('checked')) {
-        $(this.#$radio[i-1]).prop('checked', true);
-        $(this.#$radio[i-1]).attr('data-dir', 'r')
+    for (let i = 0; i < 5; i++) {
+      if ($(this.#$radio[i]).prop('checked')) {
+        $(this.#$radio[i - 1]).prop('checked', true);
+        $(this.#$radio[i - 1]).attr('data-dir', 'r')
         break;
       }
     }
   }
+
   listLeft() {
-    for(let i = 0; i <5; i++) {
-      if($(this.#$radio[i]).prop('checked')) {
-        $(this.#$radio[i+1]).prop('checked', true);
-        $(this.#$radio[i+1]).attr('data-dir', 'l');
+    for (let i = 0; i < 5; i++) {
+      if ($(this.#$radio[i]).prop('checked')) {
+        $(this.#$radio[i + 1]).prop('checked', true);
+        $(this.#$radio[i + 1]).attr('data-dir', 'l');
         break;
       }
     }

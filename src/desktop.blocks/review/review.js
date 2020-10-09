@@ -1,9 +1,10 @@
 'use strict'
 
-import './review.sass';
 import {Like} from "../like/like";
+import './review.sass';
 
-export class Review {
+
+class Review {
   constructor (review, $review) {
     new Like($review.find('.like')).likes = 12;
     $review.find('.review__avatar-portrait').attr('src', review.avatar);
@@ -12,3 +13,5 @@ export class Review {
     $review.find('.review__quote-text').text(review.text);
   }
 }
+
+export default Review;

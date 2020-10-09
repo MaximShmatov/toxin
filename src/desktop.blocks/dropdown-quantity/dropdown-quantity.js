@@ -3,6 +3,7 @@
 import '../button/button';
 import './dropdown-quantity.sass';
 
+
 export class DropdownQuantity {
   #$dropdown;
   #$headOut;
@@ -13,7 +14,6 @@ export class DropdownQuantity {
   #$amount;
   #$clear;
   #$submit;
-
   #quantity = {};
   #setValidQuantity;
   #setCaption;

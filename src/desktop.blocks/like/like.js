@@ -23,9 +23,11 @@ export class Like {
     }
     this.#$outLike.text(this.#likes);
   }
+
   get likes() {
     return this.#likes;
   }
+
   set likes(likes) {
     this.#likes = likes;
     this.#$outLike.text(this.#likes);

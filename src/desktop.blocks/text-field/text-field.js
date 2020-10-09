@@ -1,7 +1,8 @@
 'use strict'
 
-import './text-field.sass';
 import 'jquery.maskedinput/src/jquery.maskedinput';
+import './text-field.sass';
+
 
 $('.text-field').each(setEvents);
 

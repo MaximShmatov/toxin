@@ -1,8 +1,9 @@
 'use strict'
 
+import {DatePicker} from '../date-picker/date-picker';
 import '../button/button';
-import {DatePicker} from "../date-picker/date-picker";
 import './date-filter.sass';
+
 
 export class DateFilter extends DatePicker {
   #$filter;

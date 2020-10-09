@@ -1,9 +1,9 @@
 [
   {
-    "img1": "img/card-room__980-4.jpg",
-    "img2": "img/card-room__856-4.jpg",
-    "img3": "img/card-room__840-4.jpg",
-    "img4": "img/card-room__888-4.jpg",
+    "img1": "img/card-room-980-4.jpg",
+    "img2": "img/card-room-856-4.jpg",
+    "img3": "img/card-room-840-4.jpg",
+    "img4": "img/card-room-888-4.jpg",
     "alt1": "room 888 pic 1",
     "alt2": "room 888 pic 2",
     "alt3": "room 888 pic 3",
@@ -15,10 +15,10 @@
     "rate": 5
   },
   {
-    "img1": "img/card-room__350-4.jpg",
-    "img2": "img/card-room__856-4.jpg",
-    "img3": "img/card-room__678-4.jpg",
-    "img4": "img/card-room__840-4.jpg",
+    "img1": "img/card-room-350-4.jpg",
+    "img2": "img/card-room-856-4.jpg",
+    "img3": "img/card-room-678-4.jpg",
+    "img4": "img/card-room-840-4.jpg",
     "alt1": "room 840 pic 1",
     "alt2": "room 840 pic 2",
     "alt3": "room 840 pic 3",
@@ -30,10 +30,10 @@
     "rate": 4
   },
   {
-    "img1": "img/card-room__840-4.jpg",
-    "img2": "img/card-room__856-4.jpg",
-    "img3": "img/card-room__740-4.jpg",
-    "img4": "img/card-room__980-4.jpg",
+    "img1": "img/card-room-840-4.jpg",
+    "img2": "img/card-room-856-4.jpg",
+    "img3": "img/card-room-740-4.jpg",
+    "img4": "img/card-room-980-4.jpg",
     "alt1": "room 980 pic 1",
     "alt2": "room 980 pic 2",
     "alt3": "room 980 pic 3",
@@ -45,10 +45,10 @@
     "rate": 3
   },
   {
-    "img1": "img/card-room__840-4.jpg",
-    "img2": "img/card-room__980-4.jpg",
-    "img3": "img/card-room__740-4.jpg",
-    "img4": "img/card-room__856-4.jpg",
+    "img1": "img/card-room-840-4.jpg",
+    "img2": "img/card-room-980-4.jpg",
+    "img3": "img/card-room-740-4.jpg",
+    "img4": "img/card-room-856-4.jpg",
     "alt1": "room 856 pic 1",
     "alt2": "room 856 pic 2",
     "alt3": "room 856 pic 3",
@@ -60,10 +60,10 @@
     "rate": 5
   },
   {
-    "img1": "img/card-room__980-4.jpg",
-    "img2": "img/card-room__856-4.jpg",
-    "img3": "img/card-room__840-4.jpg",
-    "img4": "img/card-room__740-4.jpg",
+    "img1": "img/card-room-980-4.jpg",
+    "img2": "img/card-room-856-4.jpg",
+    "img3": "img/card-room-840-4.jpg",
+    "img4": "img/card-room-740-4.jpg",
     "alt1": "room 740 pic 1",
     "alt2": "room 740 pic 2",
     "alt3": "room 740 pic 3",
@@ -75,10 +75,10 @@
     "rate": 4
   },
   {
-    "img1": "img/card-room__840-4.jpg",
-    "img2": "img/card-room__444-4.jpg",
-    "img3": "img/card-room__666-4.jpg",
-    "img4": "img/card-room__982-4.jpg",
+    "img1": "img/card-room-840-4.jpg",
+    "img2": "img/card-room-444-4.jpg",
+    "img3": "img/card-room-666-4.jpg",
+    "img4": "img/card-room-982-4.jpg",
     "alt1": "room 982 pic 1",
     "alt2": "room 982 pic 2",
     "alt3": "room 982 pic 3",
@@ -90,10 +90,10 @@
     "rate": 3
   },
   {
-    "img1": "img/card-room__740-4.jpg",
-    "img2": "img/card-room__666-4.jpg",
-    "img3": "img/card-room__982-4.jpg",
-    "img4": "img/card-room__678-4.jpg",
+    "img1": "img/card-room-740-4.jpg",
+    "img2": "img/card-room-666-4.jpg",
+    "img3": "img/card-room-982-4.jpg",
+    "img4": "img/card-room-678-4.jpg",
     "alt1": "room 678 pic 1",
     "alt2": "room 678 pic 2",
     "alt3": "room 678 pic 3",
@@ -105,10 +105,10 @@
     "rate": 5
   },
   {
-    "img1": "img/card-room__678-4.jpg",
-    "img2": "img/card-room__982-4.jpg",
-    "img3": "img/card-room__444-4.jpg",
-    "img4": "img/card-room__450-4.jpg",
+    "img1": "img/card-room-678-4.jpg",
+    "img2": "img/card-room-982-4.jpg",
+    "img3": "img/card-room-444-4.jpg",
+    "img4": "img/card-room-450-4.jpg",
     "alt1": "room 450 pic 1",
     "alt2": "room 450 pic 2",
     "alt3": "room 450 pic 3",
@@ -120,10 +120,10 @@
     "rate": 4
   },
   {
-    "img1": "img/card-room__450-4.jpg",
-    "img2": "img/card-room__666-4.jpg",
-    "img3": "img/card-room__444-4.jpg",
-    "img4": "img/card-room__350-4.jpg",
+    "img1": "img/card-room-450-4.jpg",
+    "img2": "img/card-room-666-4.jpg",
+    "img3": "img/card-room-444-4.jpg",
+    "img4": "img/card-room-350-4.jpg",
     "alt1": "room 350 pic 1",
     "alt2": "room 350 pic 2",
     "alt3": "room 350 pic 3",
@@ -135,10 +135,10 @@
     "rate": 3
   },
   {
-    "img1": "img/card-room__980-4.jpg",
-    "img2": "img/card-room__740-4.jpg",
-    "img3": "img/card-room__840-4.jpg",
-    "img4": "img/card-room__666-4.jpg",
+    "img1": "img/card-room-980-4.jpg",
+    "img2": "img/card-room-740-4.jpg",
+    "img3": "img/card-room-840-4.jpg",
+    "img4": "img/card-room-666-4.jpg",
     "alt1": "room 666 pic 1",
     "alt2": "room 666 pic 2",
     "alt3": "room 666 pic 3",
@@ -150,10 +150,10 @@
     "rate": 5
   },
   {
-    "img1": "img/card-room__352-4.jpg",
-    "img2": "img/card-room__450-4.jpg",
-    "img3": "img/card-room__982-4.jpg",
-    "img4": "img/card-room__444-4.jpg",
+    "img1": "img/card-room-352-4.jpg",
+    "img2": "img/card-room-450-4.jpg",
+    "img3": "img/card-room-982-4.jpg",
+    "img4": "img/card-room-444-4.jpg",
     "alt1": "room 444 pic 1",
     "alt2": "room 444 pic 2",
     "alt3": "room 444 pic 3",
@@ -165,10 +165,10 @@
     "rate": 4
   },
   {
-    "img1": "img/card-room__980-4.jpg",
-    "img2": "img/card-room__982-4.jpg",
-    "img3": "img/card-room__856-4.jpg",
-    "img4": "img/card-room__352-4.jpg",
+    "img1": "img/card-room-980-4.jpg",
+    "img2": "img/card-room-982-4.jpg",
+    "img3": "img/card-room-856-4.jpg",
+    "img4": "img/card-room-352-4.jpg",
     "alt1": "room 352 pic 1",
     "alt2": "room 352 pic 2",
     "alt3": "room 352 pic 3",

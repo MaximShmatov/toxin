@@ -1,13 +1,14 @@
 'use strict'
 
-import './page-uikit-cards.sass';
+import {cardRoom} from '../../resources/card-room/card-room';
+import {DatePicker} from '../date-picker/date-picker';
+import {CardRoom} from '../card-room/card-room';
 import '../form-search-room/form-search-room';
 import '../form-reservation/form-reservation';
-import {DatePicker} from '../date-picker/date-picker';
 import '../form-registration/form-registration';
 import '../form-come-in/form-come-in';
-import {CardRoom} from '../card-room/card-room';
-import {cardRoom} from '../../resources/card-room/card-room';
+import './page-uikit-cards.sass';
+
 
 let $picker = $('.uikit-cards__form:nth-of-type(3) .date-picker');
 let $cardsRoom = $('.uikit-cards__form .card-room');

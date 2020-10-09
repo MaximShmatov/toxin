@@ -3,6 +3,7 @@
 import './slider';
 import './range-slider.sass';
 
+
 export class RangeSlider {
   $slider;
   #$range;
@@ -15,6 +16,7 @@ export class RangeSlider {
     this.#valueFrom = this.#getNumberStr(this.$slider.slider('valueFrom'));
     this.#valueTo = this.#getNumberStr(this.$slider.slider('valueTo'));
     this.#$range.text(`${this.#valueFrom}\u2009\u20BD - ${this.#valueTo}\u2009\u20BD`);
+
     this.$slider.on('slider-data', this.#handleEventSlider.bind(this));
   }
 

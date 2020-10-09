@@ -1,7 +1,8 @@
 'use strict'
 
-import './date-picker.sass';
 import '../button/button';
+import './date-picker.sass';
+
 
 export class DatePicker {
   #date = new Date();
@@ -109,6 +110,7 @@ export class DatePicker {
     let weekDay = this.#currentDate.getDay();
     if (weekDay === 0) weekDay = 7;
     this.#currentDate.setDate(-weekDay + 1);
+
     for (let i = 0; i < 35; i++) {
       this.#currentDate.setDate(this.#currentDate.getDate() + 1);
       if (this.#currentDate.getMonth() === currentMonth) {
@@ -124,6 +126,7 @@ export class DatePicker {
       this.#days[i].removeClass('date-picker__table-date_selected-out');
       this.#days[i].removeClass('date-picker__table-date_range');
     }
+
     if (currentMonth !== this.#date.getMonth()) this.#day.removeClass('date-picker__table-date_current');
     this.#currentDate.setFullYear(currentYear, currentMonth, currentDay);
   }

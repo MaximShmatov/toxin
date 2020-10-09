@@ -3,7 +3,8 @@ include ../like/like
 mixin review
 	bloquote.review
 		div.review__avatar
-			img.review__avatar-portrait
+			div.review__avatar-img
+				img.review__avatar-portrait(alt="portrait")
 			div.review__avatar-like
 				+like("checked")
 		div.review__quote

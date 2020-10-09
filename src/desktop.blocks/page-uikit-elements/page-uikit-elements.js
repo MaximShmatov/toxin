@@ -1,26 +1,27 @@
 'use strict'
 
-import './page-uikit-elements.sass';
+import { review } from '../../resources/review/review';
+import { info } from '../../resources/info/info';
+
+import {Info} from '../info/info';
+import Review from '../review/review';
 import {RangeSlider} from '../range-slider/range-slider';
 import {DropdownQuantity} from '../dropdown-quantity/dropdown-quantity';
 import {DateRange} from '../date-range/date-range';
 import {DateFilter} from '../date-filter/date-filter';
+import {Like} from '../like/like';
+import {RateButton} from '../rate-button/rate-button';
+import {CheckboxList} from '../checkbox-list/checkbox-list';
 import '../text-field/text-field';
 import '../subscription/subscription';
 import '../checkbox/checkbox';
 import '../radio/radio';
 import '../toggle/toggle';
-import {Like} from '../like/like';
-import {RateButton} from '../rate-button/rate-button';
 import '../button/button';
 import '../pagination/pagination';
-import {CheckboxList} from '../checkbox-list/checkbox-list';
 import '../checkbox-rich/checkbox-rich';
 import '../bullet-list/bullet-list';
-import {Info} from '../info/info';
-import {info} from '../../resources/info/info';
-import {Review} from '../review/review';
-import {review} from '../../resources/review/review';
+import './page-uikit-elements.sass';
 
 
 let $uikitElements = $('.uikit-elements');

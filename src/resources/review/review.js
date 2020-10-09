@@ -1,6 +1,7 @@
 'use strict'
 
-import './review__avatar1.png';
-import './review__avatar2.png';
+import './review-avatar1.jpg';
+import './review-avatar2.jpg';
+
 
 export {default as review} from './review.json';

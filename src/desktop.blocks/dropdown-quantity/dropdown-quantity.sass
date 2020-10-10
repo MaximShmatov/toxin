@@ -1,8 +1,9 @@
 .dropdown-quantity
   position: relative
   background-color: white
+  outline: none
 
-  &:hover &__head, &:hover &__picker
+  &:hover &__head, &:hover &__picker, &:focus &__head
     border-color: rgba(31, 32, 65, 0.5)
 
   &:hover &__head-button::before
@@ -34,6 +35,10 @@
         content: '\e313'
         font-size: 24px
         color: rgba(31, 32, 65, 0.5)
+        cursor: pointer
+
+      &:focus::before
+        color: rgba(31, 32, 65, 0.75)
 
   &__picker
     display: none
@@ -47,6 +52,7 @@
     border-radius: 0 0 4px 4px
     padding: 6px 7px 0 15px
     background-color: white
+    outline: none
 
     &_display
       display: block
@@ -78,6 +84,10 @@
           box-sizing: border-box
           border-radius: 50%
           outline: none
+          cursor: pointer
+
+          &:hover, &:focus
+            border-color: rgba(31, 32, 65, 0.5)
 
           &:disabled
             opacity: 0.35

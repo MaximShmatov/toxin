@@ -39,6 +39,8 @@ export class DatePicker {
     $picker.find('.date-picker__footer-clear').on('click', this.#clearPicker.bind(this));
     $picker.find('.date-picker__footer-submit').on('click', this.#submitPicker.bind(this));
 
+    document.addEventListener('mouseup', this.#pickerHidden.bind(this));
+
     this.#setTitle();
     this.#setDatePicker();
   }
@@ -129,5 +131,9 @@ export class DatePicker {
 
     if (currentMonth !== this.#date.getMonth()) this.#day.removeClass('date-picker__table-date_current');
     this.#currentDate.setFullYear(currentYear, currentMonth, currentDay);
+  }
+
+  #pickerHidden(evt) {
+    if (this.#$datePicker.has(evt.target).length === 0) this.#$datePicker.removeClass('date-picker_visible');
   }
 }

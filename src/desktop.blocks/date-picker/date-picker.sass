@@ -29,12 +29,16 @@
       outline: none
       background: transparent
       margin: 0 20px
+
       &::before
         font-family: "Material Icons", sans-serif
         font-size: 24px
         color: #BC9CFF
+        cursor: pointer
+
     &-list-left::before
       content: '\e5c4'
+
     &-list-right::before
       content: '\e5c8'
 
@@ -62,6 +66,7 @@
 
       &_range
         position: relative
+
         &::before
           content: ''
           display: block
@@ -81,9 +86,11 @@
         border-radius: 22px
         font-weight: bold
         color: white
+
       &_selected-in
         &::before
           width: 20px
+
       &_selected-out
         &::before
           left: 0

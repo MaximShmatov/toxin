@@ -2,12 +2,11 @@ include ../date-picker/date-picker
 
 mixin date-range
   div.date-range
-    div.date-range__head
-      div.date-range__head-in
-        output.date-range__head-in-date дд.мм.гггг
-        button.date-range__head-in-button(type="button")
-      div.date-range__head-out
-        output.date-range__head-out-date дд.мм.гггг
-        button.date-range__head-out-button(type="button")
+    button.date-range__head-in(type="button")
+      output.date-range__head-in-date дд.мм.гггг
+      div.date-range__head-in-arrow
+    button.date-range__head-out(type="button")
+      output.date-range__head-out-date дд.мм.гггг
+      div.date-range__head-out-arrow
     div.date-range__picker
       +date-picker

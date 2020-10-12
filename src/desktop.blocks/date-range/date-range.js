@@ -1,6 +1,6 @@
 'use strict'
 
-import {DatePicker} from '../date-picker/date-picker';
+import DatePicker from '../date-picker/date-picker';
 import './date-range.sass';
 
 
@@ -8,26 +8,50 @@ export class DateRange extends DatePicker {
   #defaultDate = 'дд.мм.гггг';
   #date = new Date();
   #$range;
+  #$picker;
+  #$headInDate;
+  #$headOutDate;
+  #selectDateOut = true;
+
 
   constructor($dateRange) {
-    super($dateRange.find('.date-picker'));
-    this.#$range = $dateRange;
-    $($dateRange).find('.date-range__head-in-button').on('click', this.datePickerToggle.bind(this));
-    $($dateRange).find('.date-range__head-out-button').on('click', this.datePickerToggle.bind(this));
-    $($dateRange).on('date-picker_selected-in', this.#setDateIn.bind(this));
-    $($dateRange).on('date-picker_selected-out', this.#setDateOut.bind(this));
-    $($dateRange).on('date-picker_clear', this.#setDefaultDate.bind(this));
-    $($dateRange).on('date-picker_submit', this.datePickerToggle.bind(this));
+    super($dateRange);
+    this.#$range = $dateRange.find('.date-range');
+    this.#$picker = $dateRange.find('.date-range__picker');
+    this.#$headInDate = $dateRange.find('.date-range__head-in-date');
+    this.#$headOutDate = $dateRange.find('.date-range__head-out-date');
+
+    $($dateRange).find('.date-range__head-in').on('click', this.#togglePicker.bind(this));
+    $($dateRange).find('.date-range__head-out').on('click', this.#togglePicker.bind(this));
+    $($dateRange).on('date-picker-selected-in', this.#setDateIn.bind(this));
+    $($dateRange).on('date-picker-selected-out', this.#setDateOut.bind(this));
+    $($dateRange).on('date-picker-clear', this.#setDefaultDate.bind(this));
+    $($dateRange).on('date-picker-submit', this.#togglePicker.bind(this));
+
+    document.addEventListener('mouseup', this.#hiddenPicker.bind(this));
+
+    this.#togglePicker();
+  }
+
+  getDateRange() {
+    const dateIn = new Date();
+    const dateOut = new Date();
+    this.#date.setTime(dateOut.setTime(this.dateCheckOut) - dateIn.setTime(this.dateComeIn));
+    return (this.#date.getDate() - 1);
   }
 
   #setDateIn() {
     this.#date.setTime(this.dateComeIn);
-    this.#$range.find('.date-range__head-in-date').text(`${this.#date.getDate()}.${this.#getMonth(this.#date.getMonth())}.${this.#date.getFullYear()}`);
+    const str = `${this.#date.getDate()}.${this.#getMonth(this.#date.getMonth())}.${this.#date.getFullYear()}`
+    this.#$headInDate.text(str);
+    this.counter = 0;
   }
 
   #setDateOut() {
     this.#date.setTime(this.dateCheckOut);
-    this.#$range.find('.date-range__head-out-date').text(`${this.#date.getDate()}.${this.#getMonth(this.#date.getMonth())}.${this.#date.getFullYear()}`);
+    const str = `${this.#date.getDate()}.${this.#getMonth(this.#date.getMonth())}.${this.#date.getFullYear()}`
+    this.#$headOutDate.text(str);
+    this.counter = 1;
   }
 
   #getMonth(month) {
@@ -40,14 +64,27 @@ export class DateRange extends DatePicker {
   }
 
   #setDefaultDate() {
-    this.#$range.find('.date-range__head-in-date').text(this.#defaultDate);
-    this.#$range.find('.date-range__head-out-date').text(this.#defaultDate);
+    this.#$headInDate.text(this.#defaultDate);
+    this.#$headOutDate.text(this.#defaultDate);
 
   }
-  getDateRange() {
-    let dateIn = new Date();
-    let dateOut = new Date();
-    this.#date.setTime(dateOut.setTime(this.dateCheckOut) - dateIn.setTime(this.dateComeIn));
-    return (this.#date.getDate() - 1);
+
+  #togglePicker(evt) {
+    this.#$picker.toggleClass('date-range__picker_hidden');
+    if (evt) {
+      if (evt.target.closest('.date-range__head-in')) {
+        this.#selectDateOut = false;
+        this.counter = 0;
+      } else {
+        this.#selectDateOut = true;
+        this.counter = 1;
+      }
+    }
+  }
+
+  #hiddenPicker(evt) {
+    if (!evt.target.closest('.date-range')) {
+      this.#$picker.addClass('date-range__picker_hidden');
+    }
   }
 }

@@ -21,7 +21,7 @@ export class DropdownQuantity {
   constructor($dropdown, mode) {
     this.#$dropdown = $dropdown;
     this.#$headOut = $dropdown.find('.dropdown-quantity__head-out');
-    this.#$headButton = $dropdown.find('.dropdown-quantity__head-button');
+    this.#$headButton = $dropdown.find('.dropdown-quantity__head');
     this.#$picker = $dropdown.find('.dropdown-quantity__picker');
     this.#$minus = $dropdown.find('.dropdown-quantity__picker-item-quantity-minus');
     this.#$plus = $dropdown.find('.dropdown-quantity__picker-item-quantity-plus');

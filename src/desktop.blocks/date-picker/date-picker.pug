@@ -4,21 +4,17 @@ mixin date-picker
 	div.date-picker
 		div.date-picker__header
 			button.date-picker__header-list-left(type="button")
-			h2.date-picker__header-title-header
-				output.date-picker__header-title
+			h2.date-picker__header-title
 			button.date-picker__header-list-right(type="button")
-		table.date-picker__table
-			thead
-				tr
-					-for (let i = 0; i < 7; i++)
-						th.date-picker__table-header
-			tbody
-				-for (let i = 1; i < 6; i++)
-					tr
-						-for (let j = 1; j < 8; j++)
-							td.date-picker__table-date(tabindex="0")
+		div.date-picker__body
+			- const weekDay = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+			-for (let i = 0; i < 7; i++)
+				span.date-picker__body-week !{weekDay[i]}
+			-for (let i = 0; i < 35; i++)
+				div.date-picker__body-range
+					input.date-picker__body-date(type="button")
 		div.date-picker__footer
 			div.date-picker__footer-clear
-				+button({type: "button", mode: "picker-grey", text: "Очистить"})
+				+button({type: "button", mode: "picker", text: "Очистить"})
 			div.date-picker__footer-submit
 				+button({type: "button", mode: "picker", text: "Применить"})

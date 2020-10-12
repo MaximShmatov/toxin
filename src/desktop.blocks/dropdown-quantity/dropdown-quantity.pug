@@ -1,10 +1,10 @@
 include ../button/button
 
 mixin dropdown-quantity
-	div.dropdown-quantity(tabindex="0")
-		div.dropdown-quantity__head
+	div.dropdown-quantity
+		button.dropdown-quantity__head(type="button")
 			output.dropdown-quantity__head-out(name="dropdown__head-out")
-			button.dropdown-quantity__head-button(type="button")
+			div.dropdown-quantity__head-arrow
 		div.dropdown-quantity__picker
 			div.dropdown-quantity__picker-item
 				h3.dropdown-quantity__picker-item-header
@@ -29,6 +29,6 @@ mixin dropdown-quantity
 					button.dropdown-quantity__picker-item-quantity-plus(type="button") +
 			div.dropdown-quantity__picker-item
 				div.dropdown-quantity__picker-item-clear
-					+button({type:"button", mode: "picker-grey", text: "Очистить"})
+					+button({type:"button", mode: "picker", text: "Очистить"})
 				div.dropdown-quantity__picker-item-submit
 					+button({type:"button", mode: "picker", text: "Применить"})

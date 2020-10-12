@@ -1,19 +1,11 @@
 .date-picker
   border: 1px solid rgba(31, 32, 65, 0.25)
+  box-sizing: border-box
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05)
   border-radius: 4px
-  box-sizing: border-box
   background: white
   max-width: 320px
-  max-height: 369px
   width: 100%
-  display: none
-
-  &:hover
-    border-color: rgba(31, 32, 65, 0.5)
-
-  &_visible
-    display: block
 
   &__header
     display: flex
@@ -36,71 +28,61 @@
         color: #BC9CFF
         cursor: pointer
 
-    &-list-left::before
+    &-list-left:before
       content: '\e5c4'
 
-    &-list-right::before
+    &-list-right:before
       content: '\e5c8'
 
-  &__table
-    font-family: Montserrat, sans-serif
+  &__body
+    display: grid
+    grid-template-columns: repeat(7, min-content)
+    grid-template-rows: repeat(6, min-content)
+    justify-content: center
+    align-content: center
     font-size: 12px
     line-height: 15px
-    text-transform: none
-    margin: 10px auto 0 auto
-    border-collapse: collapse
 
-    &-header, &-date
-      width: 40px
-      height: 40px
-      padding: 0
-
-    &-header
+    &-week
+      font-weight: bold
+      line-height: 40px
+      text-align: center
+      vertical-align: center
       color: #BC9CFF
 
+    &-range
+      background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%)
+
+    & div[data-range='first']
+      border-radius: 50% 0 0 50%
+
+    & div[data-range='last']
+      border-radius: 0 50% 50% 0
+
     &-date
-      cursor: pointer
+      width: 40px
+      height: 40px
+      font: inherit
+      border: none
+      border-radius: 50%
       outline: none
-      text-align: center
+      padding: 0
+      background: transparent
       color: rgba(31, 32, 65, 0.25)
+      cursor: pointer
 
-      &_range
-        position: relative
-
-        &::before
-          content: ''
-          display: block
-          position: absolute
-          top: 0
-          right: 0
-          width: 100%
-          height: 100%
-          background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
-          opacity: 0.25
-
-      &_month-current
+      &_day-month
         color: rgba(31, 32, 65, 0.5)
 
-      &_selected-in, &_selected-out
-        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
-        border-radius: 22px
+      &_selected, &_current
         font-weight: bold
         color: white
 
-      &_selected-in
-        &::before
-          width: 20px
-
-      &_selected-out
-        &::before
-          left: 0
-          width: 20px
+      &_selected
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
 
       &_current
-        color: white
-        font-weight: bold
         background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)
-        border-radius: 22px
 
   &__footer
     display: flex

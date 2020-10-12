@@ -3,9 +3,6 @@ mixin button(btn)
     when "picker"
       button.button(type= btn.type class= `button_${btn.mode}`)
         h3.button__caption= btn.text
-    when "picker-grey"
-      button.button(type= btn.type class= `button_${btn.mode}`)
-        h3.button__caption= btn.text
     when "forward"
       button.button(type= btn.type class= `button_${btn.mode}`)
         h3.button__caption= btn.text

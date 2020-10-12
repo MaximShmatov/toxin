@@ -2,47 +2,73 @@
   background-color: white
   position: relative
 
-  &:hover &__head-in, &:hover &__head-out
-    border-color: rgba(31, 32, 65, 0.5)
+  &::after
+    content: ''
+    display: block
+    width: 100%
+    clear: both
 
-  &:hover &__head-in-button:before, &:hover &__head-out-button:before
-    color: rgba(31, 32, 65, 0.75)
+  &__head-in
+    float: left
 
-  &__head
+  &__head-out
+    float: right
+
+  &__head-in, &__head-out
+    font: inherit
     display: flex
     justify-content: space-between
+    align-items: center
+    background-color: transparent
+    width: 150px
+    height: 44px
+    border: 1px solid rgba(31, 32, 65, 0.25)
+    color: rgba(31, 32, 65, 0.75)
+    box-sizing: border-box
+    border-radius: 4px
+    padding: 0
+    outline: none
+    cursor: pointer
 
-    &-in, &-out
+    &:hover, &:hover ~ .date-range__picker .date-picker
+      border-color: rgba(31, 32, 65, 0.5)
+
+    &:hover &-arrow
+      color: rgba(31, 32, 65, 0.75)
+
+    &:focus,  &:focus ~ .date-range__picker .date-picker
+      border: 1px solid rgba(31, 32, 65, 0.5)
+
+    &:focus &-arrow
+      color: rgba(31, 32, 65, 0.75)
+
+    &-date
+      text-transform: uppercase
+      padding-left: 14px
+
+    &-arrow
       display: flex
-      justify-content: space-between
+      justify-content: center
       align-items: center
-      width: 150px
-      height: 44px
-      border: 1px solid rgba(31, 32, 65, 0.25)
-      box-sizing: border-box
-      border-radius: 4px
+      width: 44px
+      height: 100%
+      color: rgba(31, 32, 65, 0.5)
 
-      &-date
-        text-transform: uppercase
-        margin-left: 14px
-
-      &-button
-        border: none
-        outline: none
-        background: transparent
-        width: 44px
-
-        &::before
-          display: block
-          font-family: "Material Icons", sans-serif
-          content: '\e313'
-          font-size: 24px
-          color: rgba(31, 32, 65, 0.5)
-          cursor: pointer
+      &::before
+        font-family: "Material Icons", sans-serif
+        content: '\e313'
+        font-size: 24px
+        line-height: 24px
 
   &__picker
     display: block
     width: 100%
     position: absolute
-    margin-top: 5px
+    margin-top: 50px
     z-index: 1
+
+    &_hidden
+      display: none
+
+    &:hover .date-picker
+      border-color: rgba(31, 32, 65, 0.5)

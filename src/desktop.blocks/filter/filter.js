@@ -1,8 +1,8 @@
 'use strict'
 
 import {RangeSlider} from '../range-slider/range-slider';
-import {DateFilter} from '../date-filter/date-filter';
-import {DropdownQuantity} from '../dropdown-quantity/dropdown-quantity';
+import DateFilter from '../date-filter/date-filter';
+import DropdownQuantity from '../dropdown-quantity/dropdown-quantity';
 import {CheckboxList} from '../checkbox-list/checkbox-list';
 import '../checkbox/checkbox';
 import '../checkbox-rich/checkbox-rich';

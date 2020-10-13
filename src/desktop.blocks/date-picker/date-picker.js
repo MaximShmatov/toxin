@@ -19,8 +19,8 @@ class DatePicker {
   #dateComeInBefore;
   #dateCheckOutBefore;
   #currentDate = this.#pickerDate.getTime();
-  dateComeIn;
-  dateCheckOut;
+  dateComeIn = this.#currentDate.toString();
+  dateCheckOut = this.#currentDate.toString();
   counter = 0;
 
 
@@ -68,20 +68,20 @@ class DatePicker {
   }
 
   #selectDate(evt) {
-    this.counter++;
     switch (this.counter) {
-      case 1:
+      case 0:
         this.#dateComeInBefore = this.dateComeIn;
         this.dateComeIn = evt.currentTarget.getAttribute('data-timestamp');
         this.#setRangeDate();
+        this.counter++;
         this.#$picker.trigger(this.#evtSelectIn);
         break;
-      case 2:
+      case 1:
         this.#dateCheckOutBefore = this.dateCheckOut;
         this.dateCheckOut = evt.currentTarget.getAttribute('data-timestamp');
         this.#setRangeDate();
+        this.counter--;
         this.#$picker.trigger(this.#evtSelectOut);
-        this.counter = 0;
     }
   }
 
@@ -89,10 +89,7 @@ class DatePicker {
     this.#$bodyDates.each((index, date) => {
       const timeStamp = date.getAttribute('data-timestamp');
 
-      this.#$bodyRanges[index].removeAttribute('data-range-first');
-      this.#$bodyRanges[index].removeAttribute('data-range-last');
-
-      if (timeStamp >= this.dateComeIn && timeStamp <= this.dateCheckOut) {
+      if (timeStamp >= this.dateComeIn && timeStamp <= this.dateCheckOut && this.dateComeIn !== this.dateCheckOut) {
         this.#$bodyRanges[index].classList.add('date-picker__body-range');
       } else {
         this.#$bodyRanges[index].classList.remove('date-picker__body-range');

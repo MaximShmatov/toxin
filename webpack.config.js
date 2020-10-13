@@ -11,7 +11,6 @@ module.exports = {
   context: path.resolve(__dirname, 'src/desktop.blocks'),
   entry: {
     index: './page-index/page-index.js'
-    //index: './page-uikit-elements/page-uikit-elements.js'
   },
   output: {
     filename: '[name].[hash].js',
@@ -24,46 +23,46 @@ module.exports = {
       $: 'jquery',
       jQuery: 'jquery'
     }),
-    // new HtmlWebpackPlugin({
-    //   template: path.resolve(__dirname, 'src/desktop.blocks/page-index/page-index.pug'),
-    //   filename: 'index.html'
-    // }),
-    // new HtmlWebpackPlugin({
-    //   template: path.resolve(__dirname, 'src/desktop.blocks/page-uikit-colors/page-uikit-colors.pug'),
-    //   filename: 'uikit_colors.html'
-    // }),
-    // new HtmlWebpackPlugin({
-    //   template: path.resolve(__dirname, 'src/desktop.blocks/page-uikit-elements/page-uikit-elements.pug'),
-    //   filename: 'uikit_elements.html'
-    // }),
-     new HtmlWebpackPlugin({
-       template: path.resolve(__dirname, 'src/desktop.blocks/page-uikit-cards/page-uikit-cards.pug'),
-       filename: 'uikit_cards.html'
-     }),
-    // new HtmlWebpackPlugin({
-    //   template: path.resolve(__dirname, 'src/desktop.blocks/page-uikit-headers-footers/page-uikit-headers-footers.pug'),
-    //   filename: 'uikit_headers_footers.html'
-    // }),
-    // new HtmlWebpackPlugin({
-    //   template: path.resolve(__dirname, 'src/desktop.blocks/page-landing/page-landing.pug'),
-    //   filename: 'landing.html'
-    // }),
-    // new HtmlWebpackPlugin({
-    //   template: path.resolve(__dirname, 'src/desktop.blocks/page-room-search/page-room-search.pug'),
-    //   filename: 'room_search.html'
-    // }),
-    // new HtmlWebpackPlugin({
-    //   template: path.resolve(__dirname, 'src/desktop.blocks/page-registration/page-registration.pug'),
-    //   filename: 'registration.html'
-    // }),
-    // new HtmlWebpackPlugin({
-    //   template: path.resolve(__dirname, 'src/desktop.blocks/page-room-details/page-room-details.pug'),
-    //   filename: 'room_details.html'
-    // }),
-    // new HtmlWebpackPlugin({
-    //   template: path.resolve(__dirname, 'src/desktop.blocks/page-sign-in/page-sign-in.pug'),
-    //   filename: 'sign_in.html'
-    // }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src/desktop.blocks/page-index/page-index.pug'),
+      filename: 'index.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src/desktop.blocks/page-uikit-colors/page-uikit-colors.pug'),
+      filename: 'uikit_colors.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src/desktop.blocks/page-uikit-elements/page-uikit-elements.pug'),
+      filename: 'uikit_elements.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src/desktop.blocks/page-uikit-cards/page-uikit-cards.pug'),
+      filename: 'uikit_cards.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src/desktop.blocks/page-uikit-headers-footers/page-uikit-headers-footers.pug'),
+      filename: 'uikit_headers_footers.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src/desktop.blocks/page-landing/page-landing.pug'),
+      filename: 'landing.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src/desktop.blocks/page-room-search/page-room-search.pug'),
+      filename: 'room_search.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src/desktop.blocks/page-registration/page-registration.pug'),
+      filename: 'registration.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src/desktop.blocks/page-room-details/page-room-details.pug'),
+      filename: 'room_details.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src/desktop.blocks/page-sign-in/page-sign-in.pug'),
+      filename: 'sign_in.html'
+    }),
     new MiniCssExtractPlugin({
       filename: '[name].[hash].css',
       chunkFilename: '[name].[hash].css',

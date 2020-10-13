@@ -5,47 +5,48 @@ import '../button/button';
 import './date-filter.sass';
 
 
-export class DateFilter extends DatePicker {
-  #$filter;
-  #$filterDateOutput;
-  #$filterDateButton;
+class DateFilter extends DatePicker {
+  #$dateFilter;
+  #$dateRange;
+  #$datePicker;
+  #$dateHeader;
   #month = ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'];
   #date = new Date();
-  #$picker;
+
 
   constructor($dateFilter) {
-    super($dateFilter);
-    this.#$filter = $dateFilter;
-    this.#$picker = $dateFilter.find('.date-picker');
-    this.#$filterDateOutput = $dateFilter.find('.date-filter__head-output');
-    this.#$filterDateButton = $dateFilter.find('.date-filter__head-button');
+    super($dateFilter.find('.date-picker'));
+    this.#$dateFilter = $dateFilter;
+    this.#$dateHeader = $dateFilter.find('.date-filter__header');
+    this.#$dateRange = $dateFilter.find('.date-filter__header-range');
+    this.#$datePicker = $dateFilter.find('.date-filter__picker');
 
-    this.#$filterDateButton.on('click', this.#togglePicker.bind(this));
-    $dateFilter.on('date-picker_selected-out', this.#setDateRange.bind(this));
-    $dateFilter.on('date-picker_submit', this.#togglePicker.bind(this));
+    this.#$dateHeader.on('click', this.#togglePicker.bind(this));
+    this.#$datePicker.on('date-picker-select-out', this.#setDateRange.bind(this));
+    this.#$datePicker.on('date-picker-submit', this.#togglePicker.bind(this));
 
     document.addEventListener('mouseup', this.#hiddenPicker.bind(this));
 
+    this.#togglePicker();
     this.#setDateRange();
   }
 
   #setDateRange() {
-    this.#date.setTime(this.dateComeIn);
+    this.#date.setTime(Number(this.dateComeIn));
     let fromDate = `${this.#date.getDate()} ${this.#month[this.#date.getMonth()]} `;
-    this.#date.setTime(this.dateCheckOut);
+    this.#date.setTime(Number(this.dateCheckOut));
     let toDate = `${this.#date.getDate()} ${this.#month[this.#date.getMonth()]}`;
-    this.#$filterDateOutput.text(`${fromDate} - ${toDate}`);
+    this.#$dateRange.text(`${fromDate} - ${toDate}`);
   }
   #togglePicker() {
-    this.#$picker.toggleClass('date-filter__picker_hidden');
+    this.#$datePicker.toggleClass('date-filter__picker_hidden');
   }
 
   #hiddenPicker(evt) {
     if (!evt.target.closest('.date-filter')){
-      this.#$picker.addClass('date-filter__picker_hidden');
+      this.#$datePicker.addClass('date-filter__picker_hidden');
     }
   }
 }
 
-
-
+export default DateFilter

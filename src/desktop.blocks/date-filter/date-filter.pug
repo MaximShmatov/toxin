@@ -3,8 +3,8 @@ include ../date-picker/date-picker
 
 mixin date-filter
   div.date-filter
-    div.date-filter__head
-      output.date-filter__head-output(name="filter__date-head-output")
-      button.date-filter__head-button(type="button")
+    button.date-filter__header(type="button")
+      span.date-filter__header-range
+      div.date-filter__header-arrow
     div.date-filter__picker
       +date-picker

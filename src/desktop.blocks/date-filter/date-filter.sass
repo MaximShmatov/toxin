@@ -2,35 +2,49 @@
   position: relative
   background-color: white
 
-  &:hover &__head
-    border-color: rgba(31, 32, 65, 0.75)
+  &:hover &__header, &:hover .date-picker
+    border-color: rgba(31, 32, 65, 0.5)
 
-  &__head
+  &:hover &__header-arrow
+    color: rgba(31, 32, 65, 0.75)
+
+  &__header
+    font: inherit
+    color: rgba(31, 32, 65, 0.75)
     display: flex
     justify-content: space-between
     align-items: center
+    background-color: white
     border: 1px solid rgba(31, 32, 65, 0.25)
+    outline: none
+    padding: 0
+    width: 100%
     box-sizing: border-box
     border-radius: 4px
     height: 44px
+    cursor: pointer
 
-    &-output
+    &:focus, &:focus + .date-filter__picker .date-picker
+      border-color: rgba(31, 32, 65, 0.5)
+
+    &:focus &-arrow
+      color: rgba(31, 32, 65, 0.75)
+
+    &-range
       padding-left: 14px
 
-    &-button
-      outline: none
-      border: none
-      background: transparent
+    &-arrow
+      display: flex
+      justify-content: center
+      align-items: center
       width: 44px
       height: 100%
+      color: rgba(31, 32, 65, 0.5)
 
       &::before
-        display: block
         font-family: "Material Icons", sans-serif
         content: '\e313'
         font-size: 24px
-        color: rgba(31, 32, 65, 0.5)
-        cursor: pointer
 
   &__picker
     width: 100%
@@ -38,5 +52,5 @@
     z-index: 11
     top: 96%
 
-    &-hidden
+    &_hidden
       display: none

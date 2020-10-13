@@ -1,7 +1,7 @@
 'use strict'
 
-import {DropdownQuantity} from "../dropdown-quantity/dropdown-quantity";
-import {DateRange} from "../date-range/date-range";
+import DropdownQuantity from "../dropdown-quantity/dropdown-quantity";
+import DateRange from "../date-range/date-range";
 import '../button/button';
 import './form-search-room.sass';
 

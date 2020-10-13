@@ -4,24 +4,33 @@ import '../button/button';
 import './dropdown-quantity.sass';
 
 
-export class DropdownQuantity {
+class DropdownQuantity {
   #$dropdown;
   #$headOut;
-  #$headButton;
+  #$header;
+  #$itemHeader;
   #$picker;
   #$minus;
   #$plus;
   #$amount;
   #$clear;
   #$submit;
-  #quantity = {};
   #setValidQuantity;
   #setCaption;
+  #quantity = {
+    firstItem: 0,
+    secondItem: 0,
+    thirdItem: 0,
+    isFirstItem: undefined,
+    isSecondItem: undefined,
+    isThirdItem: undefined,
+  }
 
   constructor($dropdown, mode) {
     this.#$dropdown = $dropdown;
+    this.#$header = $dropdown.find('.dropdown-quantity__head');
+    this.#$itemHeader = $dropdown.find('.dropdown-quantity__picker-item-header')
     this.#$headOut = $dropdown.find('.dropdown-quantity__head-out');
-    this.#$headButton = $dropdown.find('.dropdown-quantity__head');
     this.#$picker = $dropdown.find('.dropdown-quantity__picker');
     this.#$minus = $dropdown.find('.dropdown-quantity__picker-item-quantity-minus');
     this.#$plus = $dropdown.find('.dropdown-quantity__picker-item-quantity-plus');
@@ -29,46 +38,43 @@ export class DropdownQuantity {
     this.#$clear = $dropdown.find('.dropdown-quantity__picker-item-clear');
     this.#$submit = $dropdown.find('.dropdown-quantity__picker-item-submit');
 
-    if (mode === 'room') this.#initRoomMode();
-    else this.#initGuestsMode();
-
-    this.#quantity = {
-      firstItem: Number($(this.#$amount[0]).text()),
-      secondItem: Number($(this.#$amount[1]).text()),
-      thirdItem: Number($(this.#$amount[2]).text()),
-      isFirstItem: undefined,
-      isSecondItem: undefined,
-      isThirdItem: undefined,
-    }
-
     this.#$clear.on('click', this.#clearPicker.bind(this));
-    this.#$headButton.on('click', this.quantityPickerToggle.bind(this));
-    this.#$submit.on('click', this.quantityPickerToggle.bind(this));
-    $(this.#$minus[0]).on('click', this.#firstItemDel.bind(this));
-    $(this.#$minus[1]).on('click', this.#secondItemDel.bind(this));
-    $(this.#$minus[2]).on('click', this.#thirdItemDel.bind(this));
-    $(this.#$plus[0]).on('click', this.#firstItemAdd.bind(this));
-    $(this.#$plus[1]).on('click', this.#secondItemAdd.bind(this));
-    $(this.#$plus[2]).on('click', this.#thirdItemAdd.bind(this));
+    this.#$header.on('click', this.togglePicker.bind(this));
+    this.#$submit.on('click', this.togglePicker.bind(this));
+    this.#$minus.eq(0).on('click', this.#firstItemDel.bind(this));
+    this.#$minus.eq(1).on('click', this.#secondItemDel.bind(this));
+    this.#$minus.eq(2).on('click', this.#thirdItemDel.bind(this));
+    this.#$plus.eq(0).on('click', this.#firstItemAdd.bind(this));
+    this.#$plus.eq(1).on('click', this.#secondItemAdd.bind(this));
+    this.#$plus.eq(2).on('click', this.#thirdItemAdd.bind(this));
 
     document.addEventListener('mouseup', this.#pickerHidden.bind(this));
+
+    if (mode === 'room') this.#initRoomMode();
+    else this.#initGuestsMode();
+    this.togglePicker();
+  }
+
+  togglePicker() {
+    this.#$picker.toggleClass('dropdown-quantity__picker_hidden');
   }
 
   #initRoomMode() {
-    this.#$picker.find('.dropdown-quantity__picker-item:last-of-type').addClass('dropdown-quantity__picker-item_hidden');
+    this.#$picker.find('.dropdown-quantity__picker-item:last-of-type')
+      .addClass('dropdown-quantity__picker-item_hidden');
     this.#$headOut.text('Удобства номера');
-    this.#$picker.find('.dropdown-quantity__picker-item:nth-child(1) > h3').text('Спальни');
-    this.#$picker.find('.dropdown-quantity__picker-item:nth-child(2) > h3').text('Кровати');
-    this.#$picker.find('.dropdown-quantity__picker-item:nth-child(3) > h3').text('Ванные комнаты');
+    this.#$itemHeader.eq(0).text('Спальни');
+    this.#$itemHeader.eq(1).text('Кровати');
+    this.#$itemHeader.eq(2).text('Ванные комнаты');
     this.#setValidQuantity = this.#setValidRoom;
     this.#setCaption = this.#setCaptionRoom;
   }
 
   #initGuestsMode() {
     this.#$headOut.text('Сколько гостей');
-    this.#$picker.find('.dropdown-quantity__picker-item:nth-child(1) > h3').text('Взрослые');
-    this.#$picker.find('.dropdown-quantity__picker-item:nth-child(2) > h3').text('Дети');
-    this.#$picker.find('.dropdown-quantity__picker-item:nth-child(3) > h3').text('Младенцы');
+    this.#$itemHeader.eq(0).text('Взрослые');
+    this.#$itemHeader.eq(1).text('Дети');
+    this.#$itemHeader.eq(2).text('Младенцы');
     this.#setValidQuantity = this.#setValidGuests;
     this.#setCaption = this.#setCaptionGuests;
   }
@@ -300,15 +306,11 @@ export class DropdownQuantity {
     this.#setDisabledMinus();
   }
 
-  quantityPickerToggle() {
-    if (this.#$picker.css('display') === 'none') {
-      this.#$picker.addClass('dropdown-quantity__picker_display');
-    } else {
-      this.#$picker.removeClass('dropdown-quantity__picker_display');
+  #pickerHidden(evt) {
+    if (!evt.target.closest('.dropdown-quantity')) {
+      this.#$picker.addClass('dropdown-quantity__picker_hidden');
     }
   }
-
-  #pickerHidden(evt) {
-    if (this.#$picker.has(evt.target).length === 0) this.#$picker.removeClass('dropdown-quantity__picker_display');
-  }
 }
+
+export default DropdownQuantity;

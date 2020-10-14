@@ -153,7 +153,7 @@ class DropdownQuantity {
       case 5:
         selectedCaption = selectedCaption + `, ${this.#quantity.secondItem} кроватей`;
     }
-    this.#$headOut.val(selectedCaption);
+    this.#$headOut.text(selectedCaption);
   }
 
   #setValidGuests() {
@@ -229,7 +229,7 @@ class DropdownQuantity {
       case 5:
         selectedCaption = selectedCaption + `, ${this.#quantity.thirdItem} младенцев`;
     }
-    this.#$headOut.val(selectedCaption);
+    this.#$headOut.text(selectedCaption);
   }
 
   #setDisabledMinus() {

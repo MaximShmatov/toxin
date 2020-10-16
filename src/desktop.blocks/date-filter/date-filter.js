@@ -17,8 +17,8 @@ class DateFilter extends DatePicker {
   constructor($dateFilter) {
     super($dateFilter.find('.date-picker'));
     this.#$dateFilter = $dateFilter;
-    this.#$dateHeader = $dateFilter.find('.date-filter__header');
-    this.#$dateRange = $dateFilter.find('.date-filter__header-range');
+    this.#$dateHeader = $dateFilter.find('.date-filter__body');
+    this.#$dateRange = $dateFilter.find('.date-filter__body-range');
     this.#$datePicker = $dateFilter.find('.date-filter__picker');
 
     this.#$dateHeader.on('click', this.#togglePicker.bind(this));

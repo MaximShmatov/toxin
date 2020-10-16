@@ -19,9 +19,7 @@ block page-site
 				div.page-room__details-info-item
 					+info
 			article.page-room__details-effect
-				h2.page-room__details-effect-title Впечатления от номера
-				div.page-room__details-effect-diagram
-					+diagram
+				+diagram
 			article.page-room__details-reviews
 				div.page-room__details-reviews-header
 					h2.page-room__details-reviews-header-title Отзывы посетителей номера
@@ -31,8 +29,7 @@ block page-site
 				div.page-room__details-reviews-item
 					+review
 			article.page-room__details-rules
-				h2.page-room__details-rules-title Правила
-				+bullet-list
+				+bullet-list({header: "Правила"})
 			article.page-room__details-cancel
 				h2.page-room__details-cancel-title Отмена
 				p.page-room__details-cancel-note

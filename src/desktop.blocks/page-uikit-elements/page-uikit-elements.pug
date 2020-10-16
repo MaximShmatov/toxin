@@ -5,7 +5,7 @@ include ../dropdown-quantity/dropdown-quantity
 include ../date-range/date-range
 include ../date-filter/date-filter
 include ../subscription/subscription
-include ../checkbox/checkbox
+include ../checkbox-group/checkbox-group
 include ../radio/radio
 include ../toggle/toggle
 include ../like/like
@@ -23,50 +23,30 @@ block page-uikit
   article.uikit-elements
     aside.uikit-elements__sect1
       div.uikit-elements__sect1-element
-        label.uikit-elements__sect1-element-label
-          span.uikit-elements__sect1-element-caption Default
-          h3.uikit-elements__sect1-element-title Text field
-          +text-field({type: "email", value: "Email"})
+        span.uikit-elements__sect1-element-caption Default
+        +text-field({type: "email", value: "Email", header: "Text field"})
       div.uikit-elements__sect1-element
-        label.uikit-elements__sect1-element-label
-          span.uikit-elements__sect1-element-caption Hover / Focus
-          h3.uikit-elements__sect1-element-title Text field
-          +text-field({type: "text", value: "Имя"})
+        span.uikit-elements__sect1-element-caption Hover / Focus
+        +text-field({type: "text", value: "Имя", header: "Text field"})
       div.uikit-elements__sect1-element
-        h3.uikit-elements__sect1-element-title Dropdown
-        +dropdown-quantity
+        +dropdown-quantity({header: "Dropdown"})
       div.uikit-elements__sect1-element
-        label.uikit-elements__sect1-element-label
-          h3.uikit-elements__sect1-element-title Masked text field
-          +text-field({type: "text", value: "дд.мм.гггг", mask: "99.99.9999"})
+        +text-field({type: "text", value: "дд.мм.гггг", mask: "99.99.9999", header: "Masked text field"})
       div.uikit-elements__sect1-element
-        div.uikit-elements__sect1-element-title-dropdown
-          h3.uikit-elements__sect1-element-title-in Date dropdown
-          h3.uikit-elements__sect1-element-title-out Date dropdown
-        +date-range
+        +date-range({header1: "Date dropdown", header2: "Date dropdown"})
       div.uikit-elements__sect1-element
-          h3.uikit-elements__sect1-element-title Filter date dropdown
-          +date-filter
+        +date-filter({header: "Filter date dropdown"})
       div.uikit-elements__sect1-element
-        label.uikit-elements__sect1-element-label
-          h3.uikit-elements__sect1-element-title Subscription text field
-          +subscription
+        h3.uikit-elements__sect1-element-title Subscription text field
+        +subscription
 
     aside.uikit-elements__sect2
       div.uikit-elements__sect2-element
-        h3.uikit-elements__sect2-element-title Checkbox buttons
-        div.uikit-elements__sect2-element-checkbox
-          +checkbox({name: "smoke", caption: "Можно курить", checked: false})
-        div.uikit-elements__sect2-element-checkbox
-          +checkbox({name: "pet", caption: "Можно с питомцами", checked: true})
-        div.uikit-elements__sect2-element-checkbox
-          +checkbox({name: "guests", caption: "Можно пригласить гостей", checked: true})
-          spa.uikit-elements__sect2-element-checkbox-note (до 10 человек)
+        +checkbox-group({header: "Checkbox buttons"})
       div.uikit-elements__sect2-element
         h3.uikit-elements__sect2-element-title Radio buttons
         div.uikit-elements__sect2-element-radio
           +radio({name: "registration__mw-radio", value: "m", caption: "Мужчина", checked: true})
-        div.uikit-elements__sect2-element-radio
           +radio({name: "registration__mw-radio", value: "w", caption: "Женщина"})
       div.uikit-elements__sect2-element
         h3.uikit-elements__sect2-element-title Toggle
@@ -117,34 +97,28 @@ block page-uikit
     aside.uikit-elements__sect4
       div.uikit-elements__sect4-element
         span.uikit-elements__sect4-element-caption Default
-        h3.uikit-elements__sect4-element-title Dropdown
-        +dropdown-quantity
+        +dropdown-quantity({header: "Dropdown"})
       div.uikit-elements__sect4-element
         span.uikit-elements__sect4-element-caption Expanded
-        h3.uikit-elements__sect4-element-title Dropdown
-        +dropdown-quantity
+        +dropdown-quantity({header: "Dropdown"})
 
     aside.uikit-elements__sect5
-      h3.uikit-elements__sect5-element-title Dropdown
-      +dropdown-quantity
+      +dropdown-quantity({header: "Dropdown"})
 
     aside.uikit-elements__sect6
-      h3.uikit-elements__sect6-element-title Dropdown
-      +dropdown-quantity
+      +dropdown-quantity({header: "Dropdown"})
 
     aside.uikit-elements__sect7
       div.uikit-elements__sect7-element
-        +checkbox-list("Expandable checkbox list")
+        +checkbox-list({name: "Expandable checkbox list", checked: false})
       div.uikit-elements__sect7-element
-        +checkbox-list("Expandable checkbox list")
+        +checkbox-list({name: "Expandable checkbox list", checked: true})
 
     aside.uikit-elements__sect8
-      h3.uikit-elements__sect8-element-title Rich checkbox buttons
-      +checkbox-rich
+      +checkbox-rich({header: "Rich checkbox buttons"})
 
     aside.uikit-elements__sect9
-      h3.uikit-elements__sect9-element-title Bullet list
-      +bullet-list
+      +bullet-list({header: "Bullet list"})
 
     aside.uikit-elements__sect10
       div.uikit-elements__sect10-info

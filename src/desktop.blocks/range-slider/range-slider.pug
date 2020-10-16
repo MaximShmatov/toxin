@@ -1,6 +1,6 @@
-mixin range-slider
+mixin range-slider(props)
   div.range-slider
-    h3.range-slider__title Диапазон цены
-      output.range-slider__range(form="price" name="price-range")
+    if (props)
+      h3.range-slider__title.toxin_header-third=props.header
+        span.range-slider__title-range
     div.range-slider__plugin(data-on-range="true", data-min-value="0", data-max-value="15000", data-value-from="5000", data-value-to="10000")
-    p.range-slider__info Стоимость за сутки пребывания в номере

@@ -1,6 +1,20 @@
+@mixin header-first
+  font-family: Quicksand, 'Open Sans', Arial, sans-serif
+  font-style: normal
+  font-weight: bold
+  margin: 0
+
 .diagram
   display: flex
   align-items: flex-end
+
+  &__title
+    @include header-first
+    font-size: 19px
+    line-height: 24px
+    color: #1F2041
+    padding-bottom: 21px
+    margin: 0
 
   &__circle
     position: relative
@@ -45,10 +59,18 @@
       border-radius: 50%
       background-color: white
 
-      &-title
+      &-title:first-child
+        @include header-first
+        font-size: 24px
+        line-height: 30px
         color: #BC9CFF
 
       &-title:last-child
+        font-weight: bold
+        font-size: 12px
+        line-height: 15px
+        text-transform: uppercase
+        color: #BC9CFF
         padding-bottom: 6px
 
   &__list

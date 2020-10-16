@@ -7,6 +7,7 @@ import Review from '../review/review';
 import '../diagram/diagram';
 import '../bullet-list/bullet-list';
 import '../form-reservation/form-reservation';
+import '../template-site/template-site';
 import './page-room-details.sass';
 
 let $pageRoom = $('.page-room');

@@ -1,2 +1,4 @@
 mixin text-field(props)
-	input.text-field(type=props.type placeholder=props.value data-mask=props.mask)
+  if (props.header)
+    h3.text-field__title=props.header
+  input.text-field(type=props.type placeholder=props.value data-mask=props.mask)

@@ -3,13 +3,15 @@
   flex-direction: row-reverse
   align-items: center
   justify-content: flex-end
-  cursor: pointer
 
   &__true
-    display: none
+    position: absolute
+    visibility: hidden
+
     &:checked + .toggle__false
       justify-content: flex-end
       border-color: #BC9CFF
+
     &:checked + .toggle__false::before
       background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
 
@@ -19,10 +21,18 @@
     border: 1px solid rgba(31, 32, 65, 0.25)
     box-sizing: border-box
     border-radius: 10px
-    padding: 4px
+    padding: 3px
     width: 40px
     height: 20px
     margin-right: 10px
+    outline: none
+    cursor: pointer
+
+    &:focus
+      box-shadow: 0 0 2px 1px rgba(31, 32, 65, 0.5)
+
+    &:hover
+      opacity: .8
 
     &::before
       content: ''
@@ -30,4 +40,4 @@
       width: 12px
       height: 12px
       background: rgba(31, 32, 65, 0.25)
-      border-radius: 10px
+      border-radius: 50%

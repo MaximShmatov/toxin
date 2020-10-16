@@ -8,9 +8,18 @@ const webpack = require('webpack');
 
 module.exports = {
   mode: 'none',
-  context: path.resolve(__dirname, 'src/desktop.blocks'),
+  context: path.resolve(__dirname, 'src'),
   entry: {
-    index: './page-index/page-index.js'
+    index: './index.js',
+    colors: './desktop.blocks/page-uikit-colors/page-uikit-colors.js',
+    elements: './desktop.blocks/page-uikit-elements/page-uikit-elements.js',
+    forms: './desktop.blocks/page-uikit-forms/page-uikit-forms.js',
+    headers: './desktop.blocks/page-uikit-headers-footers/page-uikit-headers-footers.js',
+    landing: './desktop.blocks/page-landing/page-landing.js',
+    template: './desktop.blocks/page-room-search/page-room-search.js',
+    reservation: './desktop.blocks/page-registration/page-registration.js',
+    details: './desktop.blocks/page-room-details/page-room-details.js',
+    sign: './desktop.blocks/page-sign-in/page-sign-in.js',
   },
   output: {
     filename: '[name].[hash].js',
@@ -24,7 +33,7 @@ module.exports = {
       jQuery: 'jquery'
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/desktop.blocks/page-index/page-index.pug'),
+      template: path.resolve(__dirname, 'src/index.pug'),
       filename: 'index.html'
     }),
     new HtmlWebpackPlugin({
@@ -36,7 +45,7 @@ module.exports = {
       filename: 'uikit_elements.html'
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/desktop.blocks/page-uikit-cards/page-uikit-cards.pug'),
+      template: path.resolve(__dirname, 'src/desktop.blocks/page-uikit-forms/page-uikit-forms.pug'),
       filename: 'uikit_cards.html'
     }),
     new HtmlWebpackPlugin({

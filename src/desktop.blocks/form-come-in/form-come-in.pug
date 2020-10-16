@@ -3,9 +3,8 @@ include ../text-field/text-field
 
 mixin form-come-in
 	form.form-come-in
-		fieldset.form-come-in__wrapper
-			legend
-				h1.form-come-in-header Войти
+		fieldset.form-come-in__fieldset
+			legend.form-come-in__title Войти
 			div.form-come-in__email
 				+text-field({type: "email", value: "Email"})
 			div.form-come-in__pass

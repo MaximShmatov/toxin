@@ -26,12 +26,12 @@ class DatePicker {
 
   constructor($picker) {
     this.#$picker = $picker;
-    this.#$title = $picker.find('.date-picker__header-title');
+    this.#$title = $picker.find('.date-picker__head-title');
     this.#$bodyRanges = $picker.find('.date-picker__body-range');
 
     this.#$bodyDates = $picker.find('.date-picker__body-date').on('click', this.#selectDate.bind(this));
-    $picker.find('.date-picker__header-list-left').on('click', this.#listLeftDate.bind(this));
-    $picker.find('.date-picker__header-list-right').on('click', this.#listRightDate.bind(this));
+    $picker.find('.date-picker__head-list-left').on('click', this.#listLeftDate.bind(this));
+    $picker.find('.date-picker__head-list-right').on('click', this.#listRightDate.bind(this));
     $picker.find('.date-picker__footer-clear').on('click', this.#clear.bind(this));
     $picker.find('.date-picker__footer-submit').on('click', this.#submit.bind(this));
 

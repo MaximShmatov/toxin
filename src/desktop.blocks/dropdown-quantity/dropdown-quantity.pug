@@ -1,28 +1,30 @@
 include ../button/button
 
-mixin dropdown-quantity
+mixin dropdown-quantity(props)
 	div.dropdown-quantity
+		if (props)
+			h3.dropdown-quantity__title=props.header
 		button.dropdown-quantity__head(type="button")
 			span.dropdown-quantity__head-out
 			div.dropdown-quantity__head-arrow
 		div.dropdown-quantity__picker
 			div.dropdown-quantity__picker-item
-				h3.dropdown-quantity__picker-item-header
+				span.dropdown-quantity__picker-item-header
 				div.dropdown-quantity__picker-item-quantity
 					input.dropdown-quantity__picker-item-quantity-minus(type="button" value="-" disabled)
-					h3.dropdown-quantity__picker-item-quantity-amount 0
+					span.dropdown-quantity__picker-item-quantity-amount 0
 					input.dropdown-quantity__picker-item-quantity-plus(type="button" value="+")
 			div.dropdown-quantity__picker-item
-				h3.dropdown-quantity__picker-item-header
+				span.dropdown-quantity__picker-item-header
 				div.dropdown-quantity__picker-item-quantity
 					input.dropdown-quantity__picker-item-quantity-minus(type="button" value="-" disabled)
-					h3.dropdown-quantity__picker-item-quantity-amount 0
+					span.dropdown-quantity__picker-item-quantity-amount 0
 					input.dropdown-quantity__picker-item-quantity-plus(type="button" value="+")
 			div.dropdown-quantity__picker-item
-				h3.dropdown-quantity__picker-item-header
+				span.dropdown-quantity__picker-item-header
 				div.dropdown-quantity__picker-item-quantity
 					input.dropdown-quantity__picker-item-quantity-minus(type="button" value='-' disabled)
-					h3.dropdown-quantity__picker-item-quantity-amount 0
+					span.dropdown-quantity__picker-item-quantity-amount 0
 					input.dropdown-quantity__picker-item-quantity-plus(type="button" value='+')
 			div.dropdown-quantity__picker-item
 				div.dropdown-quantity__picker-item-clear

@@ -2,13 +2,16 @@
   position: relative
   background-color: white
 
-  &:hover &__header, &:hover .date-picker
+  &:hover &__body, &:hover .date-picker
     border-color: rgba(31, 32, 65, 0.5)
 
-  &:hover &__header-arrow
+  &:hover &__body-arrow
     color: rgba(31, 32, 65, 0.75)
 
-  &__header
+  &__title
+    padding-bottom: 5px
+    
+  &__body
     font: inherit
     color: rgba(31, 32, 65, 0.75)
     display: flex
@@ -37,13 +40,14 @@
       display: flex
       justify-content: center
       align-items: center
-      width: 44px
+      width: 42px
       height: 100%
+      padding-top: 2px
       color: rgba(31, 32, 65, 0.5)
 
       &::before
         font-family: "Material Icons", Icomoon, sans-serif
-        content: '\e903' //'\e313'
+        content: '\e903'
         font-size: 24px
 
   &__picker

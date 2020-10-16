@@ -1,17 +1,25 @@
+@mixin header-third
+  font-weight: bold
+  font-size: 12px
+  line-height: 15px
+  text-transform: uppercase
+  color: #1F2041
+  margin: 0
+
 .footer
   display: flex
   justify-content: space-between
   max-width: 1160px
   flex-wrap: wrap
   margin: 0 auto
-  padding: 100px 0
+  padding: 100px 0 101px
 
   &__wrapper
     background-color: white
     box-shadow: 0 1px 0 rgba(31, 32, 65, 0.1)
 
   &__logo
-    width: 260px
+    max-width: 260px
     margin-right: 40px
 
     &-caption
@@ -20,8 +28,8 @@
   &__nav
     display: grid
     grid-template-columns: 1fr 1fr 1fr
+    padding-top: 4px
     flex-grow: 1
-    margin-top: 0
 
     &-items
       list-style: none
@@ -29,7 +37,7 @@
       padding: 0
 
       &-title
-        margin: 4px 0 1px
+        @include header-third
 
       &-item
         line-height: 18px
@@ -40,10 +48,11 @@
           color: rgba(31, 32, 65, 0.5)
 
   &__subscription
-    width: 260px
+    max-width: 260px
+    padding-top: 4px
 
     &-title
-      margin-top: 4px
+      @include header-third
 
     &-caption
       margin: 18px 0 23px

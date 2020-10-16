@@ -1,7 +1,9 @@
 include ../checkbox/checkbox
 
-mixin checkbox-rich
+mixin checkbox-rich(props)
 	div.checkbox-rich
+		if (props)
+			h3.checkbox-rich__title=props.header
 		div.checkbox-rich__checkbox
 			+checkbox({name: "corridor", caption: "Широкий коридор", checked: false})
 		p.checkbox-rich__info Ширина коридоров в номере <br> не менее 91 см.

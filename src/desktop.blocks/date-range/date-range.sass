@@ -8,67 +8,78 @@
     width: 100%
     clear: both
 
-  &__head-in
-    float: left
+  &__head
+    &:nth-of-type(1)
+      float: left
 
-  &__head-out
-    float: right
+    &:nth-of-type(2)
+      float: right
 
-  &__head-in, &__head-out
-    font: inherit
-    display: flex
-    justify-content: space-between
-    align-items: center
-    background-color: transparent
-    width: 150px
-    height: 44px
-    border: 1px solid rgba(31, 32, 65, 0.25)
-    color: rgba(31, 32, 65, 0.75)
-    box-sizing: border-box
-    border-radius: 4px
-    padding: 0
-    outline: none
-    cursor: pointer
-
-    &:hover, &:hover ~ .date-range__picker .date-picker
+    &:hover &-out, &:hover &-in, &:hover ~ .date-range__picker .date-picker
       border-color: rgba(31, 32, 65, 0.5)
 
-    &:hover &-arrow
+    &:hover &-in-arrow, &:hover &-out-arrow
       color: rgba(31, 32, 65, 0.75)
 
-    &:focus,  &:focus ~ .date-range__picker .date-picker
-      border: 1px solid rgba(31, 32, 65, 0.5)
-
-    &:focus &-arrow
-      color: rgba(31, 32, 65, 0.75)
-
-    &-date
+    &-title
+      font-weight: bold
+      font-size: 12px
+      line-height: 15px
       text-transform: uppercase
-      padding-left: 14px
+      color: #1F2041
+      padding-bottom: 5px
+      margin: 0
 
-    &-arrow
+    &-in, &-out
+      font: inherit
       display: flex
-      justify-content: center
+      justify-content: space-between
       align-items: center
-      width: 44px
-      height: 100%
-      color: rgba(31, 32, 65, 0.5)
+      background-color: transparent
+      width: 150px
+      height: 44px
+      border: 1px solid rgba(31, 32, 65, 0.25)
+      color: rgba(31, 32, 65, 0.75)
+      box-sizing: border-box
+      border-radius: 4px
+      padding: 0
+      outline: none
+      cursor: pointer
 
-      &::before
-        font-family: "Material Icons", Icomoon, sans-serif
-        content: '\e903' //'\e313'
-        font-size: 24px
-        line-height: 24px
+      &:focus
+        border: 1px solid rgba(31, 32, 65, 0.5)
+
+      &:focus &-arrow
+        color: rgba(31, 32, 65, 0.75)
+
+      &-date
+        text-transform: uppercase
+        padding-left: 14px
+
+      &-arrow
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 42px
+        height: 100%
+        color: rgba(31, 32, 65, 0.5)
+        padding-top: 2px
+
+        &::before
+          font-family: "Material Icons", Icomoon, sans-serif
+          content: '\e903'
+          font-size: 24px
+          line-height: 24px
 
   &__picker
     display: block
     width: 100%
     position: absolute
-    margin-top: 50px
-    z-index: 1
-
-    &_hidden
-      display: none
+    top: 110%
+    z-index: 10
 
     &:hover .date-picker
       border-color: rgba(31, 32, 65, 0.5)
+
+    &_hidden
+      display: none

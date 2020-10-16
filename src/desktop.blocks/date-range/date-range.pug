@@ -1,12 +1,18 @@
 include ../date-picker/date-picker
 
-mixin date-range
+mixin date-range(props)
   div.date-range
-    button.date-range__head-in(type="button")
-      span.date-range__head-in-date дд.мм.гггг
-      div.date-range__head-in-arrow
-    button.date-range__head-out(type="button")
-      span.date-range__head-out-date дд.мм.гггг
-      div.date-range__head-out-arrow
+    div.date-range__head
+      if (props)
+        h3.date-range__head-title=props.header1
+      button.date-range__head-in(type="button")
+        span.date-range__head-in-date дд.мм.гггг
+        div.date-range__head-in-arrow
+    div.date-range__head
+      if (props)
+        h3.date-range__head-title=props.header2
+      button.date-range__head-out(type="button")
+        span.date-range__head-out-date дд.мм.гггг
+        div.date-range__head-out-arrow
     div.date-range__picker
       +date-picker

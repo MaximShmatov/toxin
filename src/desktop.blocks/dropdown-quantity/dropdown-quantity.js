@@ -60,8 +60,7 @@ class DropdownQuantity {
   }
 
   #initRoomMode() {
-    this.#$picker.find('.dropdown-quantity__picker-item:last-of-type')
-      .addClass('dropdown-quantity__picker-item_hidden');
+    this.#$picker.find('.dropdown-quantity__picker-item:last-of-type').hide();
     this.#$headOut.text('Удобства номера');
     this.#$itemHeader.eq(0).text('Спальни');
     this.#$itemHeader.eq(1).text('Кровати');

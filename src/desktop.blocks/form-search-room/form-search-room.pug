@@ -8,13 +8,9 @@ mixin form-search-room
       legend.form-search-room-legend
         h1.form-search-room-header Найдём номера под ваши пожелания
       div.form-search-room__date
-        div.form-search-room__date-title
-          h3.form-search-room__date-title-in Прибытие
-          h3.form-search-room__date-title-out Выезд
-        +date-range
+        +date-range({header1: "Прибытие", header2: "Выезд"})
       div.form-search-room__guests
-        h3.form-search-room__guests-title гости
-        +dropdown-quantity
+        +dropdown-quantity({header: "Гости"})
       div.form-search-room__submit
         +button({type: "button", text: "Подобрать номер", mode: "forward"})
 

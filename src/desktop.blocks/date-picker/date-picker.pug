@@ -2,10 +2,10 @@ include ../button/button
 
 mixin date-picker
 	div.date-picker
-		div.date-picker__header
-			button.date-picker__header-list-left(type="button")
-			h2.date-picker__header-title
-			button.date-picker__header-list-right(type="button")
+		div.date-picker__head
+			button.date-picker__head-list-left(type="button")
+			h2.date-picker__head-title
+			button.date-picker__head-list-right(type="button")
 		div.date-picker__body
 			- const weekDay = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
 			-for (let i = 0; i < 7; i++)

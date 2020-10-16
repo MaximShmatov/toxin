@@ -1,10 +1,12 @@
 include ../button/button
 include ../date-picker/date-picker
 
-mixin date-filter
+mixin date-filter(props)
   div.date-filter
-    button.date-filter__header(type="button")
-      span.date-filter__header-range
-      div.date-filter__header-arrow
+    if (props)
+      h3.date-filter__title.toxin_header-third=props.header
+    button.date-filter__body(type="button")
+      span.date-filter__body-range
+      div.date-filter__body-arrow
     div.date-filter__picker
       +date-picker

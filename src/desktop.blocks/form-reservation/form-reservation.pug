@@ -4,26 +4,20 @@ include ../button/button
 
 mixin form-reservation
 	form.form-reservation
-		fieldset.form-reservation__wrapper
-			div.form-reservation__room
+		fieldset.form-reservation__fieldset
+			legend.form-reservation__title
 				div.form-reservation__room-info
-					h3.form-reservation__room-info-header &#8470;&nbsp;&nbsp;
-					h1.form-reservation__room-info-number-header
-						output.form-reservation__room-info-number
-					h3.form-reservation__room-info-level-header
-						output.form-reservation__room-info-level
+					span.form-reservation__room-info-num &#8470;&nbsp;&nbsp;
+					span.form-reservation__room-info-number
+					span.form-reservation__room-info-level
 				div.form-reservation__room-price
-					output.form-reservation__room-price-amount
-					span &#x20bd;&#8194;
-					span в сутки
+					span.form-reservation__room-price-amount
+					span.form-reservation__room-price-rub &#x20bd;&nbsp;
+					span.form-reservation__room-price-term в сутки
 			div.form-reservation__date
-				div.form-reservation__date-title
-					h3.form-reservation__date-title-in Прибытие
-					h3.form-reservation__date-title-out Выезд
-				+date-range
+				+date-range({header1: "Прибытие", header2: "Выезд"})
 			div.form-reservation__guests
-				h3.form-reservation__guests-header Гости
-				+dropdown-quantity
+				+dropdown-quantity({header: "Гости"})
 
 			div.form-reservation__pay
 				div.form-reservation__pay-days

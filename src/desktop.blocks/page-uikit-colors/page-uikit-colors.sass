@@ -1,105 +1,115 @@
-@mixin color($color)
-  display: flex
-  align-items: center
-  &::before
-    content: ''
-    display: inline-block
-    width: 70px
-    height: 70px
-    border-radius: 6px
-    background: $color
-    margin-right: 40px
-
-@mixin type
-  display: block
-  height: 100%
-  width: 70px
-  text-align: right
-  color: rgba(31, 32, 65, 0.25)
-  float: left
-  margin-right: 30px
+@mixin header
+  font-family: Quicksand, 'Open Sans', Arial, sans-serif
+  font-weight: bold
+  color: #1F2041
 
 .uikit-colors
   display: flex
   justify-content: space-between
   flex-wrap: wrap
   max-width: 1140px
-  margin: 145px 150px
+  margin: 145px auto
 
-  &__color-wrapper
-    display: flex
-    flex-direction: column
-    height: 610px
-    justify-content: space-between
+  &__colors
+    &-block
+      display: flex
+      padding-bottom: 20px
 
-  &__color:nth-of-type(1)
-    @include color(rgba(31, 32, 65, 1))
+    &-square
+      min-width: 70px
+      width: 70px
+      height: 70px
+      border-radius: 6px
 
-  &__color:nth-of-type(2)
-    @include color(rgba(31, 32, 65, 0.75))
-
-  &__color:nth-of-type(3)
-    @include color(rgba(31, 32, 65, 0.50))
-
-  &__color:nth-of-type(4)
-    @include color(rgba(31, 32, 65, 0.25))
-
-  &__color:nth-of-type(5)
-    @include color(rgba(31, 32, 65, 0.05))
-
-  &__color:nth-of-type(6)
-    @include color(#BC9CFF)
-
-  &__color:nth-of-type(7)
-    @include color(#6FCF97)
-
-  &__color span
-    font-family: Quicksand, 'Open Sans', Arial, sans-serif
-    font-size: 19px
-    display: block
-    margin-top: 5px
-    color: #1F2041
-
-  &__type-wrapper
-    display: flex
-    flex-direction: column
-    max-width: 450px
-    margin-right: 27px
+    &-value
+      @include header
+      font-size: 19px
+      line-height: 29px
+      display: flex
+      justify-content: center
+      padding-left: 40px
+      flex-direction: column
+      padding-top: 1px
 
 
-  &__type:not(:first-of-type)
-    margin-top: 50px
+    &-block:nth-of-type(1) &-square
+      background-color: rgba(31, 32, 65, 1)
 
-  &__type:nth-of-type(1)
+    &-block:nth-of-type(2) &-square
+      background-color: rgba(31, 32, 65, .75)
 
-    &::before
-      content: 'H1'
-      display: block
+    &-block:nth-of-type(3) &-square
+      background-color: rgba(31, 32, 65, .50)
+
+    &-block:nth-of-type(4) &-square
+      background-color: rgba(31, 32, 65, .25)
+
+    &-block:nth-of-type(5) &-square
+      background-color: rgba(31, 32, 65, .05)
+
+    &-block:nth-of-type(6) &-square
+      background-color: #BC9CFF
+
+    &-block:nth-of-type(7) &-square
+      background-color: #6FCF97
+
+  &__value-hex
+    font-weight: normal
+
+  &__font
+    font-family: Montserrat, Arial, sans-serif
+    font-size: 14px
+    line-height: 24px
+    color: rgba(31, 32, 65, 0.25)
+    display: grid
+    grid-template-columns: 40px 1fr
+    grid-template-rows: repeat(4, min-content)
+    margin-right: 41px
+
+    &-h1-tag, &-h2-tag, &-h3-tag
+      text-transform: uppercase
+      text-align: right
+
+    &-h1-tag
       font-size: 24px
       line-height: 29px
-      @include type
 
-  &__type:nth-of-type(2)
-
-    &::before
-      content: 'H2'
-      display: block
+    &-h2-tag
       font-size: 19px
       line-height: 23px
-      @include type
 
-  &__type:nth-of-type(3)
-
-    &::before
-      content: 'H3'
-      display: block
+    &-h3-tag
       font-size: 12px
       line-height: 15px
-      @include type
 
-  &__type:nth-of-type(4)
-    max-width: 410px
-    margin-top: 47px
-    &::before
-      content: 'Body'
-      @include type
+    &-body-tag
+      text-align: right
+
+    &-h1-sample, &-h2-sample, &-h3-sample, &-body-sample
+      padding-left: 30px
+
+    &-h1-sample
+      @include header
+      font-size: 24px
+      line-height: 30px
+      max-width: 336px
+      padding-bottom: 50px
+
+    &-h2-sample
+      @include header
+      font-size: 19px
+      line-height: 24px
+      max-width: 282px
+      padding-bottom: 50px
+
+    &-h3-sample
+      font-size: 12px
+      line-height: 15px
+      font-weight: bold
+      text-transform: uppercase
+      color: #1F2041
+      padding-bottom: 47px
+
+    &-body-sample
+      color: rgba(31, 32, 65, 0.75)
+      max-width: 301px

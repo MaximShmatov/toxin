@@ -3,7 +3,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
@@ -12,6 +11,7 @@ module.exports = {
   entry: {
     index: './index.js',
     colors: './desktop.blocks/page-uikit-colors/page-uikit-colors.js',
+
     elements: './desktop.blocks/page-uikit-elements/page-uikit-elements.js',
     forms: './desktop.blocks/page-uikit-forms/page-uikit-forms.js',
     headers: './desktop.blocks/page-uikit-headers-footers/page-uikit-headers-footers.js',
@@ -20,6 +20,7 @@ module.exports = {
     reservation: './desktop.blocks/page-registration/page-registration.js',
     details: './desktop.blocks/page-room-details/page-room-details.js',
     sign: './desktop.blocks/page-sign-in/page-sign-in.js',
+
   },
   output: {
     filename: '[name].[hash].js',
@@ -40,6 +41,7 @@ module.exports = {
       template: path.resolve(__dirname, 'src/desktop.blocks/page-uikit-colors/page-uikit-colors.pug'),
       filename: 'uikit_colors.html'
     }),
+
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/desktop.blocks/page-uikit-elements/page-uikit-elements.pug'),
       filename: 'uikit_elements.html'
@@ -72,20 +74,13 @@ module.exports = {
       template: path.resolve(__dirname, 'src/desktop.blocks/page-sign-in/page-sign-in.pug'),
       filename: 'sign_in.html'
     }),
+
+
     new MiniCssExtractPlugin({
       filename: '[name].[hash].css',
       chunkFilename: '[name].[hash].css',
       ignoreOrder: false
     }),
-    new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: [
-        '**/*',
-        '!fonts/*',
-        '!img/*',
-        '!fonts',
-        '!img'
-      ]
-    })
   ],
   module: {
     rules: [
@@ -149,7 +144,7 @@ module.exports = {
         }
       },
       {
-        test: /\.(eot|ttf|woff|woff2|svg)$/,
+        test: /\.(woff2|woff|ttf|svg)$/,
         include: /fonts/,
         use: {
           loader: 'file-loader',
@@ -160,8 +155,8 @@ module.exports = {
         }
       },
       {
-        test: /\.(ico|png|jpg|gif|svg)$/,
-        exclude: /fonts/,
+        test: /\.(png|jpg|svg)$/,
+        exclude: /(fonts|favicon)/,
         use: {
           loader: 'file-loader',
           options: {
@@ -169,7 +164,18 @@ module.exports = {
             outputPath: 'img'
           }
         }
-      }
+      },
+      {
+        test: /\.(ico|png|svg|xml|webmanifest)$/,
+        include: /favicon/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: '.'
+          }
+        }
+      },
     ]
   },
   devServer: {

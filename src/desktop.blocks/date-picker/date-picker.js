@@ -89,13 +89,15 @@ class DatePicker {
     this.#$bodyDates.each((index, date) => {
       const timeStamp = date.getAttribute('data-timestamp');
 
-      if (timeStamp >= this.dateComeIn && timeStamp <= this.dateCheckOut && this.dateComeIn !== this.dateCheckOut) {
+      const isRange = timeStamp >= this.dateComeIn && timeStamp <= this.dateCheckOut && this.dateComeIn !== this.dateCheckOut;
+      if (isRange) {
         this.#$bodyRanges[index].classList.add('date-picker__body-range');
       } else {
         this.#$bodyRanges[index].classList.remove('date-picker__body-range');
       }
 
-      if (timeStamp === this.dateComeIn || timeStamp === this.dateCheckOut) {
+      const isSelected = timeStamp === this.dateComeIn || timeStamp === this.dateCheckOut;
+      if (isSelected) {
         date.classList.add('date-picker__body-date_selected');
         if (timeStamp === this.dateComeIn) {
           this.#$bodyRanges[index].setAttribute('data-range', 'first');

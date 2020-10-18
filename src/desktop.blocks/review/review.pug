@@ -1,14 +1,14 @@
 include ../like/like
 
-mixin review
-	bloquote.review
-		div.review__avatar
-			div.review__avatar-img
-				img.review__avatar-portrait(alt="portrait")
-			div.review__avatar-like
-				+like("checked")
+mixin review(props)
+	div.review
+		div.review__author
+			div.review__author-avatar
+				img.review__author-img(alt=props.name src=props.avatar)
+			div.review__author-data
+				span.review__author-name=props.name
+				span.review__author-date=props.date
 		div.review__quote
-			cite.review__quote-author
-				span.review__quote-author-name
-				p.review__quote-author-date
-			p.review__quote-text
+			div.review__quote-like
+				+like({checked: true, likes: 12})
+			blockquote.review__quote-text=props.quote

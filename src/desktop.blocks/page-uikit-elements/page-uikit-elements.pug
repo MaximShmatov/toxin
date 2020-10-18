@@ -21,109 +21,114 @@ include ../review/review
 
 block page-uikit
   article.uikit-elements
-    aside.uikit-elements__sect1
-      div.uikit-elements__sect1-element
-        span.uikit-elements__sect1-element-caption Default
+
+    // sector-1
+    section.uikit-elements__sector
+      div.uikit-elements__sector-element
+        span.uikit-elements__sector-element-caption Default
         +text-field({type: "email", value: "Email", header: "Text field"})
-      div.uikit-elements__sect1-element
-        span.uikit-elements__sect1-element-caption Hover / Focus
+      div.uikit-elements__sector-element
+        span.uikit-elements__sector-element-caption Hover / Focus
         +text-field({type: "text", value: "Имя", header: "Text field"})
-      div.uikit-elements__sect1-element
+      div.uikit-elements__sector-element
         +dropdown-quantity({header: "Dropdown"})
-      div.uikit-elements__sect1-element
+      div.uikit-elements__sector-element
         +text-field({type: "text", value: "дд.мм.гггг", mask: "99.99.9999", header: "Masked text field"})
-      div.uikit-elements__sect1-element
+      div.uikit-elements__sector-element
         +date-range({header1: "Date dropdown", header2: "Date dropdown"})
-      div.uikit-elements__sect1-element
+      div.uikit-elements__sector-element
         +date-filter({header: "Filter date dropdown"})
-      div.uikit-elements__sect1-element
-        h3.uikit-elements__sect1-element-title Subscription text field
+      h3.uikit-elements__sector-element-title Subscription text field
+      div.uikit-elements__sector-element
         +subscription
 
-    aside.uikit-elements__sect2
-      div.uikit-elements__sect2-element
+    // sector-2
+    section.uikit-elements__sector
+      div.uikit-elements__sector-element
         +checkbox-group({header: "Checkbox buttons"})
-      div.uikit-elements__sect2-element
-        h3.uikit-elements__sect2-element-title Radio buttons
-        div.uikit-elements__sect2-element-radio
-          +radio({name: "registration__mw-radio", value: "m", caption: "Мужчина", checked: true})
-          +radio({name: "registration__mw-radio", value: "w", caption: "Женщина"})
-      div.uikit-elements__sect2-element
-        h3.uikit-elements__sect2-element-title Toggle
-        div.uikit-elements__sect2-element-toggle
-          +toggle({caption: "Получать спецпредложения", checked: "checked"})
-        div.uikit-elements__sect2-element-toggle
-          +toggle({caption: "Получать спецпредложения"})
-      div.uikit-elements__sect2-element
-        h3.uikit-elements__sect2-element-title Like button
-        div.uikit-elements__sect2-element-like
-          +like
-        div.uikit-elements__sect2-element-like
-          +like("checked")
-      div.uikit-elements__sect2-element
-        h3.uikit-elements__sect2-element-title Rate button
-        div.uikit-elements__sect2-element-rate
-          +rate-button
-        div.uikit-elements__sect2-element-rate
-          +rate-button
+      h3.uikit-elements__sector-element-title Radio buttons
+      div.uikit-elements__sector-element
+        +radio({name: "registration__mw-radio", value: "m", caption: "Мужчина", checked: true})
+        +radio({name: "registration__mw-radio", value: "w", caption: "Женщина"})
+      h3.uikit-elements__sector-element-title Toggle
+      div.uikit-elements__sector-element
+        +toggle({caption: "Получать спецпредложения", checked: "checked"})
+      div.uikit-elements__sector-element
+        +toggle({caption: "Получать спецпредложения"})
+      h3.uikit-elements__sector-element-title Like button
+      div.uikit-elements__sector-element
+        +like({checked: false, likes: 2})
+        +like({checked: true, likes: 12})
+      h3.uikit-elements__sector-element-title Rate button
+      div.uikit-elements__sector-element
+        +rate-button({rate: 4})
+        +rate-button({rate: 5})
 
-    aside.uikit-elements__sect3
-      div.uikit-elements__sect3-element
-        +range-slider
-      div.uikit-elements__sect3-element
-        h3.uikit-elements__sect3-element-title Buttons
-        div.uikit-elements__sect3-element-group1
-          div.uikit-elements__sect3-element-group1-button
-            +button({type: "button", text: "Click me", mode: "registration"})
-          div.uikit-elements__sect3-element-group1-button
-            +button({type: "button", text: "Click me", mode: "registration", disabled: true})
-        div.uikit-elements__sect3-element-group2
-          div.uikit-elements__sect3-element-group2-button
-            +button({type: "button", text: "Click me", mode: "come-in"})
-          div.uikit-elements__sect3-element-group2-button
-            +button({type: "button", text: "Click me", mode: "come-in", disabled: true})
-        div.uikit-elements__sect3-element-group3
-          div.uikit-elements__sect3-element-group3-button
-            +button({type: "button", text: "Click me", mode: "picker"})
-          div.uikit-elements__sect3-element-group3-button
-            +button({type: "button", text: "Click me", mode: "picker-grey"})
-        div.uikit-elements__sect3-element-button
-          +button({type: "button", text: "Перейти к оплате", mode: "forward"})
-      div.uikit-elements__sect3-element
-        h3.uikit-elements__sect3-element-title Pagination
-        div.uikit-elements__sect3-element-pagination
-          +pagination
+    // sector-3
+    section.uikit-elements__sector
+      div.uikit-elements__sector-element
+        +range-slider({header: "Range slider"})
+      h3.uikit-elements__sector-element-title Buttons
+      div.uikit-elements__sector-element
+        div.uikit-elements__sector-element-group
+          +button({type: "button", text: "Click me", mode: "registration"})
+        div.uikit-elements__sector-element-group
+          +button({type: "button", text: "Click me", mode: "registration", disabled: true})
+      div.uikit-elements__sector-element
+        div.uikit-elements__sector-element-group
+          +button({type: "button", text: "Click me", mode: "come-in"})
+        div.uikit-elements__sector-element-group
+          +button({type: "button", text: "Click me", mode: "come-in", disabled: true})
+      div.uikit-elements__sector-element
+        div.uikit-elements__sector-element-group
+          +button({type: "button", text: "Click me", mode: "picker"})
+        div.uikit-elements__sector-element-group
+          +button({type: "button", text: "Click me", mode: "picker-grey"})
+      div.uikit-elements__sector-element
+        +button({type: "button", text: "Перейти к оплате", mode: "forward"})
+      h3.uikit-elements__sector-element-title Pagination
+      div.uikit-elements__sector-element
+        +pagination
 
-    aside.uikit-elements__sect4
-      div.uikit-elements__sect4-element
-        span.uikit-elements__sect4-element-caption Default
+    // sector-4
+    section.uikit-elements__sector
+      div.uikit-elements__sector-element
+        span.uikit-elements__sector-element-caption Default
         +dropdown-quantity({header: "Dropdown"})
-      div.uikit-elements__sect4-element
-        span.uikit-elements__sect4-element-caption Expanded
+      div.uikit-elements__sector-element
+        span.uikit-elements__sector-element-caption Expanded
         +dropdown-quantity({header: "Dropdown"})
-
-    aside.uikit-elements__sect5
-      +dropdown-quantity({header: "Dropdown"})
-
-    aside.uikit-elements__sect6
-      +dropdown-quantity({header: "Dropdown"})
-
-    aside.uikit-elements__sect7
-      div.uikit-elements__sect7-element
+      div.uikit-elements__sector-element
         +checkbox-list({name: "Expandable checkbox list", checked: false})
-      div.uikit-elements__sect7-element
+      div.uikit-elements__sector-element
         +checkbox-list({name: "Expandable checkbox list", checked: true})
 
-    aside.uikit-elements__sect8
-      +checkbox-rich({header: "Rich checkbox buttons"})
+    // sector-5
+    section.uikit-elements__sector
+      div.uikit-elements__sector-element
+        +dropdown-quantity({header: "Dropdown"})
+      div.uikit-elements__sector-element
+        +checkbox-rich({header: "Rich checkbox buttons"})
 
-    aside.uikit-elements__sect9
-      +bullet-list({header: "Bullet list"})
+    // sector-6
+    section.uikit-elements__sector
+      div.uikit-elements__sector-element
+        +dropdown-quantity({header: "Dropdown"})
+      div.uikit-elements__sector-element
+        +bullet-list({header: "Bullet list"})
 
-    aside.uikit-elements__sect10
-      div.uikit-elements__sect10-info
-        +info
-      div.uikit-elements__sect10-info
-        +info
-    aside.uikit-elements__sect11
-      +review
+    // sector-7
+    section.uikit-elements__sector
+      div.uikit-elements__sector-element
+        +info({name: "Комфорт", text: "Шумопоглощающие стены", img: "img/info-ico1.svg"})
+      div.uikit-elements__sector-element
+        +info({name: "Удобство", text: "Окно в каждой из спален", img: "img/info-ico2.svg"})
+
+    // sector-8
+    section.uikit-elements__sector
+      +review({
+        avatar: "img/review-avatar1.jpg",
+        name: "Мурад Сарафанов",
+        date: "5 дней назад",
+        quote: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару \u2014 никто не жаловался из соседей."
+      })

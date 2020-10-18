@@ -1,5 +1,5 @@
-mixin like(checked)
+mixin like(props)
 	label.like
-		input.like__true(type="checkbox" name="like" checked=checked)
+		input.like__true(type="checkbox" name="like" checked=props.checked)
 		div.like__false
-			output.like__false-quantity
+			span.like__false-quantity=props.likes

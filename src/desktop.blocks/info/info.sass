@@ -1,6 +1,5 @@
 .info
   display: flex
-  align-items: center
 
   &__icon
     display: flex
@@ -11,14 +10,12 @@
     margin-right: 10px
 
   &__item
+    display: flex
+    flex-direction: column
+    justify-content: center
     line-height: 100%
-    margin: 0
 
     &-term
-      display: block
       font-weight: bold
       margin-bottom: 10px
       color: rgba(31, 32, 65, 0.75)
-
-    &-definition
-      white-space: nowrap

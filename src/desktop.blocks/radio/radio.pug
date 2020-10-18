@@ -2,5 +2,5 @@ mixin radio(props)
 	label.radio
 		if(props)
 			input.radio__check(type="radio", name=props.name, value=props.value, checked=props.checked)
-		div.radio__checkbox(tabindex="0")
+		div.radio__checkbox
 		span.radio__caption=props.caption

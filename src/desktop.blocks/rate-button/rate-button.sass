@@ -9,9 +9,6 @@
     height: 24px
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
 
-    &:hover
-      opacity: 0.5
-
     &::before
       font-family: "Material Icons", Icomoon, sans-serif
       font-size: 24px
@@ -23,8 +20,13 @@
       cursor: pointer
 
   &__radio
-    display: none
+    position: absolute
+    opacity: 0
+    z-index: -1
+
+    &:focus + label, &:hover + label
+      text-shadow: 0 0 5px rgba(31, 32, 65, 0.5)
 
   &__radio:checked + &__star ~ &__star
     &::before
-      content: '\e905' //'\e83a'
+      content: '\e905'

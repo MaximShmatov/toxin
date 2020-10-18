@@ -2,34 +2,16 @@
 
 import './like.sass';
 
-export class Like {
-  #$like;
-  #$checkbox;
-  #$outLike;
-  #likes;
+$('.like').on('change', handleOnChangeLike.bind(this));
 
-  constructor($element) {
-    this.#$like = $element;
-    this.#$checkbox = $element.find('.like__true');
-    this.#$outLike = $element.find('.like__false-quantity');
-    $(this.#$checkbox).on('change', this.#addLike.bind(this));
-  }
+function handleOnChangeLike(evt) {
+  const isChecked = $(evt.currentTarget).find('.like__true').is(':checked');
 
-  #addLike() {
-    if (this.#$checkbox.is(':checked')) {
-      this.#likes = ++this.#likes;
+  $(evt.currentTarget).find('.like__false-quantity').each(function () {
+    if (isChecked) {
+      $(this).text(Number($(this).text()) + 1);
     } else {
-      this.#likes = --this.#likes;
+      $(this).text(Number($(this).text()) - 1);
     }
-    this.#$outLike.text(this.#likes);
-  }
-
-  get likes() {
-    return this.#likes;
-  }
-
-  set likes(likes) {
-    this.#likes = likes;
-    this.#$outLike.text(this.#likes);
-  }
+  });
 }

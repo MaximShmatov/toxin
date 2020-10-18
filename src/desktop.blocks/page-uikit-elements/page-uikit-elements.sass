@@ -1,181 +1,183 @@
 .uikit-elements
   display: grid
-  grid-template-columns: 446px 392px 1fr
-  max-width: 1160px
-  margin: 143px auto 131px
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))
+  grid-template-rows: repeat(3, auto)
+  justify-items: right
+  grid-row-gap: 100px
+  max-width: 1158px
+  margin: 143px auto
 
-  &__sect1
-    max-width: 320px
-    width: 100%
+  &__sector
+    &:not(:last-of-type)
+      max-width: 320px
+      width: 100%
 
-    &-element-caption
-      text-transform: uppercase
+    &:nth-of-type(3n + 2)
+      padding-right: 6px
+
+    &:nth-of-type(3n + 1)
+      justify-self: left
+
+    &-element-title
+      font-weight: bold
       font-size: 12px
       line-height: 15px
+      text-transform: uppercase
+      color: #1F2041
+      padding-bottom: 16px
+      margin: 0
+
+    &-element-caption
       position: absolute
       top: 0
       right: 0
-    &-element-title-dropdown
+      font-size: 12px
+      line-height: 15px
+      text-transform: uppercase
+      color: rgba(31, 32, 65, 0.5)
+
+    // sector-1
+    &:nth-of-type(1) &-element-title
+      max-width: 266px
+      padding-bottom: 5px
+
+    &:nth-of-type(1) &-element:nth-of-type(1)
+      position: relative
+      padding-bottom: 20px
+
+    &:nth-of-type(1) &-element:nth-of-type(2)
+      position: relative
+      padding-bottom: 20px
+
+    &:nth-of-type(1) &-element:nth-of-type(3)
+      padding-bottom: 23px
+
+    &:nth-of-type(1) &-element:nth-of-type(4)
+      padding-bottom: 40px
+
+    &:nth-of-type(1) &-element:nth-of-type(5)
+      padding-bottom: 41px
+
+    &:nth-of-type(1) &-element:nth-of-type(6)
+      max-width: 266px
+      padding-bottom: 41px
+
+    &:nth-of-type(1) &-element:nth-of-type(7)
+      max-width: 266px
+
+    // sector-2
+    &:nth-of-type(2) &-element-title:nth-of-type(1)
+      padding-bottom: 14px
+
+    &:nth-of-type(2) &-element-title:nth-of-type(2)
+      padding-bottom: 13px
+
+    &:nth-of-type(2) &-element:nth-of-type(1)
+      padding-bottom: 42px
+
+    &:nth-of-type(2) &-element:nth-of-type(2)
       display: flex
       justify-content: space-between
-      margin: 0 32px 5px 0
-    &-element:nth-of-type(1)
-      position: relative
-    &-element:nth-of-type(2)
-      position: relative
-      margin-top: 20.5px
-    &-element:nth-of-type(3)
-      position: relative
-      margin-top: 20px
-    &-element:nth-of-type(4)
-      position: relative
-      margin-top: 22.5px
-    &-element:nth-of-type(5)
-      margin-top: 40px
-    &-element:nth-of-type(6)
-      margin-top: 40.5px
+      max-width: 221px
+      padding-bottom: 39px
+
+    &:nth-of-type(2) &-element:nth-of-type(3)
+      padding-bottom: 10px
+
+    &:nth-of-type(2) &-element:nth-of-type(4)
+      padding-bottom: 43px
+
+    &:nth-of-type(2) &-element:nth-of-type(5)
+      display: flex
+      justify-content: space-between
+      max-width: 90px
+      padding-bottom: 40px
+
+    &:nth-of-type(2) &-element:nth-of-type(6)
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+      max-width: 260px
+
+    // sector-3
+    &:nth-of-type(3) &-element:nth-of-type(1)
       max-width: 266px
-    &-element:nth-of-type(7)
-      margin-top: 41px
+      padding-bottom: 30px
+
+    &:nth-of-type(3) &-element:nth-of-type(2)
+      display: flex
+      justify-content: space-between
+      max-width: 217px
+      padding-bottom: 30px
+      padding-left: 1px
+
+    &:nth-of-type(3) &-element:nth-of-type(2) &-element-group
+      width: 99px
+      height: 44px
+
+    &:nth-of-type(3) &-element:nth-of-type(3)
+      display: flex
+      justify-content: space-between
+      max-width: 218px
+      padding-bottom: 31px
+
+    &:nth-of-type(3) &-element:nth-of-type(3) &-element-group
+      width: 99px
+      height: 44px
+
+    &:nth-of-type(3) &-element:nth-of-type(4)
+      display: flex
+      justify-content: space-between
+      max-width: 142px
+      padding-bottom: 30px
+
+    &:nth-of-type(3) &-element:nth-of-type(5)
+      height: 44px
+      padding-bottom: 41px
+
+    &:nth-of-type(3) &-element:nth-of-type(6)
+      padding-bottom: 40px
+      padding-left: 1px
+
+    // sector-4
+    &:nth-of-type(4) &-element
       max-width: 266px
 
-  &__sect2
-    max-width: 260px
-    &-element-checkbox
-      margin-top: 10px
-      &-note
-        margin-left: 30px
-    &-element-checkbox:first-of-type
-      margin-top: 16.56px
-    &-element-radio
-      margin: 16px 17px 0 0
-      display: inline-block
-    &-element-toggle
-      margin: 14px 10px 0 0
-      width: 100%
-    &-element-toggle:first-of-type
-      margin-top: 16px
-    &-element-like
-      margin: 16px 10px 0 0
-      display: inline-block
-    &-element-rate
-      margin-top: 16px
-      display: inline-block
-    &-element-rate:first-of-type
-      margin-right: 20px
-    &-element:nth-of-type(1) //checkbox
-      color: rgba(31, 32, 65, 0.5)
-      line-height: 18px
-      max-width: 222px
-    &-element:nth-of-type(2) //radio
-      margin-top: 40px
-      line-height: 0
-    &-element:nth-of-type(3) //toggle
-      margin-top: 40.56px
-      line-height: 0
-    &-element:nth-of-type(4) //like
-      margin-top: 44.44px
-      font-size: 0
-      line-height: 0
-    &-element:nth-of-type(5) //rate
-      margin-top: 40px
-      font-size: 0
-      line-height: 0
-
-  &__sect3
-    max-width: 320px
-    width: 100%
-    &-element
-      &:first-child
-        max-width: 266px
-        margin-bottom: 16px
-      &-group1
-        display: flex
-        margin-top: 16px
-        &-button
-          height: 44px
-          width: 99px
-        &-button:first-of-type
-          margin-right: 19px
-      &-group2
-        display: flex
-        margin-top: 30px
-        &-button
-          height: 44px
-          width: 99px
-        &-button:first-of-type
-          margin-right: 20px
-      &-group3
-        display: flex
-        margin-top: 31px
-        &-button
-          height: 15px
-          width: 61px
-          margin-right: 20px
-      &-button
-        margin-top: 30px
-        height: 44px
-      &:last-of-type
-        margin-top: 40px
-      &-pagination
-        margin-top: 16px
-
-  &__sect4
-    max-width: 266px
-    margin-top: 100px
-    width: 100%
-
-    &-element-caption
-      text-transform: uppercase
-      font-size: 12px
-      line-height: 15px
-      position: absolute
-      right: 0
-      top: 0
-    &-element:nth-of-type(1)
+    &:nth-of-type(4) &-element:nth-of-type(1)
       position: relative
-    &-element:nth-of-type(2)
+      padding-bottom: 20px
+
+    &:nth-of-type(4) &-element:nth-of-type(2)
       position: relative
-      margin-top: 20px
+      padding-bottom: 158px
 
-  &__sect5
-    max-width: 320px
-    margin-top: 100px
-    width: 100%
+    &:nth-of-type(4) &-element:nth-of-type(3)
+      padding-bottom: 20px
 
+    // sector-5
+    &:nth-of-type(5) &-element:nth-of-type(1)
+      padding-bottom: 256px
 
-  &__sect6
-    max-width: 320px
-    margin-top: 100px
-    width: 100%
+    // sector-6
+    &:nth-of-type(6) &-element:nth-of-type(1)
+      padding-bottom: 256px
 
-  &__sect7
-    max-width: 266px
-    margin-top: 158px
-    &-element:nth-of-type(2)
-      margin-top: 20px
+    // sector-7
+    &:nth-of-type(7) &-element:nth-of-type(2)
+      padding-top: 20px
 
-  &__sect8
-    max-width: 266px
-    margin-top: 158px
-
-  &__sect9
-    max-width: 266px
-    margin-top: 158px
-
-  &__sect10
-    max-width: 280px
-    margin-top: 100px
-
-    &-info:after
+    &:nth-of-type(7) &-element::after
       content: ''
       display: block
-      width: 100%
+      max-width: 280px
       height: 1px
-      background-color: rgba(31, 32, 65, 0.1)
-      margin: 20px 0
+      background: rgba(31, 32, 65, 0.1)
+      margin-top: 20px
 
-  &__sect11
-    grid-area: 4 / 2 / 5 / 4
-    margin-top: 110px
-    max-width: 710px
+    // sector-8
+    &:nth-of-type(8)
+      padding-top: 11px
+      padding-right: 2px
+      max-width: 710px
+      @media (min-width: 640px)
+        grid-column: span 2

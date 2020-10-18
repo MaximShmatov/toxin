@@ -1,7 +1,7 @@
-mixin info(items)
+mixin info(props)
   div.info
     div.info__icon
-      img.info__img(alt="logo")
+      img.info__img(alt=props.name src=props.img)
     div.info__item
-      output.info__item-term
-      output.info__item-definition
+      span.info__item-term=props.name
+      span.info__item-definition=props.text

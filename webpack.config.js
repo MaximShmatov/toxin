@@ -10,17 +10,16 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   entry: {
     index: './index.js',
-    //colors: './desktop.blocks/page-uikit-colors/page-uikit-colors.js',
-    //elements: './desktop.blocks/page-uikit-elements/page-uikit-elements.js',
+    colors: './desktop.blocks/page-uikit-colors/page-uikit-colors.js',
+    elements: './desktop.blocks/page-uikit-elements/page-uikit-elements.js',
     forms: './desktop.blocks/page-uikit-forms/page-uikit-forms.js',
-    /*
     headers: './desktop.blocks/page-uikit-headers-footers/page-uikit-headers-footers.js',
     landing: './desktop.blocks/page-landing/page-landing.js',
     template: './desktop.blocks/page-room-search/page-room-search.js',
     reservation: './desktop.blocks/page-registration/page-registration.js',
     details: './desktop.blocks/page-room-details/page-room-details.js',
     sign: './desktop.blocks/page-sign-in/page-sign-in.js',
-    */
+
   },
   output: {
     filename: '[name].[hash].js',
@@ -33,26 +32,23 @@ module.exports = {
       $: 'jquery',
       jQuery: 'jquery'
     }),
+
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/index.pug'),
       filename: 'index.html'
     }),
-    /*
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/desktop.blocks/page-uikit-colors/page-uikit-colors.pug'),
       filename: 'uikit_colors.html'
     }),
-
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/desktop.blocks/page-uikit-elements/page-uikit-elements.pug'),
       filename: 'uikit_elements.html'
     }),
-    */
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/desktop.blocks/page-uikit-forms/page-uikit-forms.pug'),
       filename: 'uikit_cards.html'
     }),
-    /*
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/desktop.blocks/page-uikit-headers-footers/page-uikit-headers-footers.pug'),
       filename: 'uikit_headers_footers.html'
@@ -78,7 +74,6 @@ module.exports = {
       filename: 'sign_in.html'
     }),
 
-     */
     new MiniCssExtractPlugin({
       filename: '[name].[hash].css',
       chunkFilename: '[name].[hash].css',

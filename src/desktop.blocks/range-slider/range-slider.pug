@@ -1,6 +1,6 @@
 mixin range-slider(props)
   div.range-slider
     if (props)
-      h3.range-slider__title.toxin_header-third=props.header
+      h3.range-slider__title=props.header
         span.range-slider__title-range
     div.range-slider__plugin(data-on-range="true", data-min-value="0", data-max-value="15000", data-value-from="5000", data-value-to="10000")

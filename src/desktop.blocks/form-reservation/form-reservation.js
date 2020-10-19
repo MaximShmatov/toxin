@@ -1,40 +1,40 @@
 'use strict'
 
-import reserv from '../../resources/form-reservation/form-reservation.json';
+import reserve from './form-reservation.json';
 import DropdownQuantity from '../dropdown-quantity/dropdown-quantity';
 import DateRange from '../date-range/date-range';
 import '../button/button';
 import './form-reservation.sass';
 
 
-const $formReserv = $('.form-reservation');
-const dateRange = new DateRange($formReserv.find('.date-range'));
+const $formReserve = $('.form-reserve');
+const dateRange = new DateRange($formReserve.find('.date-range'));
 
-new DropdownQuantity($formReserv.find('.dropdown-quantity'));
+new DropdownQuantity($formReserve.find('.dropdown-quantity'));
 
-$formReserv.find('.form-reservation__room-info-number').text(reserv.number);
-$formReserv.find('.form-reservation__room-info-level').text(reserv.level);
-$formReserv.find('.form-reservation__room-price-amount').text(getNumberStr(reserv.pricePerDay));
-$formReserv.find('.form-reservation__pay-days-price').val(getNumberStr(reserv.pricePerDay));
-$formReserv.find('.form-reservation__pay-services-price').val(getNumberStr(reserv.priceServiceDiscount));
-$formReserv.find('.form-reservation__pay-services-amount-total').val(getNumberStr(reserv.priceService));
-$formReserv.find('.form-reservation__pay-additionally-amount-total').val(getNumberStr(reserv.priceServiceAdditionally));
+$formReserve.find('.form-reserve__room-info-number').text(reserve.number);
+$formReserve.find('.form-reserve__room-info-level').text(reserve.level);
+$formReserve.find('.form-reserve__room-price-amount').text(getNumberStr(reserve.pricePerDay));
+$formReserve.find('.form-reserve__pay-days-price').text(getNumberStr(reserve.pricePerDay));
+$formReserve.find('.form-reserve__pay-services-price').text(getNumberStr(reserve.priceServiceDiscount));
+$formReserve.find('.form-reserve__pay-services-amount-total').text(getNumberStr(reserve.priceService));
+$formReserve.find('.form-reserve__pay-other-amount-total').text(getNumberStr(reserve.priceServiceAdditionally));
 
-setPayment();
+$formReserve.on('date-picker-submit', setPayment);
 
 function setPayment() {
   const totalDays = dateRange.getDateRange();
-  const payForAllDays = reserv.pricePerDay * totalDays;
-  const payTotal = payForAllDays - reserv.priceServiceDiscount + reserv.priceServiceAdditionally + reserv.priceService;
+  const payForAllDays = reserve.pricePerDay * totalDays;
+  const payTotal = payForAllDays - reserve.priceServiceDiscount + reserve.priceServiceAdditionally + reserve.priceService;
 
-  $formReserv.find('.form-reservation__pay-days-quantity').val(totalDays);
-  $formReserv.find('.form-reservation__pay-amount-total').val(getNumberStr(payForAllDays));
-  $formReserv.find('.form-reservation__total-amount').val(getNumberStr(payTotal));
+  $formReserve.find('.form-reserve__pay-days-quantity').text(totalDays);
+  $formReserve.find('.form-reserve__pay-amount-total').text(getNumberStr(payForAllDays));
+  $formReserve.find('.form-reserve__total-amount').text(getNumberStr(payTotal));
 }
 
 function getNumberStr(num) {
-  let n = num.toString();
+  const n = num.toString();
   return n.replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, "$1" + ' ');
 }
 
-$formReserv.on('date-picker_submit', setPayment);
+setPayment();

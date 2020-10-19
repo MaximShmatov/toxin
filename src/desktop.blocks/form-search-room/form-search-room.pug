@@ -5,13 +5,10 @@ include ../date-range/date-range
 mixin form-search-room
   form.form-search-room
     fieldset.form-search-room__fieldset
-      legend.form-search-room-legend
-        h1.form-search-room-header Найдём номера под ваши пожелания
+      legend.form-search-room__title Найдём номера под ваши пожелания
       div.form-search-room__date
         +date-range({header1: "Прибытие", header2: "Выезд"})
       div.form-search-room__guests
         +dropdown-quantity({header: "Гости"})
       div.form-search-room__submit
-        +button({type: "button", text: "Подобрать номер", mode: "forward"})
-
-
+        +button({type: "submit", text: "Подобрать номер", mode: "forward"})

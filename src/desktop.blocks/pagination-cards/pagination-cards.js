@@ -1,14 +1,14 @@
 'use strict'
 
-import {cardRoom} from '../../resources/card-room/card-room';
-import {CardRoom} from '../card-room/card-room';
+import CardRoom from '../card-room/card-room';
+import roomData from '../card-room/card-room.json';
 import '../pagination/pagination';
 import './pagination-cards.sass';
 
 
-let $paginationCards = $('.pagination-cards');
-let $cardRoom = $paginationCards.find('.card-room');
+const $paginationCards = $('.pagination-cards');
+const $roomCards = $paginationCards.find('.card-room');
 
-for (let i = 0; i < 12; i++) {
-  new CardRoom($($cardRoom[i]), cardRoom[i]);
-}
+$roomCards.each(function (i) {
+  new CardRoom($(this), roomData[i]);
+})

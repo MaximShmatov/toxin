@@ -1,16 +1,29 @@
 'use strict'
 
-import {RateButton} from "../rate-button/rate-button";
+import '../rate-button/rate-button';
+import './350/card-room-350-4.jpg';
+import './352/card-room-352-4.jpg';
+import './444/card-room-444-4.jpg';
+import './450/card-room-450-4.jpg';
+import './666/card-room-666-4.jpg';
+import './678/card-room-678-4.jpg';
+import './740/card-room-740-4.jpg';
+import './840/card-room-840-4.jpg';
+import './856/card-room-856-4.jpg';
+import './888/card-room-888-4.jpg';
+import './980/card-room-980-4.jpg';
+import './982/card-room-982-4.jpg';
 import './card-room.sass';
 
-export class CardRoom {
+class CardRoom {
   #$radio;
 
   constructor($card, room) {
     this.#$radio = $card.find('.card-room__slider-radio');
     const $images = $card.find('.card-room__slider-img');
-    const $rate = $card.find('.rate-button');
-    new RateButton($rate, room.rate);
+    const $rate = $card.find('.rate-button__radio');
+
+    $rate.eq(room.rate - 1).prop('checked', true);
 
     $images.eq(0).attr('src', room.img1).attr('alt', room.alt);
     $images.eq(1).attr('src', room.img2).attr('alt', room.alt);
@@ -45,3 +58,5 @@ export class CardRoom {
     }
   }
 }
+
+export default CardRoom;

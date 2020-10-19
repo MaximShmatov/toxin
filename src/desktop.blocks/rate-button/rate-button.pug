@@ -1,6 +1,9 @@
 mixin rate-button(props)
 	form.rate-button
 		-let id = Math.random()
+		-let rate = 1
+		if (props)
+			-rate = props.rate
 		-for (let i = 5; i >= 1; i--)
-			input.rate-button__radio(type="radio" name=id id=(id - i) value=i checked=(props.rate === (6 - i)))
+			input.rate-button__radio(type="radio" name=id id=(id - i) value=i data-rate=rate checked=(rate === (6 - i)))
 			label.rate-button__star(for=(id - i))

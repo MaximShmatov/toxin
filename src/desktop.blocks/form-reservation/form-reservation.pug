@@ -3,54 +3,55 @@ include ../dropdown-quantity/dropdown-quantity
 include ../button/button
 
 mixin form-reservation
-	form.form-reservation
-		fieldset.form-reservation__fieldset
-			legend.form-reservation__title
-				div.form-reservation__room-info
-					span.form-reservation__room-info-num &#8470;&nbsp;&nbsp;
-					span.form-reservation__room-info-number
-					span.form-reservation__room-info-level
-				div.form-reservation__room-price
-					span.form-reservation__room-price-amount
-					span.form-reservation__room-price-rub &#x20bd;&nbsp;
-					span.form-reservation__room-price-term в сутки
-			div.form-reservation__date
+	form.form-reserve
+		fieldset.form-reserve__fieldset
+
+			legend.form-reserve__title
+				div.form-reserve__room-info
+					span.form-reserve__room-info-num &#8470;&nbsp;&nbsp;
+					span.form-reserve__room-info-number
+					span.form-reserve__room-info-level
+				div.form-reserve__room-price
+					span.form-reserve__room-price-amount
+					span.form-reserve__room-price-rub &#x20bd;&nbsp;
+					span.form-reserve__room-price-term в сутки
+
+			div.form-reserve__date
 				+date-range({header1: "Прибытие", header2: "Выезд"})
-			div.form-reservation__guests
+
+			div.form-reserve__guests
 				+dropdown-quantity({header: "Гости"})
 
-			div.form-reservation__pay
-				div.form-reservation__pay-days
-					output.form-reservation__pay-days-price
-					span &#x20bd; x
-					output.form-reservation__pay-days-quantity
-					span &#160;суток
-				div.form-reservation__pay-amount
-					output.form-reservation__pay-amount-total
+			div.form-reserve__pay
+				div.form-reserve__pay-days
+					span.form-reserve__pay-days-price
+					span &#x20bd;&nbsp;x&nbsp;
+					span.form-reserve__pay-days-quantity
+					span &nbsp;суток
+				div.form-reserve__pay-amount
+					span.form-reserve__pay-amount-total
 					span &#x20bd;
-
-				div.form-reservation__pay-services
-					span Сбор за услуги: скидка
-					output.form-reservation__pay-services-price
+				div.form-reserve__pay-services
+					span Сбор за услуги: скидка&nbsp;
+					span.form-reserve__pay-services-price
 					span &#x20bd;
-				span.form-reservation__pay-services-info i
-				div.form-reservation__pay-services-amount
-					output.form-reservation__pay-services-amount-total
+				div.form-reserve__pay-services-info i
+				div.form-reserve__pay-services-amount
+					span.form-reserve__pay-services-amount-total
 					span &#x20bd;
-
-				div.form-reservation__pay-additionally
+				div.form-reserve__pay-other
 					span Сбор за дополнительные услуги
-				span.form-reservation__pay-additionally-info i
-				div.form-reservation__pay-additionally-amount
-					output.form-reservation__pay-additionally-amount-total
+				div.form-reserve__pay-other-info i
+				div.form-reserve__pay-other-amount
+					span.form-reserve__pay-other-amount-total
 					span &#x20bd;
 
-			div.form-reservation__total
-				h2.form-reservation__total-header Итого
-				div.form-reservation__total-separator
-				div.form-reservation__total-amount
-					h2.form-reservation__total-amount-header
-						output.form-reservation__total-amount
-						span &#x20bd;
-			div.form-reservation__submit
-				+button({type: "button", text: "Забронировать", mode: "forward"})
+			div.form-reserve__total
+				span.form-reserve__total-title Итого
+				div.form-reserve__total-separator
+				div.form-reserve__total-quantity
+					span.form-reserve__total-amount
+					span &#x20bd;
+
+			div.form-reserve__submit
+				+button({type: "submit", text: "Забронировать", mode: "forward"})

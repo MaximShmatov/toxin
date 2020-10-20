@@ -1,6 +1,5 @@
 'use strict'
 
-import './slider';
 import './range-slider.sass';
 
 

@@ -1,6 +1,5 @@
 'use strict'
 
-import 'jquery.maskedinput/src/jquery.maskedinput';
 import './text-field.sass';
 
 

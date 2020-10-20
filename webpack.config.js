@@ -1,12 +1,10 @@
 'use strict'
 
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  mode: 'none',
   context: path.resolve(__dirname, 'src'),
   entry: {
     index: './index.js',
@@ -15,117 +13,88 @@ module.exports = {
     forms: './desktop.blocks/page-uikit-forms/page-uikit-forms.js',
     headers: './desktop.blocks/page-uikit-headers-footers/page-uikit-headers-footers.js',
     landing: './desktop.blocks/page-landing/page-landing.js',
-    template: './desktop.blocks/page-room-search/page-room-search.js',
-    reservation: './desktop.blocks/page-registration/page-registration.js',
+    search: './desktop.blocks/page-room-search/page-room-search.js',
+    registration: './desktop.blocks/page-registration/page-registration.js',
     details: './desktop.blocks/page-room-details/page-room-details.js',
     sign: './desktop.blocks/page-sign-in/page-sign-in.js',
-
   },
   output: {
-    filename: '[name].[hash].js',
+    filename: 'js/[name].[chunkhash].js',
     path: path.resolve(__dirname, 'dist'),
-    chunkFilename: '[name].[hash].js'
+    publicPath: '/',
   },
-  devtool: 'inline-source-map',
+  externals: [
+    'library/jquery.min.js',
+    'library/jquery.maskedinput.js',
+    'library/slider.js',
+  ],
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
   plugins: [
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery'
+    new HtmlWebpackPlugin({
+      template: 'index.pug',
+      filename: 'index.html',
+      chunks: ['index'],
+    }),
+    new HtmlWebpackPlugin({
+      template: 'desktop.blocks/page-uikit-colors/page-uikit-colors.pug',
+      filename: 'colors.html',
+      chunks: ['colors'],
+    }),
+    new HtmlWebpackPlugin({
+      template: 'desktop.blocks/page-uikit-elements/page-uikit-elements.pug',
+      filename: 'elements.html',
+      chunks: ['elements'],
+    }),
+    new HtmlWebpackPlugin({
+      template: 'desktop.blocks/page-uikit-forms/page-uikit-forms.pug',
+      filename: 'forms.html',
+      chunks: ['forms'],
+    }),
+    new HtmlWebpackPlugin({
+      template: 'desktop.blocks/page-uikit-headers-footers/page-uikit-headers-footers.pug',
+      filename: 'headers.html',
+      chunks: ['headers'],
+    }),
+    new HtmlWebpackPlugin({
+      template: 'desktop.blocks/page-landing/page-landing.pug',
+      filename: 'landing.html',
+      chunks: ['landing'],
+    }),
+    new HtmlWebpackPlugin({
+      template: 'desktop.blocks/page-room-search/page-room-search.pug',
+      filename: 'search.html',
+      chunks: ['search'],
+    }),
+    new HtmlWebpackPlugin({
+      template: 'desktop.blocks/page-registration/page-registration.pug',
+      filename: 'registration.html',
+      chunks: ['registration'],
+    }),
+    new HtmlWebpackPlugin({
+      template: 'desktop.blocks/page-room-details/page-room-details.pug',
+      filename: 'details.html',
+      chunks: ['details'],
+    }),
+    new HtmlWebpackPlugin({
+      template: 'desktop.blocks/page-sign-in/page-sign-in.pug',
+      filename: 'sign.html',
+      chunks: ['sign'],
     }),
 
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/index.pug'),
-      filename: 'index.html'
-    }),
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/desktop.blocks/page-uikit-colors/page-uikit-colors.pug'),
-      filename: 'uikit_colors.html'
-    }),
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/desktop.blocks/page-uikit-elements/page-uikit-elements.pug'),
-      filename: 'uikit_elements.html'
-    }),
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/desktop.blocks/page-uikit-forms/page-uikit-forms.pug'),
-      filename: 'uikit_cards.html'
-    }),
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/desktop.blocks/page-uikit-headers-footers/page-uikit-headers-footers.pug'),
-      filename: 'uikit_headers_footers.html'
-    }),
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/desktop.blocks/page-landing/page-landing.pug'),
-      filename: 'landing.html'
-    }),
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/desktop.blocks/page-room-search/page-room-search.pug'),
-      filename: 'room_search.html'
-    }),
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/desktop.blocks/page-registration/page-registration.pug'),
-      filename: 'registration.html'
-    }),
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/desktop.blocks/page-room-details/page-room-details.pug'),
-      filename: 'room_details.html'
-    }),
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/desktop.blocks/page-sign-in/page-sign-in.pug'),
-      filename: 'sign_in.html'
-    }),
-
-    new MiniCssExtractPlugin({
-      filename: '[name].[hash].css',
-      chunkFilename: '[name].[hash].css',
-      ignoreOrder: false
+    new CopyWebpackPlugin({
+      patterns: [
+        {from: 'library', to: 'library'},
+      ],
     }),
   ],
   module: {
     rules: [
       {
-        test: /\.(sass|scss|css)$/,
-        use: [
-          'style-loader',
-          {
-
-            loader: MiniCssExtractPlugin.loader,
-            options: {}
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              sourceMap: true
-            }
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              sourceMap: true,
-              config: {
-                path: path.resolve(__dirname, 'postcss.config.js')
-              }
-            }
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true
-            }
-          }
-        ]
-      },
-      {
-        test: /\.pug$/,
-        use: {
-          loader: 'pug-loader',
-          options: {
-            pretty: true
-          }
-        }
-      },
-      {
         test: /\.js$/,
-        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
@@ -142,13 +111,32 @@ module.exports = {
         }
       },
       {
+        test: /\.(sass|scss|css)$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: false,
+            }
+          },
+          'postcss-loader',
+          'sass-loader',
+        ]
+      },
+      {
+        test: /\.pug$/,
+        use: 'pug-loader',
+      },
+      {
         test: /\.(woff2|woff|ttf|svg)$/,
         include: /fonts/,
         use: {
           loader: 'file-loader',
           options: {
             name: '[name].[ext]',
-            outputPath: 'fonts'
+            outputPath: 'fonts',  
+            esModule: false,
           }
         }
       },
@@ -178,15 +166,13 @@ module.exports = {
   },
   devServer: {
     //contentBase: path.resolve(__dirname, 'dist'),
+    //publicPath: '/dist/',
     port: 9000,
     watchContentBase: true,
     progress: true,
-    stats: 'errors-only',
+    stats: 'errors-warnings',
     hot: true,
     historyApiFallback: true,
-    overlay: {
-      warnings: true,
-      errors: true
-    }
+    overlay: true,
   }
 }

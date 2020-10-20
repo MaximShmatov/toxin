@@ -20,7 +20,7 @@ module.exports = {
   },
   output: {
     filename: 'js/[name].[chunkhash].js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'docs'),
     publicPath: '/',
   },
   externals: [
@@ -135,7 +135,7 @@ module.exports = {
           loader: 'file-loader',
           options: {
             name: '[name].[ext]',
-            outputPath: 'fonts',  
+            outputPath: 'fonts',
             esModule: false,
           }
         }
@@ -165,8 +165,8 @@ module.exports = {
     ]
   },
   devServer: {
-    //contentBase: path.resolve(__dirname, 'dist'),
-    //publicPath: '/dist/',
+    //contentBase: path.resolve(__dirname, 'docs'),
+    //publicPath: '/docs/',
     port: 9000,
     watchContentBase: true,
     progress: true,

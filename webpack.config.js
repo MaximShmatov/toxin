@@ -21,7 +21,7 @@ module.exports = {
   output: {
     filename: 'js/[name].[chunkhash].js',
     path: path.resolve(__dirname, 'docs'),
-    publicPath: '/',
+    publicPath: '',
   },
   externals: [
     'library/jquery.min.js',

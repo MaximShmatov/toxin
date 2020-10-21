@@ -38,51 +38,61 @@ module.exports = {
       template: 'index.pug',
       filename: 'index.html',
       chunks: ['index'],
+      inject: 'body',
     }),
     new HtmlWebpackPlugin({
       template: 'desktop.blocks/page-uikit-colors/page-uikit-colors.pug',
       filename: 'colors.html',
       chunks: ['colors'],
+      inject: 'body',
     }),
     new HtmlWebpackPlugin({
       template: 'desktop.blocks/page-uikit-elements/page-uikit-elements.pug',
       filename: 'elements.html',
       chunks: ['elements'],
+      inject: 'body',
     }),
     new HtmlWebpackPlugin({
       template: 'desktop.blocks/page-uikit-forms/page-uikit-forms.pug',
       filename: 'forms.html',
       chunks: ['forms'],
+      inject: 'body',
     }),
     new HtmlWebpackPlugin({
       template: 'desktop.blocks/page-uikit-headers-footers/page-uikit-headers-footers.pug',
       filename: 'headers.html',
       chunks: ['headers'],
+      inject: 'body',
     }),
     new HtmlWebpackPlugin({
       template: 'desktop.blocks/page-landing/page-landing.pug',
       filename: 'landing.html',
       chunks: ['landing'],
+      inject: 'body',
     }),
     new HtmlWebpackPlugin({
       template: 'desktop.blocks/page-room-search/page-room-search.pug',
       filename: 'search.html',
       chunks: ['search'],
+      inject: 'body',
     }),
     new HtmlWebpackPlugin({
       template: 'desktop.blocks/page-registration/page-registration.pug',
       filename: 'registration.html',
       chunks: ['registration'],
+      inject: 'body',
     }),
     new HtmlWebpackPlugin({
       template: 'desktop.blocks/page-room-details/page-room-details.pug',
       filename: 'details.html',
       chunks: ['details'],
+      inject: 'body',
     }),
     new HtmlWebpackPlugin({
       template: 'desktop.blocks/page-sign-in/page-sign-in.pug',
       filename: 'sign.html',
       chunks: ['sign'],
+      inject: 'body',
     }),
 
     new CopyWebpackPlugin({

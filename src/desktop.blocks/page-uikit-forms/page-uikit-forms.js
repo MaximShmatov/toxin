@@ -11,9 +11,12 @@ import '../template-uikit/template-uikit';
 import './page-uikit-forms.sass';
 
 
-const $picker = $('.uikit-cards__form:nth-of-type(3) .date-picker');
-const $cardsRoom = $('.uikit-cards__form .card-room');
+(function ($) {
+  const $picker = $('.js-uikit-cards__form .js-date-picker');
+  new DatePicker($picker);
 
-new CardRoom($cardsRoom.eq(0), roomData[0]);
-new CardRoom($cardsRoom.eq(1), roomData[1]);
-new DatePicker($picker);
+  const $cardsRoom = $('.js-uikit-cards__form .js-card-room');
+  new CardRoom($cardsRoom.eq(0), roomData[0]);
+  new CardRoom($cardsRoom.eq(1), roomData[1]);
+})(window.$);
+

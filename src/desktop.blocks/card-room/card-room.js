@@ -19,26 +19,17 @@ class CardRoom {
   #$radio;
 
   constructor($card, room) {
-    this.#$radio = $card.find('.card-room__slider-radio');
-    const $images = $card.find('.card-room__slider-img');
-    const $rate = $card.find('.rate-button__radio');
-
-    $rate.eq(room.rate - 1).prop('checked', true);
-
-    $images.eq(0).attr('src', room.img1).attr('alt', room.alt);
-    $images.eq(1).attr('src', room.img2).attr('alt', room.alt);
-    $images.eq(2).attr('src', room.img3).attr('alt', room.alt);
-    $images.eq(3).attr('src', room.img4).attr('alt', room.alt);
-    $card.find('.card-room__price-number').text(room.number);
-    $card.find('.card-room__price-level').text(room.level);
-    $card.find('.card-room__price-pay-amount').text(room.amount);
-    $card.find('.card-room__review-quantity').text(room.review);
-
-    $card.find('.card-room__slider-control-right-button').on('click', this.listRight.bind(this));
-    $card.find('.card-room__slider-control-left-button').on('click', this.listLeft.bind(this));
+    this.#$radio = $card.find('.js-card-room__slider-radio');
+    this.#setHandles($card);
+    this.initCard($card, room);
   }
 
-  listRight() {
+  #setHandles($card) {
+    $card.find('.js-card-room__slider-control-right-button').on('click.cardroom', this.#handleButtonRightClick.bind(this));
+    $card.find('.js-card-room__slider-control-left-button').on('click.cardroom', this.#handleButtonLeftClick.bind(this));
+  }
+
+  #handleButtonRightClick() {
     for (let i = 1; i < 5; i++) {
       if (this.#$radio.eq(i).prop('checked')) {
         this.#$radio.eq(i - 1).prop('checked', true);
@@ -48,7 +39,7 @@ class CardRoom {
     }
   }
 
-  listLeft() {
+  #handleButtonLeftClick() {
     for (let i = 0; i < 4; i++) {
       if (this.#$radio.eq(i).prop('checked')) {
         this.#$radio.eq(i + 1).prop('checked', true);
@@ -56,6 +47,24 @@ class CardRoom {
         return;
       }
     }
+  }
+
+  initCard($card, room) {
+    const $rate = $card.find('.js-rate-button__radio');
+    $rate.eq(room.rate - 1).prop('checked', true);
+
+    const {img1, img2, img3, img4, alt1, alt2, alt3, alt4} = room;
+    const $images = $card.find('.js-card-room__slider-img');
+    $images.eq(0).attr('src', img1).attr('alt', alt1);
+    $images.eq(1).attr('src', img2).attr('alt', alt2);
+    $images.eq(2).attr('src', img3).attr('alt', alt3);
+    $images.eq(3).attr('src', img4).attr('alt', alt4);
+
+    const {number, level, amount, review} = room;
+    $card.find('.js-card-room__price-number').text(number);
+    $card.find('.js-card-room__price-level').text(level);
+    $card.find('.js-card-room__price-pay-amount').text(amount);
+    $card.find('.js-card-room__review-quantity').text(review);
   }
 }
 

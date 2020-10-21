@@ -1,5 +1,5 @@
 mixin like(props)
-	label.like
-		input.like__true(type="checkbox" name="like" checked=props.checked)
+	label.like.js-like
+		input.like__true.js-like__true(type="checkbox" name="like" checked=props.checked)
 		div.like__false
-			span.like__false-quantity=props.likes
+			span.like__false-quantity.js-like__false-quantity=props.likes

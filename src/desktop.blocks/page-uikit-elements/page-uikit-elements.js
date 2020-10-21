@@ -21,17 +21,23 @@ import '../template-uikit/template-uikit';
 import './page-uikit-elements.sass';
 
 
-let $uikitElements = $('.uikit-elements');
-let $dropdownQuantity = $uikitElements.find('.dropdown-quantity');
-let $rangeSlider = $uikitElements.find('.range-slider');
-let $dateRange = $uikitElements.find('.date-range');
-let $dateFilter = $uikitElements.find('.date-filter');
+(function ($) {
+  const $uikitElements = $('.js-uikit-elements');
 
-new DropdownQuantity($dropdownQuantity.eq(0));
-new DateRange($dateRange);
-new DateFilter($dateFilter);
-new RangeSlider($rangeSlider);
-new DropdownQuantity($dropdownQuantity.eq(1), 'room');
-new DropdownQuantity($dropdownQuantity.eq(2), 'room').togglePicker();
-new DropdownQuantity($dropdownQuantity.eq(3)).togglePicker();
-new DropdownQuantity($dropdownQuantity.eq(4)).togglePicker();
+  const $dropdownQuantity = $uikitElements.find('.js-dropdown-quantity');
+  new DropdownQuantity($dropdownQuantity.eq(0));
+  new DropdownQuantity($dropdownQuantity.eq(1), 'room');
+  new DropdownQuantity($dropdownQuantity.eq(2), 'room').togglePicker();
+  new DropdownQuantity($dropdownQuantity.eq(3)).togglePicker();
+  new DropdownQuantity($dropdownQuantity.eq(4)).togglePicker();
+
+  const $dateRange = $uikitElements.find('.js-date-range');
+  new DateRange($dateRange);
+
+  const $dateFilter = $uikitElements.find('.js-date-filter');
+  new DateFilter($dateFilter);
+
+  const $rangeSlider = $uikitElements.find('.js-range-slider');
+  new RangeSlider($rangeSlider);
+})(window.$);
+

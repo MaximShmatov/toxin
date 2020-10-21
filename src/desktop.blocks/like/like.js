@@ -2,16 +2,19 @@
 
 import './like.sass';
 
-$('.like').on('change', handleOnChangeLike.bind(this));
 
-function handleOnChangeLike(evt) {
-  const isChecked = $(evt.currentTarget).find('.like__true').is(':checked');
+(function ($) {
+  $('.js-like').on('change.like', handleLikeChange.bind(this));
 
-  $(evt.currentTarget).find('.like__false-quantity').each(function () {
-    if (isChecked) {
-      $(this).text(Number($(this).text()) + 1);
-    } else {
-      $(this).text(Number($(this).text()) - 1);
-    }
-  });
-}
+  function handleLikeChange(evt) {
+    const isChecked = $(evt.currentTarget).find('.js-like__true').is(':checked');
+
+    $(evt.currentTarget).find('.js-like__false-quantity').each(function () {
+      if (isChecked) {
+        $(this).text(Number($(this).text()) + 1);
+      } else {
+        $(this).text(Number($(this).text()) - 1);
+      }
+    });
+  }
+})(window.$);

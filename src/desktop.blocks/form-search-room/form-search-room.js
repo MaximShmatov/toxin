@@ -5,8 +5,12 @@ import DateRange from '../date-range/date-range';
 import '../button/button';
 import './form-search-room.sass';
 
+(function ($) {
+  const $formSearchRoom = $('.js-form-search-room');
 
-const $formSearchRoom = $('.form-search-room');
+  const $dateRange = $formSearchRoom.find('.js-date-range')
+  new DateRange($dateRange);
 
-new DateRange($formSearchRoom.find('.date-range'));
-new DropdownQuantity($formSearchRoom.find('.dropdown-quantity'));
+  const $dropdown = $formSearchRoom.find('.js-dropdown-quantity')
+  new DropdownQuantity($dropdown);
+})(window.$);

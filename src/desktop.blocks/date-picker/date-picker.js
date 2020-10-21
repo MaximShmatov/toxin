@@ -10,10 +10,10 @@ class DatePicker {
   #$bodyDates;
   #$bodyRanges;
 
-  #evtClear = 'date-picker-clear';
-  #evtSubmit = 'date-picker-submit';
-  #evtSelectIn = 'date-picker-select-in';
-  #evtSelectOut = 'date-picker-select-out';
+  #evtClear = 'datepicker.clear';
+  #evtSubmit = 'datepicker.submit';
+  #evtSelectIn = 'datepicker.select.in';
+  #evtSelectOut = 'datepicker.select.out';
   #pickerDate = new Date();
   #monthYear = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябр', 'Октябрь', 'Ноябрь', 'Декабрь'];
   #dateComeInBefore;
@@ -26,48 +26,27 @@ class DatePicker {
 
   constructor($picker) {
     this.#$picker = $picker;
-    this.#$title = $picker.find('.date-picker__head-title');
-    this.#$bodyRanges = $picker.find('.date-picker__body-range');
 
-    this.#$bodyDates = $picker.find('.date-picker__body-date').on('click', this.#selectDate.bind(this));
-    $picker.find('.date-picker__head-list-left').on('click', this.#listLeftDate.bind(this));
-    $picker.find('.date-picker__head-list-right').on('click', this.#listRightDate.bind(this));
-    $picker.find('.date-picker__footer-clear').on('click', this.#clear.bind(this));
-    $picker.find('.date-picker__footer-submit').on('click', this.#submit.bind(this));
-
+    this.#setAreas();
+    this.#setHandles();
     this.#setPickerDate();
   }
 
-  #submit() {
-    this.#$picker.trigger(this.#evtSubmit);
+  #setAreas() {
+    this.#$title = this.#$picker.find('.js-date-picker__head-title');
+    this.#$bodyRanges = this.#$picker.find('.js-date-picker__body-range');
+    this.#$bodyDates = this.#$picker.find('.js-date-picker__body-date');
   }
 
-  #clear() {
-    this.counter = 0;
-    this.#pickerDate.setTime(this.#currentDate);
-    this.dateComeIn = undefined;
-    this.dateCheckOut = undefined;
-    this.#setTitle();
-    this.#setPickerDate();
-    this.#setRangeDate();
-    this.#$picker.trigger(this.#evtClear);
+  #setHandles() {
+    this.#$bodyDates.on('click.datepicker', this.#handlePickerBodyClick.bind(this));
+    this.#$picker.find('.js-date-picker__head-list-left').on('click.datepicker', this.#handlePickerButtonLeftClick.bind(this));
+    this.#$picker.find('.js-date-picker__head-list-right').on('click.datepicker', this.#handlePickerButtonRightClick.bind(this));
+    this.#$picker.find('.js-date-picker__footer-clear').on('click.datepicker', this.#handlePickerButtonClearClick.bind(this));
+    this.#$picker.find('.js-date-picker__footer-submit').on('click.datepicker', this.#handlePickerButtonSubmitClick.bind(this));
   }
 
-  #setTitle() {
-    this.#$title.text(`${this.#monthYear[this.#pickerDate.getMonth()]} ${this.#pickerDate.getFullYear()}`);
-  }
-
-  #listLeftDate() {
-    this.#pickerDate.setMonth(this.#pickerDate.getMonth() - 1);
-    this.#setPickerDate();
-  }
-
-  #listRightDate() {
-    this.#pickerDate.setMonth(this.#pickerDate.getMonth() + 1);
-    this.#setPickerDate();
-  }
-
-  #selectDate(evt) {
+  #handlePickerBodyClick(evt) {
     switch (this.counter) {
       case 0:
         this.#dateComeInBefore = this.dateComeIn;
@@ -85,34 +64,63 @@ class DatePicker {
     }
   }
 
-  #setRangeDate() {
-    this.#$bodyDates.each((index, date) => {
-      const timeStamp = date.getAttribute('data-timestamp');
+  #handlePickerButtonLeftClick() {
+    this.#pickerDate.setMonth(this.#pickerDate.getMonth() - 1);
+    this.#setPickerDate();
+  }
 
-      const isRange = timeStamp >= this.dateComeIn && timeStamp <= this.dateCheckOut && this.dateComeIn !== this.dateCheckOut;
-      if (isRange) {
-        this.#$bodyRanges[index].classList.add('date-picker__body-range');
+  #handlePickerButtonRightClick() {
+    this.#pickerDate.setMonth(this.#pickerDate.getMonth() + 1);
+    this.#setPickerDate();
+  }
+
+  #handlePickerButtonClearClick() {
+    this.counter = 0;
+    this.#pickerDate.setTime(this.#currentDate);
+    this.dateComeIn = this.#currentDate;
+    this.dateCheckOut = this.#currentDate;
+    this.#setTitle();
+    this.#setPickerDate();
+    this.#setRangeDate();
+    this.#$picker.trigger(this.#evtClear);
+  }
+
+  #handlePickerButtonSubmitClick() {
+    this.#$picker.trigger(this.#evtSubmit);
+  }
+
+  #setTitle() {
+    this.#$title.text(`${this.#monthYear[this.#pickerDate.getMonth()]} ${this.#pickerDate.getFullYear()}`);
+  }
+
+  #setRangeDate() {
+    this.#$bodyDates.each((i) => {
+      const timeStamp = this.#$bodyDates.eq(i).attr('data-timestamp');
+
+      const inRange = (timeStamp >= this.dateComeIn) && (timeStamp <= this.dateCheckOut) && (String(this.dateComeIn) !== String(this.dateCheckOut));
+      if (inRange) {
+        this.#$bodyRanges.eq(i).addClass('date-picker__body-range');
       } else {
-        this.#$bodyRanges[index].classList.remove('date-picker__body-range');
+        this.#$bodyRanges.eq(i).removeClass('date-picker__body-range');
       }
 
-      const isSelected = timeStamp === this.dateComeIn || timeStamp === this.dateCheckOut;
-      if (isSelected) {
-        date.classList.add('date-picker__body-date_selected');
-        if (timeStamp === this.dateComeIn) {
-          this.#$bodyRanges[index].setAttribute('data-range', 'first');
+      const dateSelected = (timeStamp === String(this.dateComeIn)) || (timeStamp === String(this.dateCheckOut));
+      if (dateSelected) {
+        this.#$bodyDates.eq(i).addClass('date-picker__body-date_selected');
+        if (timeStamp === String(this.dateComeIn)) {
+          this.#$bodyRanges.eq(i).attr('data-range', 'first');
         } else {
-          this.#$bodyRanges[index].setAttribute('data-range', 'last');
+          this.#$bodyRanges.eq(i).attr('data-range', 'last');
         }
       } else {
-        date.classList.remove('date-picker__body-date_selected');
-        this.#$bodyRanges[index].removeAttribute('data-range');
+        this.#$bodyDates.eq(i).removeClass('date-picker__body-date_selected');
+        this.#$bodyRanges.eq(i).removeAttr('data-range');
       }
 
       if (timeStamp === String(this.#currentDate)) {
-        date.classList.add('date-picker__body-date_current');
+        this.#$bodyDates.eq(i).addClass('date-picker__body-date_current');
       } else {
-        date.classList.remove('date-picker__body-date_current');
+        this.#$bodyDates.eq(i).removeClass('date-picker__body-date_current');
       }
     });
   }
@@ -125,15 +133,15 @@ class DatePicker {
     if (weekDay === 0) weekDay = 7;
     dateCurrent.setDate(-weekDay + 1);
 
-    this.#$bodyDates.each((index, date) => {
+    this.#$bodyDates.each((i) => {
       dateCurrent.setDate(dateCurrent.getDate() + 1);
       if (dateCurrent.getMonth() === month) {
-        date.classList.add('date-picker__body-date_day-month');
+        this.#$bodyDates.eq(i).addClass('date-picker__body-date_day-month');
       } else {
-        date.classList.remove('date-picker__body-date_day-month');
+        this.#$bodyDates.eq(i).removeClass('date-picker__body-date_day-month');
       }
-      date.setAttribute('data-timestamp', dateCurrent.getTime());
-      date.value = dateCurrent.getDate();
+      this.#$bodyDates.eq(i).attr('data-timestamp', dateCurrent.getTime());
+      this.#$bodyDates.eq(i).attr('value', dateCurrent.getDate());
     });
     this.#setTitle();
     this.#setRangeDate();

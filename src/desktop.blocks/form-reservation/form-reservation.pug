@@ -3,16 +3,16 @@ include ../dropdown-quantity/dropdown-quantity
 include ../button/button
 
 mixin form-reservation
-	form.form-reserve
+	form.form-reserve.js-form-reserve
 		fieldset.form-reserve__fieldset
 
 			legend.form-reserve__title
 				div.form-reserve__room-info
 					span.form-reserve__room-info-num &#8470;&nbsp;&nbsp;
-					span.form-reserve__room-info-number
-					span.form-reserve__room-info-level
+					span.form-reserve__room-info-number.js-form-reserve__room-info-number
+					span.form-reserve__room-info-level.js-form-reserve__room-info-level
 				div.form-reserve__room-price
-					span.form-reserve__room-price-amount
+					span.form-reserve__room-price-amount.js-form-reserve__room-price-amount
 					span.form-reserve__room-price-rub &#x20bd;&nbsp;
 					span.form-reserve__room-price-term в сутки
 
@@ -24,33 +24,33 @@ mixin form-reservation
 
 			div.form-reserve__pay
 				div.form-reserve__pay-days
-					span.form-reserve__pay-days-price
+					span.form-reserve__pay-days-price.js-form-reserve__pay-days-price
 					span &#x20bd;&nbsp;x&nbsp;
-					span.form-reserve__pay-days-quantity
+					span.form-reserve__pay-days-quantity.js-form-reserve__pay-days-quantity
 					span &nbsp;суток
 				div.form-reserve__pay-amount
-					span.form-reserve__pay-amount-total
+					span.form-reserve__pay-amount-total.js-form-reserve__pay-amount-total
 					span &#x20bd;
 				div.form-reserve__pay-services
 					span Сбор за услуги: скидка&nbsp;
-					span.form-reserve__pay-services-price
+					span.form-reserve__pay-services-price.js-form-reserve__pay-services-price
 					span &#x20bd;
 				div.form-reserve__pay-services-info i
 				div.form-reserve__pay-services-amount
-					span.form-reserve__pay-services-amount-total
+					span.form-reserve__pay-services-amount-total.js-form-reserve__pay-services-amount-total
 					span &#x20bd;
 				div.form-reserve__pay-other
 					span Сбор за дополнительные услуги
 				div.form-reserve__pay-other-info i
 				div.form-reserve__pay-other-amount
-					span.form-reserve__pay-other-amount-total
+					span.form-reserve__pay-other-amount-total.js-form-reserve__pay-other-amount-total
 					span &#x20bd;
 
 			div.form-reserve__total
 				span.form-reserve__total-title Итого
 				div.form-reserve__total-separator
 				div.form-reserve__total-quantity
-					span.form-reserve__total-amount
+					span.form-reserve__total-amount.js-form-reserve__total-amount
 					span &#x20bd;
 
 			div.form-reserve__submit

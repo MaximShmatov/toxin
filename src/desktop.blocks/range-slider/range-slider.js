@@ -10,16 +10,16 @@ class RangeSlider {
   #valueTo;
 
   constructor($rangeSlider) {
-    this.$slider = $rangeSlider.find('.range-slider__plugin').slider('init');
-    this.#$range = $rangeSlider.find('.range-slider__title-range');
+    this.$slider = $rangeSlider.find('.js-range-slider__plugin').slider('init');
+    this.#$range = $rangeSlider.find('.js-range-slider__title-range');
     this.#valueFrom = this.#getNumberStr(this.$slider.slider('valueFrom'));
     this.#valueTo = this.#getNumberStr(this.$slider.slider('valueTo'));
     this.#$range.text(`${this.#valueFrom}\u20BD - ${this.#valueTo}\u20BD`);
 
-    this.$slider.on('slider-data', this.#handleEventSlider.bind(this));
+    this.$slider.on('slider-data', this.#handlePluginSliderData.bind(this));
   }
 
-  #handleEventSlider(evt) {
+  #handlePluginSliderData(evt) {
     if (evt.detail.name === 'valueFrom') {
       this.#valueFrom = this.#getNumberStr(this.$slider.slider('valueFrom'));
     }

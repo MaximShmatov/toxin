@@ -4,4 +4,7 @@ import './favicon/favicon';
 import './fonts/fonts.sass';
 import './template-main.sass';
 
-window.$ = window.jQuery;
+
+(function () {
+  window.$ = window.jQuery;
+})();

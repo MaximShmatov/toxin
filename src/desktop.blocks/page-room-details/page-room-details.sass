@@ -16,14 +16,14 @@
     height: 485px
 
   &__details
+    max-width: 1160px
+    margin: 70px auto
     display: grid
     grid-template-columns: 1fr
     @media (min-width: 576px)
       grid-template-columns: minmax(260px, 292px) 1fr minmax(311px, 350px)
     @media (min-width: 992px)
       grid-template-columns: minmax(260px, 292px) 1fr minmax(311px, 350px) 1fr minmax(auto, 380px)
-    max-width: 1160px
-    margin: 70px auto
 
     &-info
       grid-area: 1 / 1 / 2 / 2
@@ -50,10 +50,10 @@
         margin-top: 20px
 
     &-reviews
+      padding-bottom: 33px
       grid-area: 3 / 1 / 4 / 2
       @media (min-width: 576px)
         grid-area: 2 / 1 / 3 / 4
-      padding-bottom: 33px
 
       &-header
         display: flex
@@ -72,10 +72,10 @@
         padding-bottom: 23px
 
     &-rules
+      padding-bottom: 2px
       grid-area: 4 / 1 / 5 / 2
       @media (min-width: 576px)
         grid-area: 3 / 1 / 4 / 2
-      padding-bottom: 2px
 
       & > h3
         @include header
@@ -83,10 +83,10 @@
         text-transform: none
 
     &-cancel
+      padding-right: 10px
       grid-area: 5 / 1 / 6 / 2
       @media (min-width: 576px)
         grid-area: 3 / 3 / 4 / 4
-      padding-right: 10px
 
       & p
         margin: 18px 0 0

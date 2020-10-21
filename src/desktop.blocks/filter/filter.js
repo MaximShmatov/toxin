@@ -8,13 +8,16 @@ import '../checkbox-rich/checkbox-rich';
 import '../checkbox-list/checkbox-list';
 import './filter.sass';
 
+(function ($) {
+  const $filter = $('.js-filter');
 
-let $filter = $('.filter');
-let $rangeSlider = $filter.find('.range-slider');
-let $dateFilter = $filter.find('.date-filter');
-let $dropdownQuantity = $filter.find('.dropdown-quantity');
+  const $rangeSlider = $filter.find('.js-range-slider');
+  new RangeSlider($rangeSlider);
 
-new DateFilter($dateFilter.eq(0));
-new RangeSlider($rangeSlider);
-new DropdownQuantity($dropdownQuantity.eq(0));
-new DropdownQuantity($dropdownQuantity.eq(1), 'room');
+  const $dateFilter = $filter.find('.js-date-filter');
+  new DateFilter($dateFilter.eq(0));
+
+  const $dropdownQuantity = $filter.find('.js-dropdown-quantity');
+  new DropdownQuantity($dropdownQuantity.eq(0));
+  new DropdownQuantity($dropdownQuantity.eq(1), 'room');
+})(window.$);

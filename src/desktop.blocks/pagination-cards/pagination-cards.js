@@ -6,9 +6,12 @@ import '../pagination/pagination';
 import './pagination-cards.sass';
 
 
-const $paginationCards = $('.pagination-cards');
-const $roomCards = $paginationCards.find('.card-room');
+(function ($) {
+  const $paginationCards = $('.js-pagination-cards');
+  const $roomCards = $paginationCards.find('.js-card-room');
 
-$roomCards.each(function (i) {
-  new CardRoom($(this), roomData[i]);
-})
+  $roomCards.each(function (i) {
+    new CardRoom($(this), roomData[i]);
+  })
+})(window.$);
+

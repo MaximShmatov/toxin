@@ -1,25 +1,25 @@
-'use strict'
-
 import DatePicker from '../date-picker/date-picker';
 import './date-range.sass';
 
-
 class DateRange extends DatePicker {
   #$dateRange;
+
   #$datePicker;
+
   #$inDate;
+
   #$outDate;
+
   #defaultDate = 'дд.мм.гггг';
+
   #date = new Date();
 
   // "true" - selected in date, "false" - selected out date
   #selectedDate = true;
 
-
   constructor($dateRange) {
     super($dateRange.find('.js-date-picker'));
     this.#$dateRange = $dateRange;
-
     this.#setAreas();
     this.#setHandles();
     this.#togglePicker();
@@ -44,7 +44,7 @@ class DateRange extends DatePicker {
     this.#$dateRange.on('datepicker.clear', this.#handlePickerClear.bind(this));
     this.#$dateRange.on('datepicker.submit', this.#handlePickerSubmit.bind(this));
 
-    $(document).on('mouseup.daterange', this.#handleDocumentMouseup.bind(this));
+    window.$(document).on('mouseup.daterange', this.#handleDocumentMouseup.bind(this));
   }
 
   #handleHeadInClick(evt) {
@@ -58,14 +58,14 @@ class DateRange extends DatePicker {
   #handlePickerSelectIn() {
     this.counter = 0;
     this.#date.setTime(Number(this.dateComeIn));
-    const dateString = `${this.#date.getDate()}.${this.#getMonth(this.#date.getMonth())}.${this.#date.getFullYear()}`
+    const dateString = `${this.#date.getDate()}.${DateRange.#getMonth(this.#date.getMonth())}.${this.#date.getFullYear()}`;
     this.#$inDate.text(dateString);
   }
 
   #handlePickerSelectOut() {
     this.counter = 1;
     this.#date.setTime(Number(this.dateCheckOut));
-    const str = `${this.#date.getDate()}.${this.#getMonth(this.#date.getMonth())}.${this.#date.getFullYear()}`
+    const str = `${this.#date.getDate()}.${DateRange.#getMonth(this.#date.getMonth())}.${this.#date.getFullYear()}`;
     this.#$outDate.text(str);
   }
 
@@ -84,13 +84,13 @@ class DateRange extends DatePicker {
     }
   }
 
-  #getMonth(month) {
+  static #getMonth(month) {
     let monthStr = '';
-    month++;
-    if (month < 10) {
-      monthStr = `0${month}`;
+    if (month < 9) {
+      monthStr = `0${month + 1}`;
       return monthStr;
-    } else return month;
+    }
+    return month + 1;
   }
 
   #togglePicker(evt) {
@@ -101,7 +101,7 @@ class DateRange extends DatePicker {
           this.#$datePicker.toggleClass('date-range__picker_hidden');
         }
         this.#selectedDate = false;
-        this.counter = 0
+        this.counter = 0;
         return;
       }
       if (evt.target.closest('.js-date-range__head-out')) {
@@ -110,7 +110,7 @@ class DateRange extends DatePicker {
           this.#$datePicker.toggleClass('date-range__picker_hidden');
         }
         this.#selectedDate = true;
-        this.counter = 1
+        this.counter = 1;
         return;
       }
     }

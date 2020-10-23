@@ -1,32 +1,41 @@
-'use strict'
-
 import '../button/button';
 import './date-picker.sass';
 
-
 class DatePicker {
   #$picker;
+
   #$title;
+
   #$bodyDates;
+
   #$bodyRanges;
 
   #evtClear = 'datepicker.clear';
-  #evtSubmit = 'datepicker.submit';
-  #evtSelectIn = 'datepicker.select.in';
-  #evtSelectOut = 'datepicker.select.out';
-  #pickerDate = new Date();
-  #monthYear = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябр', 'Октябрь', 'Ноябрь', 'Декабрь'];
-  #dateComeInBefore;
-  #dateCheckOutBefore;
-  #currentDate = this.#pickerDate.getTime();
-  dateComeIn = this.#currentDate.toString();
-  dateCheckOut = this.#currentDate.toString();
-  counter = 0;
 
+  #evtSubmit = 'datepicker.submit';
+
+  #evtSelectIn = 'datepicker.select.in';
+
+  #evtSelectOut = 'datepicker.select.out';
+
+  #pickerDate = new Date();
+
+  #monthYear = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябр', 'Октябрь', 'Ноябрь', 'Декабрь'];
+
+  #dateComeInBefore;
+
+  #dateCheckOutBefore;
+
+  #currentDate = this.#pickerDate.getTime();
+
+  dateComeIn = this.#currentDate.toString();
+
+  dateCheckOut = this.#currentDate.toString();
+
+  counter = 0;
 
   constructor($picker) {
     this.#$picker = $picker;
-
     this.#setAreas();
     this.#setHandles();
     this.#setPickerDate();
@@ -52,15 +61,17 @@ class DatePicker {
         this.#dateComeInBefore = this.dateComeIn;
         this.dateComeIn = evt.currentTarget.getAttribute('data-timestamp');
         this.#setRangeDate();
-        this.counter++;
+        this.counter += 1;
         this.#$picker.trigger(this.#evtSelectIn);
         break;
       case 1:
         this.#dateCheckOutBefore = this.dateCheckOut;
         this.dateCheckOut = evt.currentTarget.getAttribute('data-timestamp');
         this.#setRangeDate();
-        this.counter--;
+        this.counter -= 1;
         this.#$picker.trigger(this.#evtSelectOut);
+        break;
+      default:
     }
   }
 
@@ -97,14 +108,19 @@ class DatePicker {
     this.#$bodyDates.each((i) => {
       const timeStamp = this.#$bodyDates.eq(i).attr('data-timestamp');
 
-      const inRange = (timeStamp >= this.dateComeIn) && (timeStamp <= this.dateCheckOut) && (String(this.dateComeIn) !== String(this.dateCheckOut));
+      const inRange = (
+        timeStamp >= this.dateComeIn
+        && timeStamp <= this.dateCheckOut
+        && String(this.dateComeIn) !== String(this.dateCheckOut));
       if (inRange) {
         this.#$bodyRanges.eq(i).addClass('date-picker__body-range');
       } else {
         this.#$bodyRanges.eq(i).removeClass('date-picker__body-range');
       }
 
-      const dateSelected = (timeStamp === String(this.dateComeIn)) || (timeStamp === String(this.dateCheckOut));
+      const dateSelected = (
+        timeStamp === String(this.dateComeIn)
+        || timeStamp === String(this.dateCheckOut));
       if (dateSelected) {
         this.#$bodyDates.eq(i).addClass('date-picker__body-date_selected');
         if (timeStamp === String(this.dateComeIn)) {

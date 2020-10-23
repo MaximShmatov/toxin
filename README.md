@@ -5,4 +5,4 @@ Project TOXIN
 
 **Запуск и установка**
 * комманда запуска localhost:9000: `npm start`
-* комманда сборки 'dist': `npm run build`
+* комманда сборки 'docs': `npm run build`

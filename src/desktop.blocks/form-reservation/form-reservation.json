@@ -3,6 +3,6 @@
   "level": "люкс",
   "pricePerDay": 9990,
   "priceService": 0,
-  "priceServiceDiscount": 2179,
-  "priceServiceAdditionally": 300
+  "priceDiscount": 2179,
+  "priceAdditionally": 300
 }

@@ -1,5 +1,3 @@
-'use strict'
-
 import '../info/info';
 import '../diagram/diagram';
 import '../review/review';

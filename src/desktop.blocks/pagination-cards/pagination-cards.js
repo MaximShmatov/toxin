@@ -1,10 +1,7 @@
-'use strict'
-
 import CardRoom from '../card-room/card-room';
 import roomData from '../card-room/card-room.json';
 import '../pagination/pagination';
 import './pagination-cards.sass';
-
 
 (function ($) {
   const $paginationCards = $('.js-pagination-cards');
@@ -12,6 +9,5 @@ import './pagination-cards.sass';
 
   $roomCards.each(function (i) {
     new CardRoom($(this), roomData[i]);
-  })
-})(window.$);
-
+  });
+}(window.$));

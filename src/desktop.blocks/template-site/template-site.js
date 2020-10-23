@@ -1,5 +1,3 @@
-'use strict'
-
 import '../template-main/template-main';
 import '../header/header';
 import '../footer/footer';

@@ -1,5 +1,3 @@
-'use strict'
-
 import RangeSlider from '../range-slider/range-slider';
 import DropdownQuantity from '../dropdown-quantity/dropdown-quantity';
 import DateRange from '../date-range/date-range';
@@ -20,7 +18,6 @@ import '../review/review';
 import '../template-uikit/template-uikit';
 import './page-uikit-elements.sass';
 
-
 (function ($) {
   const $uikitElements = $('.js-uikit-elements');
 
@@ -39,5 +36,4 @@ import './page-uikit-elements.sass';
 
   const $rangeSlider = $uikitElements.find('.js-range-slider');
   new RangeSlider($rangeSlider);
-})(window.$);
-
+}(window.$));

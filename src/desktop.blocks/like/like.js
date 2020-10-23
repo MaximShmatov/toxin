@@ -1,11 +1,6 @@
-'use strict'
-
 import './like.sass';
 
-
 (function ($) {
-  $('.js-like').on('change.like', handleLikeChange.bind(this));
-
   function handleLikeChange(evt) {
     const isChecked = $(evt.currentTarget).find('.js-like__true').is(':checked');
 
@@ -17,4 +12,6 @@ import './like.sass';
       }
     });
   }
-})(window.$);
+
+  $('.js-like').on('change.like', handleLikeChange.bind(this));
+}(window.$));

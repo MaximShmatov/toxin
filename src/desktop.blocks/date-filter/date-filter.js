@@ -1,18 +1,19 @@
-'use strict'
-
 import DatePicker from '../date-picker/date-picker';
 import '../button/button';
 import './date-filter.sass';
 
-
 class DateFilter extends DatePicker {
   #$dateFilter;
-  #$dateRange;
-  #$datePicker;
-  #$dateHeader;
-  #month = ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'];
-  #date = new Date();
 
+  #$dateRange;
+
+  #$datePicker;
+
+  #$dateHeader;
+
+  #month = ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'];
+
+  #date = new Date();
 
   constructor($dateFilter) {
     super($dateFilter.find('.js-date-picker'));
@@ -36,7 +37,7 @@ class DateFilter extends DatePicker {
     this.#$datePicker.on('datepicker.submit', this.#handlePickerButtonSubmit.bind(this));
     this.#$datePicker.on('datepicker.clear', this.#handlePickerButtonClear.bind(this));
 
-    $(document).on('mouseup.datefilter', this.#handleDocumentMouseup.bind(this));
+    window.$(document).on('mouseup.datefilter', this.#handleDocumentMouseup.bind(this));
   }
 
   #handleHeaderClick() {
@@ -72,4 +73,4 @@ class DateFilter extends DatePicker {
   }
 }
 
-export default DateFilter
+export default DateFilter;

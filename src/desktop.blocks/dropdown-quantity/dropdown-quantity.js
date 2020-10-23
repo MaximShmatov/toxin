@@ -1,22 +1,31 @@
-'use strict'
-
 import '../button/button';
 import './dropdown-quantity.sass';
 
-
 class DropdownQuantity {
   #$dropdown;
+
   #$headOut;
+
   #$header;
+
   #$itemHeader;
+
   #$picker;
+
   #$minus;
+
   #$plus;
+
   #$amount;
+
   #$clear;
+
   #$submit;
+
   #setValidQuantity;
+
   #setCaption;
+
   #quantity = {
     firstItem: 0,
     secondItem: 0,
@@ -44,7 +53,7 @@ class DropdownQuantity {
 
   #setAreas() {
     this.#$header = this.#$dropdown.find('.js-dropdown-quantity__head');
-    this.#$itemHeader = this.#$dropdown.find('.js-dropdown-quantity__picker-item-header')
+    this.#$itemHeader = this.#$dropdown.find('.js-dropdown-quantity__picker-item-header');
     this.#$headOut = this.#$dropdown.find('.js-dropdown-quantity__head-out');
     this.#$picker = this.#$dropdown.find('.js-dropdown-quantity__picker');
     this.#$minus = this.#$dropdown.find('.js-dropdown-quantity__picker-item-quantity-minus');
@@ -65,7 +74,7 @@ class DropdownQuantity {
     this.#$plus.eq(1).on('click.dropdownquantity', this.#handlePickerButtonPlusTwoClick.bind(this));
     this.#$plus.eq(2).on('click.dropdownquantity', this.#handlePickerButtonPlusThreeClick.bind(this));
 
-    $(document).on('mouseup.dropdownquantity', this.#handleDocumentClick.bind(this));
+    window.$(document).on('mouseup.dropdownquantity', this.#handleDocumentClick.bind(this));
   }
 
   #handlePickerButtonClearClick() {
@@ -154,22 +163,26 @@ class DropdownQuantity {
   #setValidRoom() {
     switch (this.#quantity.isFirstItem) {
       case true:
-        if (this.#quantity.firstItem < 5) this.#quantity.firstItem++;
+        if (this.#quantity.firstItem < 5) this.#quantity.firstItem += 1;
         break;
       case undefined:
         break;
       case false:
-        if (this.#quantity.firstItem > 0) this.#quantity.firstItem--;
+        if (this.#quantity.firstItem > 0) this.#quantity.firstItem -= 1;
+        break;
+      default:
     }
     if (this.#quantity.firstItem > 0) {
       switch (this.#quantity.isSecondItem) {
         case true:
-          if (this.#quantity.secondItem < 5) this.#quantity.secondItem++;
+          if (this.#quantity.secondItem < 5) this.#quantity.secondItem += 1;
           break;
         case undefined:
           break;
         case false:
-          if (this.#quantity.secondItem > 0) this.#quantity.secondItem--;
+          if (this.#quantity.secondItem > 0) this.#quantity.secondItem -= 1;
+          break;
+        default:
       }
     } else {
       this.#quantity.secondItem = 0;
@@ -179,12 +192,14 @@ class DropdownQuantity {
     if (firstSecondSelected) {
       switch (this.#quantity.isThirdItem) {
         case true:
-          if (this.#quantity.thirdItem < 5) this.#quantity.thirdItem++;
+          if (this.#quantity.thirdItem < 5) this.#quantity.thirdItem += 1;
           break;
         case undefined:
           break;
         case false:
-          if (this.#quantity.thirdItem !== 0) this.#quantity.thirdItem--;
+          if (this.#quantity.thirdItem !== 0) this.#quantity.thirdItem -= 1;
+          break;
+        default:
       }
     } else this.#quantity.thirdItem = 0;
     this.#quantity.isFirstItem = undefined;
@@ -213,6 +228,8 @@ class DropdownQuantity {
         break;
       case 5:
         selectedCaption = `${this.#quantity.firstItem} спален`;
+        break;
+      default:
     }
     switch (this.#quantity.secondItem) {
       case 1:
@@ -225,6 +242,8 @@ class DropdownQuantity {
         break;
       case 5:
         selectedCaption = `${selectedCaption} ${this.#quantity.secondItem} кроватей`;
+        break;
+      default:
     }
     this.#$headOut.text(selectedCaption);
   }
@@ -233,33 +252,39 @@ class DropdownQuantity {
     let adultsAndChildren = this.#quantity.firstItem + this.#quantity.secondItem;
     switch (this.#quantity.isFirstItem) {
       case true:
-        if (adultsAndChildren < 5) this.#quantity.firstItem++;
+        if (adultsAndChildren < 5) this.#quantity.firstItem += 1;
         break;
       case undefined:
         break;
       case false:
-        if (this.#quantity.firstItem > 0) this.#quantity.firstItem--;
+        if (this.#quantity.firstItem > 0) this.#quantity.firstItem -= 1;
+        break;
+      default:
     }
     adultsAndChildren = this.#quantity.firstItem + this.#quantity.secondItem;
     switch (this.#quantity.isSecondItem) {
       case true:
-        if (adultsAndChildren < 5) this.#quantity.secondItem++;
+        if (adultsAndChildren < 5) this.#quantity.secondItem += 1;
         break;
       case undefined:
         break;
       case false:
-        if (this.#quantity.secondItem > 0) this.#quantity.secondItem--;
+        if (this.#quantity.secondItem > 0) this.#quantity.secondItem -= 1;
+        break;
+      default:
     }
     adultsAndChildren = this.#quantity.firstItem + this.#quantity.secondItem;
     if (adultsAndChildren > 0) {
       switch (this.#quantity.isThirdItem) {
         case true:
-          if (this.#quantity.thirdItem < 5) this.#quantity.thirdItem++;
+          if (this.#quantity.thirdItem < 5) this.#quantity.thirdItem += 1;
           break;
         case undefined:
           break;
         case false:
-          if (this.#quantity.thirdItem !== 0) this.#quantity.thirdItem--;
+          if (this.#quantity.thirdItem !== 0) this.#quantity.thirdItem -= 1;
+          break;
+        default:
       }
     } else this.#quantity.thirdItem = 0;
     this.#quantity.isFirstItem = undefined;
@@ -269,7 +294,7 @@ class DropdownQuantity {
 
   #setCaptionGuests() {
     let selectedCaption = '';
-    let adultsAndChildren = this.#quantity.firstItem + this.#quantity.secondItem;
+    const adultsAndChildren = this.#quantity.firstItem + this.#quantity.secondItem;
     this.#$amount.eq(0).text(this.#quantity.firstItem);
     this.#$amount.eq(1).text(this.#quantity.secondItem);
     this.#$amount.eq(2).text(this.#quantity.thirdItem);
@@ -289,6 +314,8 @@ class DropdownQuantity {
         break;
       case 5:
         selectedCaption = `${adultsAndChildren} гостей`;
+        break;
+      default:
     }
     switch (this.#quantity.thirdItem) {
       case 1:
@@ -301,6 +328,8 @@ class DropdownQuantity {
         break;
       case 5:
         selectedCaption = `${selectedCaption} ${this.#quantity.thirdItem} младенцев`;
+        break;
+      default:
     }
     this.#$headOut.text(selectedCaption);
   }
@@ -312,6 +341,8 @@ class DropdownQuantity {
         break;
       case 1:
         this.#$minus.eq(0).prop('disabled', false);
+        break;
+      default:
     }
     switch (this.#quantity.secondItem) {
       case 0:
@@ -319,6 +350,8 @@ class DropdownQuantity {
         break;
       case 1:
         this.#$minus.eq(1).prop('disabled', false);
+        break;
+      default:
     }
     switch (this.#quantity.thirdItem) {
       case 0:
@@ -326,6 +359,8 @@ class DropdownQuantity {
         break;
       case 1:
         this.#$minus.eq(2).prop('disabled', false);
+        break;
+      default:
     }
   }
 }

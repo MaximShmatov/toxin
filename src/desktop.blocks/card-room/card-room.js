@@ -1,5 +1,3 @@
-'use strict'
-
 import '../rate-button/rate-button';
 import './350/card-room-350-4.jpg';
 import './352/card-room-352-4.jpg';
@@ -21,7 +19,30 @@ class CardRoom {
   constructor($card, room) {
     this.#$radio = $card.find('.js-card-room__slider-radio');
     this.#setHandles($card);
-    this.initCard($card, room);
+    CardRoom.initCard($card, room);
+  }
+
+  static initCard($card, room) {
+    const $rate = $card.find('.js-rate-button__radio');
+    $rate.eq(room.rate - 1).prop('checked', true);
+
+    const {
+      img1, img2, img3, img4,
+      alt1, alt2, alt3, alt4,
+    } = room;
+    const $images = $card.find('.js-card-room__slider-img');
+    $images.eq(0).attr('src', img1).attr('alt', alt1);
+    $images.eq(1).attr('src', img2).attr('alt', alt2);
+    $images.eq(2).attr('src', img3).attr('alt', alt3);
+    $images.eq(3).attr('src', img4).attr('alt', alt4);
+
+    const {
+      number, level, amount, review,
+    } = room;
+    $card.find('.js-card-room__price-number').text(number);
+    $card.find('.js-card-room__price-level').text(level);
+    $card.find('.js-card-room__price-pay-amount').text(amount);
+    $card.find('.js-card-room__review-quantity').text(review);
   }
 
   #setHandles($card) {
@@ -30,7 +51,7 @@ class CardRoom {
   }
 
   #handleButtonRightClick() {
-    for (let i = 1; i < 5; i++) {
+    for (let i = 1; i < 5; i += 1) {
       if (this.#$radio.eq(i).prop('checked')) {
         this.#$radio.eq(i - 1).prop('checked', true);
         this.#$radio.eq(i - 1).attr('data-dir', 'r');
@@ -40,31 +61,13 @@ class CardRoom {
   }
 
   #handleButtonLeftClick() {
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 4; i += 1) {
       if (this.#$radio.eq(i).prop('checked')) {
         this.#$radio.eq(i + 1).prop('checked', true);
         this.#$radio.eq(i + 1).attr('data-dir', 'l');
         return;
       }
     }
-  }
-
-  initCard($card, room) {
-    const $rate = $card.find('.js-rate-button__radio');
-    $rate.eq(room.rate - 1).prop('checked', true);
-
-    const {img1, img2, img3, img4, alt1, alt2, alt3, alt4} = room;
-    const $images = $card.find('.js-card-room__slider-img');
-    $images.eq(0).attr('src', img1).attr('alt', alt1);
-    $images.eq(1).attr('src', img2).attr('alt', alt2);
-    $images.eq(2).attr('src', img3).attr('alt', alt3);
-    $images.eq(3).attr('src', img4).attr('alt', alt4);
-
-    const {number, level, amount, review} = room;
-    $card.find('.js-card-room__price-number').text(number);
-    $card.find('.js-card-room__price-level').text(level);
-    $card.find('.js-card-room__price-pay-amount').text(amount);
-    $card.find('.js-card-room__review-quantity').text(review);
   }
 }
 

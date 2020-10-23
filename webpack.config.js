@@ -1,10 +1,9 @@
-'use strict'
-
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
+  // mode: 'development',
   context: path.resolve(__dirname, 'src'),
   entry: {
     index: './index.js',
@@ -28,6 +27,7 @@ module.exports = {
     'library/jquery.maskedinput.js',
     'library/slider.js',
   ],
+  // devtool: 'inline-source-map',
   optimization: {
     splitChunks: {
       chunks: 'all',
@@ -97,7 +97,7 @@ module.exports = {
 
     new CopyWebpackPlugin({
       patterns: [
-        {from: 'library', to: 'library'},
+        { from: 'library', to: 'library' },
       ],
     }),
   ],
@@ -105,20 +105,7 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: [
-              '@babel/preset-env',
-              {
-                plugins: [
-                  '@babel/plugin-proposal-class-properties',
-                  '@babel/plugin-proposal-private-methods'
-                ]
-              }
-            ]
-          }
-        }
+        use: 'babel-loader',
       },
       {
         test: /\.(sass|scss|css)$/,
@@ -128,11 +115,11 @@ module.exports = {
             loader: 'css-loader',
             options: {
               modules: false,
-            }
+            },
           },
           'postcss-loader',
           'sass-loader',
-        ]
+        ],
       },
       {
         test: /\.pug$/,
@@ -147,8 +134,8 @@ module.exports = {
             name: '[name].[ext]',
             outputPath: 'fonts',
             esModule: false,
-          }
-        }
+          },
+        },
       },
       {
         test: /\.(png|jpg|svg)$/,
@@ -157,9 +144,9 @@ module.exports = {
           loader: 'file-loader',
           options: {
             name: '[name].[ext]',
-            outputPath: 'img'
-          }
-        }
+            outputPath: 'img',
+          },
+        },
       },
       {
         test: /\.(ico|png|svg|xml|webmanifest)$/,
@@ -168,15 +155,15 @@ module.exports = {
           loader: 'file-loader',
           options: {
             name: '[name].[ext]',
-            outputPath: '.'
-          }
-        }
+            outputPath: '.',
+          },
+        },
       },
-    ]
+    ],
   },
   devServer: {
-    //contentBase: path.resolve(__dirname, 'docs'),
-    //publicPath: '/docs/',
+    // contentBase: path.resolve(__dirname, 'docs'),
+    // publicPath: '/docs/',
     port: 9000,
     watchContentBase: true,
     progress: true,
@@ -184,5 +171,5 @@ module.exports = {
     hot: true,
     historyApiFallback: true,
     overlay: true,
-  }
-}
+  },
+};

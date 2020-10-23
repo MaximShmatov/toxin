@@ -1,5 +1,3 @@
-'use strict'
-
 import DateFilter from '../date-filter/date-filter';
 import DropdownQuantity from '../dropdown-quantity/dropdown-quantity';
 import RangeSlider from '../range-slider/range-slider';
@@ -20,4 +18,4 @@ import './filter.sass';
   const $dropdownQuantity = $filter.find('.js-dropdown-quantity');
   new DropdownQuantity($dropdownQuantity.eq(0));
   new DropdownQuantity($dropdownQuantity.eq(1), 'room');
-})(window.$);
+}(window.$));

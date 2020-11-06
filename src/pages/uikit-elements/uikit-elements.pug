@@ -1,0 +1,134 @@
+extends ../../templates/template-uikit/template-uikit
+
+include ../../components/text-field/text-field
+include ../../components/dropdown-quantity/dropdown-quantity
+include ../../components/date-range/date-range
+include ../../components/date-filter/date-filter
+include ../../components/subscription/subscription
+include ../../components/checkbox-group/checkbox-group
+include ../../components/radio/radio
+include ../../components/toggle/toggle
+include ../../components/like/like
+include ../../components/rate-button/rate-button
+include ../../components/range-slider/range-slider
+include ../../components/button/button
+include ../../components/pagination/pagination
+include ../../components/checkbox-list/checkbox-list
+include ../../components/checkbox-rich/checkbox-rich
+include ../../components/bullet-list/bullet-list
+include ../../components/info/info
+include ../../components/review/review
+
+block page-uikit
+  article.uikit-elements.js-uikit-elements
+
+    // sector-1
+    section.uikit-elements__sector
+      div.uikit-elements__sector-element
+        span.uikit-elements__sector-element-caption Default
+        +text-field({type: "email", value: "Email", header: "Text field"})
+      div.uikit-elements__sector-element
+        span.uikit-elements__sector-element-caption Hover / Focus
+        +text-field({type: "text", value: "Имя", header: "Text field"})
+      div.uikit-elements__sector-element
+        +dropdown-quantity({header: "Dropdown"})
+      div.uikit-elements__sector-element
+        +text-field({type: "text", value: "дд.мм.гггг", mask: "99.99.9999", header: "Masked text field"})
+      div.uikit-elements__sector-element
+        +date-range({header1: "Date dropdown", header2: "Date dropdown"})
+      div.uikit-elements__sector-element
+        +date-filter({header: "Filter date dropdown"})
+      h3.uikit-elements__sector-element-title Subscription text field
+      div.uikit-elements__sector-element
+        +subscription
+
+    // sector-2
+    section.uikit-elements__sector
+      div.uikit-elements__sector-element
+        +checkbox-group({header: "Checkbox buttons"})
+      h3.uikit-elements__sector-element-title Radio buttons
+      div.uikit-elements__sector-element
+        +radio({name: "registration__mw-radio", value: "m", caption: "Мужчина", checked: true})
+        +radio({name: "registration__mw-radio", value: "w", caption: "Женщина"})
+      h3.uikit-elements__sector-element-title Toggle
+      div.uikit-elements__sector-element
+        +toggle({caption: "Получать спецпредложения", checked: "checked"})
+      div.uikit-elements__sector-element
+        +toggle({caption: "Получать спецпредложения"})
+      h3.uikit-elements__sector-element-title Like button
+      div.uikit-elements__sector-element
+        +like({checked: false, likes: 2})
+        +like({checked: true, likes: 12})
+      h3.uikit-elements__sector-element-title Rate button
+      div.uikit-elements__sector-element
+        +rate-button({rate: 4})
+        +rate-button({rate: 5})
+
+    // sector-3
+    section.uikit-elements__sector
+      div.uikit-elements__sector-element
+        +range-slider({header: "Range slider"})
+      h3.uikit-elements__sector-element-title Buttons
+      div.uikit-elements__sector-element
+        div.uikit-elements__sector-element-group
+          +button({type: "button", text: "Click me", mode: "registration"})
+        div.uikit-elements__sector-element-group
+          +button({type: "button", text: "Click me", mode: "registration", disabled: true})
+      div.uikit-elements__sector-element
+        div.uikit-elements__sector-element-group
+          +button({type: "button", text: "Click me", mode: "come-in"})
+        div.uikit-elements__sector-element-group
+          +button({type: "button", text: "Click me", mode: "come-in", disabled: true})
+      div.uikit-elements__sector-element
+        div.uikit-elements__sector-element-group
+          +button({type: "button", text: "Click me", mode: "picker"})
+        div.uikit-elements__sector-element-group
+          +button({type: "button", text: "Click me", mode: "picker-grey"})
+      div.uikit-elements__sector-element
+        +button({type: "button", text: "Перейти к оплате", mode: "forward"})
+      h3.uikit-elements__sector-element-title Pagination
+      div.uikit-elements__sector-element
+        +pagination
+
+    // sector-4
+    section.uikit-elements__sector
+      div.uikit-elements__sector-element
+        span.uikit-elements__sector-element-caption Default
+        +dropdown-quantity({header: "Dropdown"})
+      div.uikit-elements__sector-element
+        span.uikit-elements__sector-element-caption Expanded
+        +dropdown-quantity({header: "Dropdown"})
+      div.uikit-elements__sector-element
+        +checkbox-list({name: "Expandable checkbox list", checked: false})
+      div.uikit-elements__sector-element
+        +checkbox-list({name: "Expandable checkbox list", checked: true})
+
+    // sector-5
+    section.uikit-elements__sector
+      div.uikit-elements__sector-element
+        +dropdown-quantity({header: "Dropdown"})
+      div.uikit-elements__sector-element
+        +checkbox-rich({header: "Rich checkbox buttons"})
+
+    // sector-6
+    section.uikit-elements__sector
+      div.uikit-elements__sector-element
+        +dropdown-quantity({header: "Dropdown"})
+      div.uikit-elements__sector-element
+        +bullet-list({header: "Bullet list"})
+
+    // sector-7
+    section.uikit-elements__sector
+      div.uikit-elements__sector-element
+        +info({name: "Комфорт", text: "Шумопоглощающие стены", img: "img/info-ico1.svg"})
+      div.uikit-elements__sector-element
+        +info({name: "Удобство", text: "Окно в каждой из спален", img: "img/info-ico2.svg"})
+
+    // sector-8
+    section.uikit-elements__sector
+      +review({
+        avatar: "img/review-avatar1.jpg",
+        name: "Мурад Сарафанов",
+        date: "5 дней назад",
+        quote: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару \u2014 никто не жаловался из соседей."
+      })

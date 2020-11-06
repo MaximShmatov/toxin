@@ -1,0 +1,20 @@
+extends ../../templates/template-uikit/template-uikit
+
+include ../../components/header/header
+include ../../components/footer/footer
+include ../../components/copyright/copyright
+
+block page-uikit
+	div.uikit-headers-footers__wrapper
+		article.uikit-headers-footers
+			header.uikit-headers-footers__header
+				+header
+			header.uikit-headers-footers__header
+				+header("Юлий Цезарь")
+			footer.uikit-headers-footers__footer
+				+footer
+			footer.uikit-headers-footers__footer
+				+copyright
+			footer.uikit-headers-footers__footer
+				+copyright("copyright_tablet")
+

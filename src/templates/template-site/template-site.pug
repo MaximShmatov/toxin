@@ -1,0 +1,16 @@
+extends ../template-main/template-main
+
+include ../../components/header/header
+include ../../components/footer/footer
+include ../../components/copyright/copyright
+
+block page
+	body.site-template
+		header.site-template__header
+			+header
+		main.site-template__main
+			block page-site
+		footer.site-template__footer
+			+footer
+			section.site-template__footer-copyright
+				+copyright

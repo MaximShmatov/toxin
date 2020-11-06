@@ -36,6 +36,8 @@
     "file-loader": "^6.1.1",
     "glob": "^7.1.6",
     "html-webpack-plugin": "^5.0.0-alpha.6",
+    "jquery": "^3.5.1",
+    "jquery.maskedinput": "^1.4.1",
     "postcss": "^8.1.2",
     "postcss-loader": "^4.0.4",
     "pug": "^3.0.0",

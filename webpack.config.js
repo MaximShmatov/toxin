@@ -17,9 +17,8 @@ const htmlWebpackPlugins = glob.sync('src/pages/**/*.pug').map((item) => {
   );
 });
 
-console.log(...htmlWebpackPlugins);
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   context: path.resolve(__dirname, 'src'),
   entry: {
     index: './index.js',
@@ -43,7 +42,6 @@ module.exports = {
     'vendor/jquery.maskedinput.js',
     'vendor/slider.js',
   ],
-  devtool: 'inline-source-map',
   optimization: {
     splitChunks: {
       chunks: 'all',
@@ -57,64 +55,28 @@ module.exports = {
       chunks: ['index'],
       inject: 'body',
     }),
-    // new HtmlWebpackPlugin({
-    //   template: 'pages/uikit-colors/uikit-colors.pug',
-    //   filename: 'uikit-colors.html',
-    //   chunks: ['colors'],
-    //   inject: 'body',
-    // }),
-    // new HtmlWebpackPlugin({
-    //   template: 'pages/uikit-elements/uikit-elements.pug',
-    //   filename: 'uikit-elements.html',
-    //   chunks: ['elements'],
-    //   inject: 'body',
-    // }),
-    // new HtmlWebpackPlugin({
-    //   template: 'pages/uikit-forms/uikit-forms.pug',
-    //   filename: 'uikit-forms.html',
-    //   chunks: ['forms'],
-    //   inject: 'body',
-    // }),
-    // new HtmlWebpackPlugin({
-    //   template: 'pages/uikit-headers-footers/uikit-headers-footers.pug',
-    //   filename: 'uikit-headers-footers.html',
-    //   chunks: ['footers'],
-    //   inject: 'body',
-    // }),
-    // new HtmlWebpackPlugin({
-    //   template: 'pages/page-landing/page-landing.pug',
-    //   filename: 'page-landing.html',
-    //   chunks: ['landing'],
-    //   inject: 'body',
-    // }),
-    // new HtmlWebpackPlugin({
-    //   template: 'pages/room-search/room-search.pug',
-    //   filename: 'room-search.html',
-    //   chunks: ['search'],
-    //   inject: 'body',
-    // }),
-    // new HtmlWebpackPlugin({
-    //   template: 'pages/page-registration/page-registration.pug',
-    //   filename: 'page-registration.html',
-    //   chunks: ['registration'],
-    //   inject: 'body',
-    // }),
-    // new HtmlWebpackPlugin({
-    //   template: 'pages/room-details/room-details.pug',
-    //   filename: 'room-details.html',
-    //   chunks: ['details'],
-    //   inject: 'body',
-    // }),
-    // new HtmlWebpackPlugin({
-    //   template: 'pages/page-sign/page-sign.pug',
-    //   filename: 'page-sign.html',
-    //   chunks: ['sign'],
-    //   inject: 'body',
-    // }),
-
     new CopyWebpackPlugin({
       patterns: [
-        {from: 'vendor', to: 'vendor'},
+        {
+          from: 'vendor',
+          to: 'vendor'
+        },
+      ],
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: '../node_modules/jquery/dist/jquery.min.js',
+          to: 'vendor'
+        },
+      ],
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: '../node_modules/jquery.maskedinput/src/jquery.maskedinput.js',
+          to: 'vendor'
+        },
       ],
     }),
   ],

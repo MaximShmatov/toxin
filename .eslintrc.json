@@ -24,5 +24,8 @@
     "space-before-function-paren": "off",
     "func-names": "off",
     "no-new": "off"
-  }
+  },
+  "ignorePatterns": [
+    "vendor"
+  ]
 }

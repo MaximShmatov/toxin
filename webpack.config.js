@@ -1,24 +1,18 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const glob = require('glob');
 
-const htmlWebpackPlugins = glob.sync('src/pages/**/*.pug').map((item) => {
-  const filename = `${item.slice(item.lastIndexOf('/') + 1, -4)}.html`;
-  const template = item.slice(item.indexOf('/') +1);
-  const chunks = item.slice(item.lastIndexOf('-') + 1, -4);
-  return (
-    new HtmlWebpackPlugin({
-      template: template,
-      filename: filename,
-      chunks: [chunks],
-      inject: 'body',
-    })
-  );
-});
+const htmlWebpackPlugins = glob.sync('src/pages/**/*.pug')
+  .map((item) => new HtmlWebpackPlugin({
+    template: item.slice(item.indexOf('/') + 1),
+    filename: `${item.slice(item.lastIndexOf('/') + 1, -4)}.html`,
+    chunks: [item.slice(item.lastIndexOf('-') + 1, -4)],
+    inject: 'body',
+  }));
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   context: path.resolve(__dirname, 'src'),
   entry: {
     index: './index.js',
@@ -32,21 +26,7 @@ module.exports = {
     details: './pages/room-details/room-details.js',
     sign: './pages/page-sign/page-sign.js',
   },
-  output: {
-    filename: 'js/[name].[chunkhash].js',
-    path: path.resolve(__dirname, 'docs'),
-    publicPath: '',
-  },
-  externals: [
-    'vendor/jquery.min.js',
-    'vendor/jquery.maskedinput.js',
-    'vendor/slider.js',
-  ],
-  optimization: {
-    splitChunks: {
-      chunks: 'all',
-    },
-  },
+  devtool: 'inline-source-map',
   plugins: [
     ...htmlWebpackPlugins,
     new HtmlWebpackPlugin({
@@ -58,24 +38,16 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: 'vendor',
-          to: 'vendor'
+          from: 'vendor/slider.js',
+          to: 'vendor',
         },
-      ],
-    }),
-    new CopyWebpackPlugin({
-      patterns: [
         {
           from: '../node_modules/jquery/dist/jquery.min.js',
-          to: 'vendor'
+          to: 'vendor',
         },
-      ],
-    }),
-    new CopyWebpackPlugin({
-      patterns: [
         {
           from: '../node_modules/jquery.maskedinput/src/jquery.maskedinput.js',
-          to: 'vendor'
+          to: 'vendor',
         },
       ],
     }),
@@ -124,6 +96,7 @@ module.exports = {
           options: {
             name: '[name].[ext]',
             outputPath: 'img',
+            esModule: false,
           },
         },
       },
@@ -135,6 +108,7 @@ module.exports = {
           options: {
             name: '[name].[ext]',
             outputPath: '.',
+            esModule: false,
           },
         },
       },

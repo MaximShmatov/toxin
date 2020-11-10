@@ -1,9 +1,8 @@
-Project TOXIN
+Project TOXIN - [Посмотреть](https://maximshmatov.github.io/toxin/)
 =========================
-
 ## Клонирование репозитория и установка зависимостей:
 
-Следующие комманды требую наличие установленной Node.js v.14 и git 2.27.
+Для следующих команд необходимо установить Node.js v.14 и git 2.27.
 
 ### `git clone https://github.com/MaximShmatov/toxin.git`
 
@@ -26,3 +25,11 @@ Project TOXIN
 ### `npm run build`
 
 Запускает производственную сборку проекта.
+
+### `npm run lint`
+
+Запускает линтер.
+
+### `npm run deploy`
+
+Публикация проекта на github pages.

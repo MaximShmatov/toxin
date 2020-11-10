@@ -4,4 +4,4 @@ import '../../components/review/review';
 import '../../components/bullet-list/bullet-list';
 import '../../components/form-reservation/form-reservation';
 import '../../templates/template-site/template-site';
-import './room-details.sass';
+import './site-details.sass';

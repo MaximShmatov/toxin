@@ -6,7 +6,7 @@ const glob = require('glob');
 const htmlWebpackPlugins = glob.sync('src/pages/**/*.pug')
   .map((item) => new HtmlWebpackPlugin({
     template: item.slice(item.indexOf('/') + 1),
-    filename: `${item.slice(item.lastIndexOf('/') + 1, -4)}.html`,
+    filename: `${item.slice(item.lastIndexOf('-') + 1, -4)}.html`,
     chunks: [item.slice(item.lastIndexOf('-') + 1, -4)],
     inject: 'body',
   }));
@@ -15,26 +15,20 @@ module.exports = {
   mode: 'development',
   context: path.resolve(__dirname, 'src'),
   entry: {
-    index: './index.js',
+    index: './page-index.js',
     colors: './pages/uikit-colors/uikit-colors.js',
     elements: './pages/uikit-elements/uikit-elements.js',
     forms: './pages/uikit-forms/uikit-forms.js',
-    footers: './pages/uikit-headers-footers/uikit-headers-footers.js',
-    landing: './pages/page-landing/page-landing.js',
-    search: './pages/room-search/room-search.js',
-    registration: './pages/page-registration/page-registration.js',
-    details: './pages/room-details/room-details.js',
-    sign: './pages/page-sign/page-sign.js',
+    headers: './pages/uikit-headers/uikit-headers.js',
+    landing: './pages/site-landing/site-landing.js',
+    search: './pages/site-search/site-search.js',
+    registration: './pages/site-registration/site-registration.js',
+    details: './pages/site-details/site-details.js',
+    sign: './pages/site-sign/site-sign.js',
   },
   devtool: 'inline-source-map',
   plugins: [
     ...htmlWebpackPlugins,
-    new HtmlWebpackPlugin({
-      template: 'index.pug',
-      filename: 'index.html',
-      chunks: ['index'],
-      inject: 'body',
-    }),
     new CopyWebpackPlugin({
       patterns: [
         {

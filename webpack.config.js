@@ -1,5 +1,5 @@
 const path = require('path');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const glob = require('glob');
 
@@ -20,21 +20,10 @@ module.exports = {
   devtool: 'inline-source-map',
   plugins: [
     ...htmlWebpackPlugins,
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: 'vendor/slider.js',
-          to: 'vendor',
-        },
-        {
-          from: '../node_modules/jquery/dist/jquery.min.js',
-          to: 'vendor',
-        },
-        {
-          from: '../node_modules/jquery.maskedinput/src/jquery.maskedinput.js',
-          to: 'vendor',
-        },
-      ],
+    new webpack.ProvidePlugin({
+      '$': 'jquery',
+      'jQuery': 'jquery',
+      'window.$': 'jquery',
     }),
   ],
   module: {

@@ -1,3 +1,4 @@
+import '../../vendor/slider';
 import './range-slider.sass';
 
 class RangeSlider {

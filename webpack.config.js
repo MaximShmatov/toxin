@@ -7,7 +7,7 @@ const htmlWebpackPlugins = glob.sync('src/pages/**/*.pug')
   .map((item) => new HtmlWebpackPlugin({
     template: item.slice(item.indexOf('/') + 1),
     filename: `${item.slice(item.lastIndexOf('-') + 1, -4)}.html`,
-    chunks: [item.slice(item.lastIndexOf('-') + 1, -4)],
+    chunks: ['index'],
     inject: 'body',
   }));
 
@@ -15,16 +15,7 @@ module.exports = {
   mode: 'development',
   context: path.resolve(__dirname, 'src'),
   entry: {
-    index: './page-index.js',
-    colors: './pages/uikit-colors/uikit-colors.js',
-    elements: './pages/uikit-elements/uikit-elements.js',
-    forms: './pages/uikit-forms/uikit-forms.js',
-    headers: './pages/uikit-headers/uikit-headers.js',
-    landing: './pages/site-landing/site-landing.js',
-    search: './pages/site-search/site-search.js',
-    registration: './pages/site-registration/site-registration.js',
-    details: './pages/site-details/site-details.js',
-    sign: './pages/site-sign/site-sign.js',
+    index: './index.js',
   },
   devtool: 'inline-source-map',
   plugins: [

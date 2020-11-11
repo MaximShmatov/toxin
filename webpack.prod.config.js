@@ -15,7 +15,3 @@ module.exports = {
   },
   devtool: false,
 }
-
-exports.deploy = () => {
-  console.log('run deploy');
-}

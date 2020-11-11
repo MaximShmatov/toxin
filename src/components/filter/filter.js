@@ -1,10 +1,6 @@
 import DateFilter from '../date-filter/date-filter';
 import DropdownQuantity from '../dropdown-quantity/dropdown-quantity';
 import RangeSlider from '../range-slider/range-slider';
-import '../checkbox-group/checkbox-group';
-import '../checkbox-rich/checkbox-rich';
-import '../checkbox-list/checkbox-list';
-import './filter.sass';
 
 (function ($) {
   const $filter = $('.js-filter');

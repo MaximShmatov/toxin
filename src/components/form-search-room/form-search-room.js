@@ -1,7 +1,5 @@
 import DropdownQuantity from '../dropdown-quantity/dropdown-quantity';
 import DateRange from '../date-range/date-range';
-import '../button/button';
-import './form-search-room.sass';
 
 (function ($) {
   const $formSearchRoom = $('.js-form-search-room');

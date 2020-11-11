@@ -1,6 +1,4 @@
 import DatePicker from '../date-picker/date-picker';
-import '../button/button';
-import './date-filter.sass';
 
 class DateFilter extends DatePicker {
   #$dateFilter;

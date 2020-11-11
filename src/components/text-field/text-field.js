@@ -1,5 +1,4 @@
 import '../../../node_modules/jquery.maskedinput/src/jquery.maskedinput';
-import './text-field.sass';
 
 (function ($) {
   function setEvents(index, item) {

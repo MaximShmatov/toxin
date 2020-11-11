@@ -1,7 +1,5 @@
 import CardRoom from '../card-room/card-room';
 import roomData from '../card-room/card-room.json';
-import '../pagination/pagination';
-import './pagination-cards.sass';
 
 (function ($) {
   const $paginationCards = $('.js-pagination-cards');

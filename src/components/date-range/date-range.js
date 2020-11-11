@@ -1,5 +1,4 @@
 import DatePicker from '../date-picker/date-picker';
-import './date-range.sass';
 
 class DateRange extends DatePicker {
   #$dateRange;

@@ -1,1 +1,0 @@
-import './checkbox-group.sass';

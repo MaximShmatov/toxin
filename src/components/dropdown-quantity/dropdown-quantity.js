@@ -1,6 +1,3 @@
-import '../button/button';
-import './dropdown-quantity.sass';
-
 class DropdownQuantity {
   #$dropdown;
 

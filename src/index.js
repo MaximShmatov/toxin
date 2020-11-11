@@ -1,4 +1,4 @@
 (function () {
-  const ctxPages = require.context('./pages', true, /\.js$/);
-  ctxPages.keys().forEach(ctxPages);
+  const context = require.context('./', true, /\.js$|\.sass$/);
+  context.keys().forEach(context);
 }());

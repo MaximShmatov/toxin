@@ -1,8 +1,6 @@
 import reserve from './form-reservation.json';
 import DropdownQuantity from '../dropdown-quantity/dropdown-quantity';
 import DateRange from '../date-range/date-range';
-import '../button/button';
-import './form-reservation.sass';
 
 (function ($) {
   const $formReserve = $('.js-form-reserve');

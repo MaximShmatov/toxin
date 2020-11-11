@@ -1,5 +1,3 @@
-import './like.sass';
-
 (function ($) {
   function handleLikeChange(evt) {
     const isChecked = $(evt.currentTarget).find('.js-like__true').is(':checked');

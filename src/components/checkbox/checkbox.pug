@@ -1,5 +1,5 @@
 mixin checkbox(props)
 	-let {caption = "", name = "", isChecked = ""} = props
 	label.checkbox=caption
-		input.checkbox__true(type="checkbox" name=name checked=isChecked)
-		div.checkbox__false
+		input.checkbox__hidden(type="checkbox" name=name checked=isChecked)
+		div.checkbox__visible

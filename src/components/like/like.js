@@ -1,8 +1,8 @@
 (function ($) {
   function handleLikeChange(evt) {
-    const isChecked = $(evt.currentTarget).find('.js-like__true').is(':checked');
+    const isChecked = $(evt.currentTarget).find('.js-like__hidden').is(':checked');
 
-    $(evt.currentTarget).find('.js-like__false-quantity').each(function () {
+    $(evt.currentTarget).find('.js-like__visible-quantity').each(function () {
       if (isChecked) {
         $(this).text(Number($(this).text()) + 1);
       } else {

@@ -1,21 +1,21 @@
 .like
   cursor: pointer
 
-  &__true
+  &__hidden
     position: absolute
     opacity: 0
 
-    &:checked + .like__false
+    &:checked + .like__visible
       background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
       color: #BC9CFF
 
-      & .like__false-quantity::before
+      & .like__visible-quantity::before
         content: '\e906'
 
     &:focus + div
       box-shadow: 0 0 2px 1px rgba(31, 32, 65, 0.5)
 
-  &__false
+  &__visible
     background: rgba(31, 32, 65, 0.25)
     color: rgba(31, 32, 65, 0.25)
     box-sizing: border-box

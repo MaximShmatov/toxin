@@ -1,6 +1,7 @@
 mixin bullet-list(props)
-  if (props)
-    h3.bullet-list__title=props.header
+  - let { header } = props
+  if (header)
+    h3.bullet-list__title=header
   ul.bullet-list__items
     li.bullet-list__item Нельзя с питомцами
     li.bullet-list__item Без вечеринок и мероприятий

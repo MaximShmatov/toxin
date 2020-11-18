@@ -1,4 +1,5 @@
 mixin text-field(props)
-  if (props.header)
-    h3.text-field__title=props.header
-  input.text-field.js-text-field(type=props.type placeholder=props.value data-mask=props.mask)
+  - let { type, header, value, mask } = props
+  if (header)
+    h3.text-field__title=header
+  input.text-field.js-text-field(type=type placeholder=value data-mask=mask)

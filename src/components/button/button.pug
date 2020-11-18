@@ -1,3 +1,4 @@
-mixin button(btn)
-  button.button(type=btn.type class=`button_${btn.mode}` disabled=btn.disabled)
-    span.button__caption=btn.text
+mixin button(props)
+  -let { mode, disabled=false, type, text="" } = props
+  button.button(type=type class=`button_${mode}` disabled=disabled)
+    span.button__caption=text

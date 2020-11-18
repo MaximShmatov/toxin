@@ -1,14 +1,15 @@
 include ../like/like
 
 mixin review(props)
+	- let { name, avatar, quote, date } = props
 	div.review
 		div.review__author
 			div.review__author-avatar
-				img.review__author-img(alt=props.name src=props.avatar)
+				img.review__author-img(alt=name src=avatar)
 			div.review__author-data
-				span.review__author-name=props.name
-				span.review__author-date=props.date
+				span.review__author-name=name
+				span.review__author-date=date
 		div.review__quote
 			div.review__quote-like
 				+like({checked: true, likes: 12})
-			blockquote.review__quote-text=props.quote
+			blockquote.review__quote-text=quote

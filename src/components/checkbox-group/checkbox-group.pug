@@ -1,9 +1,10 @@
 include ../checkbox/checkbox
 
 mixin checkbox-group(props)
+  - let { header } = props
   div.checkbox-group
-    if (props)
-      h3.checkbox-group__title=props.header
+    if (header)
+      h3.checkbox-group__title=header
     div.checkbox-group__checkbox
       +checkbox({name: "smoke", caption: "Можно курить", checked: false})
     div.checkbox-group__checkbox

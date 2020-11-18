@@ -2,10 +2,11 @@ include ../checkbox/checkbox
 
 mixin checkbox-list(props)
 	- let id = Math.random();
+	- let { name, checked } = props
 	div.checkbox-list
-		input.checkbox-list__check(type="checkbox" id=id checked=props.checked)
+		input.checkbox-list__check(type="checkbox" id=id checked=checked)
 		label.checkbox-list__body(for=id)
-			h3.checkbox-list__body-title=props.name
+			h3.checkbox-list__body-title=name
 			div.checkbox-list__body-arrow
 		div.checkbox-list__picker
 			div.checkbox-list__picker-item

@@ -1,5 +1,5 @@
 mixin toggle(props)
-	- let { caption, checked } = props
+	- let { caption, isChecked } = props
 	label.toggle=caption
-		input.toggle__true(type="checkbox" checked=checked)
+		input.toggle__true(type="checkbox" checked=isChecked)
 		div.toggle__false

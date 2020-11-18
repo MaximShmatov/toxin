@@ -48,17 +48,17 @@ block page-uikit
         +checkbox-group({header: "Checkbox buttons"})
       h3.uikit-elements__sector-element-title Radio buttons
       div.uikit-elements__sector-element
-        +radio({name: "registration__mw-radio", value: "m", caption: "Мужчина", checked: true})
+        +radio({name: "registration__mw-radio", value: "m", caption: "Мужчина", isChecked: true})
         +radio({name: "registration__mw-radio", value: "w", caption: "Женщина"})
       h3.uikit-elements__sector-element-title Toggle
       div.uikit-elements__sector-element
-        +toggle({caption: "Получать спецпредложения", checked: "checked"})
+        +toggle({caption: "Получать спецпредложения", isChecked: true})
       div.uikit-elements__sector-element
         +toggle({caption: "Получать спецпредложения"})
       h3.uikit-elements__sector-element-title Like button
       div.uikit-elements__sector-element
-        +like({checked: false, likes: 2})
-        +like({checked: true, likes: 12})
+        +like({isChecked: false, likes: 2})
+        +like({isChecked: true, likes: 12})
       h3.uikit-elements__sector-element-title Rate button
       div.uikit-elements__sector-element
         +rate-button({rate: 4})
@@ -73,12 +73,12 @@ block page-uikit
         div.uikit-elements__sector-element-group
           +button({type: "button", text: "Click me", mode: "registration"})
         div.uikit-elements__sector-element-group
-          +button({type: "button", text: "Click me", mode: "registration", disabled: true})
+          +button({type: "button", text: "Click me", mode: "registration", isDisabled: true})
       div.uikit-elements__sector-element
         div.uikit-elements__sector-element-group
           +button({type: "button", text: "Click me", mode: "come-in"})
         div.uikit-elements__sector-element-group
-          +button({type: "button", text: "Click me", mode: "come-in", disabled: true})
+          +button({type: "button", text: "Click me", mode: "come-in", isDisabled: true})
       div.uikit-elements__sector-element
         div.uikit-elements__sector-element-group
           +button({type: "button", text: "Click me", mode: "picker"})
@@ -99,9 +99,9 @@ block page-uikit
         span.uikit-elements__sector-element-caption Expanded
         +dropdown-quantity({header: "Dropdown"})
       div.uikit-elements__sector-element
-        +checkbox-list({name: "Expandable checkbox list", checked: false})
+        +checkbox-list({name: "Expandable checkbox list", isChecked: false})
       div.uikit-elements__sector-element
-        +checkbox-list({name: "Expandable checkbox list", checked: true})
+        +checkbox-list({name: "Expandable checkbox list", isChecked: true})
 
     // sector-5
     section.uikit-elements__sector

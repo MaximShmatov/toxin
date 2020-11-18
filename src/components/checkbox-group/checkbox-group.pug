@@ -6,9 +6,9 @@ mixin checkbox-group(props)
     if (header)
       h3.checkbox-group__title=header
     div.checkbox-group__checkbox
-      +checkbox({name: "smoke", caption: "Можно курить", checked: false})
+      +checkbox({name: "smoke", caption: "Можно курить", isChecked: false})
     div.checkbox-group__checkbox
-      +checkbox({name: "pet", caption: "Можно с питомцами", checked: true})
+      +checkbox({name: "pet", caption: "Можно с питомцами", isChecked: true})
     div.checkbox-group__checkbox
-      +checkbox({name: "guests", caption: "Можно пригласить гостей", checked: true})
+      +checkbox({name: "guests", caption: "Можно пригласить гостей", isChecked: true})
       span.checkbox-group__checkbox-note (до 10 человек)

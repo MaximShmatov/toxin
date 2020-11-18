@@ -1,7 +1,7 @@
 mixin radio(props)
-	-let { name, value, caption, checked } = props
+	-let { name, value, caption, isChecked } = props
 	label.radio
 		if(props)
-			input.radio__check(type="radio", name=name, value=value, checked=checked)
+			input.radio__check(type="radio", name=name, value=value, checked=isChecked)
 		div.radio__checkbox
 		span.radio__caption=caption

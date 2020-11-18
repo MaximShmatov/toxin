@@ -13,8 +13,7 @@ class DateRange extends DatePicker {
 
   #date = new Date();
 
-  // "true" - selected in date, "false" - selected out date
-  #selectedDate = true;
+  #isOutDate = false;
 
   constructor($dateRange) {
     super($dateRange.find('.js-date-picker'));
@@ -95,20 +94,20 @@ class DateRange extends DatePicker {
   #togglePicker(evt) {
     if (evt) {
       if (evt.target.closest('.js-date-range__head-in')) {
-        const hidden = !this.#selectedDate || this.#$datePicker.hasClass('date-range__picker_hidden');
+        const hidden = !this.#isOutDate || this.#$datePicker.hasClass('date-range__picker_hidden');
         if (hidden) {
           this.#$datePicker.toggleClass('date-range__picker_hidden');
         }
-        this.#selectedDate = false;
+        this.#isOutDate = false;
         this.counter = 0;
         return;
       }
       if (evt.target.closest('.js-date-range__head-out')) {
-        const hidden = this.#selectedDate || this.#$datePicker.hasClass('date-range__picker_hidden');
+        const hidden = this.#isOutDate || this.#$datePicker.hasClass('date-range__picker_hidden');
         if (hidden) {
           this.#$datePicker.toggleClass('date-range__picker_hidden');
         }
-        this.#selectedDate = true;
+        this.#isOutDate = true;
         this.counter = 1;
         return;
       }

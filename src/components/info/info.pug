@@ -1,8 +1,7 @@
-mixin info(props)
-  - let { name, img, text } = props
-  div.info
+mixin info
+  div.info.js-info
     div.info__icon
-      img.info__img(alt=name src=img)
+      img.info__img.js-info__img
     div.info__item
-      span.info__item-term=name
-      span.info__item-definition=text
+      span.info__item-term.js-info__item-term
+      span.info__item-definition.js-info__item-definition

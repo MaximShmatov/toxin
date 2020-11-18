@@ -1,3 +1,13 @@
+@mixin come-in-caption
+  display: flex
+  justify-content: center
+  align-items: center
+  background-color: white
+  border-radius: 22px
+  width: 100%
+  height: 100%
+  color: #BC9CFF
+
 .button
   position: relative
   display: flex
@@ -33,15 +43,27 @@
     text-transform: uppercase
     color: white
 
-  &_come-in > &__caption
-    display: flex
-    justify-content: center
-    align-items: center
-    background-color: white
-    border-radius: 22px
-    width: 100%
-    height: 100%
-    color: #BC9CFF
+  &_registration
+    width: 196px
+    height: 34px
+
+    &-uikit
+      width: 99px
+      height: 44px
+
+  &_come-in
+    width: 87px
+    height: 34px
+
+    .button__caption
+      @include come-in-caption
+
+    &-uikit
+      width: 99px
+      height: 44px
+
+      .button__caption
+        @include come-in-caption
 
   &_picker
     background: white

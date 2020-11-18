@@ -32,7 +32,7 @@ mixin header(name)
 				div.header__menu-separator
 				output.header__menu-user=name
 			else
-				div.header__button-come-in
-					+button({type: "button", mode: "come-in", text: "Войти"})
-				div.header__button-registration
-					+button({type: "button", mode: "registration", text: "Зарегистрироваться"})
+				div.header__button
+					+button({type: "button", theme: "come-in", text: "Войти"})
+				div.header__button
+					+button({type: "button", theme: "registration", text: "Зарегистрироваться"})

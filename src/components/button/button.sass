@@ -1,4 +1,4 @@
-@mixin come-in-caption
+@mixin bordered-caption
   display: flex
   justify-content: center
   align-items: center
@@ -43,44 +43,17 @@
     text-transform: uppercase
     color: white
 
-  &_registration
+  &_violet_small
     width: 196px
     height: 34px
 
-    &-uikit
-      width: 99px
-      height: 44px
+  &_violet_large
+    width: 99px
+    height: 44px
 
-  &_come-in
-    width: 87px
-    height: 34px
+  &_violet_arrow
+    height: 44px
 
-    .button__caption
-      @include come-in-caption
-
-    &-uikit
-      width: 99px
-      height: 44px
-
-      .button__caption
-        @include come-in-caption
-
-  &_picker
-    background: white
-    padding: 0
-
-    .button__caption
-      margin: 0
-      color: #BC9CFF
-
-    &-grey
-      background: white
-      padding: 0
-
-      .button__caption
-        color: rgba(31, 32, 65, 0.5)
-
-  &_forward
     &::after
       position: absolute
       font-family: "Material Icons", Icomoon, sans-serif
@@ -90,3 +63,32 @@
       color: white
       width: 44px
       right: 0
+
+  &_bordered_small
+    width: 87px
+    height: 34px
+
+    .button__caption
+      @include bordered-caption
+
+  &_bordered_large
+    width: 99px
+    height: 44px
+
+    .button__caption
+      @include bordered-caption
+
+  &_text
+    background: white
+    padding: 0
+
+    .button__caption
+      margin: 0
+      color: #BC9CFF
+
+  &_text_grey
+    background: white
+    padding: 0
+
+    .button__caption
+      color: rgba(31, 32, 65, 0.5)

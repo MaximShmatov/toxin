@@ -1,7 +1,7 @@
 include ../button/button
 
 mixin dropdown-quantity(props)
-	- let { header } = props
+	- const { header } = props
 	div.dropdown-quantity.js-dropdown-quantity
 		if (header)
 			h3.dropdown-quantity__title=header

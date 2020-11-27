@@ -3,7 +3,7 @@ mixin rate-button(props)
 	if (props)
 		- rate = props.rate
 	form.rate-button
-		- let id = Math.random()
+		- const id = Math.random()
 		- for (let i = 5; i >= 1; i--)
 			input.rate-button__radio.js-rate-button__radio(type="radio" name=id id=(id - i) value=i data-rate=rate checked=(rate === (6 - i)))
 			label.rate-button__star(for=(id - i))

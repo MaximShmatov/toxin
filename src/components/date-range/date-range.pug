@@ -1,17 +1,17 @@
 include ../date-picker/date-picker
 
 mixin date-range(props)
-  - let { header1, header2 } = props
+  - const { headerFirst, headerSecond } = props
   div.date-range.js-date-range
     div.date-range__head
-      if (header1)
-        h3.date-range__head-title=header1
+      if (headerFirst)
+        h3.date-range__head-title=headerFirst
       button.date-range__head-in.js-date-range__head-in(type="button")
         span.date-range__head-in-date.js-date-range__head-in-date дд.мм.гггг
         div.date-range__head-in-arrow
     div.date-range__head
-      if (header2)
-        h3.date-range__head-title=header2
+      if (headerSecond)
+        h3.date-range__head-title=headerSecond
       button.date-range__head-out.js-date-range__head-out(type="button")
         span.date-range__head-out-date.js-date-range__head-out-date дд.мм.гггг
         div.date-range__head-out-arrow

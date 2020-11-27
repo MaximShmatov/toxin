@@ -2,7 +2,7 @@ include ../button/button
 include ../date-picker/date-picker
 
 mixin date-filter(props)
-  -let { header } = props
+  - const { header } = props
   div.date-filter.js-date-filter
     if (header)
       h3.date-filter__title=header

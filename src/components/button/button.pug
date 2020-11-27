@@ -1,4 +1,4 @@
 mixin button(props)
-  -let { theme, isDisabled=false, type, text="" } = props
+  -const { theme, isDisabled=false, type, text="" } = props
   button.button(type=type class=`button_${theme}` disabled=isDisabled)
     span.button__caption=text

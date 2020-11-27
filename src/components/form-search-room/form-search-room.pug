@@ -7,7 +7,7 @@ mixin form-search-room
     fieldset.form-search-room__fieldset
       legend.form-search-room__title Найдём номера под ваши пожелания
       div.form-search-room__date
-        +date-range({header1: "Прибытие", header2: "Выезд"})
+        +date-range({headerFirst: "Прибытие", headerSecond: "Выезд"})
       div.form-search-room__guests
         +dropdown-quantity({header: "Гости"})
       div.form-search-room__submit

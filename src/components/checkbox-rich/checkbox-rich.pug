@@ -1,7 +1,7 @@
 include ../checkbox/checkbox
 
 mixin checkbox-rich(props)
-	-let { header } = props
+	- const { header } = props
 	div.checkbox-rich
 		if (header)
 			h3.checkbox-rich__title=header

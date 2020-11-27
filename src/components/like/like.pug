@@ -1,5 +1,5 @@
 mixin like(props)
-	- let { likes, isChecked } = props
+	- const { likes, isChecked } = props
 	label.like.js-like
 		input.like__hidden.js-like__hidden(type="checkbox" name="like" checked=isChecked)
 		div.like__visible

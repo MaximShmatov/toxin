@@ -1,7 +1,7 @@
 include ../checkbox/checkbox
 
 mixin checkbox-group(props)
-  - let { header } = props
+  - const { header } = props
   div.checkbox-group
     if (header)
       h3.checkbox-group__title=header

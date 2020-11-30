@@ -1,25 +1,13 @@
-@mixin bordered-caption
-  display: flex
-  justify-content: center
-  align-items: center
-  background-color: white
-  border-radius: 22px
-  width: 100%
-  height: 100%
-  color: #BC9CFF
-
 .button
   position: relative
   display: flex
   justify-content: center
   align-items: center
-  background: linear-gradient(180deg, rgba(188, 156, 255, 1) 0%, rgba(139, 164, 249, 1) 100%)
   border-radius: 22px
   border: none
-  width: 100%
-  height: 100%
   padding: 2px
   margin: 0
+  background: linear-gradient(180deg, rgba(188, 156, 255, 1) 0%, rgba(139, 164, 249, 1) 100%)
   cursor: pointer
   outline: none
 
@@ -41,19 +29,24 @@
     font-size: 12px
     line-height: 15px
     text-transform: uppercase
+    display: flex
+    justify-content: center
+    align-items: center
+    border-radius: 22px
+    margin: 0
+    width: 100%
+    height: 100%
+
+  &_theme_filled
     color: white
 
-  &_violet_small
-    width: 196px
-    height: 34px
+  &_theme_bordered
+    color: #BC9CFF
+    .button__caption
+      background: white
 
-  &_violet_large
-    width: 99px
-    height: 44px
-
-  &_violet_arrow
-    height: 44px
-
+  &_theme_arrowed
+    color: white
     &::after
       position: absolute
       font-family: "Material Icons", Icomoon, sans-serif
@@ -64,31 +57,27 @@
       width: 44px
       right: 0
 
-  &_bordered_small
+  &_theme_texted
+    background: white
+    color: #BC9CFF
+
+    &:disabled
+      background: white
+      color: rgba(31, 32, 65, 0.5)
+
+  &_size_h-small
     width: 87px
     height: 34px
 
-    .button__caption
-      @include bordered-caption
+  &_size_h-large
+    width: 196px
+    height: 34px
 
-  &_bordered_large
+  &_size_f-small
     width: 99px
     height: 44px
 
-    .button__caption
-      @include bordered-caption
+  &_size_f-large
+    width: 320px
+    height: 44px
 
-  &_text
-    background: white
-    padding: 0
-
-    .button__caption
-      margin: 0
-      color: #BC9CFF
-
-  &_text_grey
-    background: white
-    padding: 0
-
-    .button__caption
-      color: rgba(31, 32, 65, 0.5)

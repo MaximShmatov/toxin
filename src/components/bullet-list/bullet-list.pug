@@ -1,5 +1,4 @@
-mixin bullet-list(props)
+mixin bullet-list(props = {})
   - const { header } = props
-  if (header)
-    h3.bullet-list__title=header
+  h3.bullet-list__title=header
   ul.bullet-list__items.js-bullet-list__items

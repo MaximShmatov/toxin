@@ -1,6 +1,6 @@
 include ../checkbox/checkbox
 
-mixin checkbox-list(props)
+mixin checkbox-list(props = {})
 	- const id = Math.random();
 	- const { name, isChecked } = props
 	div.checkbox-list

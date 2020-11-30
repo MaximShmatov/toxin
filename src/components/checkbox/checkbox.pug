@@ -1,4 +1,4 @@
-mixin checkbox(props)
+mixin checkbox(props = {})
 	- const {caption = "", name = "", isChecked = ""} = props
 	label.checkbox=caption
 		input.checkbox__hidden(type="checkbox" name=name checked=isChecked)

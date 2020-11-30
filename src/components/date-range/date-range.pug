@@ -1,11 +1,10 @@
 include ../date-picker/date-picker
 
-mixin date-range(props)
+mixin date-range(props = {})
   - const { headerFirst, headerSecond } = props
   div.date-range.js-date-range
     div.date-range__head
-      if (headerFirst)
-        h3.date-range__head-title=headerFirst
+      h3.date-range__head-title=headerFirst
       button.date-range__head-in.js-date-range__head-in(type="button")
         span.date-range__head-in-date.js-date-range__head-in-date дд.мм.гггг
         div.date-range__head-in-arrow

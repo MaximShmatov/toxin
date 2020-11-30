@@ -1,7 +1,6 @@
-mixin range-slider(props)
+mixin range-slider(props = {})
   - const { header } = props
   div.range-slider.js-range-slider
-    if (header)
-      h3.range-slider__title=header
-        span.range-slider__title-range.js-range-slider__title-range
+    h3.range-slider__title=header
+      span.range-slider__title-range.js-range-slider__title-range
     div.range-slider__plugin.js-range-slider__plugin(data-on-range="true", data-min-value="0", data-max-value="15000", data-value-from="5000", data-value-to="10000")

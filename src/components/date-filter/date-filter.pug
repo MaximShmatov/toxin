@@ -1,11 +1,10 @@
 include ../button/button
 include ../date-picker/date-picker
 
-mixin date-filter(props)
+mixin date-filter(props = {})
   - const { header } = props
   div.date-filter.js-date-filter
-    if (header)
-      h3.date-filter__title=header
+    h3.date-filter__title=header
     button.date-filter__body.js-date-filter__body(type="button")
       span.date-filter__body-range.js-date-filter__body-range
       div.date-filter__body-arrow

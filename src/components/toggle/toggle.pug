@@ -1,4 +1,4 @@
-mixin toggle(props)
+mixin toggle(props = {})
 	- const { caption, isChecked } = props
 	label.toggle=caption
 		input.toggle__hidden(type="checkbox" checked=isChecked)

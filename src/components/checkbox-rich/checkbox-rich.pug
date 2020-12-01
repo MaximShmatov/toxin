@@ -2,11 +2,11 @@ include ../checkbox/checkbox
 
 mixin checkbox-rich(props = {})
 	- const { header } = props
-	div.checkbox-rich
+	div.checkbox-rich.js-checkbox-rich
 		h3.checkbox-rich__title=header
-		div.checkbox-rich__checkbox
-			+checkbox({name: "corridor", caption: "Широкий коридор", isChecked: false})
-		p.checkbox-rich__info Ширина коридоров в номере <br> не менее 91 см.
-		div.checkbox-rich__checkbox
-			+checkbox({name: "assistant", caption: "Помошник для инвалидов", isChecked: false})
-		p.checkbox-rich__info На 1 этаже вас встретит специалист <br> и проводит до номера
+		div.checkbox-rich__checkbox.js-checkbox-rich__checkbox
+			+checkbox
+		p.checkbox-rich__info.js-checkbox-rich__info
+		div.checkbox-rich__checkbox.js-checkbox-rich__checkbox
+			+checkbox
+		p.checkbox-rich__info.js-checkbox-rich__info

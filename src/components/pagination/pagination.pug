@@ -1,6 +1,6 @@
 mixin pagination
 	-
-		const classes = {
+		const buttons = {
 			'first': '1',
 			'second': '2',
 			'third': '3',
@@ -10,6 +10,6 @@ mixin pagination
 		}
 	div.pagination
 		form.pagination__control
-			- for (let key in classes)
-				button(type="button" class=`pagination__control-${key}`) #{classes[key]}
+			- for (let key in buttons)
+				button(type="button" class=`pagination__control-${key}`) #{buttons[key]}
 		span.pagination__result 1 &#x2013; 12 из 100+ вариантов аренды

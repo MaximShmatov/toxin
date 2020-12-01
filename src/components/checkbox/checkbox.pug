@@ -1,5 +1,6 @@
 mixin checkbox(props = {})
-	- const {caption = "", name = "", isChecked = ""} = props
-	label.checkbox=caption
-		input.checkbox__hidden(type="checkbox" name=name checked=isChecked)
+	- const { caption, name, isChecked } = props
+	label.checkbox.js-checkbox
+		span=caption
+		input.checkbox__hidden.js-checkbox__hidden(type="checkbox" name=name checked=isChecked)
 		div.checkbox__visible

@@ -7,6 +7,9 @@ import reviewData from '../../components/review/review.json';
 import info from '../../components/info/info';
 import infoData from '../../components/info/info.json';
 
+import diagram from '../../components/diagram/diagram';
+import diagramData from '../../components/diagram/diagram.json';
+
 (function ($) {
   const $pageRoom = $('.js-page-room');
 
@@ -21,4 +24,7 @@ import infoData from '../../components/info/info.json';
   info($info.eq(0), infoData[0]);
   info($info.eq(1), infoData[1]);
   info($info.eq(2), infoData[2]);
+
+  const $diagram = $pageRoom.find('.js-diagram');
+  diagram($diagram, diagramData);
 }(window.$));

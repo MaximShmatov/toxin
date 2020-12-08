@@ -4,18 +4,10 @@ mixin card-room
 	- const name = Math.random();
 	div.card-room.js-card-room
 		div.card-room__slider
-			input.card-room__slider-radio.js-card-room__slider-radio(type="radio" name=name value="1")
-			div.card-room__slider-item
-			img.card-room__slider-img.js-card-room__slider-img
-			input.card-room__slider-radio.js-card-room__slider-radio(type="radio" name=name value="2")
-			div.card-room__slider-item
-			img.card-room__slider-img.js-card-room__slider-img
-			input.card-room__slider-radio.js-card-room__slider-radio(type="radio" name=name value="3")
-			div.card-room__slider-item
-			img.card-room__slider-img.js-card-room__slider-img
-			input.card-room__slider-radio.js-card-room__slider-radio(type="radio" name=name value="4" checked)
-			div.card-room__slider-item
-			img.card-room__slider-img.js-card-room__slider-img
+			- for (let i = 0; i < 4; i++)
+				input.card-room__slider-radio.js-card-room__slider-radio(type="radio" name=name value=i checked= (i === 3))
+				div.card-room__slider-item
+				img.card-room__slider-img.js-card-room__slider-img
 			div.card-room__slider-control
 				div.card-room__slider-control-left
 					button.card-room__slider-control-left-button.js-card-room__slider-control-left-button(type="button")

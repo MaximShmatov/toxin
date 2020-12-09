@@ -1,10 +1,11 @@
 include ../card-room/card-room
 include ../pagination/pagination
 
-mixin pagination-cards
+mixin pagination-cards(props)
+	- const { title } = props
 	div.pagination-cards.js-pagination-cards
 		div.pagination-cards__content
-			h1.pagination-cards__content-title Номера, которые мы для вас подобрали
+			h1.pagination-cards__content-title= title
 			- for (let i = 0; i < 12; i++)
 				aside.pagination-cards__content-card
 					+card-room

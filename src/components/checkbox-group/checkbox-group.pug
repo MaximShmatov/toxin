@@ -1,13 +1,17 @@
 include ../checkbox/checkbox
 
 mixin checkbox-group(props = {})
-  - const { header } = props
+  -
+    const { header } = props
+    const checkboxes = [
+      {name: "smoke", caption: "Можно курить", isChecked: false},
+      {name: "pet", caption: "Можно с питомцами", isChecked: true},
+      {name: "guests", caption: "Можно пригласить гостей", isChecked: true},
+    ]
   div.checkbox-group
     h3.checkbox-group__title=header
-    div.checkbox-group__checkbox
-      +checkbox({name: "smoke", caption: "Можно курить", isChecked: false})
-    div.checkbox-group__checkbox
-      +checkbox({name: "pet", caption: "Можно с питомцами", isChecked: true})
-    div.checkbox-group__checkbox
-      +checkbox({name: "guests", caption: "Можно пригласить гостей", isChecked: true})
-      span.checkbox-group__checkbox-note (до 10 человек)
+    - for (let i = 0; i < 3; i++)
+      div.checkbox-group__checkbox
+        +checkbox(checkboxes[i])
+        - if (i === 2)
+          span.checkbox-group__checkbox-note (до 10 человек)

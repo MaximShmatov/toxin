@@ -1,29 +1,31 @@
 extends ../../templates/template-main/template-main
 
 block page
+	-
+		const uikitPages = [
+			{ href: 'colors.html', text: 'Colors & Type'},
+			{ href: 'elements.html', text: 'Elements' },
+			{ href: 'forms.html', text: 'Forms' },
+			{ href: 'headers.html', text: 'Headers & Footers' },
+		]
+		const sitePages = [
+			{ href: 'landing.html', text: 'Landing Page' },
+			{ href: 'search.html', text: 'Search Room' },
+			{ href: 'details.html', text: 'Room Details' },
+			{ href: 'registration.html', text: 'Registration' },
+			{ href: 'sign.html', text: 'Sign In' },
+		]
+
 	body.index
 		h1.index__header TOXIN
 		nav.index__nav
 			h2.index__header-uikit UI kit
 			ul.index__nav-items
-				li.index__nav-item
-					a.index__nav-item-link(href="colors.html") Colors & Type
-				li.index__nav-item
-					a.index__nav-item-link(href="elements.html") Elements
-				li.index__nav-item
-					a.index__nav-item-link(href="forms.html") Forms
-				li.index__nav-item
-					a.index__nav-item-link(href="headers.html") Headers & Footers
-
+				- for (let i = 0; i < 4; i++)
+					li.index__nav-item
+						a.index__nav-item-link(href= uikitPages[i].href)= uikitPages[i].text
 			h2.index__header-site Website pages
 			ul.index__nav-items
-				li.index__nav-item
-					a.index__nav-item-link(href="landing.html") Landing Page
-				li.index__nav-item
-					a.index__nav-item-link(href="search.html") Search Room
-				li.index__nav-item
-					a.index__nav-item-link(href="details.html") Room Details
-				li.index__nav-item
-					a.index__nav-item-link(href="registration.html") Registration
-				li.index__nav-item
-					a.index__nav-item-link(href="sign.html") Sign In
+				- for (let i = 0; i < 5; i++)
+					li.index__nav-item
+						a.index__nav-item-link(href= sitePages[i].href)= sitePages[i].text

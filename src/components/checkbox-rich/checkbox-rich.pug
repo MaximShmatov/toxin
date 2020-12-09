@@ -4,9 +4,7 @@ mixin checkbox-rich(props = {})
 	- const { header } = props
 	div.checkbox-rich.js-checkbox-rich
 		h3.checkbox-rich__title=header
-		div.checkbox-rich__checkbox.js-checkbox-rich__checkbox
-			+checkbox
-		p.checkbox-rich__info.js-checkbox-rich__info
-		div.checkbox-rich__checkbox.js-checkbox-rich__checkbox
-			+checkbox
-		p.checkbox-rich__info.js-checkbox-rich__info
+		- for (let i = 0; i < 2; i++)
+			div.checkbox-rich__checkbox.js-checkbox-rich__checkbox
+				+checkbox
+			p.checkbox-rich__info.js-checkbox-rich__info

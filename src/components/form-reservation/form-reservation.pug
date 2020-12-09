@@ -25,33 +25,33 @@ mixin form-reservation
 			div.form-reserve__pay
 				div.form-reserve__pay-days
 					span.form-reserve__pay-days-price.js-form-reserve__pay-days-price
-					span &#x20bd;&nbsp;x&nbsp;
+					span.form-reserve__pay-days-quantity-begin &#x20bd;&nbsp;x&nbsp;
 					span.form-reserve__pay-days-quantity.js-form-reserve__pay-days-quantity
-					span &nbsp;суток
+					span.form-reserve__pay-days-quantity-end &nbsp;суток
 				div.form-reserve__pay-amount
 					span.form-reserve__pay-amount-total.js-form-reserve__pay-amount-total
-					span &#x20bd;
+					span.form-reserve__pay-amount-total-end &#x20bd;
 				div.form-reserve__pay-services
-					span Сбор за услуги: скидка&nbsp;
+					span.form-reserve__pay-services-begin Сбор за услуги: скидка&nbsp;
 					span.form-reserve__pay-services-price.js-form-reserve__pay-services-price
-					span &#x20bd;
+					span.form-reserve__pay-services-end &#x20bd;
 				div.form-reserve__pay-services-info i
 				div.form-reserve__pay-services-amount
 					span.form-reserve__pay-services-amount-total.js-form-reserve__pay-services-amount-total
-					span &#x20bd;
+					span.form-reserve__pay-services-amount-total-end &#x20bd;
 				div.form-reserve__pay-other
-					span Сбор за дополнительные услуги
+					span.form-reserve__pay-other-caption Сбор за дополнительные услуги
 				div.form-reserve__pay-other-info i
 				div.form-reserve__pay-other-amount
 					span.form-reserve__pay-other-amount-total.js-form-reserve__pay-other-amount-total
-					span &#x20bd;
+					span.form-reserve__pay-other-amount-total-end &#x20bd;
 
 			div.form-reserve__total
 				span.form-reserve__total-title Итого
 				div.form-reserve__total-separator
 				div.form-reserve__total-quantity
 					span.form-reserve__total-amount.js-form-reserve__total-amount
-					span &#x20bd;
+					span.form-reserve__total-amount-end &#x20bd;
 
 			div.form-reserve__submit
 				+button({type: "submit", text: "Забронировать", theme: "arrowed", size: "form-large"})

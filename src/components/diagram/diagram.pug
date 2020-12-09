@@ -3,8 +3,7 @@ mixin diagram
 		h2.diagram__title.js-diagram__title
 		div.diagram__wrapper
 			div.diagram__circle
-				div.diagram__circle-sector
-				div.diagram__circle-sector
-				div.diagram__circle-sector
+				- for (let i = 0; i < 3; i++)
+					div.diagram__circle-sector
 				div.diagram__circle-content.js-diagram__circle-content
 			ul.diagram__list.js-diagram__list

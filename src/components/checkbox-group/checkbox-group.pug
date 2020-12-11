@@ -4,14 +4,12 @@ mixin checkbox-group(props = {})
   -
     const { header } = props
     const checkboxes = [
-      {name: "smoke", caption: "Можно курить", isChecked: false},
-      {name: "pet", caption: "Можно с питомцами", isChecked: true},
-      {name: "guests", caption: "Можно пригласить гостей", isChecked: true},
+      { name: "smoke", caption: "Можно курить", isChecked: false },
+      { name: "pet", caption: "Можно с питомцами", isChecked: true },
+      { name: "guests", caption: "Можно пригласить гостей (до 10 человек)", isChecked: true },
     ]
   div.checkbox-group
-    h3.checkbox-group__title=header
+    h3.checkbox-group__title= header
     - for (let i = 0; i < 3; i++)
       div.checkbox-group__checkbox
         +checkbox(checkboxes[i])
-        - if (i === 2)
-          span.checkbox-group__checkbox-note (до 10 человек)

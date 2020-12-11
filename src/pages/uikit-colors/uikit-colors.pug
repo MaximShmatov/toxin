@@ -3,13 +3,19 @@ extends ../../templates/template-uikit/template-uikit
 block page-uikit
   -
     const colors = [
-      {name: 'Dark Shade 100%', hex: '#1F2041'},
-      {name: 'Dark Shade 75%', hex: '#1F2041'},
-      {name: 'Dark Shade 50%', hex: '#1F2041'},
-      {name: 'Dark Shade 25%', hex: '#1F2041'},
-      {name: 'Dark Shade 5%', hex: '#1F2041'},
-      {name: 'Purple', hex: '#BC9CFF'},
-      {name: 'Green', hex: '#6FCF97'},
+      { name: 'Dark Shade 100%', hex: '#1F2041' },
+      { name: 'Dark Shade 75%', hex: '#1F2041' },
+      { name: 'Dark Shade 50%', hex: '#1F2041' },
+      { name: 'Dark Shade 25%', hex: '#1F2041' },
+      { name: 'Dark Shade 5%', hex: '#1F2041' },
+      { name: 'Purple', hex: '#BC9CFF' },
+      { name: 'Green', hex: '#6FCF97' },
+    ]
+    const tags = [
+      { tag: 'h1', sample: 'This one is the sub-section or widget title' },
+      { tag: 'h2', sample: 'Next one is the item title inside widgets' },
+      { tag: 'h3', sample: 'This is a label or cta text' },
+      { tag: 'h4', sample: 'This is the body text which is used for most of the design, like paragraphs, lists, etc.' },
     ]
   article.uikit-colors
     section.uikit-colors__colors
@@ -20,11 +26,7 @@ block page-uikit
             span.uikit-colors__value-name= colors[i].name
             span.uikit-colors__value-hex= colors[i].hex
     section.uikit-colors__font
-      span.uikit-colors__font-h1-tag h1
-      span.uikit-colors__font-h1-sample This one is the sub-section or widget title
-      span.uikit-colors__font-h2-tag h2
-      span.uikit-colors__font-h2-sample Next one is the item title inside widgets
-      span.uikit-colors__font-h3-tag h3
-      span.uikit-colors__font-h3-sample This is a label or cta text
-      sapn.uikit-colors__font-body-tag body
-      span.uikit-colors__font-body-sample This is the body text which is used for most of the design, like paragraphs, lists, etc.
+      - for (let i = 0; i < 4; i++)
+        span.uikit-colors__font-tag= tags[i].tag
+        span.uikit-colors__font-sample= tags[i].sample
+

@@ -65,50 +65,50 @@
     grid-template-rows: repeat(4, min-content)
     margin-right: 7px
 
-    &-h1-tag, &-h2-tag, &-h3-tag
+    &-tag
       text-transform: uppercase
       text-align: right
 
-    &-h1-tag
-      font-size: 24px
-      line-height: 29px
+      &:nth-child(1)
+        font-size: 24px
+        line-height: 29px
 
-    &-h2-tag
-      font-size: 19px
-      line-height: 23px
+      &:nth-child(3)
+        font-size: 19px
+        line-height: 23px
 
-    &-h3-tag
-      font-size: 12px
-      line-height: 15px
+      &:nth-child(5)
+        font-size: 12px
+        line-height: 15px
 
-    &-body-tag
-      text-align: right
+      &:nth-child(7)
+        text-transform: none
 
-    &-h1-sample, &-h2-sample, &-h3-sample, &-body-sample
+    &-sample
       padding-left: 30px
 
-    &-h1-sample
-      @include header
-      font-size: 24px
-      line-height: 30px
-      max-width: 370px
-      padding-bottom: 50px
+      &:nth-child(2)
+        @include header
+        font-size: 24px
+        line-height: 30px
+        max-width: 370px
+        padding-bottom: 50px
 
-    &-h2-sample
-      @include header
-      font-size: 19px
-      line-height: 24px
-      max-width: 320px
-      padding-bottom: 50px
+      &:nth-child(4)
+        @include header
+        font-size: 19px
+        line-height: 24px
+        max-width: 320px
+        padding-bottom: 50px
 
-    &-h3-sample
-      font-size: 12px
-      line-height: 15px
-      font-weight: bold
-      text-transform: uppercase
-      color: #1F2041
-      padding-bottom: 47px
+      &:nth-child(6)
+        font-size: 12px
+        line-height: 15px
+        font-weight: bold
+        text-transform: uppercase
+        color: #1F2041
+        padding-bottom: 47px
 
-    &-body-sample
-      color: rgba(31, 32, 65, 0.75)
-      max-width: 301px
+      &:nth-child(8)
+        color: rgba(31, 32, 65, 0.75)
+        max-width: 301px

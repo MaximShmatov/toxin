@@ -1,17 +1,16 @@
 .copyright
-  display: flex
-  justify-content: space-between
-  align-items: center
-  flex-grow: 1
-  flex-wrap: wrap
-  max-width: 1160px
-  margin: 0 auto
-  padding: 23px 0
   background-color: white
+  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.1)
 
   &__wrapper
-    background-color: white
-    box-shadow: 0 10px 20px rgba(31, 32, 65, 0.1)
+    display: flex
+    justify-content: space-between
+    align-items: center
+    flex-grow: 1
+    flex-wrap: wrap
+    max-width: 1160px
+    margin: 0 auto
+    padding: 23px 0
 
   &__logo
     display: none
@@ -43,11 +42,12 @@
     background-color: transparent
     box-shadow: none
 
-    .copyright
+    .copyright__wrapper
       flex-direction: column
       max-width: 768px
       padding: 120px 0
       box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05)
+      background-color: white
 
     .copyright__logo
       display: block

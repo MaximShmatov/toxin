@@ -9,6 +9,6 @@ mixin form-search-room
       div.form-search-room__date
         +date-range({titleFirst: "Прибытие", titleSecond: "Выезд"})
       div.form-search-room__guests
-        +dropdown-quantity({header: "Гости"})
+        +dropdown-quantity({title: "Гости"})
       div.form-search-room__submit
         +button({type: "submit", text: "Подобрать номер", theme: "arrowed", size: "form-large"})

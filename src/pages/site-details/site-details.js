@@ -13,7 +13,7 @@ import diagramData from '../../components/diagram/diagram.json';
 (function ($) {
   const $pageRoom = $('.js-page-room');
 
-  const $bullet = $pageRoom.find('.js-bullet-list__items');
+  const $bullet = $pageRoom.find('.js-bullet-list');
   bulletList($bullet, bulletListData[0]);
 
   const $review = $pageRoom.find('.js-review');

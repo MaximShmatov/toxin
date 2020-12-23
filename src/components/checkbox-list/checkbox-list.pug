@@ -1,23 +1,14 @@
 include ../checkbox/checkbox
 
 mixin checkbox-list(props = {})
-  -
-    const checkboxes = [
-      { name: "breakfast", caption: "Завтрак", isChecked: false },
-      { name: "table", caption: "Письменный стол", isChecked: true },
-      { name: "chair", caption: "Стул для кормления", isChecked: true },
-      { name: "bed", caption: "Кроватка", isChecked: true },
-      { name: "tv", caption: "Телевизор", isChecked: false },
-      { name: "shampoo", caption: "Шампунь", isChecked: false },
-    ]
-    const id = Math.random()
-    const { name, isChecked } = props
-  div.checkbox-list
-    input.checkbox-list__check(type="checkbox" id=id checked=isChecked)
-    label.checkbox-list__body(for=id)
-      h3.checkbox-list__body-title=name
+  - const id = Math.random()
+  - const { title, isChecked } = props
+  div.checkbox-list.js-checkbox-list
+    input.checkbox-list__check(type="checkbox" id= id checked= isChecked)
+    label.checkbox-list__body(for= id)
+      h3.checkbox-list__body-title.js-checkbox-list__body-title= title
       div.checkbox-list__body-arrow
     div.checkbox-list__picker
       - for (let i = 0; i < 6; i++)
         div.checkbox-list__picker-item
-          +checkbox(checkboxes[i])
+          +checkbox

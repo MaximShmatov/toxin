@@ -31,13 +31,13 @@ block page-uikit
         span.uikit-elements__sector-element-caption Hover / Focus
         +text-field({type: "text", value: "Имя", header: "Text field"})
       div.uikit-elements__sector-element
-        +dropdown-quantity({header: "Dropdown"})
+        +dropdown-quantity({title: "Dropdown"})
       div.uikit-elements__sector-element
         +text-field({type: "text", value: "дд.мм.гггг", mask: "99.99.9999", header: "Masked text field"})
       div.uikit-elements__sector-element
         +date-range({titleFirst: "Date dropdown", titleSecond: "Date dropdown"})
       div.uikit-elements__sector-element
-        +date-filter({header: "Filter date dropdown"})
+        +date-filter({title: "Filter date dropdown"})
       h3.uikit-elements__sector-element-title Subscription text field
       div.uikit-elements__sector-element
         +subscription
@@ -45,7 +45,7 @@ block page-uikit
     // sector-2
     section.uikit-elements__sector
       div.uikit-elements__sector-element
-        +checkbox-group({header: "Checkbox buttons"})
+        +checkbox-group({title: "Checkbox buttons"})
       h3.uikit-elements__sector-element-title Radio buttons
       div.uikit-elements__sector-element
         +radio({name: "registration__mw-radio", value: "m", caption: "Мужчина", isChecked: true})
@@ -67,7 +67,7 @@ block page-uikit
     // sector-3
     section.uikit-elements__sector
       div.uikit-elements__sector-element
-        +range-slider({header: "Range slider"})
+        +range-slider({title: "Range slider"})
       h3.uikit-elements__sector-element-title Buttons
       div.uikit-elements__sector-element
         div.uikit-elements__sector-element-group
@@ -94,28 +94,28 @@ block page-uikit
     section.uikit-elements__sector
       div.uikit-elements__sector-element
         span.uikit-elements__sector-element-caption Default
-        +dropdown-quantity({header: "Dropdown"})
+        +dropdown-quantity({title: "Dropdown"})
       div.uikit-elements__sector-element
         span.uikit-elements__sector-element-caption Expanded
-        +dropdown-quantity({header: "Dropdown"})
+        +dropdown-quantity({title: "Dropdown"})
       div.uikit-elements__sector-element
-        +checkbox-list({name: "Expandable checkbox list", isChecked: false})
+        +checkbox-list({title: "Expandable checkbox list", isChecked: false})
       div.uikit-elements__sector-element
-        +checkbox-list({name: "Expandable checkbox list", isChecked: true})
+        +checkbox-list({title: "Expandable checkbox list", isChecked: true})
 
     // sector-5
     section.uikit-elements__sector
       div.uikit-elements__sector-element
-        +dropdown-quantity({header: "Dropdown"})
+        +dropdown-quantity({title: "Dropdown"})
       div.uikit-elements__sector-element
-        +checkbox-rich({header: "Rich checkbox buttons"})
+        +checkbox-rich({title: "Rich checkbox buttons"})
 
     // sector-6
     section.uikit-elements__sector
       div.uikit-elements__sector-element
-        +dropdown-quantity({header: "Dropdown"})
+        +dropdown-quantity({title: "Dropdown"})
       div.uikit-elements__sector-element
-        +bullet-list({header: "Bullet list"})
+        +bullet-list({title: "Bullet list"})
 
     // sector-7
     section.uikit-elements__sector

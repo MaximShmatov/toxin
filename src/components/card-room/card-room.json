@@ -8,10 +8,10 @@
     "alt2": "room 888 pic 2",
     "alt3": "room 888 pic 3",
     "alt4": "room 888 pic 4",
-    "number": 888,
+    "number": "№ 888",
     "level": "люкс",
-    "amount": "9 990",
-    "review": 145,
+    "amount": "9 990₽ в сутки",
+    "review": "145 Отзывов",
     "rate": 5
   },
   {
@@ -23,10 +23,10 @@
     "alt2": "room 840 pic 2",
     "alt3": "room 840 pic 3",
     "alt4": "room 840 pic 4",
-    "number": 840,
+    "number": "№ 840",
     "level": "",
-    "amount": "9 900",
-    "review": 65,
+    "amount": "9 900₽ в сутки",
+    "review": "65 Отзывов",
     "rate": 4
   },
   {
@@ -38,10 +38,10 @@
     "alt2": "room 980 pic 2",
     "alt3": "room 980 pic 3",
     "alt4": "room 980 pic 4",
-    "number": 980,
+    "number": "№ 980",
     "level": "люкс",
-    "amount": "8 500",
-    "review": 35,
+    "amount": "8 500₽ в сутки",
+    "review": "35 Отзывов",
     "rate": 3
   },
   {
@@ -53,10 +53,10 @@
     "alt2": "room 856 pic 2",
     "alt3": "room 856 pic 3",
     "alt4": "room 856 pic 4",
-    "number": 856,
+    "number": "№ 856",
     "level": "",
-    "amount": "7 300",
-    "review": 19,
+    "amount": "7 300₽ в сутки",
+    "review": "19 Отзывов",
     "rate": 5
   },
   {
@@ -68,10 +68,10 @@
     "alt2": "room 740 pic 2",
     "alt3": "room 740 pic 3",
     "alt4": "room 740 pic 4",
-    "number": 740,
+    "number": "№ 740",
     "level": "",
-    "amount": "6 000",
-    "review": 44,
+    "amount": "6 000₽ в сутки",
+    "review": "44 Отзывов",
     "rate": 4
   },
   {
@@ -83,10 +83,10 @@
     "alt2": "room 982 pic 2",
     "alt3": "room 982 pic 3",
     "alt4": "room 982 pic 4",
-    "number": 982,
+    "number": "№ 982",
     "level": "",
-    "amount": "5 800",
-    "review": 56,
+    "amount": "5 800₽ в сутки",
+    "review": "56 Отзывов",
     "rate": 3
   },
   {
@@ -98,10 +98,10 @@
     "alt2": "room 678 pic 2",
     "alt3": "room 678 pic 3",
     "alt4": "room 678 pic 4",
-    "number": 678,
+    "number": "№ 678",
     "level": "",
-    "amount": "5 500",
-    "review": 45,
+    "amount": "5 500₽ в сутки",
+    "review": "45 Отзывов",
     "rate": 5
   },
   {
@@ -113,10 +113,10 @@
     "alt2": "room 450 pic 2",
     "alt3": "room 450 pic 3",
     "alt4": "room 450 pic 4",
-    "number": 450,
+    "number": "№ 450",
     "level": "",
-    "amount": "5 300",
-    "review": 39,
+    "amount": "5 300₽ в сутки",
+    "review": "39 Отзывов",
     "rate": 4
   },
   {
@@ -128,10 +128,10 @@
     "alt2": "room 350 pic 2",
     "alt3": "room 350 pic 3",
     "alt4": "room 350 pic 4",
-    "number": 350,
+    "number": "№ 350",
     "level": "",
-    "amount": "5 000",
-    "review": 77,
+    "amount": "5 000₽ в сутки",
+    "review": "77 Отзывов",
     "rate": 3
   },
   {
@@ -143,10 +143,10 @@
     "alt2": "room 666 pic 2",
     "alt3": "room 666 pic 3",
     "alt4": "room 666 pic 4",
-    "number": 666,
+    "number": "№ 666",
     "level": "",
-    "amount": "5 000",
-    "review": 25,
+    "amount": "5 000₽ в сутки",
+    "review": "25 Отзывов",
     "rate": 5
   },
   {
@@ -158,10 +158,10 @@
     "alt2": "room 444 pic 2",
     "alt3": "room 444 pic 3",
     "alt4": "room 444 pic 4",
-    "number": 444,
+    "number": "№ 444",
     "level": "",
-    "amount": "5 000",
-    "review": 15,
+    "amount": "5 000₽ в сутки",
+    "review": "15 Отзывов",
     "rate": 4
   },
   {
@@ -173,10 +173,10 @@
     "alt2": "room 352 pic 2",
     "alt3": "room 352 pic 3",
     "alt4": "room 352 pic 4",
-    "number": 352,
+    "number": "№ 352",
     "level": "",
-    "amount": "5 000",
-    "review": 55,
+    "amount": "5 000₽ в сутки",
+    "review": "55 Отзывов",
     "rate": 3
   }
 ]

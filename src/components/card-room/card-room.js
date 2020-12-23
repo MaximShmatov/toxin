@@ -37,10 +37,22 @@ class CardRoom {
     const {
       number, level, amount, review,
     } = room;
+
     $card.find('.js-card-room__price-number').text(number);
     $card.find('.js-card-room__price-level').text(level);
-    $card.find('.js-card-room__price-pay-amount').text(amount);
-    $card.find('.js-card-room__review-quantity').text(review);
+
+    const arrStrAmount = amount.split(' ');
+    const pay = `
+      <span class="card-room__price-pay-amount">${arrStrAmount[0]} ${arrStrAmount[1]}</span>
+      <span class="card-room__price-pay-term">${arrStrAmount[2]} ${arrStrAmount[3]}</span>
+    `;
+    $card.find('.js-card-room__price-pay').html(pay);
+
+    const quantity = `
+      <span class="card-room__review-quantity-number">${review.split(' ')[0]}</span>
+      <span class="card-room__review-quantity-text">${review.split(' ')[1]}</span>
+    `;
+    $card.find('.js-card-room__review-quantity').html(quantity);
   }
 
   #setHandles($card) {

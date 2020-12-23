@@ -1,7 +1,8 @@
 mixin range-slider(props = {})
-  - const { header } = props
+  - const { title, caption } = props
+
   div.range-slider.js-range-slider
-    h3.range-slider__title= header
+    h3.range-slider__title.js-range-slider__title= title
       span.range-slider__title-range.js-range-slider__title-range
     div.range-slider__plugin.js-range-slider__plugin(
       data-on-range="true",
@@ -10,3 +11,4 @@ mixin range-slider(props = {})
       data-value-from="5000",
       data-value-to="10000"
       )
+    p.range-slider__info.js-range-slider__info= caption

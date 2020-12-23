@@ -2,16 +2,17 @@ include ../button/button
 include ../text-field/text-field
 
 mixin form-come-in
-	form.form-come-in
+	form.form-come-in.js-form-come-in
 		fieldset.form-come-in__fieldset
-			legend.form-come-in__title Войти
+			legend.form-come-in__title.js-form-come-in__title
 			div.form-come-in__email
-				+text-field({type: "email", value: "Email"})
+				+text-field({type: "email"})
 			div.form-come-in__pass
-				+text-field({type: "password", value: "Пароль"})
+				+text-field({type: "password"})
 			div.form-come-in__come
-				+button({type: "submit", text: "Войти", theme: "arrowed", size: "form-large"})
+				+button({type: "submit", theme: "arrowed", size: "form-large"})
 			div.form-come-in__reg
-				label.form-come-in__reg-caption Нет аккаунта на Toxin?
+				label.form-come-in__reg-caption
+					span.js-form-come-in__reg-caption
 					div.form-come-in__reg-button
-						+button({type: "submit", text: "Создать", theme: "bordered", size: "form-small"})
+						+button({type: "submit",theme: "bordered", size: "form-small"})

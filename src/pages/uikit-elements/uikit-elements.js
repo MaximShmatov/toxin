@@ -1,3 +1,9 @@
+import checkboxList from '../../components/checkbox-list/checkbox-list';
+import checkboxListData from '../../components/checkbox-list/checkbox-list.json';
+
+import checkboxGroup from '../../components/checkbox-group/checkbox-group';
+import checkboxGroupData from '../../components/checkbox-group/checkbox-group.json';
+
 import bulletList from '../../components/bullet-list/bullet-list';
 import bulletListData from '../../components/bullet-list/bullet-list.json';
 
@@ -18,7 +24,14 @@ import DateFilter from '../../components/date-filter/date-filter';
 (function ($) {
   const $uikitElements = $('.js-uikit-elements');
 
-  const $component = $uikitElements.find('.js-bullet-list__items');
+  const $checkboxList = $uikitElements.find('.js-checkbox-list');
+  checkboxList($checkboxList.eq(0), checkboxListData);
+  checkboxList($checkboxList.eq(1), checkboxListData);
+
+  const $checkboxGroup = $uikitElements.find('.js-checkbox-group');
+  checkboxGroup($checkboxGroup, checkboxGroupData);
+
+  const $component = $uikitElements.find('.js-bullet-list');
   bulletList($component, bulletListData[0]);
 
   const $review = $uikitElements.find('.js-review');

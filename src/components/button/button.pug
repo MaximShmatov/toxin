@@ -1,6 +1,8 @@
 mixin button(props = {})
   -
-    const { type, text, theme, size, isDisabled} = props
+    const {
+      type, text, theme, size, isDisabled
+    } = props
     const themes = {
       'filled': 'theme_filled',
       'bordered': 'theme_bordered',
@@ -18,5 +20,5 @@ mixin button(props = {})
       `button_${themes[theme]}`,
       `button_${sizes[size]}`
     ]
-  button(type=type class=classes disabled=isDisabled)
-    span.button__caption=text
+  button(type= type class= classes disabled= isDisabled)
+    span.button__caption.js-button__caption= text

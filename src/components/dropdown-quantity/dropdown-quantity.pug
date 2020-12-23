@@ -1,9 +1,8 @@
 include ../button/button
 
-mixin dropdown-quantity(props = {})
-	- const { header } = props
+mixin dropdown-quantity(props)
 	div.dropdown-quantity.js-dropdown-quantity
-		h3.dropdown-quantity__title=header
+		h3.dropdown-quantity__title.js-dropdown-quantity__title= props ? props.title : ''
 		button.dropdown-quantity__head.js-dropdown-quantity__head(type="button")
 			span.dropdown-quantity__head-out.js-dropdown-quantity__head-out
 			div.dropdown-quantity__head-arrow

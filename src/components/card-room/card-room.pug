@@ -5,7 +5,7 @@ mixin card-room
 	div.card-room.js-card-room
 		div.card-room__slider
 			- for (let i = 0; i < 4; i++)
-				input.card-room__slider-radio.js-card-room__slider-radio(type="radio" name=name value=i checked= (i === 3))
+				input.card-room__slider-radio.js-card-room__slider-radio(type="radio" name= name value= i checked= (i === 3))
 				div.card-room__slider-item
 				img.card-room__slider-img.js-card-room__slider-img
 			div.card-room__slider-control
@@ -15,14 +15,9 @@ mixin card-room
 					button.card-room__slider-control-right-button.js-card-room__slider-control-right-button(type="button")
 		div.card-room__price
 			div.card-room__price-room
-				span.card-room__price-num &#8470;&#x2002;
 				span.card-room__price-number.js-card-room__price-number
 				span.card-room__price-level.js-card-room__price-level
-			div.card-room__price-pay
-				span.card-room__price-pay-amount.js-card-room__price-pay-amount
-				span.card-room__price-pay-rub &#x20bd;&nbsp;
-				span.card-room__price-pay-term в сутки
+			div.card-room__price-pay.js-card-room__price-pay
 		div.card-room__review
 			+rate-button
-			span.card-room__review-quantity.js-card-room__review-quantity
-			span.card-room__review-term &#160;Отзывов
+			div.card-room__review-quantity.js-card-room__review-quantity

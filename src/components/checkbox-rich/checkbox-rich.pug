@@ -1,9 +1,8 @@
 include ../checkbox/checkbox
 
-mixin checkbox-rich(props = {})
-	- const { header } = props
+mixin checkbox-rich(props)
 	div.checkbox-rich.js-checkbox-rich
-		h3.checkbox-rich__title=header
+		h3.checkbox-rich__title.js-checkbox-rich__title= props ? props.title : ''
 		- for (let i = 0; i < 2; i++)
 			div.checkbox-rich__checkbox.js-checkbox-rich__checkbox
 				+checkbox

@@ -1,48 +1,21 @@
 include ../subscription/subscription
 
 mixin footer
-  -
-    const nav = [{
-      title: 'Навигация',
-      items: [
-        'О нас',
-        'Новости',
-        'Служба поддержки',
-        'Услуги',
-      ],
-    }, {
-      title: 'О нас',
-      items: [
-        'О сервисе',
-        'Наша команда',
-        'Вакансии',
-        'Инвесторы',
-      ],
-    }, {
-      title: 'Служба поддержки',
-      items: [
-        'Соглашения',
-        'Сообщества',
-        'Связь с нами',
-        '',
-      ],
-    }]
-
   div.footer__wrapper
-    div.footer
+    div.footer.js-footer
       section.footer__logo
-        img.footer__logo-img(alt="logo" src="img/template-site-logo.svg")
-        p.footer__logo-caption Бронирование номеров в лучшем отеле 2019 года по версии ассоциации &laquo;Отельные взгляды&raquo;
+        img.footer__logo-img.js-footer__logo-img
+        p.footer__logo-caption.js-footer__logo-caption
       nav.footer__nav
         - for (let i = 0; i < 3; i++)
-          div.footer__nav-block
-            h3.footer__nav-items-title= nav[i].title
+          div.footer__nav-block.js-footer__nav-block
+            h3.footer__nav-items-title.js-footer__nav-items-title
             ul.footer__nav-items
               - for (let j = 0; j < 4; j++)
                 li.footer__nav-items-item
-                  a.footer__nav-items-item-ref(href="/mock-address")= nav[i].items[j]
+                  a.footer__nav-items-item-ref.js-footer__nav-items-item-ref
       section.footer__subscription
-        h3.footer__subscription-title Подписка
-        p.footer__subscription-caption Получайте специальные предложения и новости сервиса
+        h3.footer__subscription-title.js-footer__subscription-title
+        p.footer__subscription-caption.js-footer__subscription-caption
         div.footer__subscription-form
           +subscription

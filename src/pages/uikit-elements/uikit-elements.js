@@ -13,9 +13,6 @@ import reviewData from '../../components/review/review.json';
 import info from '../../components/info/info';
 import infoData from '../../components/info/info.json';
 
-import checkboxRich from '../../components/checkbox-rich/checkbox-rich';
-import checkboxRichData from '../../components/checkbox-rich/checkbox-rich.json';
-
 import RangeSlider from '../../components/range-slider/range-slider';
 import DropdownQuantity from '../../components/dropdown-quantity/dropdown-quantity';
 import DateRange from '../../components/date-range/date-range';
@@ -40,9 +37,6 @@ import DateFilter from '../../components/date-filter/date-filter';
   const $info = $uikitElements.find('.js-info');
   info($info.eq(0), infoData[0]);
   info($info.eq(1), infoData[1]);
-
-  const $checkboxRich = $uikitElements.find('.js-checkbox-rich');
-  checkboxRich($checkboxRich, checkboxRichData);
 
   const $dropdownQuantity = $uikitElements.find('.js-dropdown-quantity');
   new DropdownQuantity($dropdownQuantity.eq(0));

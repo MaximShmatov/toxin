@@ -2,9 +2,6 @@ import DateFilter from '../date-filter/date-filter';
 import DropdownQuantity from '../dropdown-quantity/dropdown-quantity';
 import RangeSlider from '../range-slider/range-slider';
 
-import checkboxRich from '../checkbox-rich/checkbox-rich';
-import checkboxRichData from '../checkbox-rich/checkbox-rich.json';
-
 import checkboxGroup from '../checkbox-group/checkbox-group';
 import checkboxGroupData from '../checkbox-group/checkbox-group.json';
 
@@ -26,9 +23,6 @@ import checkboxListData from '../checkbox-list/checkbox-list.json';
 
   const $checkboxGroup = $filter.find('.js-checkbox-group');
   checkboxGroup($checkboxGroup, checkboxGroupData);
-
-  const $checkboxRich = $filter.find('.js-checkbox-rich');
-  checkboxRich($checkboxRich, checkboxRichData);
 
   const $checkboxList = $filter.find('.js-checkbox-list');
   checkboxList($checkboxList, checkboxListData);

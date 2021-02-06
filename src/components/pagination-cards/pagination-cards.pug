@@ -1,8 +1,7 @@
 include ../card-room/card-room
 include ../pagination/pagination
 
-mixin pagination-cards(props)
-	- const { title } = props
+mixin pagination-cards({title = ''} = {})
 	div.pagination-cards.js-pagination-cards
 		div.pagination-cards__content
 			h1.pagination-cards__content-title= title

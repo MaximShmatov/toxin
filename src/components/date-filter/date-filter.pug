@@ -1,9 +1,9 @@
 include ../button/button
 include ../date-picker/date-picker
 
-mixin date-filter(props)
+mixin date-filter({title = ''} = {})
   div.date-filter.js-date-filter
-    h3.date-filter__title.js-date-filter__title= props ? props.title : ''
+    h3.date-filter__title.js-date-filter__title= title
     button.date-filter__body.js-date-filter__body(type="button")
       span.date-filter__body-range.js-date-filter__body-range
       div.date-filter__body-arrow

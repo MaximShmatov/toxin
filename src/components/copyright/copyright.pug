@@ -1,7 +1,7 @@
-mixin copyright(props)
+mixin copyright({theme = ''} = {})
   - const themes = { 'tablet': 'copyright_theme_tablet' }
 
-  div.copyright.js-copyright(class= props ? themes[props.theme]: '')
+  div.copyright.js-copyright(class= themes[theme])
     div.copyright__wrapper
       img.copyright__logo.js-copyright__logo(alt="toxin logo")
       p.copyright__caption.js-copyright__caption

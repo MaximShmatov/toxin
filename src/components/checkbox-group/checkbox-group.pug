@@ -1,8 +1,8 @@
 include ../checkbox/checkbox
 
-mixin checkbox-group(props)
+mixin checkbox-group({title = ''} = {})
   div.checkbox-group.js-checkbox-group
-    h3.checkbox-group__title.js-checkbox-group__title= props ? props.title : ''
+    h3.checkbox-group__title.js-checkbox-group__title= title
     - for (let i = 0; i < 3; i++)
       div.checkbox-group__checkbox
         +checkbox

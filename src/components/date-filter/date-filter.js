@@ -14,8 +14,8 @@ class DateFilter extends DatePicker {
   #date = new Date();
 
   constructor($dateFilter) {
-    super($dateFilter.find('.js-date-picker'));
-    this.#$dateFilter = $dateFilter;
+    super($dateFilter);
+    this.#$dateFilter = $dateFilter.find('.js-date-filter');
 
     this.#initAreas();
     this.#setHandles();

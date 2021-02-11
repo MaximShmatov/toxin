@@ -14,7 +14,8 @@ import './img/card-room-982-4.jpg';
 class CardRoom {
   #$radio;
 
-  constructor($card, room) {
+  constructor($component, room) {
+    const $card = $component.find('.js-card-room');
     this.#$radio = $card.find('.js-card-room__slider-radio');
     this.#setHandles($card);
     CardRoom.initCard($card, room);

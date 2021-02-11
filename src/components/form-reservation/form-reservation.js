@@ -13,11 +13,8 @@ import DateRange from '../date-range/date-range';
     priceAdditionally,
   } = reserve;
 
-  const $dropdown = $formReserve.find('.js-dropdown-quantity');
-  new DropdownQuantity($dropdown);
-
-  const $dateRange = $formReserve.find('.js-date-range');
-  const dateRange = new DateRange($dateRange);
+  new DropdownQuantity($formReserve);
+  const dateRange = new DateRange($formReserve);
 
   function getNumberStr(num) {
     const n = num.toString();

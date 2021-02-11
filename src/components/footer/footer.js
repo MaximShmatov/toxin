@@ -1,16 +1,19 @@
-function footer($component, data) {
+import footerData from './footer.json';
+
+(function ($) {
+  const $footer = $('.js-footer');
   const {
     logoImg,
     logoCaption,
     nav,
     subTitle,
-    subCaption
-  } = data;
+    subCaption,
+  } = footerData;
 
-  $component.find('.js-footer__logo-img').prop('src', logoImg);
-  $component.find('.js-footer__logo-caption').text(logoCaption);
+  $footer.find('.js-footer__logo-img').prop('src', logoImg);
+  $footer.find('.js-footer__logo-caption').text(logoCaption);
 
-  $component.find('.js-footer__nav-block').each((index, items) => {
+  $footer.find('.js-footer__nav-block').each((index, items) => {
     $(items).find('.js-footer__nav-items-title').text(nav[index].title);
     $(items).find('.js-footer__nav-items-item-ref').each((i, item) => {
       const { href, text } = nav[index].items[i];
@@ -18,8 +21,6 @@ function footer($component, data) {
     });
   });
 
-  $component.find('.js-footer__subscription-title').text(subTitle);
-  $component.find('.js-footer__subscription-caption').text(subCaption);
-}
-
-export default footer;
+  $footer.find('.js-footer__subscription-title').text(subTitle);
+  $footer.find('.js-footer__subscription-caption').text(subCaption);
+}(window.$));

@@ -32,8 +32,8 @@ class DropdownQuantity {
     isThirdItem: undefined,
   }
 
-  constructor($dropdown, mode) {
-    this.#$dropdown = $dropdown;
+  constructor($component, mode) {
+    this.#$dropdown = $component.find('.js-dropdown-quantity');
 
     this.#setAreas();
     this.#setHandles();

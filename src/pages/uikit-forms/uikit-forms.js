@@ -5,10 +5,8 @@ import roomData from '../../components/card-room/card-room.json';
 (function ($) {
   const $page = $('.js-uikit-cards');
 
-  const $picker = $page.find('.js-uikit-cards__form .js-date-picker');
-  new DatePicker($picker);
-
-  const $cardsRoom = $page.find('.js-uikit-cards__form .js-card-room');
-  new CardRoom($cardsRoom.eq(0), roomData[0]);
-  new CardRoom($cardsRoom.eq(1), roomData[1]);
+  const $components = $page.find('.js-uikit-cards__form');
+  new DatePicker($components.eq(0));
+  new CardRoom($components.eq(1), roomData[0]);
+  new CardRoom($components.eq(2), roomData[1]);
 }(window.$));

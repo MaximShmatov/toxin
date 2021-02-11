@@ -8,16 +8,16 @@ include ../checkbox-list/checkbox-list
 mixin filter
   div.filter.js-filter
     div.filter__date
-      +date-filter
-    div.filter__guests
-      +dropdown-quantity
+      +date-filter({title: "Даты пребывания в отеле"})
+    div.filter__guests.js-filter__guests
+      +dropdown-quantity({title: "Гости"})
     div.filter__price
-      +range-slider
+      +range-slider({title: "Диапазон цены", caption: "Стоимость за сутки пребывания в номере"})
     div.filter__rules
-      +checkbox-group
+      +checkbox-group({title: "Правила дома"})
     div.filter__availability
-      +checkbox-rich
-    div.filter__comfort
-      +dropdown-quantity
+      +checkbox-rich({title: "Доступность"})
+    div.filter__comfort.js-filter__comfort
+      +dropdown-quantity({title: "Удобства номера"})
     div.filter__comfort-other
-      +checkbox-list
+      +checkbox-list({title: "Дополнительные удобства"})

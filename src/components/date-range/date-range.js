@@ -15,9 +15,9 @@ class DateRange extends DatePicker {
 
   #isOutDate = false;
 
-  constructor($dateRange) {
-    super($dateRange.find('.js-date-picker'));
-    this.#$dateRange = $dateRange;
+  constructor($component) {
+    super($component);
+    this.#$dateRange = $component.find('.js-date-range');
     this.#setAreas();
     this.#setHandles();
     this.#togglePicker();

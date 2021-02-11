@@ -31,8 +31,8 @@ class DatePicker {
 
   counter = 0;
 
-  constructor($picker) {
-    this.#$picker = $picker;
+  constructor($component) {
+    this.#$picker = $component.find('.js-date-picker');
     this.#setAreas();
     this.#setHandles();
     this.#setPickerDate();

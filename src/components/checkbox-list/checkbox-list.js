@@ -3,7 +3,7 @@ function checkboxList($component, data) {
     const { name, caption, isChecked } = data[index];
     $(item).find('.js-checkbox__caption')
       .text(caption);
-    $(item).find('.js-checkbox__input')
+    $(item).find('.js-checkbox__true-input')
       .prop('name', name)
       .prop('checked', isChecked);
   });

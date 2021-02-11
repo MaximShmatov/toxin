@@ -1,8 +1,5 @@
-mixin button(props = {})
+mixin button({ type, text, theme, size, isDisabled } = {})
   -
-    const {
-      type, text, theme, size, isDisabled
-    } = props
     const themes = {
       'filled': 'theme_filled',
       'bordered': 'theme_bordered',

@@ -1,7 +1,6 @@
 include ../date-picker/date-picker
 
-mixin date-range(props = {})
-  - const { titleFirst, titleSecond } = props
+mixin date-range({ titleFirst, titleSecond } = {})
   div.date-range.js-date-range
     div.date-range__head
       h3.date-range__head-title= titleFirst

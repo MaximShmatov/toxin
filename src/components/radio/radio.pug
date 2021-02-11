@@ -1,5 +1,4 @@
-mixin radio(props = {})
-	- const { name, value, caption, isChecked } = props
+mixin radio({ name, value, caption, isChecked } = {})
 	label.radio
 		input.radio__check(type="radio", name= name, value= value, checked= isChecked)
 		div.radio__checkbox

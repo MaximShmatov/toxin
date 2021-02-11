@@ -1,8 +1,7 @@
 include ../checkbox/checkbox
 
-mixin checkbox-list(props = {})
+mixin checkbox-list({ title, isChecked } = {})
   - const id = Math.random()
-  - const { title, isChecked } = props
   div.checkbox-list.js-checkbox-list
     input.checkbox-list__check(type="checkbox" id= id checked= isChecked)
     label.checkbox-list__body(for= id)

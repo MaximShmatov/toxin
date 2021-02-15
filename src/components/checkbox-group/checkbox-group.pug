@@ -1,11 +1,8 @@
 include ../checkbox/checkbox
 
-mixin checkbox-group({title = ''} = {})
+mixin checkbox-group({title = '', checkboxes = []} = {})
   div.checkbox-group
     h3.checkbox-group__title= title
-    div.checkbox-group__checkbox
-      +checkbox({name: "smoke", caption: "Можно курить", isChecked: false})
-    div.checkbox-group__checkbox
-      +checkbox({name: "pet", caption: "Можно с питомцами", isChecked: true})
-    div.checkbox-group__checkbox
-      +checkbox({name: "guests", caption: "Можно пригласить гостей (до 10 человек)", isChecked: true})
+    - for (let i = 0; i < checkboxes.length; i++)
+      div.checkbox-group__checkbox
+        +checkbox(checkboxes[i])

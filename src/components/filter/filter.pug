@@ -6,6 +6,12 @@ include ../checkbox-rich/checkbox-rich
 include ../checkbox-list/checkbox-list
 
 mixin filter(props = {})
+  -
+    const checkboxes = [
+      {name: "smoke", caption: "Можно курить", isChecked: false},
+      {name: "pet", caption: "Можно с питомцами", isChecked: true},
+      {name: "guests", caption: "Можно пригласить гостей (до 10 человек)", isChecked: true},
+    ]
   div.filter.js-filter
     div.filter__date
       +date-filter({title: "Даты пребывания в отеле"})
@@ -14,7 +20,7 @@ mixin filter(props = {})
     div.filter__price
       +range-slider({title: "Диапазон цены", caption: "Стоимость за сутки пребывания в номере"})
     div.filter__rules
-      +checkbox-group({title: "Правила дома"})
+      +checkbox-group({title: "Правила дома", checkboxes})
     div.filter__availability
       +checkbox-rich({title: "Доступность"})
     div.filter__comfort.js-filter__comfort

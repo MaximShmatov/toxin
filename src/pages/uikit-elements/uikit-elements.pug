@@ -20,6 +20,12 @@ include ../../components/info/info
 include ../../components/review/review
 
 block page-uikit
+  -
+    const checkboxes = [
+      {name: "smoke", caption: "Можно курить", isChecked: false},
+      {name: "pet", caption: "Можно с питомцами", isChecked: true},
+      {name: "guests", caption: "Можно пригласить гостей (до 10 человек)", isChecked: true},
+    ]
   article.uikit-elements.js-uikit-elements
 
     // sector-1
@@ -45,7 +51,7 @@ block page-uikit
     // sector-2
     section.uikit-elements__sector
       div.uikit-elements__sector-element
-        +checkbox-group({title: "Checkbox buttons"})
+        +checkbox-group({title: "Checkbox buttons", checkboxes})
       h3.uikit-elements__sector-element-title Radio buttons
       div.uikit-elements__sector-element
         +radio({name: "registration__mw-radio", value: "m", caption: "Мужчина", isChecked: true})

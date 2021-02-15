@@ -26,6 +26,13 @@ block page-uikit
       {name: "pet", caption: "Можно с питомцами", isChecked: true},
       {name: "guests", caption: "Можно пригласить гостей (до 10 человек)", isChecked: true},
     ]
+
+    const list = [
+      'Нельзя с питомцами',
+      'Без вечеринок и мероприятий',
+      'Время прибытия \u2014 после 13:00,\nа выезд до 12:00'
+    ]
+
   article.uikit-elements.js-uikit-elements
 
     // sector-1
@@ -121,7 +128,7 @@ block page-uikit
       div.uikit-elements__sector-element.js-uikit-elements__sector-element
         +dropdown-quantity({title: "Dropdown"})
       div.uikit-elements__sector-element
-        +bullet-list({title: "Bullet list"})
+        +bullet-list({title: "Bullet list", list})
 
     // sector-7
     section.uikit-elements__sector

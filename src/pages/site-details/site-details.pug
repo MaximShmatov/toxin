@@ -7,6 +7,13 @@ include ../../components/bullet-list/bullet-list
 include ../../components/form-reservation/form-reservation
 
 block page-site
+	-
+		const list = [
+			'Нельзя с питомцами',
+			'Без вечеринок и мероприятий',
+			'Время прибытия \u2014 после 13:00,\nа выезд до 12:00',
+		]
+
 	article.page-room.js-page-room
 		section.page-room__preview
 		section.page-room__details
@@ -29,7 +36,7 @@ block page-site
 				div.page-room__details-reviews-item.js-page-room__details-reviews-item
 					+review({})
 			aside.page-room__details-rules
-				+bullet-list({title: "Правила"})
+				+bullet-list({title: "Правила", list})
 			aside.page-room__details-cancel
 				h2.page-room__details-cancel-title Отмена
 				p.page-room__details-cancel-note

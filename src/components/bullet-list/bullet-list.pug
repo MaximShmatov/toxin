@@ -1,5 +1,7 @@
-mixin bullet-list({title = ''} = {})
-  div.bullet-list.js-bullet-list
+mixin bullet-list({title = '', list = []} = {})
+  div.bullet-list
     - if (title)
       h3.bullet-list__title= title
-    ul.bullet-list__items.js-bullet-list__items
+    ul.bullet-list__items
+      - for (let i = 0; i < list.length; i++)
+        li.bullet-list__item= list[i]

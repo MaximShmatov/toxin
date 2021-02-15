@@ -1,6 +1,3 @@
-import bulletList from '../../components/bullet-list/bullet-list';
-import bulletListData from '../../components/bullet-list/bullet-list.json';
-
 import review from '../../components/review/review';
 import reviewData from '../../components/review/review.json';
 
@@ -24,7 +21,6 @@ import DateFilter from '../../components/date-filter/date-filter';
   info($elements.eq(7), infoData[0]);
   info($elements.eq(8), infoData[1]);
 
-  bulletList($uikitElements, bulletListData[0]);
   review($uikitElements, reviewData[0]);
   new DateRange($uikitElements);
   new DateFilter($uikitElements);

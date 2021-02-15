@@ -1,6 +1,3 @@
-import bulletList from '../../components/bullet-list/bullet-list';
-import bulletListData from '../../components/bullet-list/bullet-list.json';
-
 import review from '../../components/review/review';
 import reviewData from '../../components/review/review.json';
 
@@ -12,7 +9,6 @@ import diagramData from '../../components/diagram/diagram.json';
 
 (function ($) {
   const $pageRoom = $('.js-page-room');
-  bulletList($pageRoom, bulletListData[0]);
   diagram($pageRoom, diagramData);
 
   const $review = $pageRoom.find('.js-page-room__details-reviews-item');

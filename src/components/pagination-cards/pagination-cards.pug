@@ -5,8 +5,9 @@ mixin pagination-cards({title = ''} = {})
 	div.pagination-cards
 		div.pagination-cards__content
 			h1.pagination-cards__content-title= title
-			- for (let i = 0; i < 12; i++)
+			- const cards = require('../../components/card-room/card-room.json');
+			- for (let i = 0; i < cards.length; i++)
 				aside.pagination-cards__content-card.js-pagination-cards__content-card
-					+card-room({})
+					+card-room(cards[i])
 		div.pagination-cards__control
 			+pagination({})

@@ -1,182 +1,231 @@
 [
   {
-    "img1": "img/card-room-980-4.jpg",
-    "img2": "img/card-room-856-4.jpg",
-    "img3": "img/card-room-840-4.jpg",
-    "img4": "img/card-room-888-4.jpg",
-    "alt1": "room 888 pic 1",
-    "alt2": "room 888 pic 2",
-    "alt3": "room 888 pic 3",
-    "alt4": "room 888 pic 4",
+    "img": [
+      "img/card-room-980-4.jpg",
+      "img/card-room-856-4.jpg",
+      "img/card-room-840-4.jpg",
+      "img/card-room-888-4.jpg"
+    ],
+    "alt": [
+      "room 888 pic 1",
+      "room 888 pic 2",
+      "room 888 pic 3",
+      "room 888 pic 4"
+    ],
     "number": "№ 888",
     "level": "люкс",
-    "amount": "9 990₽ в сутки",
-    "review": "145 Отзывов",
+    "amount": ["9 990₽ ", "в сутки"],
+    "review": ["145 ", "Отзывов"],
     "rate": 5
   },
   {
-    "img1": "img/card-room-350-4.jpg",
-    "img2": "img/card-room-856-4.jpg",
-    "img3": "img/card-room-678-4.jpg",
-    "img4": "img/card-room-840-4.jpg",
-    "alt1": "room 840 pic 1",
-    "alt2": "room 840 pic 2",
-    "alt3": "room 840 pic 3",
-    "alt4": "room 840 pic 4",
+    "img": [
+      "img/card-room-350-4.jpg",
+      "img/card-room-856-4.jpg",
+      "img/card-room-678-4.jpg",
+      "img/card-room-840-4.jpg"
+    ],
+
+    "alt": [
+      "room 840 pic 1",
+      "room 840 pic 2",
+      "room 840 pic 3",
+      "room 840 pic 4"
+    ],
     "number": "№ 840",
     "level": "",
-    "amount": "9 900₽ в сутки",
-    "review": "65 Отзывов",
+    "amount":[ "9 900₽ ", "в сутки"],
+    "review": ["65 ", "Отзывов"],
     "rate": 4
   },
   {
-    "img1": "img/card-room-840-4.jpg",
-    "img2": "img/card-room-856-4.jpg",
-    "img3": "img/card-room-740-4.jpg",
-    "img4": "img/card-room-980-4.jpg",
-    "alt1": "room 980 pic 1",
-    "alt2": "room 980 pic 2",
-    "alt3": "room 980 pic 3",
-    "alt4": "room 980 pic 4",
+    "img": [
+      "img/card-room-840-4.jpg",
+      "img/card-room-856-4.jpg",
+      "img/card-room-740-4.jpg",
+      "img/card-room-980-4.jpg"
+    ],
+    "alt": [
+      "room 980 pic 1",
+      "room 980 pic 2",
+      "room 980 pic 3",
+      "room 980 pic 4"
+    ],
     "number": "№ 980",
     "level": "люкс",
-    "amount": "8 500₽ в сутки",
-    "review": "35 Отзывов",
+    "amount": ["8 500₽ ", "в сутки"],
+    "review": ["35 ", "Отзывов"],
     "rate": 3
   },
   {
-    "img1": "img/card-room-840-4.jpg",
-    "img2": "img/card-room-980-4.jpg",
-    "img3": "img/card-room-740-4.jpg",
-    "img4": "img/card-room-856-4.jpg",
-    "alt1": "room 856 pic 1",
-    "alt2": "room 856 pic 2",
-    "alt3": "room 856 pic 3",
-    "alt4": "room 856 pic 4",
+    "img": [
+      "img/card-room-840-4.jpg",
+      "img/card-room-980-4.jpg",
+      "img/card-room-740-4.jpg",
+      "img/card-room-856-4.jpg"
+    ],
+    "alt": [
+      "room 856 pic 1",
+      "room 856 pic 2",
+      "room 856 pic 3",
+      "room 856 pic 4"
+    ],
     "number": "№ 856",
     "level": "",
-    "amount": "7 300₽ в сутки",
-    "review": "19 Отзывов",
+    "amount": ["7 300₽ ", "в сутки"],
+    "review": ["19 ", "Отзывов"],
     "rate": 5
   },
   {
-    "img1": "img/card-room-980-4.jpg",
-    "img2": "img/card-room-856-4.jpg",
-    "img3": "img/card-room-840-4.jpg",
-    "img4": "img/card-room-740-4.jpg",
-    "alt1": "room 740 pic 1",
-    "alt2": "room 740 pic 2",
-    "alt3": "room 740 pic 3",
-    "alt4": "room 740 pic 4",
+    "img": [
+      "img/card-room-980-4.jpg",
+      "img/card-room-856-4.jpg",
+      "img/card-room-840-4.jpg",
+      "img/card-room-740-4.jpg"
+    ],
+    "alt": [
+      "room 740 pic 1",
+      "room 740 pic 2",
+      "room 740 pic 3",
+      "room 740 pic 4"
+    ],
     "number": "№ 740",
     "level": "",
-    "amount": "6 000₽ в сутки",
-    "review": "44 Отзывов",
+    "amount": ["6 000₽ ", "в сутки"],
+    "review": ["44 ", "Отзывов"],
     "rate": 4
   },
   {
-    "img1": "img/card-room-840-4.jpg",
-    "img2": "img/card-room-444-4.jpg",
-    "img3": "img/card-room-666-4.jpg",
-    "img4": "img/card-room-982-4.jpg",
-    "alt1": "room 982 pic 1",
-    "alt2": "room 982 pic 2",
-    "alt3": "room 982 pic 3",
-    "alt4": "room 982 pic 4",
+    "img": [
+      "img/card-room-840-4.jpg",
+      "img/card-room-444-4.jpg",
+      "img/card-room-666-4.jpg",
+      "img/card-room-982-4.jpg"
+    ],
+    "alt": [
+      "room 982 pic 1",
+      "room 982 pic 2",
+      "room 982 pic 3",
+      "room 982 pic 4"
+    ],
     "number": "№ 982",
     "level": "",
-    "amount": "5 800₽ в сутки",
-    "review": "56 Отзывов",
+    "amount": ["5 800₽ ","в сутки"],
+    "review": ["56 ","Отзывов"],
     "rate": 3
   },
   {
-    "img1": "img/card-room-740-4.jpg",
-    "img2": "img/card-room-666-4.jpg",
-    "img3": "img/card-room-982-4.jpg",
-    "img4": "img/card-room-678-4.jpg",
-    "alt1": "room 678 pic 1",
-    "alt2": "room 678 pic 2",
-    "alt3": "room 678 pic 3",
-    "alt4": "room 678 pic 4",
+    "img": [
+      "img/card-room-740-4.jpg",
+      "img/card-room-666-4.jpg",
+      "img/card-room-982-4.jpg",
+      "img/card-room-678-4.jpg"
+    ],
+    "alt": [
+      "room 678 pic 1",
+      "room 678 pic 2",
+      "room 678 pic 3",
+      "room 678 pic 4"
+    ],
     "number": "№ 678",
     "level": "",
-    "amount": "5 500₽ в сутки",
-    "review": "45 Отзывов",
+    "amount": ["5 500₽ ", "в сутки"],
+    "review": ["45 ", "Отзывов"],
     "rate": 5
   },
   {
-    "img1": "img/card-room-678-4.jpg",
-    "img2": "img/card-room-982-4.jpg",
-    "img3": "img/card-room-444-4.jpg",
-    "img4": "img/card-room-450-4.jpg",
-    "alt1": "room 450 pic 1",
-    "alt2": "room 450 pic 2",
-    "alt3": "room 450 pic 3",
-    "alt4": "room 450 pic 4",
+    "img": [
+      "img/card-room-678-4.jpg",
+      "img/card-room-982-4.jpg",
+      "img/card-room-444-4.jpg",
+      "img/card-room-450-4.jpg"
+    ],
+    "alt": [
+      "room 450 pic 1",
+      "room 450 pic 2",
+      "room 450 pic 3",
+      "room 450 pic 4"
+    ],
     "number": "№ 450",
     "level": "",
-    "amount": "5 300₽ в сутки",
-    "review": "39 Отзывов",
+    "amount": ["5 300₽ ", "в сутки"],
+    "review": ["39 ", "Отзывов"],
     "rate": 4
   },
   {
-    "img1": "img/card-room-450-4.jpg",
-    "img2": "img/card-room-666-4.jpg",
-    "img3": "img/card-room-444-4.jpg",
-    "img4": "img/card-room-350-4.jpg",
-    "alt1": "room 350 pic 1",
-    "alt2": "room 350 pic 2",
-    "alt3": "room 350 pic 3",
-    "alt4": "room 350 pic 4",
+    "img": [
+      "img/card-room-450-4.jpg",
+      "img/card-room-666-4.jpg",
+      "img/card-room-444-4.jpg",
+      "img/card-room-350-4.jpg"
+    ],
+    "alt": [
+      "room 350 pic 1",
+      "room 350 pic 2",
+      "room 350 pic 3",
+      "room 350 pic 4"
+    ],
     "number": "№ 350",
     "level": "",
-    "amount": "5 000₽ в сутки",
-    "review": "77 Отзывов",
+    "amount": ["5 000₽ ", "в сутки"],
+    "review": ["77 ", "Отзывов"],
     "rate": 3
   },
   {
-    "img1": "img/card-room-980-4.jpg",
-    "img2": "img/card-room-740-4.jpg",
-    "img3": "img/card-room-840-4.jpg",
-    "img4": "img/card-room-666-4.jpg",
-    "alt1": "room 666 pic 1",
-    "alt2": "room 666 pic 2",
-    "alt3": "room 666 pic 3",
-    "alt4": "room 666 pic 4",
+    "img": [
+      "img/card-room-980-4.jpg",
+      "img/card-room-740-4.jpg",
+      "img/card-room-840-4.jpg",
+      "img/card-room-666-4.jpg"
+    ],
+    "alt": [
+      "room 666 pic 1",
+      "room 666 pic 2",
+      "room 666 pic 3",
+      "room 666 pic 4"
+    ],
     "number": "№ 666",
     "level": "",
-    "amount": "5 000₽ в сутки",
-    "review": "25 Отзывов",
+    "amount": ["5 000₽ ", "в сутки"],
+    "review": ["25 ", "Отзывов"],
     "rate": 5
   },
   {
-    "img1": "img/card-room-352-4.jpg",
-    "img2": "img/card-room-450-4.jpg",
-    "img3": "img/card-room-982-4.jpg",
-    "img4": "img/card-room-444-4.jpg",
-    "alt1": "room 444 pic 1",
-    "alt2": "room 444 pic 2",
-    "alt3": "room 444 pic 3",
-    "alt4": "room 444 pic 4",
+    "img": [
+      "img/card-room-352-4.jpg",
+      "img/card-room-450-4.jpg",
+      "img/card-room-982-4.jpg",
+      "img/card-room-444-4.jpg"
+    ],
+    "alt": [
+      "room 444 pic 1",
+      "room 444 pic 2",
+      "room 444 pic 3",
+      "room 444 pic 4"
+    ],
     "number": "№ 444",
     "level": "",
-    "amount": "5 000₽ в сутки",
-    "review": "15 Отзывов",
+    "amount": ["5 000₽ ", "в сутки"],
+    "review": ["15 ", "Отзывов"],
     "rate": 4
   },
   {
-    "img1": "img/card-room-980-4.jpg",
-    "img2": "img/card-room-982-4.jpg",
-    "img3": "img/card-room-856-4.jpg",
-    "img4": "img/card-room-352-4.jpg",
-    "alt1": "room 352 pic 1",
-    "alt2": "room 352 pic 2",
-    "alt3": "room 352 pic 3",
-    "alt4": "room 352 pic 4",
+    "img": [
+      "img/card-room-980-4.jpg",
+      "img/card-room-982-4.jpg",
+      "img/card-room-856-4.jpg",
+      "img/card-room-352-4.jpg"
+    ],
+    "alt": [
+      "room 352 pic 1",
+      "room 352 pic 2",
+      "room 352 pic 3",
+      "room 352 pic 4"
+    ],
     "number": "№ 352",
     "level": "",
-    "amount": "5 000₽ в сутки",
-    "review": "55 Отзывов",
+    "amount": ["5 000₽ ", "в сутки"],
+    "review": ["55 ", "Отзывов"],
     "rate": 3
   }
 ]

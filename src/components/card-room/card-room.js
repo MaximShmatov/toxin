@@ -14,51 +14,16 @@ import './img/card-room-982-4.jpg';
 class CardRoom {
   #$radio;
 
-  constructor($component, room) {
-    const $card = $component.find('.js-card-room');
+  constructor($card) {
     this.#$radio = $card.find('.js-card-room__slider-radio');
     this.#setHandles($card);
-    CardRoom.initCard($card, room);
-  }
-
-  static initCard($card, room) {
-    const $rate = $card.find('.js-rate-button__radio');
-    $rate.eq(room.rate - 1).prop('checked', true);
-
-    const {
-      img1, img2, img3, img4,
-      alt1, alt2, alt3, alt4,
-    } = room;
-    const $images = $card.find('.js-card-room__slider-img');
-    $images.eq(0).attr('src', img1).attr('alt', alt1);
-    $images.eq(1).attr('src', img2).attr('alt', alt2);
-    $images.eq(2).attr('src', img3).attr('alt', alt3);
-    $images.eq(3).attr('src', img4).attr('alt', alt4);
-
-    const {
-      number, level, amount, review,
-    } = room;
-
-    $card.find('.js-card-room__price-number').text(number);
-    $card.find('.js-card-room__price-level').text(level);
-
-    const arrStrAmount = amount.split(' ');
-    const pay = `
-      <span class="card-room__price-pay-amount">${arrStrAmount[0]} ${arrStrAmount[1]}</span>
-      <span class="card-room__price-pay-term">${arrStrAmount[2]} ${arrStrAmount[3]}</span>
-    `;
-    $card.find('.js-card-room__price-pay').html(pay);
-
-    const quantity = `
-      <span class="card-room__review-quantity-number">${review.split(' ')[0]}</span>
-      <span class="card-room__review-quantity-text">${review.split(' ')[1]}</span>
-    `;
-    $card.find('.js-card-room__review-quantity').html(quantity);
   }
 
   #setHandles($card) {
-    $card.find('.js-card-room__slider-control-right-button').on('click.cardroom', this.#handleButtonRightClick.bind(this));
-    $card.find('.js-card-room__slider-control-left-button').on('click.cardroom', this.#handleButtonLeftClick.bind(this));
+    $card.find('.js-card-room__slider-control-right-button')
+      .on('click.cardroom', this.#handleButtonRightClick.bind(this));
+    $card.find('.js-card-room__slider-control-left-button')
+      .on('click.cardroom', this.#handleButtonLeftClick.bind(this));
   }
 
   #handleButtonRightClick() {
@@ -82,4 +47,8 @@ class CardRoom {
   }
 }
 
-export default CardRoom;
+(function ($) {
+  $('.js-card-room').each(
+    (index, card) => new CardRoom($(card)),
+  );
+}(window.$));

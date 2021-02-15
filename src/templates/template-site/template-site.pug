@@ -7,10 +7,10 @@ include ../../components/copyright/copyright
 block page
 	body.site-template
 		header.site-template__header
-			+header
+			+header({})
 		main.site-template__main
 			block page-site
 		footer.site-template__footer
-			+footer
+			+footer({})
 			section.site-template__footer-copyright
-				+copyright
+				+copyright({})

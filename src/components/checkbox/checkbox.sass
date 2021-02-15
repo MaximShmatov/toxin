@@ -5,18 +5,18 @@
   justify-content: flex-end
   line-height: 20px
 
-  &__true-input
+  &__visible-input
     position: absolute
     width: 0
     height: 0
 
-    &:focus + .checkbox__false-input
+    &:focus + .checkbox__hidden-input
       box-shadow: 0 0 2px 1px rgba(31, 32, 65, 0.5)
 
-    &:hover:not(:disabled) + .checkbox__false-input
+    &:hover:not(:disabled) + .checkbox__hidden-input
       opacity: .6
 
-    &:checked + .checkbox__false-input
+    &:checked + .checkbox__hidden-input
       border: 1px solid #BC9CFF
 
       &::before, &::after
@@ -35,7 +35,7 @@
         padding: 0 4px 4px 0
         background-clip: content-box
 
-  &__false-input
+  &__hidden-input
     position: relative
     display: flex
     align-items: center

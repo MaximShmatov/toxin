@@ -7,6 +7,6 @@ mixin pagination-cards({title = ''} = {})
 			h1.pagination-cards__content-title= title
 			- for (let i = 0; i < 12; i++)
 				aside.pagination-cards__content-card.js-pagination-cards__content-card
-					+card-room
+					+card-room({})
 		div.pagination-cards__control
-			+pagination
+			+pagination({})

@@ -13,11 +13,11 @@ block page-site
 			aside.page-room__details-info
 				h2.page-room__details-info-title Сведения о номере
 				div.page-room__details-info-item.js-page-room__details-info-item
-					+info
+					+info({})
 				div.page-room__details-info-item.js-page-room__details-info-item
-					+info
+					+info({})
 				div.page-room__details-info-item.js-page-room__details-info-item
-					+info
+					+info({})
 			aside.page-room__details-effect
 				+diagram
 			aside.page-room__details-reviews
@@ -25,9 +25,9 @@ block page-site
 					h2.page-room__details-reviews-header-title Отзывы посетителей номера
 					span.page-room__details-reviews-header-quantity 2 отзыва
 				div.page-room__details-reviews-item.js-page-room__details-reviews-item
-					+review
+					+review({})
 				div.page-room__details-reviews-item.js-page-room__details-reviews-item
-					+review
+					+review({})
 			aside.page-room__details-rules
 				+bullet-list({title: "Правила"})
 			aside.page-room__details-cancel
@@ -36,4 +36,4 @@ block page-site
 				|Бесплатная отмена в течении 48 ч. После этого при отмене не позднее чем за 5 дн. до
 				|прибытия вы получите полный возврат за вычетом сбора за услуги.
 			aside.page-room__details-reservation
-				+form-reservation
+				+form-reservation({})

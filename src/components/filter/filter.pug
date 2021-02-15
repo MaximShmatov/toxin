@@ -5,7 +5,7 @@ include ../checkbox-group/checkbox-group
 include ../checkbox-rich/checkbox-rich
 include ../checkbox-list/checkbox-list
 
-mixin filter
+mixin filter(props = {})
   div.filter.js-filter
     div.filter__date
       +date-filter({title: "Даты пребывания в отеле"})

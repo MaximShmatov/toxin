@@ -1,5 +1,5 @@
 mixin checkbox({ caption, name, isChecked } = {})
-	label.checkbox.js-checkbox
-		span.checkbox__caption.js-checkbox__caption= caption
-		input.checkbox__visible-input.js-checkbox__visible-input(type="checkbox" name= name checked= isChecked)
+	label.checkbox
+		span.checkbox__caption= caption
+		input.checkbox__visible-input(type="checkbox" name= name checked= isChecked)
 		div.checkbox__hidden-input

@@ -5,25 +5,35 @@ include ../checkbox-group/checkbox-group
 include ../checkbox-rich/checkbox-rich
 include ../checkbox-list/checkbox-list
 
-mixin filter(props = {})
+mixin filter(titles = {})
   -
-    const checkboxes = [
-      {name: "smoke", caption: "Можно курить", isChecked: false},
-      {name: "pet", caption: "Можно с питомцами", isChecked: true},
-      {name: "guests", caption: "Можно пригласить гостей (до 10 человек)", isChecked: true},
-    ]
+    const {
+      dateTitle,
+      guestsTitle,
+      priceTitle,
+      priceCaption,
+      rulesTitle,
+      availabilityTitle,
+      comfortTitle,
+      otherTitle
+    } = titles;
+    const checkboxGroupItems = require('../../components/checkbox-group/checkbox-group.json');
+    const checkboxListItems = require('../../components/checkbox-list/checkbox-list.json');
+    const checkboxRichItems = require('../../components/checkbox-rich/checkbox-rich.json');
+
   div.filter.js-filter
     div.filter__date
-      +date-filter({title: "Даты пребывания в отеле"})
+      +date-filter({title: dateTitle})
     div.filter__guests.js-filter__guests
-      +dropdown-quantity({title: "Гости"})
+      +dropdown-quantity({title: guestsTitle})
     div.filter__price
-      +range-slider({title: "Диапазон цены", caption: "Стоимость за сутки пребывания в номере"})
+      +range-slider({title: priceTitle})
+      p.filter__price-caption= priceCaption
     div.filter__rules
-      +checkbox-group({title: "Правила дома", checkboxes})
+      +checkbox-group({title: rulesTitle, items: checkboxGroupItems})
     div.filter__availability
-      +checkbox-rich({title: "Доступность"})
+      +checkbox-rich({title: availabilityTitle, items: checkboxRichItems})
     div.filter__comfort.js-filter__comfort
-      +dropdown-quantity({title: "Удобства номера"})
+      +dropdown-quantity({title: comfortTitle})
     div.filter__comfort-other
-      +checkbox-list({title: "Дополнительные удобства"})
+      +checkbox-list({title: otherTitle, items: checkboxListItems})

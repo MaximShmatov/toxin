@@ -1,13 +1,13 @@
 include ../card-room/card-room
 include ../pagination/pagination
 
-mixin pagination-cards({title = ''} = {})
+mixin pagination-cards({ title } = {})
 	div.pagination-cards
 		div.pagination-cards__content
 			h1.pagination-cards__content-title= title
 			- const cards = require('../../components/card-room/card-room.json');
 			- for (let i = 0; i < cards.length; i++)
-				aside.pagination-cards__content-card.js-pagination-cards__content-card
+				aside.pagination-cards__content-card
 					+card-room(cards[i])
 		div.pagination-cards__control
-			+pagination({})
+			+pagination({caption: "1 \u2013 12 из 100+ вариантов аренды"})

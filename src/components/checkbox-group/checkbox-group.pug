@@ -1,8 +1,8 @@
 include ../checkbox/checkbox
 
-mixin checkbox-group({title = '', checkboxes = []} = {})
+mixin checkbox-group({ title, items } = {})
   div.checkbox-group
     h3.checkbox-group__title= title
-    - for (let i = 0; i < checkboxes.length; i++)
+    - for (let i = 0; i < items.length; i++)
       div.checkbox-group__checkbox
-        +checkbox(checkboxes[i])
+        +checkbox(items[i])

@@ -2,10 +2,10 @@ include ../button/button
 include ../dropdown-quantity/dropdown-quantity
 include ../date-range/date-range
 
-mixin form-search-room(props = {})
+mixin form-search-room({ title } = {})
   form.form-search-room.js-form-search-room
     fieldset.form-search-room__fieldset
-      legend.form-search-room__title Найдём номера под ваши пожелания
+      legend.form-search-room__title= title
       div.form-search-room__date
         +date-range({titleFirst: "Прибытие", titleSecond: "Выезд"})
       div.form-search-room__guests

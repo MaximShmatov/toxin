@@ -8,20 +8,21 @@ include ../../components/form-come-in/form-come-in
 include ../../components/card-room/card-room
 
 block page-uikit
-	- const cards = require('../../components/card-room/card-room.json')
+	- const cards = require('../../components/card-room/card-room.json');
+
 	div.uikit-cards__wrapper
 		article.uikit-cards.js-uikit-cards
 			section.uikit-cards__form
-				+form-search-room({})
+				+form-search-room({title: "Найдём номера под ваши пожелания"})
 			section.uikit-cards__form
 				+form-reservation({})
-			section.uikit-cards__form.js-uikit-cards__form
+			section.uikit-cards__form
 				+date-picker({})
 			section.uikit-cards__form
-				+form-registration({})
+				+form-registration({title: "Регистрация аккаунта", caption: "Уже есть аккаунт на Toxin"})
 			section.uikit-cards__form
-				+form-come-in({})
-			section.uikit-cards__form.js-uikit-cards__form
+				+form-come-in({title: "Войти", caption: "Нет аккаунта на Toxin?"})
+			section.uikit-cards__form
 				+card-room(cards[0])
-			section.uikit-cards__form.js-uikit-cards__form
+			section.uikit-cards__form
 				+card-room(cards[1])

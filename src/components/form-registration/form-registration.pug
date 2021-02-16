@@ -3,10 +3,10 @@ include ../toggle/toggle
 include ../radio/radio
 include ../text-field/text-field
 
-mixin form-registration(props = {})
+mixin form-registration({ title, caption } = {})
 	form.form-registration
 		fieldset.form-registration__fieldset
-			legend.form-registration__title Регистрация аккаунта
+			legend.form-registration__title= title
 			div.form-registration__name
 				+text-field({type: "text", value: "Имя"})
 			div.form-registration__family
@@ -27,6 +27,6 @@ mixin form-registration(props = {})
 			div.form-registration__pay
 				+button({type: "submit", text: "Перейти к оплате", theme: "arrowed", size: "huge"})
 			div.form-registration__come-in
-				label.form-registration__come-in-caption Уже есть аккаунт на Toxin
+				label.form-registration__come-in-caption= caption
 					div.form-registration__come-in-button
 						+button({type: "submit", text: "Войти", theme: "bordered", size: "middle"})

@@ -21,17 +21,12 @@ include ../../components/review/review
 
 block page-uikit
   -
-    const checkboxes = [
-      {name: "smoke", caption: "Можно курить", isChecked: false},
-      {name: "pet", caption: "Можно с питомцами", isChecked: true},
-      {name: "guests", caption: "Можно пригласить гостей (до 10 человек)", isChecked: true},
-    ]
-
-    const list = [
-      'Нельзя с питомцами',
-      'Без вечеринок и мероприятий',
-      'Время прибытия \u2014 после 13:00,\nа выезд до 12:00'
-    ]
+    const checkboxGroupItems = require('../../components/checkbox-group/checkbox-group.json');
+    const infoData = require('../../components/info/info.json');
+    const reviewData = require('../../components/review/review.json');
+    const list = require('../../components/bullet-list/bullet-list.json');
+    const checkboxListItems = require('../../components/checkbox-list/checkbox-list.json');
+    const checkboxRichItems = require('../../components/checkbox-rich/checkbox-rich.json');
 
   article.uikit-elements.js-uikit-elements
 
@@ -58,7 +53,7 @@ block page-uikit
     // sector-2
     section.uikit-elements__sector
       div.uikit-elements__sector-element
-        +checkbox-group({title: "Checkbox buttons", checkboxes})
+        +checkbox-group({title: "Checkbox buttons", items: checkboxGroupItems})
       h3.uikit-elements__sector-element-title Radio buttons
       div.uikit-elements__sector-element
         +radio({name: "registration__mw-radio", value: "m", caption: "Мужчина", isChecked: true})
@@ -101,7 +96,7 @@ block page-uikit
         +button({type: "button", text: "Перейти к оплате", theme: "arrowed", size: "huge"})
       h3.uikit-elements__sector-element-title Pagination
       div.uikit-elements__sector-element
-        +pagination
+        +pagination({caption: "1 \u2013 12 из 100+ вариантов аренды"})
 
     // sector-4
     section.uikit-elements__sector
@@ -111,17 +106,17 @@ block page-uikit
       div.uikit-elements__sector-element.js-uikit-elements__sector-element
         span.uikit-elements__sector-element-caption Expanded
         +dropdown-quantity({title: "Dropdown"})
-      div.uikit-elements__sector-element.js-uikit-elements__sector-element
-        +checkbox-list({title: "Expandable checkbox list", isChecked: false})
-      div.uikit-elements__sector-element.js-uikit-elements__sector-element
-        +checkbox-list({title: "Expandable checkbox list", isChecked: true})
+      div.uikit-elements__sector-element
+        +checkbox-list({title: "Expandable checkbox list", isChecked: false, items: checkboxListItems})
+      div.uikit-elements__sector-element
+        +checkbox-list({title: "Expandable checkbox list", isChecked: true, items: checkboxListItems})
 
     // sector-5
     section.uikit-elements__sector
       div.uikit-elements__sector-element.js-uikit-elements__sector-element
         +dropdown-quantity({title: "Dropdown"})
       div.uikit-elements__sector-element
-        +checkbox-rich({title: "Rich checkbox buttons"})
+        +checkbox-rich({title: "Rich checkbox buttons", items: checkboxRichItems})
 
     // sector-6
     section.uikit-elements__sector
@@ -132,11 +127,11 @@ block page-uikit
 
     // sector-7
     section.uikit-elements__sector
-      div.uikit-elements__sector-element.js-uikit-elements__sector-element
-        +info({})
-      div.uikit-elements__sector-element.js-uikit-elements__sector-element
-        +info({})
+      div.uikit-elements__sector-element
+        +info(infoData[0])
+      div.uikit-elements__sector-element
+        +info(infoData[1])
 
     // sector-8
     section.uikit-elements__sector
-      +review({})
+      +review(reviewData[0])

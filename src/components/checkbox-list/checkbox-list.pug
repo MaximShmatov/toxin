@@ -1,7 +1,7 @@
 include ../checkbox/checkbox
 
-mixin checkbox-list({ title, isChecked } = {})
-  - const id = Math.random()
+mixin checkbox-list({ title, isChecked, items } = {})
+  - const id = Math.random();
 
   div.checkbox-list
     input.checkbox-list__check(type="checkbox" id= id checked= isChecked)
@@ -9,15 +9,6 @@ mixin checkbox-list({ title, isChecked } = {})
       h3.checkbox-list__body-title= title
       div.checkbox-list__body-arrow
     div.checkbox-list__picker
-      div.checkbox-list__picker-item
-        +checkbox({name: "breakfast", caption: "Завтрак", isChecked: false})
-      div.checkbox-list__picker-item
-        +checkbox({name: "table", caption: "Письменный стол", isChecked: true})
-      div.checkbox-list__picker-item
-        +checkbox({name: "chair", caption: "Стул для кормления", isChecked: true})
-      div.checkbox-list__picker-item
-        +checkbox({name: "bed", caption: "Кроватка", isChecked: true})
-      div.checkbox-list__picker-item
-        +checkbox({name: "tv", caption: "Телевизор", isChecked: false})
-      div.checkbox-list__picker-item
-        +checkbox({name: "shampoo", caption: "Шампунь", isChecked: false})
+      - for (let i = 0; i < items.length; i++)
+        div.checkbox-list__picker-item
+          +checkbox(items[i])

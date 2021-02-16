@@ -1,11 +1,10 @@
 include ../checkbox/checkbox
 
-mixin checkbox-rich({title = ''} = {})
-	div.checkbox-rich.js-checkbox-rich
+mixin checkbox-rich({ title, items } = {})
+	div.checkbox-rich
 		h3.checkbox-rich__title= title
-		div.checkbox-rich__checkbox
-			+checkbox({name: "corridor", caption: "Широкий коридор", isChecked: false})
-		p.checkbox-rich__info Ширина коридоров в номере <br> не менее 91 см.
-		div.checkbox-rich__checkbox
-			+checkbox({name: "assistant", caption: "Помошник для инвалидов", isChecked: false})
-		p.checkbox-rich__info На 1 этаже вас встретит специалист <br> и проводит до номера
+		- for (let i = 0; i < items.length; i++)
+			- const { checkbox, info } = items[i];
+			div.checkbox-rich__checkbox
+				+checkbox(checkbox)
+			p.checkbox-rich__info= info

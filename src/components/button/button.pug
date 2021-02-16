@@ -11,11 +11,11 @@ mixin button({ type, text, theme, size, isDisabled } = {})
       'large': 'size_large',
       'middle': 'size_middle',
       'huge': 'size_huge',
-    }
+    };
     const classes = [
       'button',
       `button_${themes[theme]}`,
-      `button_${sizes[size]}`
-    ]
+      `button_${sizes[size]}`,
+    ];
   button(type= type class= classes disabled= isDisabled)
-    span.button__caption.js-button__caption= text
+    span.button__caption= text

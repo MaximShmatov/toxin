@@ -1,0 +1,9 @@
+{
+  "logo": {"src": "img/template-site-logo.svg", "alt": "toxin logo"},
+  "caption": "Copyright &copy; 2018 Toxin отель. Все права зачищены.",
+  "links": [
+    "http://twitter.com",
+    "http://facebook.com",
+    "http://instagram.com"
+  ]
+}

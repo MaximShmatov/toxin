@@ -1,9 +1,13 @@
-mixin diagram(props = {})
-	div.diagram.js-diagram
-		h2.diagram__title.js-diagram__title
+mixin diagram({ title, content, list } = {})
+	div.diagram
+		h2.diagram__title= title
 		div.diagram__wrapper
 			div.diagram__circle
 				- for (let i = 0; i < 3; i++)
 					div.diagram__circle-sector
-				div.diagram__circle-content.js-diagram__circle-content
-			ul.diagram__list.js-diagram__list
+				div.diagram__circle-content
+					span.diagram__circle-content-title= content[0]
+					span.diagram__circle-content-title= content[1]
+			ul.diagram__list
+				- for (let i = 0; i < list.length; i++)
+					li.diagram__list-item= list[i]

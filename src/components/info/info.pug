@@ -1,7 +1,7 @@
-mixin info(props = {})
-  div.info.js-info
+mixin info({ name, text, img } = {})
+  div.info
     div.info__icon
-      img.info__img.js-info__img
+      img.info__img(src=img alt=name)
     div.info__item
-      span.info__item-term.js-info__item-term
-      span.info__item-definition.js-info__item-definition
+      span.info__item-term= name
+      span.info__item-definition= text

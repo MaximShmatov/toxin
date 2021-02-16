@@ -1,0 +1,18 @@
+[
+  {
+    "checkbox": {
+      "name": "corridor",
+      "caption": "Широкий коридор",
+      "isChecked": false
+    },
+    "info": "Ширина коридоров в номере\nне менее 91 см."
+  },
+  {
+    "checkbox": {
+      "name": "assistant",
+      "caption": "Помошник для инвалидов",
+      "isChecked": false
+    },
+    "info": "На 1 этаже вас встретит специалист\nи проводит до номера"
+  }
+]

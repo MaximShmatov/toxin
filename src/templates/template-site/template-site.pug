@@ -5,6 +5,8 @@ include ../../components/footer/footer
 include ../../components/copyright/copyright
 
 block page
+	- const copyrightContent = require('../../components/copyright/copyright.json');
+
 	body.site-template
 		header.site-template__header
 			+header({})
@@ -13,4 +15,4 @@ block page
 		footer.site-template__footer
 			+footer({})
 			section.site-template__footer-copyright
-				+copyright({})
+				+copyright({content: copyrightContent})

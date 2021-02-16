@@ -8,33 +8,32 @@ include ../../components/form-reservation/form-reservation
 
 block page-site
 	-
-		const list = [
-			'Нельзя с питомцами',
-			'Без вечеринок и мероприятий',
-			'Время прибытия \u2014 после 13:00,\nа выезд до 12:00',
-		]
+		const infoData = require('../../components/info/info.json');
+		const reviewData = require('../../components/review/review.json');
+		const diagramData = require('../../components/diagram/diagram.json');
+		const list = require('../../components/bullet-list/bullet-list.json');
 
 	article.page-room.js-page-room
 		section.page-room__preview
 		section.page-room__details
 			aside.page-room__details-info
 				h2.page-room__details-info-title Сведения о номере
-				div.page-room__details-info-item.js-page-room__details-info-item
-					+info({})
-				div.page-room__details-info-item.js-page-room__details-info-item
-					+info({})
-				div.page-room__details-info-item.js-page-room__details-info-item
-					+info({})
+				div.page-room__details-info-item
+					+info(infoData[0])
+				div.page-room__details-info-item
+					+info(infoData[1])
+				div.page-room__details-info-item
+					+info(infoData[2])
 			aside.page-room__details-effect
-				+diagram
+				+diagram(diagramData)
 			aside.page-room__details-reviews
 				div.page-room__details-reviews-header
 					h2.page-room__details-reviews-header-title Отзывы посетителей номера
 					span.page-room__details-reviews-header-quantity 2 отзыва
-				div.page-room__details-reviews-item.js-page-room__details-reviews-item
-					+review({})
-				div.page-room__details-reviews-item.js-page-room__details-reviews-item
-					+review({})
+				div.page-room__details-reviews-item
+					+review(reviewData[0])
+				div.page-room__details-reviews-item
+					+review(reviewData[1])
 			aside.page-room__details-rules
 				+bullet-list({title: "Правила", list})
 			aside.page-room__details-cancel

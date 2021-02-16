@@ -1,4 +1,4 @@
-mixin pagination(props = {})
+mixin pagination({ caption } = {})
 	-
 		const buttons = {
 			'first': '1',
@@ -12,4 +12,4 @@ mixin pagination(props = {})
 		form.pagination__control
 			- for (let key in buttons)
 				button(type="button" class=`pagination__control-${key}`) #{buttons[key]}
-		span.pagination__result 1 &#x2013; 12 из 100+ вариантов аренды
+		span.pagination__result= caption

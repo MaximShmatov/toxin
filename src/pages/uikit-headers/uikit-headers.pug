@@ -5,6 +5,8 @@ include ../../components/footer/footer
 include ../../components/copyright/copyright
 
 block page-uikit
+	- const copyrightContent = require('../../components/copyright/copyright.json');
+
 	div.uikit-headers-footers__wrapper
 		article.uikit-headers-footers
 			header.uikit-headers-footers__header
@@ -14,7 +16,6 @@ block page-uikit
 			footer.uikit-headers-footers__footer
 				+footer({})
 			footer.uikit-headers-footers__footer
-				+copyright({})
+				+copyright({content: copyrightContent})
 			footer.uikit-headers-footers__footer
-				+copyright({theme: "tablet"})
-
+				+copyright({theme: "tablet", content: copyrightContent})

@@ -1,11 +1,13 @@
-mixin copyright({theme = ''} = {})
-  - const themes = { 'tablet': 'copyright_theme_tablet' }
+mixin copyright({ theme, content } = {})
+  -
+    const themes = { 'tablet': 'copyright_theme_tablet' };
+    const { logo, caption, links } = content;
+    const { src, alt } = logo;
 
-  div.copyright(class= themes[theme])
+  div.copyright(class=themes[theme])
     div.copyright__wrapper
-      img.copyright__logo(src="img/template-site-logo.svg" alt="toxin logo")
-      p.copyright__caption Copyright &copy; 2018 Toxin отель. Все права зачищены.
+      img.copyright__logo(src=src alt=alt)
+      p.copyright__caption= caption
       div.copyright__social
-        a.copyright__social-icon(href="http://twitter.com" target="_blank" rel="noopener noreferrer")
-        a.copyright__social-icon(href="http://facebook.com" target="_blank" rel="noopener noreferrer")
-        a.copyright__social-icon(href="http://instagram.com" target="_blank" rel="noopener noreferrer")
+        - for (let i = 0; i < links.length; i++)
+          a.copyright__social-icon(href=links[i] target="_blank" rel="noopener noreferrer")

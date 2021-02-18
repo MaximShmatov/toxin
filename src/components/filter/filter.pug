@@ -7,6 +7,11 @@ include ../checkbox-list/checkbox-list
 
 mixin filter(titles = {})
   -
+    const checkboxGroupItems = require('../../components/checkbox-group/checkbox-group.json');
+    const checkboxListItems = require('../../components/checkbox-list/checkbox-list.json');
+    const checkboxRichItems = require('../../components/checkbox-rich/checkbox-rich.json');
+
+  -
     const {
       dateTitle,
       guestsTitle,
@@ -17,9 +22,6 @@ mixin filter(titles = {})
       comfortTitle,
       otherTitle
     } = titles;
-    const checkboxGroupItems = require('../../components/checkbox-group/checkbox-group.json');
-    const checkboxListItems = require('../../components/checkbox-list/checkbox-list.json');
-    const checkboxRichItems = require('../../components/checkbox-rich/checkbox-rich.json');
 
   div.filter.js-filter
     div.filter__date

@@ -2,10 +2,11 @@ include ../card-room/card-room
 include ../pagination/pagination
 
 mixin pagination-cards({ title } = {})
+	- const cards = require('../../components/card-room/card-room.json');
+
 	div.pagination-cards
 		div.pagination-cards__content
 			h1.pagination-cards__content-title= title
-			- const cards = require('../../components/card-room/card-room.json');
 			- for (let i = 0; i < cards.length; i++)
 				aside.pagination-cards__content-card
 					+card-room(cards[i])

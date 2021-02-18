@@ -1,11 +1,11 @@
 .like
   cursor: pointer
 
-  &__hidden
+  &__hidden-input
     position: absolute
     opacity: 0
 
-    &:checked + .like__visible
+    &:checked + .like__visible-input
       background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
       color: #BC9CFF
 
@@ -15,7 +15,7 @@
     &:focus + div
       box-shadow: 0 0 2px 1px rgba(31, 32, 65, 0.5)
 
-  &__visible
+  &__visible-input
     background: rgba(31, 32, 65, 0.25)
     color: rgba(31, 32, 65, 0.25)
     box-sizing: border-box
@@ -42,4 +42,3 @@
         content: '\e907'
         margin-left: 5px
         margin-right: 5px
-

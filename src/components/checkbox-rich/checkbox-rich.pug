@@ -3,8 +3,8 @@ include ../checkbox/checkbox
 mixin checkbox-rich({ title, items } = {})
 	div.checkbox-rich
 		h3.checkbox-rich__title= title
-		- for (let i = items.reverse().length; i > 0; i--)
-			- const { checkbox, info } = items.pop();
+		each item in items
+			- const { checkbox, info } = item;
 			div.checkbox-rich__checkbox
 				+checkbox(checkbox)
 			p.checkbox-rich__info= info

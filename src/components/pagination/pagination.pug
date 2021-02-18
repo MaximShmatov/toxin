@@ -11,5 +11,5 @@ mixin pagination({ caption } = {})
 	div.pagination
 		form.pagination__control
 			- for (let key in buttons)
-				button(type="button" class=`pagination__control-${key}`) #{buttons[key]}
+				button(type="button" class=`pagination__control-${key}`)= buttons[key]
 		span.pagination__result= caption

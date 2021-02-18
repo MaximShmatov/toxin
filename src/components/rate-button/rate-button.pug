@@ -1,5 +1,6 @@
 mixin rate-button({ rate = 1 } = {})
-	- const id = Math.random()
+	- const id = Math.random();
+
 	form.rate-button
 		- for (let i = 5; i >= 1; i--)
 			input.rate-button__radio(

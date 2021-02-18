@@ -3,5 +3,5 @@ mixin bullet-list({ title, list } = {})
     - if (title)
       h3.bullet-list__title= title
     ul.bullet-list__items
-      - for (let i = list.reverse().length; i > 0; i--)
-        li.bullet-list__item= list.pop()
+      each item in list
+        li.bullet-list__item= item

@@ -25,9 +25,9 @@ mixin header({links, name} = {})
 						button.header__submenu(type="button")
 						ul.header__submenu-items
 							li.header__submenu-item
-								a.header__menu-ref(href=servicesItems.pop()) Услуга 1
+								a.header__menu-ref(href=servicesItems[0]) Услуга 1
 							li.header__submenu-item
-								a.header__menu-ref(href=servicesItems.pop()) Услуга 2
+								a.header__menu-ref(href=servicesItems[1]) Услуга 2
 					li.header__menu-item
 						a.header__menu-ref(href=vacancies) Вакансии
 					li.header__menu-item
@@ -37,12 +37,12 @@ mixin header({links, name} = {})
 						button.header__submenu(type="button")
 						ul.header__submenu-items
 							li.header__submenu-item
-								a.header__menu-ref(href=agreementsItems.pop()) Соглашение 1
+								a.header__menu-ref(href=agreementsItems[0]) Соглашение 1
 							li.header__submenu-item
-								a.header__menu-ref(href=agreementsItems.pop()) Соглашение 2
+								a.header__menu-ref(href=agreementsItems[1]) Соглашение 2
 			if(name)
 				div.header__menu-separator
-				output.header__menu-user=name
+				output.header__menu-user= name
 			else
 				div.header__button
 					+button({type: "button", theme: "bordered", size: "small", text: "Войти"})

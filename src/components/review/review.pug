@@ -1,6 +1,6 @@
 include ../like/like
 
-mixin review({ name, avatar, quote, date } = {})
+mixin review({ name, avatar, quote, date, likes, isChecked } = {})
 	div.review
 		div.review__author
 			div.review__author-avatar
@@ -10,5 +10,5 @@ mixin review({ name, avatar, quote, date } = {})
 				span.review__author-date= date
 		div.review__quote
 			div.review__quote-like
-				+like({isChecked: true, likes: 12})
+				+like({isChecked, likes})
 			blockquote.review__quote-text= quote

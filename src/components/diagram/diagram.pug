@@ -11,5 +11,5 @@ mixin diagram({ title, content, list } = {})
 					span.diagram__circle-content-title= numeral
 					span.diagram__circle-content-title= line
 			ul.diagram__list
-				- for (let i = list.reverse().length; i > 0; i--)
-					li.diagram__list-item= list.pop()
+				each item in list
+					li.diagram__list-item= item

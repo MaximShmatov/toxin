@@ -3,6 +3,6 @@ include ../checkbox/checkbox
 mixin checkbox-group({ title, items } = {})
   div.checkbox-group
     h3.checkbox-group__title= title
-    - for (let i = items.reverse().length; i > 0; i--)
+    each item in items
       div.checkbox-group__checkbox
-        +checkbox(items.pop())
+        +checkbox(item)

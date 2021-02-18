@@ -4,7 +4,7 @@
   align-items: center
   justify-content: flex-end
 
-  &__hidden
+  &__hidden-input
     position: absolute
     opacity: 0
     z-index: -1
@@ -12,14 +12,14 @@
     &:focus + div
       box-shadow: 0 0 2px 1px rgba(31, 32, 65, 0.5)
 
-    &:checked + .toggle__visible
+    &:checked + .toggle__visible-input
       justify-content: flex-end
       border-color: #BC9CFF
 
-    &:checked + .toggle__visible::before
+    &:checked + .toggle__visible-input::before
       background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
 
-  &__visible
+  &__visible-input
     display: flex
     align-items: center
     border: 1px solid rgba(31, 32, 65, 0.25)

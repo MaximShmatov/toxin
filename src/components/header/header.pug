@@ -1,33 +1,45 @@
 include ../button/button
 
-mixin header({ name } = {})
+mixin header({links, name} = {})
+	-
+		const {
+			logo,
+			about,
+			services,
+			servicesItems,
+			vacancies,
+			news,
+			agreements,
+			agreementsItems,
+		} = links;
+
 	div.header__wrapper
 		div.header
-			img.header__logo(alt="logo toxin" src="img/template-site-logo.svg")
+			img.header__logo(alt="logo" src=logo)
 			nav.header__menu
 				ul.header__menu-items
 					li.header__menu-item
-						a.header__menu-ref(href="/mock-address") О нас
+						a.header__menu-ref(href=about) О нас
 					li.header__menu-item
-						a.header__menu-ref(href="/mock-address") Услуги
+						a.header__menu-ref(href=services) Услуги
 						button.header__submenu(type="button")
 						ul.header__submenu-items
 							li.header__submenu-item
-								a.header__menu-ref(href="/mock-address") Услуга 1
+								a.header__menu-ref(href=servicesItems.pop()) Услуга 1
 							li.header__submenu-item
-								a.header__menu-ref(href="/mock-address") Услуга 2
+								a.header__menu-ref(href=servicesItems.pop()) Услуга 2
 					li.header__menu-item
-						a.header__menu-ref(href="/mock-address") Вакансии
+						a.header__menu-ref(href=vacancies) Вакансии
 					li.header__menu-item
-						a.header__menu-ref(href="/mock-address") Новости
+						a.header__menu-ref(href=news) Новости
 					li.header__menu-item
-						a.header__menu-ref(href="/mock-address") Соглашения
+						a.header__menu-ref(href=agreements) Соглашения
 						button.header__submenu(type="button")
 						ul.header__submenu-items
 							li.header__submenu-item
-								a.header__menu-ref(href="/mock-address") Соглашение 1
+								a.header__menu-ref(href=agreementsItems.pop()) Соглашение 1
 							li.header__submenu-item
-								a.header__menu-ref(href="/mock-address") Соглашение 2
+								a.header__menu-ref(href=agreementsItems.pop()) Соглашение 2
 			if(name)
 				div.header__menu-separator
 				output.header__menu-user=name

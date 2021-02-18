@@ -1,0 +1,16 @@
+{
+  "logo": "img/template-site-logo.svg",
+  "about": "/mock-address",
+  "services": "/mock-address",
+  "servicesItems": [
+    "/mock-address/",
+    "/mock-address"
+  ],
+  "vacancies": "/mock-address",
+  "news": "/mock-address",
+  "agreements": "/mock-address",
+  "agreementsItems": [
+    "/mock-address/",
+    "/mock-address"
+  ]
+}

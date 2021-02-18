@@ -5,14 +5,16 @@ include ../../components/footer/footer
 include ../../components/copyright/copyright
 
 block page-uikit
-	- const copyrightContent = require('../../components/copyright/copyright.json');
+	-
+		const copyrightContent = require('../../components/copyright/copyright.json');
+		const headerLinks = require('../../components/header/header.json');
 
 	div.uikit-headers-footers__wrapper
 		article.uikit-headers-footers
 			header.uikit-headers-footers__header
-				+header()
+				+header({links: headerLinks})
 			header.uikit-headers-footers__header
-				+header({name: "Юлий Цезарь"})
+				+header({links: headerLinks, name: "Юлий Цезарь"})
 			footer.uikit-headers-footers__footer
 				+footer()
 			footer.uikit-headers-footers__footer

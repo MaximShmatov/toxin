@@ -9,5 +9,5 @@ mixin copyright({ theme, content } = {})
       img.copyright__logo(src=src alt=alt)
       p.copyright__caption= caption
       div.copyright__social
-        - for (let i = 0; i < links.length; i++)
-          a.copyright__social-icon(href=links[i] target="_blank" rel="noopener noreferrer")
+        - for (let i = links.reverse().length; i > 0; i--)
+          a.copyright__social-icon(href=links.pop() target="_blank" rel="noopener noreferrer")

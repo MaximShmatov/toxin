@@ -9,6 +9,6 @@ mixin checkbox-list({ title, isChecked, items } = {})
       h3.checkbox-list__body-title= title
       div.checkbox-list__body-arrow
     div.checkbox-list__picker
-      - for (let i = 0; i < items.length; i++)
+      - for (let i = items.reverse().length; i > 0; i--)
         div.checkbox-list__picker-item
-          +checkbox(items[i])
+          +checkbox(items.pop())

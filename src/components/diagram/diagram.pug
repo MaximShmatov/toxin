@@ -1,4 +1,6 @@
 mixin diagram({ title, content, list } = {})
+	- const { numeral, line } = content;
+
 	div.diagram
 		h2.diagram__title= title
 		div.diagram__wrapper
@@ -6,8 +8,8 @@ mixin diagram({ title, content, list } = {})
 				- for (let i = 0; i < 3; i++)
 					div.diagram__circle-sector
 				div.diagram__circle-content
-					span.diagram__circle-content-title= content[0]
-					span.diagram__circle-content-title= content[1]
+					span.diagram__circle-content-title= numeral
+					span.diagram__circle-content-title= line
 			ul.diagram__list
-				- for (let i = 0; i < list.length; i++)
-					li.diagram__list-item= list[i]
+				- for (let i = list.reverse().length; i > 0; i--)
+					li.diagram__list-item= list.pop()

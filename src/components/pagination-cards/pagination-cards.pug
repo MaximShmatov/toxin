@@ -7,8 +7,8 @@ mixin pagination-cards({ title } = {})
 	div.pagination-cards
 		div.pagination-cards__content
 			h1.pagination-cards__content-title= title
-			- for (let i = 0; i < cards.length; i++)
+			- for (let i = cards.reverse().length; i > 0; i--)
 				aside.pagination-cards__content-card
-					+card-room(cards[i])
+					+card-room(cards.pop())
 		div.pagination-cards__control
 			+pagination({caption: "1 \u2013 12 из 100+ вариантов аренды"})

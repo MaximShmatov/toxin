@@ -21,9 +21,14 @@ block page
 		nav.index__nav
 			h2.index__header-uikit UI kit
 			ul.index__nav-items
-				- for (let i = 0; i < 4; i++)
-					li.index__nav-item
-						a.index__nav-item-link(href= uikitPages[i].href)= uikitPages[i].text
+				-
+					const ps = uikitPages.map((index, item) => {
+						const {href, text} = item;
+						return `
+							li.index__nav-item
+								a.index__nav-item-link(href = ${href}) = ${text}
+							`});
+				#{ps}
 			h2.index__header-site Website pages
 			ul.index__nav-items
 				- for (let i = 0; i < 5; i++)

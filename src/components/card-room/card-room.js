@@ -11,44 +11,34 @@ import './img/card-room-888-4.jpg';
 import './img/card-room-980-4.jpg';
 import './img/card-room-982-4.jpg';
 
-class CardRoom {
-  #$radio;
-
-  constructor($card) {
-    this.#$radio = $card.find('.js-card-room__slider-radio');
-    this.#setHandles($card);
-  }
-
-  #setHandles($card) {
-    $card.find('.js-card-room__slider-control-right-button')
-      .on('click.cardroom', this.#handleButtonRightClick.bind(this));
-    $card.find('.js-card-room__slider-control-left-button')
-      .on('click.cardroom', this.#handleButtonLeftClick.bind(this));
-  }
-
-  #handleButtonRightClick() {
-    for (let i = 1; i < 5; i += 1) {
-      if (this.#$radio.eq(i).prop('checked')) {
-        this.#$radio.eq(i - 1).prop('checked', true);
-        this.#$radio.eq(i - 1).attr('data-dir', 'r');
-        return;
-      }
-    }
-  }
-
-  #handleButtonLeftClick() {
-    for (let i = 0; i < 4; i += 1) {
-      if (this.#$radio.eq(i).prop('checked')) {
-        this.#$radio.eq(i + 1).prop('checked', true);
-        this.#$radio.eq(i + 1).attr('data-dir', 'l');
-        return;
-      }
-    }
-  }
-}
-
 (function ($) {
-  $('.js-card-room').each(
-    (index, card) => new CardRoom($(card)),
-  );
+  $('.js-card-room').each(function () {
+    const radio = $(this)
+      .find('.js-card-room__slider-radio');
+
+    const handleButtonLeftClick = () => {
+      for (let i = 0; i < 4; i += 1) {
+        if ($(radio).eq(i).prop('checked')) {
+          $(radio).eq(i + 1).prop('checked', true);
+          $(radio).eq(i + 1).attr('data-dir', 'l');
+          return;
+        }
+      }
+    };
+
+    const handleButtonRightClick = () => {
+      for (let i = 1; i < 5; i += 1) {
+        if ($(radio).eq(i).prop('checked')) {
+          $(radio).eq(i - 1).prop('checked', true);
+          $(radio).eq(i - 1).attr('data-dir', 'r');
+          return;
+        }
+      }
+    };
+
+    $(this).find('.js-card-room__slider-control-left-button')
+      .on('click.cardroom', handleButtonLeftClick.bind(this));
+    $(this).find('.js-card-room__slider-control-right-button')
+      .on('click.cardroom', handleButtonRightClick.bind(this));
+  });
 }(window.$));

@@ -1,48 +1,87 @@
-import reserve from './form-reservation.json';
 import DropdownQuantity from '../dropdown-quantity/dropdown-quantity';
 import DateRange from '../date-range/date-range';
 
-(function ($) {
-  const $formReserve = $('.js-form-reserve');
-  const {
-    number,
-    level,
-    pricePerDay,
-    priceService,
-    priceDiscount,
-    priceAdditionally,
-  } = reserve;
+class FormReserve {
+  #$formReserve;
 
-  new DropdownQuantity($formReserve);
-  const dateRange = new DateRange($formReserve);
+  #formData;
 
-  function getNumberStr(num) {
+  #dateRange;
+
+  constructor($element, data) {
+    this.#$formReserve = $element.find('.js-form-reserve');
+    this.#formData = data;
+
+    const $dateRange = $element.find('.js-form-reserve__date');
+    this.#dateRange = new DateRange($dateRange);
+
+    this.#init();
+  }
+
+  #handleDatePickerSubmit() {
+    this.#setPayment();
+  }
+
+  static formatNumberToStr(num) {
     const n = num.toString();
     return n.replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, '$1 ');
   }
 
-  $formReserve.find('.js-form-reserve__room-info-number').text(number);
-  $formReserve.find('.js-form-reserve__room-info-level').text(level);
-  $formReserve.find('.js-form-reserve__room-price-amount').text(getNumberStr(pricePerDay));
-  $formReserve.find('.js-form-reserve__pay-days-price').text(getNumberStr(pricePerDay));
-  $formReserve.find('.js-form-reserve__pay-services-price').text(getNumberStr(priceDiscount));
-  $formReserve.find('.js-form-reserve__pay-services-amount-total').text(getNumberStr(priceService));
-  $formReserve.find('.js-form-reserve__pay-other-amount-total').text(getNumberStr(priceAdditionally));
+  #init() {
+    const $guests = this.#$formReserve
+      .find('.js-form-reserve__guests');
+    new DropdownQuantity($guests);
 
-  function setPayment() {
-    const totalDays = dateRange.getDateRange();
+    const {
+      number, level, pricePerDay, priceService, priceDiscount, priceAdditionally,
+    } = this.#formData;
+
+    this.#$formReserve
+      .find('.js-form-reserve__room-info-number')
+      .text(number);
+    this.#$formReserve
+      .find('.js-form-reserve__room-info-level')
+      .text(level);
+    this.#$formReserve
+      .find('.js-form-reserve__room-price-amount')
+      .text(FormReserve.formatNumberToStr(pricePerDay));
+    this.#$formReserve
+      .find('.js-form-reserve__pay-days-price')
+      .text(FormReserve.formatNumberToStr(pricePerDay));
+    this.#$formReserve
+      .find('.js-form-reserve__pay-services-price')
+      .text(FormReserve.formatNumberToStr(priceDiscount));
+    this.#$formReserve
+      .find('.js-form-reserve__pay-services-amount-total')
+      .text(FormReserve.formatNumberToStr(priceService));
+    this.#$formReserve
+      .find('.js-form-reserve__pay-other-amount-total')
+      .text(FormReserve.formatNumberToStr(priceAdditionally));
+    this.#$formReserve
+      .on('datepicker.submit', this.#handleDatePickerSubmit.bind(this));
+    this.#setPayment();
+  }
+
+  #setPayment() {
+    const {
+      pricePerDay, priceDiscount, priceAdditionally, priceService,
+    } = this.#formData;
+
+    const totalDays = this.#dateRange.getDateRange();
     const payForAllDays = pricePerDay * totalDays;
-    const payTotal = payForAllDays - priceDiscount + priceAdditionally + priceService;
+    const payBase = priceDiscount + priceAdditionally + priceService;
+    const payTotal = payForAllDays - payBase;
 
-    $formReserve.find('.js-form-reserve__pay-days-quantity').text(totalDays);
-    $formReserve.find('.js-form-reserve__pay-amount-total').text(getNumberStr(payForAllDays));
-    $formReserve.find('.js-form-reserve__total-amount').text(getNumberStr(payTotal));
+    this.#$formReserve
+      .find('.js-form-reserve__pay-days-quantity')
+      .text(totalDays);
+    this.#$formReserve
+      .find('.js-form-reserve__pay-amount-total')
+      .text(FormReserve.formatNumberToStr(payForAllDays));
+    this.#$formReserve
+      .find('.js-form-reserve__total-amount')
+      .text(FormReserve.formatNumberToStr(payTotal));
   }
+}
 
-  function handleDatePickerSubmit() {
-    setPayment();
-  }
-
-  $formReserve.on('datepicker.submit', handleDatePickerSubmit);
-  setPayment();
-}(window.$));
+export default FormReserve;

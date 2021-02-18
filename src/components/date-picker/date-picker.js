@@ -46,10 +46,14 @@ class DatePicker {
 
   #setHandles() {
     this.#$bodyDates.on('click.datepicker', this.#handlePickerBodyClick.bind(this));
-    this.#$picker.find('.js-date-picker__head-list-left').on('click.datepicker', this.#handlePickerButtonLeftClick.bind(this));
-    this.#$picker.find('.js-date-picker__head-list-right').on('click.datepicker', this.#handlePickerButtonRightClick.bind(this));
-    this.#$picker.find('.js-date-picker__footer-clear').on('click.datepicker', this.#handlePickerButtonClearClick.bind(this));
-    this.#$picker.find('.js-date-picker__footer-submit').on('click.datepicker', this.#handlePickerButtonSubmitClick.bind(this));
+    this.#$picker.find('.js-date-picker__head-list-left')
+      .on('click.datepicker', this.#handlePickerButtonLeftClick.bind(this));
+    this.#$picker.find('.js-date-picker__head-list-right')
+      .on('click.datepicker', this.#handlePickerButtonRightClick.bind(this));
+    this.#$picker.find('.js-date-picker__footer-clear')
+      .on('click.datepicker', this.#handlePickerButtonClearClick.bind(this));
+    this.#$picker.find('.js-date-picker__footer-submit')
+      .on('click.datepicker', this.#handlePickerButtonSubmitClick.bind(this));
   }
 
   #handlePickerBodyClick(evt) {

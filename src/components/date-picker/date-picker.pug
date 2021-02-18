@@ -9,7 +9,7 @@ mixin date-picker({} = {})
 		div.date-picker__body
 			- const weekDay = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
 			- for (let i = 0; i < 7; i++)
-				span.date-picker__body-week !{weekDay[i]}
+				span.date-picker__body-week= weekDay[i]
 			- for (let i = 0; i < 35; i++)
 				div.date-picker__body-range.js-date-picker__body-range
 					input.date-picker__body-date.js-date-picker__body-date(type="button")

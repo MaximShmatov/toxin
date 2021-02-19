@@ -23,11 +23,11 @@
     & :checked + &-item
       background-color: white
 
-    & :checked[data-dir="r"] + &-item + &-img ~ &-img
+    & :checked[data-direction="right"] + &-item + &-img ~ &-img
       transform: translateX(100%)
       transition: .8s
 
-    & :checked[data-dir="l"] + &-item + &-img
+    & :checked[data-direction="left"] + &-item + &-img
       transform: translateX(0)
       transition: .8s
 

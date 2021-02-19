@@ -1,13 +1,15 @@
 include ../button/button
 
 mixin dropdown-quantity({ title } = {})
+	- const pickerItems = 3;
+
 	div.dropdown-quantity.js-dropdown-quantity
 		h3.dropdown-quantity__title.js-dropdown-quantity__title= title
 		button.dropdown-quantity__head.js-dropdown-quantity__head(type="button")
 			span.dropdown-quantity__head-out.js-dropdown-quantity__head-out
 			div.dropdown-quantity__head-arrow
 		div.dropdown-quantity__picker.js-dropdown-quantity__picker
-			- for (let i = 0; i < 3; i++)
+			- for (let i = 0; i < pickerItems; i += 1)
 				div.dropdown-quantity__picker-item
 					span.dropdown-quantity__picker-item-header.js-dropdown-quantity__picker-item-header
 					div.dropdown-quantity__picker-item-quantity

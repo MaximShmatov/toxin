@@ -1,7 +1,9 @@
 include ../button/button
 
 mixin date-picker({} = {})
-	- const weekDay = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+	-
+		const weekDay = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+		const dateButtons = 35;
 
 	div.date-picker.js-date-picker
 		div.date-picker__head
@@ -11,7 +13,7 @@ mixin date-picker({} = {})
 		div.date-picker__body
 			each day in weekDay
 				span.date-picker__body-week= day
-			- for (let i = 0; i < 35; i++)
+			- for (let i = 0; i < dateButtons; i += 1)
 				div.date-picker__body-range.js-date-picker__body-range
 					input.date-picker__body-date.js-date-picker__body-date(type="button")
 		div.date-picker__footer

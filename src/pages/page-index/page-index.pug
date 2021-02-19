@@ -2,32 +2,29 @@ extends ../../templates/template-main/template-main
 
 block page
   -
-    const uikitPages = [
-      { href: 'colors.html', text: 'Colors & Type' },
-      { href: 'elements.html', text: 'Elements' },
-      { href: 'forms.html', text: 'Forms' },
-      { href: 'headers.html', text: 'Headers & Footers' },
-    ]
-    const sitePages = [
-      { href: 'landing.html', text: 'Landing Page' },
-      { href: 'search.html', text: 'Search Room' },
-      { href: 'details.html', text: 'Room Details' },
-      { href: 'registration.html', text: 'Registration' },
-      { href: 'sign.html', text: 'Sign In' },
-    ]
+    const pages = {
+      uikit: [
+        { href: 'colors.html', text: 'Colors & Type' },
+        { href: 'elements.html', text: 'Elements' },
+        { href: 'forms.html', text: 'Forms' },
+        { href: 'headers.html', text: 'Headers & Footers' },
+      ],
+      site: [
+        { href: 'landing.html', text: 'Landing Page' },
+        { href: 'search.html', text: 'Search Room' },
+        { href: 'details.html', text: 'Room Details' },
+        { href: 'registration.html', text: 'Registration' },
+        { href: 'sign.html', text: 'Sign In' },
+      ],
+    }
 
   body.index
     h1.index__header TOXIN
     nav.index__nav
-      h2.index__header-uikit UI kit
-      ul.index__nav-items
-        each item in uikitPages
-          - const { href, text } = item;
-          li.index__nav-item
-            a.index__nav-item-link(href=href)= text
-      h2.index__header-site Website pages
-      ul.index__nav-items
-        each item in sitePages
-          - const { href, text } = item;
-          li.index__nav-item
-            a.index__nav-item-link(href=href)= text
+      - for (key in pages)
+        h2.index__header= `${key} pages`
+        ul.index__nav-items
+          each item in pages[key]
+            - const { href, text } = item;
+            li.index__nav-item
+              a.index__nav-item-link(href=href)= text

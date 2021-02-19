@@ -3,49 +3,49 @@ include ../dropdown-quantity/dropdown-quantity
 include ../button/button
 
 mixin form-reservation({} = {})
-	form.form-reserve.js-form-reserve
-		fieldset.form-reserve__fieldset
-			legend.form-reserve__title
-				div.form-reserve__room-info
-					span.form-reserve__room-info-num &#8470;&nbsp;&nbsp;
-					span.form-reserve__room-info-number.js-form-reserve__room-info-number
-					span.form-reserve__room-info-level.js-form-reserve__room-info-level
-				div.form-reserve__room-price
-					span.form-reserve__room-price-amount.js-form-reserve__room-price-amount
-					span.form-reserve__room-price-rub &#x20bd;&nbsp;
-					span.form-reserve__room-price-term в сутки
-			div.form-reserve__date.js-form-reserve__date
-				+date-range({titleFirst: "Прибытие", titleSecond: "Выезд"})
-			div.form-reserve__guests.js-form-reserve__guests
-				+dropdown-quantity({title: "Гости"})
-			div.form-reserve__pay
-				div.form-reserve__pay-days
-					span.form-reserve__pay-days-price.js-form-reserve__pay-days-price
-					span.form-reserve__pay-days-quantity-begin &#x20bd;&nbsp;x&nbsp;
-					span.form-reserve__pay-days-quantity.js-form-reserve__pay-days-quantity
-					span.form-reserve__pay-days-quantity-end &nbsp;суток
-				div.form-reserve__pay-amount
-					span.form-reserve__pay-amount-total.js-form-reserve__pay-amount-total
-					span.form-reserve__pay-amount-total-end &#x20bd;
-				div.form-reserve__pay-services
-					span.form-reserve__pay-services-begin Сбор за услуги: скидка&nbsp;
-					span.form-reserve__pay-services-price.js-form-reserve__pay-services-price
-					span.form-reserve__pay-services-end &#x20bd;
-				div.form-reserve__pay-services-info i
-				div.form-reserve__pay-services-amount
-					span.form-reserve__pay-services-amount-total.js-form-reserve__pay-services-amount-total
-					span.form-reserve__pay-services-amount-total-end &#x20bd;
-				div.form-reserve__pay-other
-					span.form-reserve__pay-other-caption Сбор за дополнительные услуги
-				div.form-reserve__pay-other-info i
-				div.form-reserve__pay-other-amount
-					span.form-reserve__pay-other-amount-total.js-form-reserve__pay-other-amount-total
-					span.form-reserve__pay-other-amount-total-end &#x20bd;
-			div.form-reserve__total
-				span.form-reserve__total-title Итого
-				div.form-reserve__total-separator
-				div.form-reserve__total-quantity
-					span.form-reserve__total-amount.js-form-reserve__total-amount
-					span.form-reserve__total-amount-end &#x20bd;
-			div.form-reserve__submit
-				+button({type: "submit", text: "Забронировать", theme: "arrowed", size: "huge"})
+  form.form-reserve.js-form-reserve
+    fieldset.form-reserve__fieldset
+      legend.form-reserve__title
+        div.form-reserve__room-info
+          span.form-reserve__room-info-num &#8470;&nbsp;&nbsp;
+          span.form-reserve__room-info-number.js-form-reserve__room-info-number
+          span.form-reserve__room-info-level.js-form-reserve__room-info-level
+        div.form-reserve__room-price
+          span.form-reserve__room-price-amount.js-form-reserve__room-price-amount
+          span.form-reserve__room-price-rub &#x20bd;&nbsp;
+          span.form-reserve__room-price-term в сутки
+      div.form-reserve__date.js-form-reserve__date
+        +date-range({titleFirst: "Прибытие", titleSecond: "Выезд"})
+      div.form-reserve__guests.js-form-reserve__guests
+        +dropdown-quantity({title: "Гости"})
+      div.form-reserve__pay
+        div.form-reserve__pay-days
+          span.form-reserve__pay-days-price.js-form-reserve__pay-days-price
+          span.form-reserve__pay-days-quantity-begin &#x20bd;&nbsp;x&nbsp;
+          span.form-reserve__pay-days-quantity.js-form-reserve__pay-days-quantity
+          span.form-reserve__pay-days-quantity-end &nbsp;суток
+        div.form-reserve__pay-amount
+          span.form-reserve__pay-amount-total.js-form-reserve__pay-amount-total
+          span.form-reserve__pay-amount-total-end &#x20bd;
+        div.form-reserve__pay-services
+          span.form-reserve__pay-services-begin Сбор за услуги: скидка&nbsp;
+          span.form-reserve__pay-services-price.js-form-reserve__pay-services-price
+          span.form-reserve__pay-services-end &#x20bd;
+        div.form-reserve__pay-services-info i
+        div.form-reserve__pay-services-amount
+          span.form-reserve__pay-services-amount-total.js-form-reserve__pay-services-amount-total
+          span.form-reserve__pay-services-amount-total-end &#x20bd;
+        div.form-reserve__pay-other
+          span.form-reserve__pay-other-caption Сбор за дополнительные услуги
+        div.form-reserve__pay-other-info i
+        div.form-reserve__pay-other-amount
+          span.form-reserve__pay-other-amount-total.js-form-reserve__pay-other-amount-total
+          span.form-reserve__pay-other-amount-total-end &#x20bd;
+      div.form-reserve__total
+        span.form-reserve__total-title Итого
+        div.form-reserve__total-separator
+        div.form-reserve__total-quantity
+          span.form-reserve__total-amount.js-form-reserve__total-amount
+          span.form-reserve__total-amount-end &#x20bd;
+      div.form-reserve__submit
+        +button({type: "submit", text: "Забронировать", theme: "arrowed", size: "huge"})

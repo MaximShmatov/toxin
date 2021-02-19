@@ -1,31 +1,31 @@
 include ../rate-button/rate-button
 
-mixin card-room({ img, alt, number, level, pay, review, rate} = {})
-	-
-		const name = Math.random();
-		const { amount, term } = pay;
-		const { numeral, text } = review;
+mixin card-room({ img, alt, number, level, pay, review, rate } = {})
+  -
+    const name = Math.random();
+    const { amount, term } = pay;
+    const { numeral, text } = review;
 
-	div.card-room.js-card-room
-		div.card-room__slider
-			each image, index in img
-				input.card-room__slider-radio.js-card-room__slider-radio(type="radio" name=name value=index checked=(index === 3))
-				div.card-room__slider-item
-				img.card-room__slider-img(src=image alt=alt[index])
-			div.card-room__slider-control
-				div.card-room__slider-control-left
-					button.card-room__slider-control-left-button.js-card-room__slider-control-left-button(type="button")
-				div.card-room__slider-control-right
-					button.card-room__slider-control-right-button.js-card-room__slider-control-right-button(type="button")
-		div.card-room__price
-			div.card-room__price-room
-				span.card-room__price-number= number
-				span.card-room__price-level= level
-			div.card-room__price-pay.js-card-room__price-pay
-				span.card-room__price-pay-amount= amount
-				span.card-room__price-pay-term= term
-		div.card-room__review
-			+rate-button({rate})
-			div.card-room__review-quantity
-				span.card-room__review-quantity-number= numeral
-				span.card-room__review-quantity-text= text
+  div.card-room.js-card-room
+    div.card-room__slider
+      each image, index in img
+        input.card-room__slider-radio.js-card-room__slider-radio(type="radio" name=name value=index checked=(index === 3))
+        div.card-room__slider-item
+        img.card-room__slider-img(src=image alt=alt[index])
+      div.card-room__slider-control
+        div.card-room__slider-control-left
+          button.card-room__slider-control-left-button.js-card-room__slider-control-left-button(type="button")
+        div.card-room__slider-control-right
+          button.card-room__slider-control-right-button.js-card-room__slider-control-right-button(type="button")
+    div.card-room__price
+      div.card-room__price-room
+        span.card-room__price-number= number
+        span.card-room__price-level= level
+      div.card-room__price-pay.js-card-room__price-pay
+        span.card-room__price-pay-amount= amount
+        span.card-room__price-pay-term= term
+    div.card-room__review
+      +rate-button({rate})
+      div.card-room__review-quantity
+        span.card-room__review-quantity-number= numeral
+        span.card-room__review-quantity-text= text

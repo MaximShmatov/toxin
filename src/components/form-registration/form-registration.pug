@@ -4,29 +4,29 @@ include ../radio/radio
 include ../text-field/text-field
 
 mixin form-registration({ title, caption } = {})
-	form.form-registration
-		fieldset.form-registration__fieldset
-			legend.form-registration__title= title
-			div.form-registration__name
-				+text-field({type: "text", value: "Имя"})
-			div.form-registration__family
-				+text-field({type: "text", value: "Фамилия"})
-			div.form-registration__mw
-				div.form-registration__mw-radio
-					+radio({name: "form-registration__mw-radio", value: "m", caption: "Мужчина", isChecked: true})
-				div.form-registration__mw-radio
-					+radio({name: "form-registration__mw-radio", value: "w", caption: "Женщина"})
-			div.form-registration__birth
-				+text-field({type: "text", value: "дд.мм.гггг", mask: "99.99.9999", header: "Дата рождения"})
-			div.form-registration__email
-				+text-field({type: "email", value: "Email", header: "Данные для входа в сервис"})
-			div.form-registration__pass
-				+text-field({type: "password", value: "Пароль"})
-			div.form-registration__subscription
-				+toggle({caption: "Получать спецпредложения"})
-			div.form-registration__pay
-				+button({type: "submit", text: "Перейти к оплате", theme: "arrowed", size: "huge"})
-			div.form-registration__come-in
-				label.form-registration__come-in-caption= caption
-					div.form-registration__come-in-button
-						+button({type: "submit", text: "Войти", theme: "bordered", size: "middle"})
+  form.form-registration
+    fieldset.form-registration__fieldset
+      legend.form-registration__title= title
+      div.form-registration__name
+        +text-field({type: "text", value: "Имя"})
+      div.form-registration__family
+        +text-field({type: "text", value: "Фамилия"})
+      div.form-registration__mw
+        div.form-registration__mw-radio
+          +radio({name: "form-registration__mw-radio", value: "m", caption: "Мужчина", isChecked: true})
+        div.form-registration__mw-radio
+          +radio({name: "form-registration__mw-radio", value: "w", caption: "Женщина"})
+      div.form-registration__birth
+        +text-field({type: "text", value: "дд.мм.гггг", mask: "99.99.9999", header: "Дата рождения"})
+      div.form-registration__email
+        +text-field({type: "email", value: "Email", header: "Данные для входа в сервис"})
+      div.form-registration__pass
+        +text-field({type: "password", value: "Пароль"})
+      div.form-registration__subscription
+        +toggle({caption: "Получать спецпредложения"})
+      div.form-registration__pay
+        +button({type: "submit", text: "Перейти к оплате", theme: "arrowed", size: "huge"})
+      div.form-registration__come-in
+        label.form-registration__come-in-caption= caption
+          div.form-registration__come-in-button
+            +button({type: "submit", text: "Войти", theme: "bordered", size: "middle"})

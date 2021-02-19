@@ -1,14 +1,14 @@
 include ../like/like
 
 mixin review({ name, avatar, quote, date, likes, isChecked } = {})
-	div.review
-		div.review__author
-			div.review__author-avatar
-				img.review__author-img(src=avatar, alt=name)
-			div.review__author-data
-				span.review__author-name= name
-				span.review__author-date= date
-		div.review__quote
-			div.review__quote-like
-				+like({isChecked, likes})
-			blockquote.review__quote-text= quote
+  div.review
+    div.review__author
+      div.review__author-avatar
+        img.review__author-img(src=avatar, alt=name)
+      div.review__author-data
+        span.review__author-name= name
+        span.review__author-date= date
+    div.review__quote
+      div.review__quote-like
+        +like({isChecked, likes})
+      blockquote.review__quote-text= quote

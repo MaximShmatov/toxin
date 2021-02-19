@@ -1,23 +1,23 @@
 include ../button/button
 
 mixin dropdown-quantity({ title } = {})
-	- const pickerItems = 3;
+  - const pickerItems = 3;
 
-	div.dropdown-quantity.js-dropdown-quantity
-		h3.dropdown-quantity__title.js-dropdown-quantity__title= title
-		button.dropdown-quantity__head.js-dropdown-quantity__head(type="button")
-			span.dropdown-quantity__head-out.js-dropdown-quantity__head-out
-			div.dropdown-quantity__head-arrow
-		div.dropdown-quantity__picker.js-dropdown-quantity__picker
-			- for (let i = 0; i < pickerItems; i += 1)
-				div.dropdown-quantity__picker-item
-					span.dropdown-quantity__picker-item-header.js-dropdown-quantity__picker-item-header
-					div.dropdown-quantity__picker-item-quantity
-						input.dropdown-quantity__picker-item-quantity-minus.js-dropdown-quantity__picker-item-quantity-minus(type="button" value="-" disabled)
-						span.dropdown-quantity__picker-item-quantity-amount.js-dropdown-quantity__picker-item-quantity-amount 0
-						input.dropdown-quantity__picker-item-quantity-plus.js-dropdown-quantity__picker-item-quantity-plus(type="button" value="+")
-			div.dropdown-quantity__picker-item.js-dropdown-quantity__picker-item
-				div.dropdown-quantity__picker-item-clear.js-dropdown-quantity__picker-item-clear
-					+button({type:"button", theme: "texted", text: "Очистить"})
-				div.dropdown-quantity__picker-item-submit.js-dropdown-quantity__picker-item-submit
-					+button({type:"button", theme: "texted", text: "Применить"})
+  div.dropdown-quantity.js-dropdown-quantity
+    h3.dropdown-quantity__title.js-dropdown-quantity__title= title
+    button.dropdown-quantity__head.js-dropdown-quantity__head(type="button")
+      span.dropdown-quantity__head-out.js-dropdown-quantity__head-out
+      div.dropdown-quantity__head-arrow
+    div.dropdown-quantity__picker.js-dropdown-quantity__picker
+      - for (let i = 0; i < pickerItems; i += 1)
+        div.dropdown-quantity__picker-item
+          span.dropdown-quantity__picker-item-header.js-dropdown-quantity__picker-item-header
+          div.dropdown-quantity__picker-item-quantity
+            input.dropdown-quantity__picker-item-quantity-minus.js-dropdown-quantity__picker-item-quantity-minus(type="button" value="-" disabled)
+            span.dropdown-quantity__picker-item-quantity-amount.js-dropdown-quantity__picker-item-quantity-amount 0
+            input.dropdown-quantity__picker-item-quantity-plus.js-dropdown-quantity__picker-item-quantity-plus(type="button" value="+")
+      div.dropdown-quantity__picker-item.js-dropdown-quantity__picker-item
+        div.dropdown-quantity__picker-item-clear.js-dropdown-quantity__picker-item-clear
+          +button({type: "button", theme: "texted", text: "Очистить"})
+        div.dropdown-quantity__picker-item-submit.js-dropdown-quantity__picker-item-submit
+          +button({type: "button", theme: "texted", text: "Применить"})

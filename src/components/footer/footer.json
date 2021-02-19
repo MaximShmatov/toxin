@@ -2,51 +2,66 @@
   "nav": [
     {
       "title": "Навигация",
-      "items": [{
-        "href": "/mock-address",
-        "text": "О нас"
-      },{
-        "href": "/mock-address",
-        "text": "Новости"
-      },{
-        "href": "/mock-address",
-        "text": "Служба поддержки"
-      },{
-        "href": "/mock-address",
-        "text": "Услуги"
-      }]
+      "items": [
+        {
+          "href": "/mock-address",
+          "text": "О нас"
+        },
+        {
+          "href": "/mock-address",
+          "text": "Новости"
+        },
+        {
+          "href": "/mock-address",
+          "text": "Служба поддержки"
+        },
+        {
+          "href": "/mock-address",
+          "text": "Услуги"
+        }
+      ]
     },
     {
       "title": "О нас",
-      "items": [{
-        "href": "/mock-address",
-        "text": "О сервисе"
-      },{
-        "href": "/mock-address",
-        "text": "Наша команда"
-      },{
-        "href": "/mock-address",
-        "text": "Вакансии"
-      },{
-        "href": "/mock-address",
-        "text": "Инвесторы"
-      }]
+      "items": [
+        {
+          "href": "/mock-address",
+          "text": "О сервисе"
+        },
+        {
+          "href": "/mock-address",
+          "text": "Наша команда"
+        },
+        {
+          "href": "/mock-address",
+          "text": "Вакансии"
+        },
+        {
+          "href": "/mock-address",
+          "text": "Инвесторы"
+        }
+      ]
     },
     {
       "title": "Служба поддержки",
-      "items": [{
-        "href": "/mock-address",
-        "text": "Соглашения"
-      },{
-        "href": "/mock-address",
-        "text": "Сообщества"
-      },{
-        "href": "/mock-address",
-        "text": "Связь с нами"
-      },{
-        "href": "/mock-address",
-        "text": ""
-      }]
+      "items": [
+        {
+          "href": "/mock-address",
+          "text": "Соглашения"
+        },
+        {
+          "href": "/mock-address",
+          "text": "Сообщества"
+        },
+        {
+          "href": "/mock-address",
+          "text": "Связь с нами"
+        },
+        {
+          "href": "/mock-address",
+          "text": ""
+        }
+      ]
     }
   ],
   "logoImg": "img/template-site-logo.svg",

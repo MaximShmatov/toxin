@@ -1,23 +1,23 @@
 include ../button/button
 
 mixin date-picker({} = {})
-	-
-		const weekDay = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
-		const dateButtons = 35;
+  -
+    const weekDay = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+    const dateButtons = 35;
 
-	div.date-picker.js-date-picker
-		div.date-picker__head
-			button.date-picker__head-list-left.js-date-picker__head-list-left(type="button")
-			h2.date-picker__head-title.js-date-picker__head-title
-			button.date-picker__head-list-right.js-date-picker__head-list-right(type="button")
-		div.date-picker__body
-			each day in weekDay
-				span.date-picker__body-week= day
-			- for (let i = 0; i < dateButtons; i += 1)
-				div.date-picker__body-range.js-date-picker__body-range
-					input.date-picker__body-date.js-date-picker__body-date(type="button")
-		div.date-picker__footer
-			div.date-picker__footer-clear.js-date-picker__footer-clear
-				+button({type: "button", theme: "texted", text: "Очистить"})
-			div.date-picker__footer-submit.js-date-picker__footer-submit
-				+button({type: "button", theme: "texted", text: "Применить"})
+  div.date-picker.js-date-picker
+    div.date-picker__head
+      button.date-picker__head-list-left.js-date-picker__head-list-left(type="button")
+      h2.date-picker__head-title.js-date-picker__head-title
+      button.date-picker__head-list-right.js-date-picker__head-list-right(type="button")
+    div.date-picker__body
+      each day in weekDay
+        span.date-picker__body-week= day
+      - for (let i = 0; i < dateButtons; i += 1)
+          div.date-picker__body-range.js-date-picker__body-range
+            input.date-picker__body-date.js-date-picker__body-date(type = "button")
+    div.date-picker__footer
+      div.date-picker__footer-clear.js-date-picker__footer-clear
+        +button({type: "button", theme: "texted", text: "Очистить"})
+      div.date-picker__footer-submit.js-date-picker__footer-submit
+        +button({type: "button", theme: "texted", text: "Применить"})

@@ -1,17 +1,17 @@
 mixin diagram({ title, content, list } = {})
-	-
-		const { numeral, line } = content;
-		const diagramSectors = 3;
+  -
+    const { numeral, line } = content;
+    const diagramSectors = 3;
 
-	div.diagram
-		h2.diagram__title= title
-		div.diagram__wrapper
-			div.diagram__circle
-				- for (let i = 0; i < diagramSectors; i += 1)
-					div.diagram__circle-sector
-				div.diagram__circle-content
-					span.diagram__circle-content-title= numeral
-					span.diagram__circle-content-title= line
-			ul.diagram__list
-				each item in list
-					li.diagram__list-item= item
+  div.diagram
+    h2.diagram__title= title
+    div.diagram__wrapper
+      div.diagram__circle
+        - for (let i = 0; i < diagramSectors; i += 1)
+          div.diagram__circle-sector
+        div.diagram__circle-content
+          span.diagram__circle-content-title= numeral
+          span.diagram__circle-content-title= line
+      ul.diagram__list
+        each item in list
+          li.diagram__list-item= item

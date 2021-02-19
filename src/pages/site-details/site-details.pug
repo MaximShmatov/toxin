@@ -7,39 +7,39 @@ include ../../components/bullet-list/bullet-list
 include ../../components/form-reservation/form-reservation
 
 block page-site
-	-
-		const infoData = require('../../components/info/info.json');
-		const reviewData = require('../../components/review/review.json');
-		const diagramData = require('../../components/diagram/diagram.json');
-		const list = require('../../components/bullet-list/bullet-list.json');
+  -
+    const infoData = require('../../components/info/info.json');
+    const reviewData = require('../../components/review/review.json');
+    const diagramData = require('../../components/diagram/diagram.json');
+    const list = require('../../components/bullet-list/bullet-list.json');
 
-	article.page-room.js-page-room
-		section.page-room__preview
-		section.page-room__details
-			aside.page-room__details-info
-				h2.page-room__details-info-title Сведения о номере
-				div.page-room__details-info-item
-					+info(infoData[0])
-				div.page-room__details-info-item
-					+info(infoData[1])
-				div.page-room__details-info-item
-					+info(infoData[2])
-			aside.page-room__details-effect
-				+diagram(diagramData)
-			aside.page-room__details-reviews
-				div.page-room__details-reviews-header
-					h2.page-room__details-reviews-header-title Отзывы посетителей номера
-					span.page-room__details-reviews-header-quantity 2 отзыва
-				div.page-room__details-reviews-item
-					+review(reviewData[0])
-				div.page-room__details-reviews-item
-					+review(reviewData[1])
-			aside.page-room__details-rules
-				+bullet-list({title: "Правила", list})
-			aside.page-room__details-cancel
-				h2.page-room__details-cancel-title Отмена
-				p.page-room__details-cancel-note
-				|Бесплатная отмена в течении 48 ч. После этого при отмене не позднее чем за 5 дн. до
-				|прибытия вы получите полный возврат за вычетом сбора за услуги.
-			aside.page-room__details-reservation.js-page-room__details-reservation
-				+form-reservation()
+  article.page-room.js-page-room
+    section.page-room__preview
+    section.page-room__details
+      aside.page-room__details-info
+        h2.page-room__details-info-title Сведения о номере
+        div.page-room__details-info-item
+          +info(infoData[0])
+        div.page-room__details-info-item
+          +info(infoData[1])
+        div.page-room__details-info-item
+          +info(infoData[2])
+      aside.page-room__details-effect
+        +diagram(diagramData)
+      aside.page-room__details-reviews
+        div.page-room__details-reviews-header
+          h2.page-room__details-reviews-header-title Отзывы посетителей номера
+          span.page-room__details-reviews-header-quantity 2 отзыва
+        div.page-room__details-reviews-item
+          +review(reviewData[0])
+        div.page-room__details-reviews-item
+          +review(reviewData[1])
+      aside.page-room__details-rules
+        +bullet-list({title: "Правила", list})
+      aside.page-room__details-cancel
+        h2.page-room__details-cancel-title Отмена
+        p.page-room__details-cancel-note
+        | Бесплатная отмена в течении 48 ч. После этого при отмене не позднее чем за 5 дн. до
+        | прибытия вы получите полный возврат за вычетом сбора за услуги.
+      aside.page-room__details-reservation.js-page-room__details-reservation
+        +form-reservation()

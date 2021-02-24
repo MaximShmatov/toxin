@@ -1,8 +1,18 @@
 import DropdownQuantity from '../dropdown-quantity/dropdown-quantity';
 import DateRange from '../date-range/date-range';
 
-(function ($) {
-  const $formSearchRoom = $('.js-form-search-room');
-  new DateRange($formSearchRoom);
-  new DropdownQuantity($formSearchRoom);
-}(window.$));
+class FormSearchRoom {
+  #$form;
+
+  constructor($component) {
+    this.#$form = $component;
+    this.#init();
+  }
+
+  #init() {
+    new DateRange(this.#$form);
+    new DropdownQuantity(this.#$form);
+  };
+}
+
+export default FormSearchRoom;

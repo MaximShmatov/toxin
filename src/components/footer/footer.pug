@@ -1,25 +1,23 @@
 include ../subscription/subscription
 
-mixin footer({} = {})
-  -
-    const navigationBlocks = 3;
-    const navigationBlockItems = 4;
-
+mixin footer({ nav, logoImg, logoCaption, subTitle, subCaption } = {})
   div.footer__wrapper
-    div.footer.js-footer
+    div.footer
       section.footer__logo
-        img.footer__logo-img.js-footer__logo-img
-        p.footer__logo-caption.js-footer__logo-caption
+        img.footer__logo-img(alt="logo" src=logoImg)
+        p.footer__logo-caption= logoCaption
       nav.footer__nav
-        - for (let i = 0; i < navigationBlocks; i += 1)
-          div.footer__nav-block.js-footer__nav-block
-            h3.footer__nav-items-title.js-footer__nav-items-title
+        each block in nav
+          - const { title, items } = block;
+          div.footer__nav-block
+            h3.footer__nav-items-title= title
             ul.footer__nav-items
-              - for (let j = 0; j < navigationBlockItems; j += 1)
+              each item in items
+                - const { href, text } = item;
                 li.footer__nav-items-item
-                  a.footer__nav-items-item-ref.js-footer__nav-items-item-ref
+                  a.footer__nav-items-item-ref(href=href)= text
       section.footer__subscription
-        h3.footer__subscription-title.js-footer__subscription-title
-        p.footer__subscription-caption.js-footer__subscription-caption
+        h3.footer__subscription-title= subTitle
+        p.footer__subscription-caption= subCaption
         div.footer__subscription-form
           +subscription()

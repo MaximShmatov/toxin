@@ -42,9 +42,9 @@ block page-uikit
         +dropdown-quantity({title: "Dropdown"})
       div.uikit-elements__sector-element
         +text-field({type: "text", value: "дд.мм.гггг", mask: "99.99.9999", header: "Masked text field"})
-      div.uikit-elements__sector-element.js-uikit-elements__date-range
+      div.uikit-elements__sector-element.js-uikit-elements__sector-element
         +date-range({titleFirst: "Date dropdown", titleSecond: "Date dropdown"})
-      div.uikit-elements__sector-element
+      div.uikit-elements__sector-element.js-uikit-elements__sector-element
         +date-filter({title: "Filter date dropdown"})
       h3.uikit-elements__sector-element-title Subscription text field
       div.uikit-elements__sector-element
@@ -74,7 +74,7 @@ block page-uikit
 
     // sector-3
     section.uikit-elements__sector
-      div.uikit-elements__sector-element
+      div.uikit-elements__sector-element.js-uikit-elements__sector-element
         +range-slider({title: "Range slider"})
       h3.uikit-elements__sector-element-title Buttons
       div.uikit-elements__sector-element

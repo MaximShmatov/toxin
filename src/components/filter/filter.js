@@ -2,14 +2,26 @@ import DateFilter from '../date-filter/date-filter';
 import DropdownQuantity from '../dropdown-quantity/dropdown-quantity';
 import RangeSlider from '../range-slider/range-slider';
 
-(function ($) {
-  const $filter = $('.js-filter');
-  new DateFilter($filter);
-  new RangeSlider($filter);
+class Filter {
+  #$filter;
 
-  const $guests = $filter.find('.js-filter__guests');
-  new DropdownQuantity($guests);
+  #$guests;
 
-  const $comfort = $filter.find('.js-filter__comfort');
-  new DropdownQuantity($comfort, 'room');
-}(window.$));
+  #$comfort;
+
+  constructor($component) {
+    this.#$filter = $component;
+    this.#$guests = $component.find('.js-filter__guests');
+    this.#$comfort = $component.find('.js-filter__comfort');
+    this.#init();
+  }
+
+  #init() {
+    new DateFilter(this.#$filter);
+    new RangeSlider(this.#$filter);
+    new DropdownQuantity(this.#$guests);
+    new DropdownQuantity(this.#$comfort, 'room');
+  }
+}
+
+export default Filter;

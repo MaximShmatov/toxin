@@ -14,9 +14,9 @@ mixin form-reservation({} = {})
           span.form-reserve__room-price-amount.js-form-reserve__room-price-amount
           span.form-reserve__room-price-rub &#x20bd;&nbsp;
           span.form-reserve__room-price-term в сутки
-      div.form-reserve__date.js-form-reserve__date
+      div.form-reserve__date
         +date-range({titleFirst: "Прибытие", titleSecond: "Выезд"})
-      div.form-reserve__guests.js-form-reserve__guests
+      div.form-reserve__guests
         +dropdown-quantity({title: "Гости"})
       div.form-reserve__pay
         div.form-reserve__pay-days

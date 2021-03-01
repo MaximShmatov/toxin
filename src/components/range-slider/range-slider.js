@@ -15,7 +15,10 @@ class RangeSlider {
     this.#valueFrom = RangeSlider.#getNumberStr(this.$slider.slider('valueFrom'));
     this.#valueTo = RangeSlider.#getNumberStr(this.$slider.slider('valueTo'));
     this.#$range.text(`${this.#valueFrom}\u20BD - ${this.#valueTo}\u20BD`);
+    this.#setHandles();
+  }
 
+  #setHandles() {
     this.$slider.on('slider-data', this.#handlePluginSliderData.bind(this));
   }
 

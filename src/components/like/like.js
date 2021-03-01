@@ -6,6 +6,10 @@ class Like {
   constructor($component) {
     this.#$checkbox = $component.find('.js-like__hidden-input');
     this.#$likes = $component.find('.js-like__visible-input-quantity');
+    this.#setHandles($component);
+  }
+
+  #setHandles($component) {
     $component.on('change.like', this.#handleCheckboxClick.bind(this));
   }
 

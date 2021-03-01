@@ -7,12 +7,12 @@ include ../../components/copyright/copyright
 block page
   -
     const copyrightContent = require('../../components/copyright/copyright.json');
-    const headerLinks = require('../../components/header/header.json');
+    const headerData = require('../../components/header/header.json');
     const footerData = require('../../components/footer/footer.json');
 
   body.site-template
     header.site-template__header
-      +header({links: headerLinks})
+      +header({data: headerData})
     main.site-template__main
       block page-site
     footer.site-template__footer

@@ -1,16 +1,45 @@
 {
   "logo": "img/template-site-logo.svg",
-  "about": "/mock-address",
-  "services": "/mock-address",
-  "servicesItems": [
-    "/mock-address/",
-    "/mock-address"
-  ],
-  "vacancies": "/mock-address",
-  "news": "/mock-address",
-  "agreements": "/mock-address",
-  "agreementsItems": [
-    "/mock-address/",
-    "/mock-address"
+  "nav": [
+    {
+      "hrefMenu": "/mock-address",
+      "captionMenu": "О нас"
+    },
+    {
+      "hrefMenu": "/mock-address",
+      "captionMenu": "Услуги",
+      "submenu": [
+        {
+          "hrefSubmenu": "/mock-address",
+          "captionSubmenu": "Услуга 1"
+        },
+        {
+          "hrefSubmenu": "/mock-address",
+          "captionSubmenu": "Услуга 2"
+        }
+      ]
+    },
+    {
+      "hrefMenu": "/mock-address",
+      "captionMenu": "Вакансии"
+    },
+    {
+      "hrefMenu": "/mock-address",
+      "captionMenu": "Новости"
+    },
+    {
+      "hrefMenu": "/mock-address",
+      "captionMenu": "Соглашения",
+      "submenu": [
+        {
+          "hrefSubmenu": "/mock-address",
+          "captionSubmenu": "Соглашение 1"
+        },
+        {
+          "hrefSubmenu": "/mock-address",
+          "captionSubmenu": "Соглашение 2"
+        }
+      ]
+    }
   ]
 }

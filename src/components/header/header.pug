@@ -1,45 +1,24 @@
 include ../button/button
 
-mixin header({links, name} = {})
-  -
-    const {
-      logo,
-      about,
-      services,
-      servicesItems,
-      vacancies,
-      news,
-      agreements,
-      agreementsItems,
-    } = links;
+mixin header({ data, name } = {})
+  - const { logo, nav } = data;
 
   div.header__wrapper
     div.header
       img.header__logo(alt="logo" src=logo)
       nav.header__menu
         ul.header__menu-items
-          li.header__menu-item
-            a.header__menu-ref(href=about) О нас
-          li.header__menu-item
-            a.header__menu-ref(href=services) Услуги
-            button.header__submenu(type="button")
-            ul.header__submenu-items
-              li.header__submenu-item
-                a.header__menu-ref(href=servicesItems[0]) Услуга 1
-              li.header__submenu-item
-                a.header__menu-ref(href=servicesItems[1]) Услуга 2
-          li.header__menu-item
-            a.header__menu-ref(href=vacancies) Вакансии
-          li.header__menu-item
-            a.header__menu-ref(href=news) Новости
-          li.header__menu-item
-            a.header__menu-ref(href=agreements) Соглашения
-            button.header__submenu(type="button")
-            ul.header__submenu-items
-              li.header__submenu-item
-                a.header__menu-ref(href=agreementsItems[0]) Соглашение 1
-              li.header__submenu-item
-                a.header__menu-ref(href=agreementsItems[1]) Соглашение 2
+          each menuItem in nav
+            - const { hrefMenu, captionMenu, submenu } = menuItem;
+            li.header__menu-item
+              a.header__menu-ref(href=hrefMenu)= captionMenu
+              if(submenu)
+                button.header__submenu(type="button")
+                ul.header__submenu-items
+                  each submenuItem in submenu
+                    - const { hrefSubmenu, captionSubmenu } = submenuItem;
+                    li.header__submenu-item
+                      a.header__menu-ref(href=hrefSubmenu)= captionSubmenu
       if(name)
         div.header__menu-separator
         output.header__menu-user= name

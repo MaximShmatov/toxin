@@ -150,7 +150,9 @@ class DatePicker {
     const month = dateCurrent.getMonth();
     dateCurrent.setDate(1);
     let weekDay = dateCurrent.getDay();
-    if (weekDay === 0) weekDay = 7;
+    if (weekDay === 0) {
+      weekDay = 7;
+    }
     dateCurrent.setDate(-weekDay + 1);
 
     this.#$bodyDates.each((i, item) => {

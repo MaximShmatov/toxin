@@ -38,8 +38,9 @@ class DropdownQuantity {
     this.#setAreas();
     this.#setHandles();
 
-    if (mode === 'room') this.#initRoomMode();
-    else this.#initGuestsMode();
+    if (mode === 'room') {
+      this.#initRoomMode();
+    } else this.#initGuestsMode();
 
     this.togglePicker();
   }
@@ -160,24 +161,32 @@ class DropdownQuantity {
   #setValidRoom() {
     switch (this.#quantity.isFirstItem) {
       case true:
-        if (this.#quantity.firstItem < 5) this.#quantity.firstItem += 1;
+        if (this.#quantity.firstItem < 5) {
+          this.#quantity.firstItem += 1;
+        }
         break;
       case undefined:
         break;
       case false:
-        if (this.#quantity.firstItem > 0) this.#quantity.firstItem -= 1;
+        if (this.#quantity.firstItem > 0) {
+          this.#quantity.firstItem -= 1;
+        }
         break;
       default:
     }
     if (this.#quantity.firstItem > 0) {
       switch (this.#quantity.isSecondItem) {
         case true:
-          if (this.#quantity.secondItem < 5) this.#quantity.secondItem += 1;
+          if (this.#quantity.secondItem < 5) {
+            this.#quantity.secondItem += 1;
+          }
           break;
         case undefined:
           break;
         case false:
-          if (this.#quantity.secondItem > 0) this.#quantity.secondItem -= 1;
+          if (this.#quantity.secondItem > 0) {
+            this.#quantity.secondItem -= 1;
+          }
           break;
         default:
       }
@@ -189,12 +198,16 @@ class DropdownQuantity {
     if (firstSecondSelected) {
       switch (this.#quantity.isThirdItem) {
         case true:
-          if (this.#quantity.thirdItem < 5) this.#quantity.thirdItem += 1;
+          if (this.#quantity.thirdItem < 5) {
+            this.#quantity.thirdItem += 1;
+          }
           break;
         case undefined:
           break;
         case false:
-          if (this.#quantity.thirdItem !== 0) this.#quantity.thirdItem -= 1;
+          if (this.#quantity.thirdItem !== 0) {
+            this.#quantity.thirdItem -= 1;
+          }
           break;
         default:
       }
@@ -249,24 +262,32 @@ class DropdownQuantity {
     let adultsAndChildren = this.#quantity.firstItem + this.#quantity.secondItem;
     switch (this.#quantity.isFirstItem) {
       case true:
-        if (adultsAndChildren < 5) this.#quantity.firstItem += 1;
+        if (adultsAndChildren < 5) {
+          this.#quantity.firstItem += 1;
+        }
         break;
       case undefined:
         break;
       case false:
-        if (this.#quantity.firstItem > 0) this.#quantity.firstItem -= 1;
+        if (this.#quantity.firstItem > 0) {
+          this.#quantity.firstItem -= 1;
+        }
         break;
       default:
     }
     adultsAndChildren = this.#quantity.firstItem + this.#quantity.secondItem;
     switch (this.#quantity.isSecondItem) {
       case true:
-        if (adultsAndChildren < 5) this.#quantity.secondItem += 1;
+        if (adultsAndChildren < 5) {
+          this.#quantity.secondItem += 1;
+        }
         break;
       case undefined:
         break;
       case false:
-        if (this.#quantity.secondItem > 0) this.#quantity.secondItem -= 1;
+        if (this.#quantity.secondItem > 0) {
+          this.#quantity.secondItem -= 1;
+        }
         break;
       default:
     }
@@ -274,12 +295,16 @@ class DropdownQuantity {
     if (adultsAndChildren > 0) {
       switch (this.#quantity.isThirdItem) {
         case true:
-          if (this.#quantity.thirdItem < 5) this.#quantity.thirdItem += 1;
+          if (this.#quantity.thirdItem < 5) {
+            this.#quantity.thirdItem += 1;
+          }
           break;
         case undefined:
           break;
         case false:
-          if (this.#quantity.thirdItem !== 0) this.#quantity.thirdItem -= 1;
+          if (this.#quantity.thirdItem !== 0) {
+            this.#quantity.thirdItem -= 1;
+          }
           break;
         default:
       }

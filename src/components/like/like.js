@@ -11,8 +11,9 @@ class Like {
 
   #handleCheckboxClick() {
     const currentValue = Number(this.#$likes.text());
-    if (this.#$checkbox.is(':checked')) this.#$likes.text(currentValue + 1);
-    else this.#$likes.text(currentValue - 1);
+    if (this.#$checkbox.is(':checked')) {
+      this.#$likes.text(currentValue + 1);
+    } else this.#$likes.text(currentValue - 1);
   }
 }
 

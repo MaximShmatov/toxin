@@ -6,13 +6,17 @@ class CardRoom {
   #$rightButtons;
 
   constructor($component) {
+    this.#init($component);
+    this.#setHandlers();
+  }
+
+  #init($component) {
     this.#$radio = $component
       .find('.js-card-room__slider-radio');
     this.#$leftButtons = $component
       .find('.js-card-room__slider-control-left-button');
     this.#$rightButtons = $component
       .find('.js-card-room__slider-control-right-button');
-    this.#setHandlers();
   }
 
   #setHandlers() {

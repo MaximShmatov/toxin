@@ -33,32 +33,29 @@ class DropdownQuantity {
   }
 
   constructor($component, mode) {
-    this.#$dropdown = $component.find('.js-dropdown-quantity');
-
-    this.#setAreas();
-    this.#setHandles();
-
+    this.#init($component);
     if (mode === 'room') {
       this.#initRoomMode();
     } else this.#initGuestsMode();
-
-    this.togglePicker();
+    this.#setHandles();
   }
 
   togglePicker() {
     this.#$picker.toggleClass('dropdown-quantity__picker_hidden');
   }
 
-  #setAreas() {
-    this.#$header = this.#$dropdown.find('.js-dropdown-quantity__head');
-    this.#$itemHeader = this.#$dropdown.find('.js-dropdown-quantity__picker-item-header');
-    this.#$headOut = this.#$dropdown.find('.js-dropdown-quantity__head-out');
-    this.#$picker = this.#$dropdown.find('.js-dropdown-quantity__picker');
-    this.#$minus = this.#$dropdown.find('.js-dropdown-quantity__picker-item-quantity-minus');
-    this.#$plus = this.#$dropdown.find('.js-dropdown-quantity__picker-item-quantity-plus');
-    this.#$amount = this.#$dropdown.find('.js-dropdown-quantity__picker-item-quantity-amount');
-    this.#$clear = this.#$dropdown.find('.js-dropdown-quantity__picker-item-clear');
-    this.#$submit = this.#$dropdown.find('.js-dropdown-quantity__picker-item-submit');
+  #init($component) {
+    this.#$dropdown = $component.find('.js-dropdown-quantity');
+    this.#$header = $component.find('.js-dropdown-quantity__head');
+    this.#$itemHeader = $component.find('.js-dropdown-quantity__picker-item-header');
+    this.#$headOut = $component.find('.js-dropdown-quantity__head-out');
+    this.#$picker = $component.find('.js-dropdown-quantity__picker');
+    this.#$minus = $component.find('.js-dropdown-quantity__picker-item-quantity-minus');
+    this.#$plus = $component.find('.js-dropdown-quantity__picker-item-quantity-plus');
+    this.#$amount = $component.find('.js-dropdown-quantity__picker-item-quantity-amount');
+    this.#$clear = $component.find('.js-dropdown-quantity__picker-item-clear');
+    this.#$submit = $component.find('.js-dropdown-quantity__picker-item-submit');
+    this.togglePicker();
   }
 
   #setHandles() {

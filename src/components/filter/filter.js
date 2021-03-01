@@ -10,13 +10,13 @@ class Filter {
   #$comfort;
 
   constructor($component) {
+    this.#init($component);
+  }
+
+  #init($component) {
     this.#$filter = $component;
     this.#$guests = $component.find('.js-filter__guests');
     this.#$comfort = $component.find('.js-filter__comfort');
-    this.#init();
-  }
-
-  #init() {
     new DateFilter(this.#$filter);
     new RangeSlider(this.#$filter);
     new DropdownQuantity(this.#$guests);

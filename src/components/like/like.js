@@ -4,9 +4,13 @@ class Like {
   #$checkbox;
 
   constructor($component) {
+    this.#init($component);
+    this.#setHandles($component);
+  }
+
+  #init($component) {
     this.#$checkbox = $component.find('.js-like__hidden-input');
     this.#$likes = $component.find('.js-like__visible-input-quantity');
-    this.#setHandles($component);
   }
 
   #setHandles($component) {

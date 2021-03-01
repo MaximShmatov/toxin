@@ -25,8 +25,8 @@ class FormReservation {
   constructor($form, dataForm) {
     this.#init($form, dataForm);
     this.#initView($form);
-    this.#setHandles($form);
     this.#calcPayment();
+    this.#setHandles($form);
   }
 
   static formatNumberToStr(num) {

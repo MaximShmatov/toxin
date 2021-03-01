@@ -32,16 +32,16 @@ class DatePicker {
   counter = 0;
 
   constructor($component) {
-    this.#$picker = $component.find('.js-date-picker');
-    this.#setAreas();
+    this.#init($component);
     this.#setHandles();
-    this.#setPickerDate();
   }
 
-  #setAreas() {
-    this.#$title = this.#$picker.find('.js-date-picker__head-title');
-    this.#$bodyRanges = this.#$picker.find('.js-date-picker__body-range');
-    this.#$bodyDates = this.#$picker.find('.js-date-picker__body-date');
+  #init($component) {
+    this.#$picker = $component.find('.js-date-picker');
+    this.#$title = $component.find('.js-date-picker__head-title');
+    this.#$bodyRanges = $component.find('.js-date-picker__body-range');
+    this.#$bodyDates = $component.find('.js-date-picker__body-date');
+    this.#setPickerDate();
   }
 
   #setHandles() {

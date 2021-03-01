@@ -4,23 +4,20 @@ import DateRange from '../../components/date-range/date-range';
 import DateFilter from '../../components/date-filter/date-filter';
 
 class UikitElements {
-  #$elements;
-
   constructor($component) {
-    this.#$elements = $component
-      .find('.js-uikit-elements__sector-element');
-    this.#init();
+    this.#init($component);
   }
 
-  #init() {
-    new DropdownQuantity(this.#$elements.eq(0));
-    new DateRange(this.#$elements.eq(1));
-    new DateFilter(this.#$elements.eq(2));
-    new RangeSlider(this.#$elements.eq(3));
-    new DropdownQuantity(this.#$elements.eq(4), 'room');
-    new DropdownQuantity(this.#$elements.eq(5), 'room').togglePicker();
-    new DropdownQuantity(this.#$elements.eq(6)).togglePicker();
-    new DropdownQuantity(this.#$elements.eq(7)).togglePicker();
+  #init($component) {
+    const $elements = $component.find('.js-uikit-elements__sector-element');
+    new DropdownQuantity($elements.eq(0));
+    new DateRange($elements.eq(1));
+    new DateFilter($elements.eq(2));
+    new RangeSlider($elements.eq(3));
+    new DropdownQuantity($elements.eq(4), 'room');
+    new DropdownQuantity($elements.eq(5), 'room').togglePicker();
+    new DropdownQuantity($elements.eq(6)).togglePicker();
+    new DropdownQuantity($elements.eq(7)).togglePicker();
   }
 }
 

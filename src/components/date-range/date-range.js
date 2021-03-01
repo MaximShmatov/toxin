@@ -17,10 +17,8 @@ class DateRange extends DatePicker {
 
   constructor($component) {
     super($component);
-    this.#$dateRange = $component.find('.js-date-range');
-    this.#setAreas();
+    this.#init($component);
     this.#setHandles();
-    this.#togglePicker();
   }
 
   getDateRange() {
@@ -28,10 +26,12 @@ class DateRange extends DatePicker {
     return (this.#date.getDate() - 1);
   }
 
-  #setAreas() {
-    this.#$datePicker = this.#$dateRange.find('.js-date-range__picker');
-    this.#$inDate = this.#$dateRange.find('.js-date-range__head-in-date');
-    this.#$outDate = this.#$dateRange.find('.js-date-range__head-out-date');
+  #init($component) {
+    this.#$dateRange = $component.find('.js-date-range');
+    this.#$datePicker = $component.find('.js-date-range__picker');
+    this.#$inDate = $component.find('.js-date-range__head-in-date');
+    this.#$outDate = $component.find('.js-date-range__head-out-date');
+    this.#togglePicker();
   }
 
   #setHandles() {

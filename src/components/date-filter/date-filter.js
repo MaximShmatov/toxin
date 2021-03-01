@@ -15,18 +15,17 @@ class DateFilter extends DatePicker {
 
   constructor($dateFilter) {
     super($dateFilter);
-    this.#$dateFilter = $dateFilter.find('.js-date-filter');
-
-    this.#initAreas();
+    this.#init($dateFilter);
     this.#setHandles();
-    this.#setTextBody();
-    this.#$datePicker.toggleClass('date-filter__picker_hidden');
   }
 
-  #initAreas() {
-    this.#$dateHeader = this.#$dateFilter.find('.js-date-filter__body');
-    this.#$dateRange = this.#$dateFilter.find('.js-date-filter__body-range');
-    this.#$datePicker = this.#$dateFilter.find('.js-date-filter__picker');
+  #init($dateFilter) {
+    this.#$dateFilter = $dateFilter.find('.js-date-filter');
+    this.#$dateHeader = $dateFilter.find('.js-date-filter__body');
+    this.#$dateRange = $dateFilter.find('.js-date-filter__body-range');
+    this.#$datePicker = $dateFilter.find('.js-date-filter__picker');
+    this.#$datePicker.toggleClass('date-filter__picker_hidden');
+    this.#setTextBody();
   }
 
   #setHandles() {

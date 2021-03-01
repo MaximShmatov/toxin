@@ -21,8 +21,8 @@ class CardRoom {
   }
 
   #handleButtonLeftClick() {
-    this.#$radio.each((index) => {
-      if (this.#$radio.eq(index).prop('checked')) {
+    this.#$radio.each((index, item) => {
+      if (window.$(item).prop('checked')) {
         this.#$radio.eq(index + 1).prop('checked', true);
         this.#$radio.eq(index + 1).attr('data-direction', 'left');
         return false;
@@ -32,8 +32,8 @@ class CardRoom {
   };
 
   #handleButtonRightClick() {
-    this.#$radio.each((index) => {
-      if (this.#$radio.eq(index).prop('checked') && index > 0) {
+    this.#$radio.each((index, item) => {
+      if (window.$(item).prop('checked') && index > 0) {
         this.#$radio.eq(index - 1).prop('checked', true);
         this.#$radio.eq(index - 1).attr('data-direction', 'right');
         return false;

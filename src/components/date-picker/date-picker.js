@@ -106,13 +106,15 @@ class DatePicker {
   }
 
   #setRangeDate() {
-    this.#$bodyDates.each((i) => {
-      const timeStamp = this.#$bodyDates.eq(i).attr('data-timestamp');
+    this.#$bodyDates.each((i, item) => {
+      const $date = window.$(item);
+      const timeStamp = $date.attr('data-timestamp');
 
       const inRange = (
         timeStamp >= this.dateComeIn
         && timeStamp <= this.dateCheckOut
-        && String(this.dateComeIn) !== String(this.dateCheckOut));
+        && String(this.dateComeIn) !== String(this.dateCheckOut)
+      );
       if (inRange) {
         this.#$bodyRanges.eq(i).addClass('date-picker__body-range');
       } else {
@@ -121,23 +123,24 @@ class DatePicker {
 
       const dateSelected = (
         timeStamp === String(this.dateComeIn)
-        || timeStamp === String(this.dateCheckOut));
+        || timeStamp === String(this.dateCheckOut)
+      );
       if (dateSelected) {
-        this.#$bodyDates.eq(i).addClass('date-picker__body-date_selected');
+        $date.addClass('date-picker__body-date_selected');
         if (timeStamp === String(this.dateComeIn)) {
           this.#$bodyRanges.eq(i).attr('data-range', 'first');
         } else {
           this.#$bodyRanges.eq(i).attr('data-range', 'last');
         }
       } else {
-        this.#$bodyDates.eq(i).removeClass('date-picker__body-date_selected');
+        $date.removeClass('date-picker__body-date_selected');
         this.#$bodyRanges.eq(i).removeAttr('data-range');
       }
 
       if (timeStamp === String(this.#currentDate)) {
-        this.#$bodyDates.eq(i).addClass('date-picker__body-date_current');
+        $date.addClass('date-picker__body-date_current');
       } else {
-        this.#$bodyDates.eq(i).removeClass('date-picker__body-date_current');
+        $date.removeClass('date-picker__body-date_current');
       }
     });
   }
@@ -150,15 +153,16 @@ class DatePicker {
     if (weekDay === 0) weekDay = 7;
     dateCurrent.setDate(-weekDay + 1);
 
-    this.#$bodyDates.each((i) => {
+    this.#$bodyDates.each((i, item) => {
+      const $date = window.$(item);
       dateCurrent.setDate(dateCurrent.getDate() + 1);
       if (dateCurrent.getMonth() === month) {
-        this.#$bodyDates.eq(i).addClass('date-picker__body-date_day-month');
+        $date.addClass('date-picker__body-date_day-month');
       } else {
-        this.#$bodyDates.eq(i).removeClass('date-picker__body-date_day-month');
+        $date.removeClass('date-picker__body-date_day-month');
       }
-      this.#$bodyDates.eq(i).attr('data-timestamp', dateCurrent.getTime());
-      this.#$bodyDates.eq(i).attr('value', dateCurrent.getDate());
+      $date.attr('data-timestamp', dateCurrent.getTime());
+      $date.attr('value', dateCurrent.getDate());
     });
     this.#setTitle();
     this.#setRangeDate();

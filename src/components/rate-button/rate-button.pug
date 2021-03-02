@@ -1,16 +1,14 @@
 mixin rate-button({ rate = 1 } = {})
-  -
-    const id = Math.random();
-    const rateCount = 5;
+  - const id = Math.random();
 
   form.rate-button
-    - for (let i = rateCount; i > 0; i -= 1)
-      input.rate-button__radio(
-        type="radio"
-        name=id
-        id=(id - i)
-        value=i
-        data-rate=rate
-        checked=(rate === (6 - i))
-      )
-      label.rate-button__star(for=(id - i))
+    label.rate-button__star
+      input.rate-button__radio(type="radio" name=id value="1" checked=(rate === 1))
+      label.rate-button__star
+        input.rate-button__radio(type="radio" name=id value="2" checked=(rate === 2))
+        label.rate-button__star
+          input.rate-button__radio(type="radio" name=id value="3" checked=(rate === 3))
+          label.rate-button__star
+            input.rate-button__radio(type="radio" name=id value="4" checked=(rate === 4))
+            label.rate-button__star
+              input.rate-button__radio(type="radio" name=id value="5" checked=(rate === 5))

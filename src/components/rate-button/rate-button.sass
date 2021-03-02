@@ -1,10 +1,8 @@
 .rate-button
   max-width: 120px
-  display: flex
-  justify-content: center
 
   &__star
-    display: block
+    display: flex
     width: 24px
     height: 24px
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
@@ -19,14 +17,15 @@
       mix-blend-mode: lighten
       cursor: pointer
 
+
   &__radio
     position: absolute
     opacity: 0
     z-index: -1
 
-    &:hover + label
-      text-shadow: 0 0 5px rgba(31, 32, 65, 0.5)
+  &__star:hover:before
+    text-shadow: 0 0 5px rgba(31, 32, 65, 0.5)
 
-  &__radio:checked + &__star ~ &__star
+  &__radio:checked + label label, &__radio:checked + label
     &::before
       content: '\e905'

@@ -56,14 +56,14 @@ class DateRange extends DatePicker {
   #handlePickerSelectIn() {
     this.counter = 0;
     this.#date.setTime(Number(this.dateComeIn));
-    const dateString = `${this.#date.getDate()}.${DateRange.#getMonth(this.#date.getMonth())}.${this.#date.getFullYear()}`;
+    const dateString = `${this.#date.getDate()}.${this.#getMonth(this.#date.getMonth())}.${this.#date.getFullYear()}`;
     this.#$inDate.text(dateString);
   }
 
   #handlePickerSelectOut() {
     this.counter = 1;
     this.#date.setTime(Number(this.dateCheckOut));
-    const str = `${this.#date.getDate()}.${DateRange.#getMonth(this.#date.getMonth())}.${this.#date.getFullYear()}`;
+    const str = `${this.#date.getDate()}.${this.#getMonth(this.#date.getMonth())}.${this.#date.getFullYear()}`;
     this.#$outDate.text(str);
   }
 
@@ -82,7 +82,7 @@ class DateRange extends DatePicker {
     }
   }
 
-  static #getMonth(month) {
+  #getMonth(month) {
     let monthStr = '';
     if (month < 9) {
       monthStr = `0${month + 1}`;

@@ -29,9 +29,8 @@ class FormReservation {
     this.#setHandles($form);
   }
 
-  static formatNumberToStr(num) {
-    const n = num.toString();
-    return n.replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, '$1 ');
+  formatNumberToStr(num) {
+    return String(num).replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, '$1 ');
   }
 
   #handleDatePickerSubmit() {
@@ -71,15 +70,15 @@ class FormReservation {
     $component.find('.js-form-reserve__room-info-level')
       .text(this.#level);
     $component.find('.js-form-reserve__room-price-amount')
-      .text(FormReservation.formatNumberToStr(this.#pricePerDay));
+      .text(this.formatNumberToStr(this.#pricePerDay));
     $component.find('.js-form-reserve__pay-days-price')
-      .text(FormReservation.formatNumberToStr(this.#pricePerDay));
+      .text(this.formatNumberToStr(this.#pricePerDay));
     $component.find('.js-form-reserve__pay-services-price')
-      .text(FormReservation.formatNumberToStr(this.#priceDiscount));
+      .text(this.formatNumberToStr(this.#priceDiscount));
     $component.find('.js-form-reserve__pay-services-amount-total')
-      .text(FormReservation.formatNumberToStr(this.#priceService));
+      .text(this.formatNumberToStr(this.#priceService));
     $component.find('.js-form-reserve__pay-other-amount-total')
-      .text(FormReservation.formatNumberToStr(this.#priceAdditionally));
+      .text(this.formatNumberToStr(this.#priceAdditionally));
   }
 
   #calcPayment() {
@@ -89,8 +88,8 @@ class FormReservation {
     const payTotal = payForAllDays - payBase;
 
     this.#$payDays.text(totalDays);
-    this.#$payAmount.text(FormReservation.formatNumberToStr(payForAllDays));
-    this.#$payTotal.text(FormReservation.formatNumberToStr(payTotal));
+    this.#$payAmount.text(this.formatNumberToStr(payForAllDays));
+    this.#$payTotal.text(this.formatNumberToStr(payTotal));
   }
 }
 

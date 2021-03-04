@@ -69,7 +69,7 @@ class DropdownQuantity {
     this.#$plus.eq(1).on('click.dropdownquantity', this.#handlePickerButtonPlusTwoClick.bind(this));
     this.#$plus.eq(2).on('click.dropdownquantity', this.#handlePickerButtonPlusThreeClick.bind(this));
 
-    window.$(document).on('mouseup.dropdownquantity', this.#handleDocumentClick.bind(this));
+    $(document).on('mouseup.dropdownquantity', this.#handleDocumentClick.bind(this));
   }
 
   #handlePickerButtonClearClick() {

@@ -4,4 +4,4 @@ import Like from './like';
   $('.js-like').each(function () {
     new Like($(this));
   });
-}(window.$));
+}($));

@@ -5,4 +5,4 @@ import formData from './form-reservation.json';
   $('.js-form-reserve').each(function () {
     new FormReservation($(this), formData);
   });
-}(window.$));
+}($));

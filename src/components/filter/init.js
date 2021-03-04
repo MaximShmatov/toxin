@@ -4,4 +4,4 @@ import Filter from './filter';
   $('.js-filter').each(function () {
     new Filter($(this));
   });
-}(window.$));
+}($));

@@ -16,4 +16,4 @@ import CardRoom from './card-room';
   $('.js-card-room').each(function () {
     new CardRoom($(this));
   });
-}(window.$));
+}($));

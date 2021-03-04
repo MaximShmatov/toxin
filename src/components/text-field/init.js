@@ -4,4 +4,4 @@ import TextField from './text-field';
   $('.js-text-field').each(function () {
     new TextField($(this));
   });
-}(window.$));
+}($));

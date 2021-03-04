@@ -107,7 +107,7 @@ class DatePicker {
 
   #setRangeDate() {
     this.#$bodyDates.each((i, item) => {
-      const $date = window.$(item);
+      const $date = $(item);
       const timeStamp = $date.attr('data-timestamp');
 
       const inRange = (
@@ -156,7 +156,7 @@ class DatePicker {
     dateCurrent.setDate(-weekDay + 1);
 
     this.#$bodyDates.each((i, item) => {
-      const $date = window.$(item);
+      const $date = $(item);
       dateCurrent.setDate(dateCurrent.getDate() + 1);
       if (dateCurrent.getMonth() === month) {
         $date.addClass('date-picker__body-date_day-month');

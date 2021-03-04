@@ -4,4 +4,4 @@ import FormSearchRoom from './form-search-room';
   $('.js-form-search-room').each(function () {
     new FormSearchRoom($(this));
   });
-}(window.$));
+}($));

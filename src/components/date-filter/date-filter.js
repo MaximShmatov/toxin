@@ -34,7 +34,7 @@ class DateFilter extends DatePicker {
     this.#$datePicker.on('datepicker.submit', this.#handlePickerButtonSubmit.bind(this));
     this.#$datePicker.on('datepicker.clear', this.#handlePickerButtonClear.bind(this));
 
-    window.$(document).on('mouseup.datefilter', this.#handleDocumentMouseup.bind(this));
+    $(document).on('mouseup.datefilter', this.#handleDocumentMouseup.bind(this));
   }
 
   #handleHeaderClick() {

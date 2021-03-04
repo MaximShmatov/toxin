@@ -4,4 +4,4 @@ import UikitElements from './uikit-elements';
   $('.js-uikit-elements').each(function () {
     new UikitElements($(this));
   });
-}(window.$));
+}($));

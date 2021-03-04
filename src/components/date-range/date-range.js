@@ -42,7 +42,7 @@ class DateRange extends DatePicker {
     this.#$dateRange.on('datepicker.clear', this.#handlePickerClear.bind(this));
     this.#$dateRange.on('datepicker.submit', this.#handlePickerSubmit.bind(this));
 
-    window.$(document).on('mouseup.daterange', this.#handleDocumentMouseup.bind(this));
+    $(document).on('mouseup.daterange', this.#handleDocumentMouseup.bind(this));
   }
 
   #handleHeadInClick(evt) {

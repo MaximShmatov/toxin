@@ -1,10 +1,14 @@
-import '../../../node_modules/jquery.maskedinput/src/jquery.maskedinput';
+import 'jquery.maskedinput';
 
 class TextField {
   constructor($component) {
-    const mask = $component.attr('data-mask');
+    this.#init($component);
+  }
+
+  #init($input) {
+    const mask = $input.attr('data-mask');
     if (mask) {
-      $component.mask(mask, { placeholder: 'дд.мм.гггг' });
+      $input.mask(mask, { placeholder: 'дд.мм.гггг' });
     }
   }
 }

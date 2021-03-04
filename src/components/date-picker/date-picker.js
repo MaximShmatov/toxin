@@ -17,7 +17,7 @@ class DatePicker {
 
   #pickerDate = new Date();
 
-  #monthYear = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябр', 'Октябрь', 'Ноябрь', 'Декабрь'];
+  #months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
 
   #dateComeInBefore;
 
@@ -102,7 +102,7 @@ class DatePicker {
   }
 
   #setTitle() {
-    this.#$title.text(`${this.#monthYear[this.#pickerDate.getMonth()]} ${this.#pickerDate.getFullYear()}`);
+    this.#$title.text(`${this.#months[this.#pickerDate.getMonth()]} ${this.#pickerDate.getFullYear()}`);
   }
 
   #setRangeDate() {

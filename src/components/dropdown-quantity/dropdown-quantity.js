@@ -36,7 +36,9 @@ class DropdownQuantity {
     this.#init($component);
     if (mode === 'room') {
       this.#initRoomMode();
-    } else this.#initGuestsMode();
+    } else {
+      this.#initGuestsMode();
+    }
     this.#setHandles();
   }
 
@@ -208,7 +210,9 @@ class DropdownQuantity {
           break;
         default:
       }
-    } else this.#quantity.thirdItem = 0;
+    } else {
+      this.#quantity.thirdItem = 0;
+    }
     this.#quantity.isFirstItem = undefined;
     this.#quantity.isSecondItem = undefined;
     this.#quantity.isThirdItem = undefined;
@@ -305,7 +309,9 @@ class DropdownQuantity {
           break;
         default:
       }
-    } else this.#quantity.thirdItem = 0;
+    } else {
+      this.#quantity.thirdItem = 0;
+    }
     this.#quantity.isFirstItem = undefined;
     this.#quantity.isSecondItem = undefined;
     this.#quantity.isThirdItem = undefined;

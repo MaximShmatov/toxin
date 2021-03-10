@@ -1,3 +1,5 @@
+import itemsRoomAndGuests from './dropdown-quantity.json';
+
 class DropdownQuantity {
   #$dropdown;
 
@@ -21,7 +23,7 @@ class DropdownQuantity {
 
   #setValidQuantity;
 
-  #setCaption;
+  #mode;
 
   #quantity = {
     firstItem: 0,
@@ -32,13 +34,11 @@ class DropdownQuantity {
     isThirdItem: undefined,
   }
 
+  #itemsData;
+
   constructor($component, mode) {
     this.#init($component);
-    if (mode === 'room') {
-      this.#initRoomMode();
-    } else {
-      this.#initGuestsMode();
-    }
+    this.#initMode(mode);
     this.#setHandles();
   }
 
@@ -60,6 +60,23 @@ class DropdownQuantity {
     this.togglePicker();
   }
 
+  #initMode(mode) {
+    this.#mode = mode;
+    if (mode === 'room') {
+      this.#itemsData = itemsRoomAndGuests.room;
+      this.#$picker.find('.js-dropdown-quantity__picker-item').hide();
+      this.#setValidQuantity = this.#setValidRoom;
+    } else {
+      this.#itemsData = itemsRoomAndGuests.guests;
+      this.#setValidQuantity = this.#setValidGuests;
+    }
+    this.#$headOut.text(this.#itemsData.title);
+    const { itemNames } = this.#itemsData;
+    this.#$itemHeader.eq(0).text(itemNames[0]);
+    this.#$itemHeader.eq(1).text(itemNames[1]);
+    this.#$itemHeader.eq(2).text(itemNames[2]);
+  }
+
   #setHandles() {
     this.#$clear.on('click.dropdownquantity', this.#handlePickerButtonClearClick.bind(this));
     this.#$header.on('click.dropdownquantity', this.#handleDropdownHeadClick.bind(this));
@@ -70,7 +87,6 @@ class DropdownQuantity {
     this.#$plus.eq(0).on('click.dropdownquantity', this.#handlePickerButtonPlusOneClick.bind(this));
     this.#$plus.eq(1).on('click.dropdownquantity', this.#handlePickerButtonPlusTwoClick.bind(this));
     this.#$plus.eq(2).on('click.dropdownquantity', this.#handlePickerButtonPlusThreeClick.bind(this));
-
     $(document).on('mouseup.dropdownquantity', this.#handleDocumentClick.bind(this));
   }
 
@@ -138,25 +154,6 @@ class DropdownQuantity {
     }
   }
 
-  #initRoomMode() {
-    this.#$picker.find('.js-dropdown-quantity__picker-item').hide();
-    this.#$headOut.text('Удобства номера');
-    this.#$itemHeader.eq(0).text('Спальни');
-    this.#$itemHeader.eq(1).text('Кровати');
-    this.#$itemHeader.eq(2).text('Ванные комнаты');
-    this.#setValidQuantity = this.#setValidRoom;
-    this.#setCaption = this.#setCaptionRoom;
-  }
-
-  #initGuestsMode() {
-    this.#$headOut.text('Сколько гостей');
-    this.#$itemHeader.eq(0).text('Взрослые');
-    this.#$itemHeader.eq(1).text('Дети');
-    this.#$itemHeader.eq(2).text('Младенцы');
-    this.#setValidQuantity = this.#setValidGuests;
-    this.#setCaption = this.#setCaptionGuests;
-  }
-
   #setValidRoom() {
     switch (this.#quantity.isFirstItem) {
       case true:
@@ -218,47 +215,6 @@ class DropdownQuantity {
     this.#quantity.isThirdItem = undefined;
   }
 
-  #setCaptionRoom() {
-    let selectedCaption = '';
-    this.#$amount.eq(0).text(this.#quantity.firstItem);
-    this.#$amount.eq(1).text(this.#quantity.secondItem);
-    this.#$amount.eq(2).text(this.#quantity.thirdItem);
-    switch (this.#quantity.firstItem) {
-      case 0:
-        this.#$clear.css('visibility', 'hidden');
-        selectedCaption = 'Удобства номера';
-        break;
-      case 1:
-        this.#$clear.css('visibility', 'visible');
-        selectedCaption = `${this.#quantity.firstItem} спальня`;
-        break;
-      case 2:
-      case 3:
-      case 4:
-        selectedCaption = `${this.#quantity.firstItem} спальни`;
-        break;
-      case 5:
-        selectedCaption = `${this.#quantity.firstItem} спален`;
-        break;
-      default:
-    }
-    switch (this.#quantity.secondItem) {
-      case 1:
-        selectedCaption = `${selectedCaption} ${this.#quantity.secondItem} кровать`;
-        break;
-      case 2:
-      case 3:
-      case 4:
-        selectedCaption = `${selectedCaption} ${this.#quantity.secondItem} кровати`;
-        break;
-      case 5:
-        selectedCaption = `${selectedCaption} ${this.#quantity.secondItem} кроватей`;
-        break;
-      default:
-    }
-    this.#$headOut.text(selectedCaption);
-  }
-
   #setValidGuests() {
     let adultsAndChildren = this.#quantity.firstItem + this.#quantity.secondItem;
     switch (this.#quantity.isFirstItem) {
@@ -317,42 +273,51 @@ class DropdownQuantity {
     this.#quantity.isThirdItem = undefined;
   }
 
-  #setCaptionGuests() {
+  #setCaption() {
     let selectedCaption = '';
-    const adultsAndChildren = this.#quantity.firstItem + this.#quantity.secondItem;
+    let firstItemQuantity;
+    let secondItemQuantity;
+    if (this.#mode === 'room') {
+      firstItemQuantity = this.#quantity.firstItem;
+      secondItemQuantity = this.#quantity.secondItem;
+    } else {
+      firstItemQuantity = this.#quantity.firstItem + this.#quantity.secondItem;
+      secondItemQuantity = this.#quantity.thirdItem;
+    }
     this.#$amount.eq(0).text(this.#quantity.firstItem);
     this.#$amount.eq(1).text(this.#quantity.secondItem);
     this.#$amount.eq(2).text(this.#quantity.thirdItem);
-    switch (adultsAndChildren) {
+    const { variants } = this.#itemsData;
+    switch (firstItemQuantity) {
       case 0:
         this.#$clear.css('visibility', 'hidden');
-        selectedCaption = 'Сколько гостей';
+        selectedCaption = this.#itemsData.title;
         break;
       case 1:
         this.#$clear.css('visibility', 'visible');
-        selectedCaption = `${adultsAndChildren} гость`;
+        selectedCaption = `${firstItemQuantity} ${variants[0]}`;
         break;
       case 2:
       case 3:
       case 4:
-        selectedCaption = `${adultsAndChildren} гостя`;
+        selectedCaption = `${firstItemQuantity} ${variants[1]}`;
         break;
       case 5:
-        selectedCaption = `${adultsAndChildren} гостей`;
+        selectedCaption = `${firstItemQuantity} ${variants[2]}`;
         break;
       default:
     }
-    switch (this.#quantity.thirdItem) {
+    switch (secondItemQuantity) {
       case 1:
-        selectedCaption = `${selectedCaption} ${this.#quantity.thirdItem} младенец`;
+        selectedCaption = `${selectedCaption} ${secondItemQuantity} ${variants[3]}`;
         break;
       case 2:
       case 3:
       case 4:
-        selectedCaption = `${selectedCaption} ${this.#quantity.thirdItem} младенца`;
+        selectedCaption = `${selectedCaption} ${secondItemQuantity} ${variants[4]}`;
         break;
       case 5:
-        selectedCaption = `${selectedCaption} ${this.#quantity.thirdItem} младенцев`;
+        selectedCaption = `${selectedCaption} ${secondItemQuantity} ${variants[5]}`;
         break;
       default:
     }

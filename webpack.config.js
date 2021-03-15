@@ -21,8 +21,8 @@ module.exports = {
   plugins: [
     ...htmlWebpackPlugins,
     new webpack.ProvidePlugin({
-      '$': 'jquery',
-      'jQuery': 'jquery',
+      $: 'jquery',
+      jQuery: 'jquery',
       'window.$': 'jquery',
     }),
   ],
@@ -30,7 +30,10 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        use: 'babel-loader',
+        use: [
+          'babel-loader',
+          'import-glob-loader',
+        ],
       },
       {
         test: /\.(sass|scss|css)$/,
@@ -39,11 +42,13 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
+              url: false,
               modules: false,
             },
           },
           'postcss-loader',
           'sass-loader',
+          'import-glob-loader',
         ],
       },
       {

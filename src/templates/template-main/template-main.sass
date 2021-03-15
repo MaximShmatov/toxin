@@ -1,9 +1,22 @@
+$color-primary-opaque: #1F2041
+$color-primary-dark: rgba(31, 32, 65, 0.75)
+$color-primary-shady: rgba(31, 32, 65, 0.5)
+$color-primary-light: rgba(31, 32, 65, 0.25)
+$color-primary-limpid: rgba(31, 32, 65, 0.05)
+$color-purple: #BC9CFF
+$color-green: #6FCF97
+
+@mixin font-primary
+  font-family: Montserrat, Arial, sans-serif
+  font-size: 14px
+  color: $color-primary-light
+
 html
   font-family: Montserrat, Arial, sans-serif
   font-style: normal
   font-weight: normal
   font-size: 14px
   line-height: 24px
-  color: rgba(31, 32, 65, 0.75)
+  color: $color-primary-dark
   background: #E5E5E5
   height: 100%

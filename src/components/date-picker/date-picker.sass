@@ -1,7 +1,7 @@
 .date-picker
-  border: 1px solid rgba(31, 32, 65, 0.25)
+  border: 1px solid $color-primary-light
   box-sizing: border-box
-  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05)
+  box-shadow: 0 10px 20px $color-primary-limpid
   border-radius: 4px
   background: white
   max-width: 320px
@@ -16,7 +16,7 @@
     &-title
       font-weight: bold
       font-size: 19px
-      color: #1F2041
+      color: $color-primary-opaque
       max-width: 80px
       text-align: center
       padding-top: 2px
@@ -34,7 +34,7 @@
       &::before
         font-family: "Material Icons", Icomoon, sans-serif
         font-size: 24px
-        color: #BC9CFF
+        color: $color-purple
         cursor: pointer
 
     &-list-left:before
@@ -78,21 +78,21 @@
       outline: none
       padding: 0
       background: transparent
-      color: rgba(31, 32, 65, 0.25)
+      color: $color-primary-light
       cursor: pointer
 
       &_day-month
-        color: rgba(31, 32, 65, 0.5)
+        color: $color-primary-shady
 
       &_selected, &_current
         font-weight: bold
         color: white
 
       &_selected
-        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+        background: linear-gradient(180deg, $color-purple 0%, #8BA4F9 100%)
 
       &_current
-        background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)
+        background: linear-gradient(180deg, $color-green 0%, #66D2EA 100%)
 
   &__footer
     display: flex

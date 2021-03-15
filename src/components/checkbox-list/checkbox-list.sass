@@ -9,7 +9,7 @@
 
     &:focus + label, &:hover:not(:disabled) + label
       & h3, div:before
-        text-shadow: 0 0 5px rgba(31, 32, 65, 0.5)
+        text-shadow: 0 0 5px $color-primary-shady
 
     &:checked + label div:before
       content: '\e902'
@@ -32,7 +32,7 @@
       text-transform: uppercase
       background: transparent
       margin: 0
-      color: #1F2041
+      color: $color-primary-opaque
 
     &-arrow
       display: flex
@@ -47,14 +47,14 @@
         content: '\e903'
         font-size: 24px
         line-height: 24px
-        color: rgba(31, 32, 65, 0.5)
+        color: $color-primary-shady
 
   &__picker
     display: none
     position: relative
     bottom: 0
     padding-top: 3px
-    color: rgba(31, 32, 65, 0.5)
+    color: $color-primary-shady
 
     &-item:not(:last-of-type)
       margin-bottom: 10px

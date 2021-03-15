@@ -1,11 +1,11 @@
 @mixin header
   font-size: 19px
   font-weight: bold
-  color: #1F2041
+  color: $color-primary-opaque
   margin: 0
 
 .page-room
-  border-bottom: 1px solid rgba(31, 32, 65, 0.25)
+  border-bottom: 1px solid $color-primary-light
 
   &__preview
     background-image: url('img/room-details-img3.jpg'), url('img/room-details-img2.jpg'), url('img/room-details-img1.jpg')
@@ -36,7 +36,7 @@
           display: block
           width: 280px
           height: 1px
-          background-color: rgba(31, 32, 65, 0.1)
+          background-color: $color-primary-light
           margin: 20px 0
 
     &-effect
@@ -64,7 +64,7 @@
           padding-bottom: 20px
 
       &-header span
-        color: rgba(31, 32, 65, 0.5)
+        color: $color-primary-shady
 
       &-item:nth-of-type(2)
         padding-bottom: 23px

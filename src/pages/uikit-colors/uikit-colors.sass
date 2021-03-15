@@ -1,6 +1,6 @@
 @mixin header
   font-weight: bold
-  color: #1F2041
+  color: $color-primary-opaque
 
 .uikit-colors
   display: flex
@@ -15,7 +15,6 @@
       padding-bottom: 20px
 
     &-square
-      min-width: 70px
       width: 70px
       height: 70px
       border-radius: 6px
@@ -32,25 +31,25 @@
 
 
     &-block:nth-of-type(1) &-square
-      background-color: rgba(31, 32, 65, 1)
+      background-color: $color-primary-opaque
 
     &-block:nth-of-type(2) &-square
-      background-color: rgba(31, 32, 65, .75)
+      background-color: $color-primary-dark
 
     &-block:nth-of-type(3) &-square
-      background-color: rgba(31, 32, 65, .50)
+      background-color: $color-primary-shady
 
     &-block:nth-of-type(4) &-square
-      background-color: rgba(31, 32, 65, .25)
+      background-color: $color-primary-light
 
     &-block:nth-of-type(5) &-square
-      background-color: rgba(31, 32, 65, .05)
+      background-color: $color-primary-limpid
 
     &-block:nth-of-type(6) &-square
-      background-color: #BC9CFF
+      background-color: $color-purple
 
     &-block:nth-of-type(7) &-square
-      background-color: #6FCF97
+      background-color: $color-green
 
   &__value-hex
     font-weight: normal
@@ -59,7 +58,7 @@
     font-family: Montserrat, Arial, sans-serif
     font-size: 14px
     line-height: 24px
-    color: rgba(31, 32, 65, 0.25)
+    color: $color-primary-light
     display: grid
     grid-template-columns: 40px 1fr
     grid-template-rows: repeat(4, min-content)
@@ -106,9 +105,9 @@
         line-height: 15px
         font-weight: bold
         text-transform: uppercase
-        color: #1F2041
+        color: $color-primary-opaque
         padding-bottom: 47px
 
       &:nth-child(8)
-        color: rgba(31, 32, 65, 0.75)
+        color: $color-primary-dark
         max-width: 301px

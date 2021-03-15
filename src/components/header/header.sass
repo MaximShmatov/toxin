@@ -10,7 +10,7 @@
 
   &__wrapper
     background-color: white
-    box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05)
+    box-shadow: 0 10px 20px $color-primary-limpid
 
   &__menu
     display: flex
@@ -29,7 +29,7 @@
       margin-left: 20px
 
     &-item:nth-of-type(1) > a
-      color: rgba(31, 32, 65, 0.75)
+      color: $color-primary-dark
       font-weight: bold
 
     &-item:nth-of-type(2)
@@ -41,17 +41,17 @@
       display: flex
 
     &-ref
-      color: rgba(31, 32, 65, 0.5)
+      color: $color-primary-shady
       text-decoration: none
 
     &-separator
       height: 30px
       width: 1px
       margin: 0 20px
-      background: rgba(31, 32, 65, 0.1)
+      background: $color-primary-limpid
 
     &-user
-      color: rgba(31, 32, 65, 0.5)
+      color: $color-primary-shady
 
   &__submenu
     border: none
@@ -70,7 +70,7 @@
       content: '\e903'
       font-size: 24px
       line-height: 20px
-      color: rgba(31, 32, 65, 0.5)
+      color: $color-primary-shady
 
     &-items
       display: none
@@ -80,7 +80,7 @@
       top: 100%
       right: 0
       background-color: white
-      border: 1px solid rgba(31, 32, 65, 0.5)
+      border: 1px solid $color-primary-shady
       z-index: 1
 
     &-item

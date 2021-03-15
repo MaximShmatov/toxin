@@ -16,17 +16,17 @@
       float: right
 
     &:hover &-out, &:hover &-in, &:hover ~ .date-range__picker .date-picker
-      border-color: rgba(31, 32, 65, 0.5)
+      border-color: $color-primary-shady
 
     &:hover &-in-arrow, &:hover &-out-arrow
-      color: rgba(31, 32, 65, 0.75)
+      color: $color-primary-dark
 
     &-title
       font-weight: bold
       font-size: 12px
       line-height: 15px
       text-transform: uppercase
-      color: #1F2041
+      color: $color-primary-opaque
       padding-bottom: 5px
       margin: 0
 
@@ -38,8 +38,8 @@
       background-color: transparent
       width: 150px
       height: 44px
-      border: 1px solid rgba(31, 32, 65, 0.25)
-      color: rgba(31, 32, 65, 0.75)
+      border: 1px solid $color-primary-light
+      color: $color-primary-dark
       box-sizing: border-box
       border-radius: 4px
       padding: 0
@@ -47,10 +47,10 @@
       cursor: pointer
 
       &:focus
-        border: 1px solid rgba(31, 32, 65, 0.5)
+        border: $color-primary-shady
 
       &:focus &-arrow
-        color: rgba(31, 32, 65, 0.75)
+        color: $color-primary-dark
 
       &-date
         text-transform: uppercase
@@ -62,7 +62,7 @@
         align-items: center
         width: 42px
         height: 100%
-        color: rgba(31, 32, 65, 0.5)
+        color: $color-primary-shady
         padding-top: 2px
 
         &::before
@@ -79,7 +79,7 @@
     z-index: 10
 
     &:hover .date-picker
-      border-color: rgba(31, 32, 65, 0.5)
+      border-color: $color-primary-shady
 
     &_hidden
       display: none

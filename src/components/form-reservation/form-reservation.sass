@@ -6,15 +6,15 @@
   height: 20px
   font-size: 12px
   font-weight: bold
-  color: rgba(31, 32, 65, 0.25)
+  color: $color-primary-light
   vertical-align: text-top
-  border: 1px solid rgba(31, 32, 65, 0.25)
+  border: 1px solid $color-primary-light
   box-sizing: border-box
   border-radius: 50% 50%
 
 @mixin font-head
   font-weight: bold
-  color: #1F2041
+  color: $color-primary-opaque
 
 @mixin font-head-third
   font-size: 12px
@@ -24,9 +24,9 @@
 
 .form-reserve
   background: white
-  border: 1px solid rgba(0, 0, 0, 0.12)
+  border: 1px solid $color-primary-limpid
   box-sizing: border-box
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2)
+  box-shadow: 0 0 25px $color-primary-light
   border-radius: 4px
   max-width: 380px
 
@@ -46,7 +46,7 @@
   &__room-info
     &-num
       @include font-head-third
-      color: #1F2041
+      color: $color-primary-opaque
 
     &-number
       @include font-head
@@ -55,10 +55,10 @@
 
     &-level
       @include font-head-third
-      color: #BC9CFF
+      color: $color-purple
 
   &__room-price
-    color: rgba(31, 32, 65, 0.5)
+    color: $color-primary-shady
 
     &-amount, &-rub
       font-weight: bold
@@ -112,4 +112,4 @@
 
     &-separator
       flex-grow: 1
-      border-bottom: 1px dotted rgba(31, 32, 65, 0.25)
+      border-bottom: 1px dotted $color-primary-light

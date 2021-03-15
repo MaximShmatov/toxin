@@ -6,18 +6,18 @@
     opacity: 0
 
     &:checked + .like__visible-input
-      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
-      color: #BC9CFF
+      background: linear-gradient(180deg, $color-purple 0%, #8BA4F9 100%)
+      color: $color-purple
 
       & .like__visible-quantity::before
         content: '\e906'
 
     &:focus + div
-      box-shadow: 0 0 2px 1px rgba(31, 32, 65, 0.5)
+      box-shadow: 0 0 2px 1px $color-primary-shady
 
   &__visible-input
-    background: rgba(31, 32, 65, 0.25)
-    color: rgba(31, 32, 65, 0.25)
+    background: $color-primary-light
+    color: $color-primary-light
     box-sizing: border-box
     border-radius: 10px
     padding: 1px

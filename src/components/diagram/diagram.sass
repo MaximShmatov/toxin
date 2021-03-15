@@ -11,7 +11,7 @@
     @include header-first
     font-size: 19px
     line-height: 24px
-    color: #1F2041
+    color: $color-primary-opaque
     padding-bottom: 21px
     margin: 0
 
@@ -40,12 +40,12 @@
       &:nth-child(2)
         top: 0
         right: 0
-        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+        background: linear-gradient(180deg, $color-purple 0%, #8BA4F9 100%)
 
       &:nth-child(3)
         bottom: 0
         right: 0
-        background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)
+        background: linear-gradient(180deg, $color-green 0%, #66D2EA 100%)
 
     &-content
       position: absolute
@@ -58,19 +58,20 @@
       border-radius: 50%
       background-color: white
 
-      &-title:first-child
-        @include header-first
-        font-size: 24px
-        line-height: 30px
-        color: #BC9CFF
+      &-title
+        color: $color-purple
 
-      &-title:last-child
-        font-weight: bold
-        font-size: 12px
-        line-height: 15px
-        text-transform: uppercase
-        color: #BC9CFF
-        padding-bottom: 6px
+        &:first-child
+          @include header-first
+          font-size: 24px
+          line-height: 30px
+
+        &:last-child
+          font-weight: bold
+          font-size: 12px
+          line-height: 15px
+          text-transform: uppercase
+          padding-bottom: 6px
 
   &__list
     padding-left: 30px
@@ -91,10 +92,10 @@
         background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%)
 
       &:nth-of-type(2)::before
-        background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)
+        background: linear-gradient(180deg, $color-green 0%, #66D2EA 100%)
 
       &:nth-of-type(3)::before
-        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+        background: linear-gradient(180deg, $color-purple 0%, #8BA4F9 100%)
 
       &:nth-of-type(4)::before
         background: linear-gradient(180deg, #919191 0%, #3D4975 100%)

@@ -35,7 +35,8 @@ block page-site
         div.page-room__details-reviews-item
           +review(reviewData[1])
       aside.page-room__details-rules
-        +bullet-list({title: "Правила", list})
+        h2.page-room__details-rules-title Правила
+        +bullet-list({list})
       aside.page-room__details-cancel
         h2.page-room__details-cancel-title Отмена
         p.page-room__details-cancel-note

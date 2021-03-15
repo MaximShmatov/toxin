@@ -5,7 +5,7 @@
     display: table-row
 
     &-first, &-second, &-third, &-intermediate, &-last, &-next
-      font-family: Montserrat, Arial, sans-serif
+      @include font-primary
       font-size: 12px
       line-height: 15px
       width: 40px
@@ -38,10 +38,8 @@
       background: linear-gradient(180deg, $color-green 0%, #66D2EA 100%)
 
       &::after
+        @include font-icon
         display: block
-        font-family: "Material Icons", Icomoon, sans-serif
-        font-size: 24px
-        line-height: 24px
         content: '\e901'
         color: white
 

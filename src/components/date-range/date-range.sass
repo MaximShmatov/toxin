@@ -22,13 +22,7 @@
       color: $color-primary-dark
 
     &-title
-      font-weight: bold
-      font-size: 12px
-      line-height: 15px
-      text-transform: uppercase
-      color: $color-primary-opaque
       padding-bottom: 5px
-      margin: 0
 
     &-in, &-out
       font: inherit
@@ -66,10 +60,8 @@
         padding-top: 2px
 
         &::before
-          font-family: "Material Icons", Icomoon, sans-serif
+          @include font-icon
           content: '\e903'
-          font-size: 24px
-          line-height: 24px
 
   &__picker
     display: block

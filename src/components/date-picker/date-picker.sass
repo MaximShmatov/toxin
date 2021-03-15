@@ -14,13 +14,9 @@
     padding: 18px 0 5px
 
     &-title
-      font-weight: bold
-      font-size: 19px
-      color: $color-primary-opaque
       max-width: 80px
       text-align: center
       padding-top: 2px
-      margin: 0
 
     &-list-left, &-list-right
       width: 24px
@@ -32,8 +28,7 @@
       margin: 0 20px
 
       &::before
-        font-family: "Material Icons", Icomoon, sans-serif
-        font-size: 24px
+        @include font-icon
         color: $color-purple
         cursor: pointer
 

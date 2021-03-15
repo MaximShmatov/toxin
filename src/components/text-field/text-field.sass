@@ -1,10 +1,6 @@
-@mixin font
-  font-family: Montserrat, Arial, sans-serif
-  font-size: 14px
-  color: $color-primary-light
-
 .text-field
-  @include font
+  @include font-body
+  color: $color-primary-light
   padding: 0 14px
   box-sizing: border-box
   border-radius: 4px
@@ -14,19 +10,15 @@
   outline: none
 
   &__title
-    font-weight: bold
-    font-size: 12px
-    line-height: 15px
-    text-transform: uppercase
-    color: $color-primary-opaque
     padding-bottom: 5px
-    margin: 0
 
   &::-webkit-input-placeholder
-    @include font
+    @include font-body
+    color: $color-primary-light
 
   &:-ms-input-placeholder
-    @include font
+    @include font-body
+    color: $color-primary-light
 
   &:hover, &:focus
     color: $color-primary-dark

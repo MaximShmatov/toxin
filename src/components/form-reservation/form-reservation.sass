@@ -1,28 +1,24 @@
-@mixin info
-  display: flex
-  justify-content: center
-  align-items: center
-  width: 20px
-  height: 20px
-  font-size: 12px
-  font-weight: bold
-  color: $color-primary-light
-  vertical-align: text-top
-  border: 1px solid $color-primary-light
-  box-sizing: border-box
-  border-radius: 50% 50%
-
-@mixin font-head
-  font-weight: bold
-  color: $color-primary-opaque
-
-@mixin font-head-third
-  font-size: 12px
-  line-height: 15px
-  font-weight: bold
-  text-transform: uppercase
-
 .form-reserve
+  @mixin info
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 20px
+    height: 20px
+    font-size: 12px
+    font-weight: bold
+    color: $color-primary-light
+    vertical-align: text-top
+    border: 1px solid $color-primary-light
+    box-sizing: border-box
+    border-radius: 50% 50%
+
+  @mixin font-header
+    font-size: 12px
+    font-weight: bold
+    line-height: 15px
+    text-transform: uppercase
+
   background: white
   border: 1px solid $color-primary-limpid
   box-sizing: border-box
@@ -45,26 +41,31 @@
 
   &__room-info
     &-num
-      @include font-head-third
+      @include font-header
       color: $color-primary-opaque
 
     &-number
-      @include font-head
       font-size: 24px
+      font-weight: bold
       line-height: 30px
+      color: $color-primary-opaque
 
     &-level
-      @include font-head-third
+      @include font-header
       color: $color-purple
 
   &__room-price
     color: $color-primary-shady
 
     &-amount, &-rub
+      font-size: 14px
       font-weight: bold
+      line-height: 24px
 
     &-term
       font-size: 12px
+      font-weight: normal
+      line-height: 15px
 
   &__date
     padding-bottom: 21px
@@ -100,9 +101,10 @@
         text-align: right
 
   &__total
-    @include font-head
     font-size: 19px
     line-height: 24px
+    font-weight: bold
+    color: $color-primary-opaque
     display: flex
     justify-content: space-between
     align-items: baseline

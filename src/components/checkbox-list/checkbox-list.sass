@@ -26,13 +26,7 @@
     cursor: pointer
 
     &-title
-      font-weight: bold
-      font-size: 12px
-      line-height: 15px
-      text-transform: uppercase
       background: transparent
-      margin: 0
-      color: $color-primary-opaque
 
     &-arrow
       display: flex
@@ -43,10 +37,8 @@
       height: 100%
 
       &::before
-        font-family: "Material Icons", Icomoon, sans-serif
+        @include font-icon
         content: '\e903'
-        font-size: 24px
-        line-height: 24px
         color: $color-primary-shady
 
   &__picker

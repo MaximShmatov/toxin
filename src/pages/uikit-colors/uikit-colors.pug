@@ -15,7 +15,7 @@ block page-uikit
       { tag: 'h1', sample: 'This one is the sub-section or widget title' },
       { tag: 'h2', sample: 'Next one is the item title inside widgets' },
       { tag: 'h3', sample: 'This is a label or cta text' },
-      { tag: 'h4', sample: 'This is the body text which is used for most of the design, like paragraphs, lists, etc.' },
+      { tag: 'body', sample: 'This is the body text which is used for most of the design, like paragraphs, lists, etc.' },
     ]
 
   article.uikit-colors
@@ -31,4 +31,4 @@ block page-uikit
       each example in tags
         - const { tag, sample } = example
         span.uikit-colors__font-tag= tag
-        span.uikit-colors__font-sample= sample
+        #{tag === 'body' ? 'span' : tag}.uikit-colors__font-sample= sample

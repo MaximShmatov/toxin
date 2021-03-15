@@ -8,15 +8,42 @@ $color-green: #6FCF97
 
 @mixin font-primary
   font-family: Montserrat, Arial, sans-serif
-  font-size: 14px
-  color: $color-primary-light
 
-html
-  font-family: Montserrat, Arial, sans-serif
-  font-style: normal
-  font-weight: normal
+@mixin font-body
+  @include font-primary
   font-size: 14px
   line-height: 24px
-  color: $color-primary-dark
+
+@mixin font-icon
+  font-family: "Material Icons", Icomoon, sans-serif
+  font-size: 24px
+  line-height: 24px
+
+html
+  @include font-body
   background: #E5E5E5
+  color: $color-primary-dark
   height: 100%
+
+h1, h2, h3
+  color: $color-primary-opaque
+  margin: 0
+
+h1, legend
+  font-size: 24px
+  line-height: 30px
+
+h2
+  font-size: 19px
+  line-height: 24px
+
+h3
+  font-size: 12px
+  font-weight: bold
+  line-height: 15px
+  text-transform: uppercase
+
+legend
+  font-weight: bold
+  color: $color-primary-opaque
+  padding: 0

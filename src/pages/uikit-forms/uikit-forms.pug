@@ -12,17 +12,17 @@ block page-uikit
 
   div.uikit-cards__wrapper
     article.uikit-cards
-      section.uikit-cards__form
+      section.uikit-cards__form-search
         +form-search-room({title: "Найдём номера под ваши пожелания"})
-      section.uikit-cards__form
+      section.uikit-cards__form-reservation
         +form-reservation()
-      section.uikit-cards__form.js-uikit-cards__form
+      section.uikit-cards__form-picker.js-uikit-cards__form-picker
         +date-picker()
-      section.uikit-cards__form
+      section.uikit-cards__form-registration
         +form-registration({title: "Регистрация аккаунта", caption: "Уже есть аккаунт на Toxin"})
-      section.uikit-cards__form
+      section.uikit-cards__form-sign
         +form-come-in({title: "Войти", caption: "Нет аккаунта на Toxin?"})
-      section.uikit-cards__form
+      section.uikit-cards__form-card-top
         +card-room(cards[0])
-      section.uikit-cards__form
+      section.uikit-cards__form-card-bottom
         +card-room(cards[1])

@@ -3,13 +3,13 @@ extends ../../templates/template-uikit/template-uikit
 block page-uikit
   -
     const colors = [
-      { name: 'Dark Shade 100%', hex: '#1F2041' },
-      { name: 'Dark Shade 75%', hex: '#1F2041' },
-      { name: 'Dark Shade 50%', hex: '#1F2041' },
-      { name: 'Dark Shade 25%', hex: '#1F2041' },
-      { name: 'Dark Shade 5%', hex: '#1F2041' },
-      { name: 'Purple', hex: '#BC9CFF' },
-      { name: 'Green', hex: '#6FCF97' },
+      { id: 'opaque', name: 'Dark Shade 100%', hex: '#1F2041' },
+      { id: 'dark', name: 'Dark Shade 75%', hex: '#1F2041' },
+      { id: 'shady', name: 'Dark Shade 50%', hex: '#1F2041' },
+      { id: 'light', name: 'Dark Shade 25%', hex: '#1F2041' },
+      { id: 'limpid', name: 'Dark Shade 5%', hex: '#1F2041' },
+      { id: 'purple', name: 'Purple', hex: '#BC9CFF' },
+      { id: 'green', name: 'Green', hex: '#6FCF97' },
     ]
     const tags = [
       { tag: 'h1', sample: 'This one is the sub-section or widget title' },
@@ -21,14 +21,14 @@ block page-uikit
   article.uikit-colors
     section.uikit-colors__colors
       each color in colors
+        - const { id, name, hex } = color;
         div.uikit-colors__colors-block
-          div.uikit-colors__colors-square
+          div(class=`uikit-colors__colors-${id}`)
           div.uikit-colors__colors-value
-            - const { name, hex } = color;
             span.uikit-colors__value-name= name
             span.uikit-colors__value-hex= hex
     section.uikit-colors__font
       each example in tags
         - const { tag, sample } = example
-        span.uikit-colors__font-tag= tag
-        #{tag === 'body' ? 'span' : tag}.uikit-colors__font-sample= sample
+        span(class=`uikit-colors__font-${tag}`)= tag
+        #{tag === 'body' ? 'span' : tag}(class=`uikit-colors__font-sample-${tag}`)= sample

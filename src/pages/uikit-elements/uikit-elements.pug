@@ -28,108 +28,108 @@ block page-uikit
     const checkboxListItems = require('../../components/checkbox-list/checkbox-list.json');
     const checkboxRichItems = require('../../components/checkbox-rich/checkbox-rich.json');
 
-  article.uikit-elements.js-uikit-elements
+  article.uikit-elements
 
     // sector-1
     section.uikit-elements__sector
-      div.uikit-elements__sector-element
+      div.uikit-elements__sector-text-field-email
         span.uikit-elements__sector-element-caption Default
         +text-field({type: "email", value: "Email", header: "Text field"})
-      div.uikit-elements__sector-element
+      div.uikit-elements__sector-text-field
         span.uikit-elements__sector-element-caption Hover / Focus
         +text-field({type: "text", value: "Имя", header: "Text field"})
-      div.uikit-elements__sector-element.js-uikit-elements__sector-element
+      div.uikit-elements__sector-dropdown.js-uikit-elements__sector-dropdown
         +dropdown-quantity({title: "Dropdown"})
-      div.uikit-elements__sector-element
+      div.uikit-elements__sector-text-field-mask
         +text-field({type: "text", value: "дд.мм.гггг", mask: "99.99.9999", header: "Masked text field"})
-      div.uikit-elements__sector-element.js-uikit-elements__sector-element
+      div.uikit-elements__sector-date-range.js-uikit-elements__sector-date-range
         +date-range({titleFirst: "Date dropdown", titleSecond: "Date dropdown"})
-      div.uikit-elements__sector-element.js-uikit-elements__sector-element
+      div.uikit-elements__sector-date-filter.js-uikit-elements__sector-date-filter
         +date-filter({title: "Filter date dropdown"})
-      h3.uikit-elements__sector-element-title Subscription text field
-      div.uikit-elements__sector-element
+      h3.uikit-elements__sector-subscription-title Subscription text field
+      div.uikit-elements__sector-subscription
         +subscription({})
 
     // sector-2
     section.uikit-elements__sector
-      div.uikit-elements__sector-element
+      div.uikit-elements__sector-checkbox-group
         +checkbox-group({title: "Checkbox buttons", items: checkboxGroupItems})
-      h3.uikit-elements__sector-element-title Radio buttons
-      div.uikit-elements__sector-element
+      h3.uikit-elements__sector-radio-title Radio buttons
+      div.uikit-elements__sector-radio
         +radio({name: "registration__mw-radio", value: "m", caption: "Мужчина", isChecked: true})
         +radio({name: "registration__mw-radio", value: "w", caption: "Женщина"})
-      h3.uikit-elements__sector-element-title Toggle
-      div.uikit-elements__sector-element
+      h3.uikit-elements__sector-toggle-title Toggle
+      div.uikit-elements__sector-toggle-top
         +toggle({caption: "Получать спецпредложения", isChecked: true})
-      div.uikit-elements__sector-element
+      div.uikit-elements__sector-toggle-bottom
         +toggle({caption: "Получать спецпредложения"})
       h3.uikit-elements__sector-element-title Like button
-      div.uikit-elements__sector-element
+      div.uikit-elements__sector-like
         +like({isChecked: false, likes: 2})
         +like({isChecked: true, likes: 12})
       h3.uikit-elements__sector-element-title Rate button
-      div.uikit-elements__sector-element
+      div.uikit-elements__sector-rate
         +rate-button({rate: 4})
         +rate-button({rate: 5})
 
     // sector-3
     section.uikit-elements__sector
-      div.uikit-elements__sector-element.js-uikit-elements__sector-element
+      div.uikit-elements__sector-slider.js-uikit-elements__sector-slider
         +range-slider({title: "Range slider"})
       h3.uikit-elements__sector-element-title Buttons
-      div.uikit-elements__sector-element
-        div.uikit-elements__sector-element-group
+      div.uikit-elements__sector-buttons-filled
+        div.uikit-elements__sector-buttons-filled-left
           +button({type: "button", text: "Click me", theme: "filled", size: "middle"})
-        div.uikit-elements__sector-element-group
+        div.uikit-elements__sector-buttons-filled-right
           +button({type: "button", text: "Click me", theme: "filled", size: "middle", isDisabled: true})
-      div.uikit-elements__sector-element
-        div.uikit-elements__sector-element-group
+      div.uikit-elements__sector-buttons-bordered
+        div.uikit-elements__sector-buttons-bordered-left
           +button({type: "button", text: "Click me", theme: "bordered", size: "middle"})
-        div.uikit-elements__sector-element-group
+        div.uikit-elements__sector-buttons-bordered-right
           +button({type: "button", text: "Click me", theme: "bordered", size: "middle", isDisabled: true})
-      div.uikit-elements__sector-element
-        div.uikit-elements__sector-element-group
+      div.uikit-elements__sector-buttons-texted
+        div.uikit-elements__sector-buttons-texted-left
           +button({type: "button", text: "Click me", theme: "texted"})
-        div.uikit-elements__sector-element-group
+        div.uikit-elements__sector-buttons-texted-right
           +button({type: "button", text: "Click me", theme: "texted", isDisabled: true})
-      div.uikit-elements__sector-element
+      div.uikit-elements__sector-button-large
         +button({type: "button", text: "Перейти к оплате", theme: "arrowed", size: "huge"})
       h3.uikit-elements__sector-element-title Pagination
-      div.uikit-elements__sector-element
+      div.uikit-elements__sector-pagination
         +pagination({caption: "1 \u2013 12 из 100+ вариантов аренды"})
 
     // sector-4
     section.uikit-elements__sector
-      div.uikit-elements__sector-element.js-uikit-elements__sector-element
+      div.uikit-elements__sector-dropdown-default.js-uikit-elements__sector-dropdown-default
         span.uikit-elements__sector-element-caption Default
         +dropdown-quantity({title: "Dropdown"})
-      div.uikit-elements__sector-element.js-uikit-elements__sector-element
+      div.uikit-elements__sector-dropdown-expanded.js-uikit-elements__sector-dropdown-expanded
         span.uikit-elements__sector-element-caption Expanded
         +dropdown-quantity({title: "Dropdown"})
-      div.uikit-elements__sector-element
+      div.uikit-elements__sector-checkbox-list
         +checkbox-list({title: "Expandable checkbox list", isChecked: false, items: checkboxListItems})
-      div.uikit-elements__sector-element
+      div.uikit-elements__sector-checkbox-list-expanded
         +checkbox-list({title: "Expandable checkbox list", isChecked: true, items: checkboxListItems})
 
     // sector-5
     section.uikit-elements__sector
-      div.uikit-elements__sector-element.js-uikit-elements__sector-element
+      div.uikit-elements__sector-dropdown-guests.js-uikit-elements__sector-dropdown-guests
         +dropdown-quantity({title: "Dropdown"})
-      div.uikit-elements__sector-element
+      div.uikit-elements__sector-checkbox-rich
         +checkbox-rich({title: "Rich checkbox buttons", items: checkboxRichItems})
 
     // sector-6
     section.uikit-elements__sector
-      div.uikit-elements__sector-element.js-uikit-elements__sector-element
+      div.uikit-elements__sector-dropdown-guests.js-uikit-elements__sector-dropdown-guests
         +dropdown-quantity({title: "Dropdown"})
-      div.uikit-elements__sector-element
+      div.uikit-elements__sector-bullet-list
         +bullet-list({title: "Bullet list", list})
 
     // sector-7
     section.uikit-elements__sector
-      div.uikit-elements__sector-element
+      div.uikit-elements__sector-info-top
         +info(infoData[0])
-      div.uikit-elements__sector-element
+      div.uikit-elements__sector-info-bottom
         +info(infoData[1])
 
     // sector-8

@@ -1,5 +1,5 @@
 const path = require('path');
-const webpack = require('webpack');
+const { ProvidePlugin } = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const glob = require('glob');
 
@@ -20,10 +20,9 @@ module.exports = {
   devtool: 'inline-source-map',
   plugins: [
     ...htmlWebpackPlugins,
-    new webpack.ProvidePlugin({
+    new ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
-      'window.$': 'jquery',
     }),
   ],
   module: {

@@ -1,25 +1,28 @@
 .dropdown-quantity
+  @mixin flex-between
+    display: flex
+    justify-content: space-between
+    align-items: center
+
   position: relative
 
-  &:hover &__head
+  &:hover &__body
     border-color: $color-primary-shady
 
   &:hover &__picker
     border-color: $color-primary-shady
 
-  &:hover &__head-arrow
+  &:hover &__body-arrow
     color: $color-primary-dark
 
   &__title
     padding-bottom: 5px
 
-  &__head
+  &__body
+    @include flex-between
     font: inherit
-    color: $color-primary-dark
     background-color: white
-    display: flex
-    justify-content: space-between
-    align-items: center
+    color: $color-primary-dark
     width: 100%
     height: 44px
     padding: 0
@@ -37,7 +40,7 @@
     &:focus &-arrow
       color: $color-primary-dark
 
-    &-out
+    &-caption
       padding: 0 14px
 
     &-arrow
@@ -67,30 +70,27 @@
     &_hidden
       display: none
 
+    &-actions
+      @include flex-between
+      margin-top: 20px
+      margin-bottom: 13px
+
     &-item
-      display: flex
-      justify-content: space-between
-      align-items: center
+      @include flex-between
       margin-bottom: 7px
 
-      &-header, &-quantity-amount
+      &-name, &-actions-counter
         font-weight: bold
         font-size: 12px
         line-height: 15px
         text-transform: uppercase
         color: $color-primary-opaque
 
-      &:last-of-type
-        margin-top: 20px
-        margin-bottom: 13px
-
-      &-quantity
-        display: flex
-        justify-content: space-between
-        align-items: center
+      &-actions
+        @include flex-between
         width: 92px
 
-        &-minus, &-plus
+        &-decrement, &-increment
           font: inherit
           width: 30px
           height: 30px

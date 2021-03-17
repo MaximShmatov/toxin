@@ -27,6 +27,7 @@ block page-uikit
     const list = require('../../components/bullet-list/bullet-list.json');
     const checkboxListItems = require('../../components/checkbox-list/checkbox-list.json');
     const checkboxRichItems = require('../../components/checkbox-rich/checkbox-rich.json');
+    const dropdownData = require('../../components/dropdown-quantity/dropdown-quantity.json');
 
   article.uikit-elements
 
@@ -39,7 +40,7 @@ block page-uikit
         span.uikit-elements__sector-element-caption Hover / Focus
         +text-field({type: "text", value: "Имя", header: "Text field"})
       div.uikit-elements__sector-dropdown.js-uikit-elements__sector-dropdown
-        +dropdown-quantity({title: "Dropdown"})
+        +dropdown-quantity({title: "Dropdown", picker: dropdownData.guests})
       div.uikit-elements__sector-text-field-mask
         +text-field({type: "text", value: "дд.мм.гггг", mask: "99.99.9999", header: "Masked text field"})
       div.uikit-elements__sector-date-range.js-uikit-elements__sector-date-range
@@ -102,10 +103,10 @@ block page-uikit
     section.uikit-elements__sector
       div.uikit-elements__sector-dropdown-default.js-uikit-elements__sector-dropdown-default
         span.uikit-elements__sector-element-caption Default
-        +dropdown-quantity({title: "Dropdown"})
+        +dropdown-quantity({title: "Dropdown", picker: dropdownData.room, hasActions: false})
       div.uikit-elements__sector-dropdown-expanded.js-uikit-elements__sector-dropdown-expanded
         span.uikit-elements__sector-element-caption Expanded
-        +dropdown-quantity({title: "Dropdown"})
+        +dropdown-quantity({title: "Dropdown", picker: dropdownData.room, hasActions: false})
       div.uikit-elements__sector-checkbox-list
         +checkbox-list({title: "Expandable checkbox list", isChecked: false, items: checkboxListItems})
       div.uikit-elements__sector-checkbox-list-expanded
@@ -114,14 +115,14 @@ block page-uikit
     // sector-5
     section.uikit-elements__sector
       div.uikit-elements__sector-dropdown-guests.js-uikit-elements__sector-dropdown-guests
-        +dropdown-quantity({title: "Dropdown"})
+        +dropdown-quantity({title: "Dropdown", picker: dropdownData.guests})
       div.uikit-elements__sector-checkbox-rich
         +checkbox-rich({title: "Rich checkbox buttons", items: checkboxRichItems})
 
     // sector-6
     section.uikit-elements__sector
       div.uikit-elements__sector-dropdown-guests.js-uikit-elements__sector-dropdown-guests
-        +dropdown-quantity({title: "Dropdown"})
+        +dropdown-quantity({title: "Dropdown", picker: dropdownData.guests})
       div.uikit-elements__sector-bullet-list
         +bullet-list({title: "Bullet list", list})
 

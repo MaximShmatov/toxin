@@ -20,7 +20,7 @@ class Filter {
     new DateFilter(this.#$filter);
     new RangeSlider(this.#$filter);
     new DropdownQuantity(this.#$guests);
-    new DropdownQuantity(this.#$comfort, 'room');
+    new DropdownQuantity(this.#$comfort);
   }
 }
 

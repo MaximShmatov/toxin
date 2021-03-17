@@ -3,12 +3,14 @@ include ../dropdown-quantity/dropdown-quantity
 include ../date-range/date-range
 
 mixin form-search-room({ title } = {})
+  - const dropdownData = require('../../components/dropdown-quantity/dropdown-quantity.json');
+
   form.form-search-room.js-form-search-room
     fieldset.form-search-room__fieldset
       legend.form-search-room__title= title
       div.form-search-room__date
         +date-range({titleFirst: "Прибытие", titleSecond: "Выезд"})
       div.form-search-room__guests
-        +dropdown-quantity({title: "Гости"})
+        +dropdown-quantity({title: "Гости", picker: dropdownData.guests})
       div.form-search-room__submit
         +button({type: "submit", text: "Подобрать номер", theme: "arrowed", size: "huge"})

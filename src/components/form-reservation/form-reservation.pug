@@ -3,6 +3,8 @@ include ../dropdown-quantity/dropdown-quantity
 include ../button/button
 
 mixin form-reservation({} = {})
+  - const dropdownData = require('../../components/dropdown-quantity/dropdown-quantity.json');
+
   form.form-reserve.js-form-reserve
     fieldset.form-reserve__fieldset
       legend.form-reserve__title
@@ -17,7 +19,7 @@ mixin form-reservation({} = {})
       div.form-reserve__date
         +date-range({titleFirst: "Прибытие", titleSecond: "Выезд"})
       div.form-reserve__guests
-        +dropdown-quantity({title: "Гости"})
+        +dropdown-quantity({title: "Гости", picker: dropdownData.guests})
       div.form-reserve__pay
         div.form-reserve__pay-days
           span.form-reserve__pay-days-price.js-form-reserve__pay-days-price

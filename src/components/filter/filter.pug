@@ -10,6 +10,7 @@ mixin filter(titles = {})
     const checkboxGroupItems = require('../../components/checkbox-group/checkbox-group.json');
     const checkboxListItems = require('../../components/checkbox-list/checkbox-list.json');
     const checkboxRichItems = require('../../components/checkbox-rich/checkbox-rich.json');
+    const dropdownData = require('../../components/dropdown-quantity/dropdown-quantity.json');
 
   -
     const {
@@ -27,7 +28,7 @@ mixin filter(titles = {})
     div.filter__date
       +date-filter({title: dateTitle})
     div.filter__guests.js-filter__guests
-      +dropdown-quantity({title: guestsTitle})
+      +dropdown-quantity({title: guestsTitle, picker: dropdownData.guests})
     div.filter__price
       +range-slider({title: priceTitle})
       p.filter__price-caption= priceCaption
@@ -36,6 +37,6 @@ mixin filter(titles = {})
     div.filter__availability
       +checkbox-rich({title: availabilityTitle, items: checkboxRichItems})
     div.filter__comfort.js-filter__comfort
-      +dropdown-quantity({title: comfortTitle})
+      +dropdown-quantity({title: comfortTitle, picker: dropdownData.room, hasActions: false})
     div.filter__comfort-other
       +checkbox-list({title: otherTitle, items: checkboxListItems})

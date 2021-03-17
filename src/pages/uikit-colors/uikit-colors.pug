@@ -12,10 +12,10 @@ block page-uikit
       { id: 'green', name: 'Green', hex: '#6FCF97' },
     ]
     const tags = [
-      { tag: 'h1', sample: 'This one is the sub-section or widget title' },
-      { tag: 'h2', sample: 'Next one is the item title inside widgets' },
-      { tag: 'h3', sample: 'This is a label or cta text' },
-      { tag: 'body', sample: 'This is the body text which is used for most of the design, like paragraphs, lists, etc.' },
+      { id: 'first', tag: 'h1', sample: 'This one is the sub-section or widget title' },
+      { id: 'second', tag: 'h2', sample: 'Next one is the item title inside widgets' },
+      { id: 'third', tag: 'h3', sample: 'This is a label or cta text' },
+      { id: 'fourth', tag: 'body', sample: 'This is the body text which is used for most of the design, like paragraphs, lists, etc.' },
     ]
 
   article.uikit-colors
@@ -29,6 +29,6 @@ block page-uikit
             span.uikit-colors__value-hex= hex
     section.uikit-colors__font
       each example in tags
-        - const { tag, sample } = example
-        span(class=`uikit-colors__font-${tag}`)= tag
-        #{tag === 'body' ? 'span' : tag}(class=`uikit-colors__font-sample-${tag}`)= sample
+        - const { id, tag, sample } = example
+        span(class=`uikit-colors__font-${id}`)= tag
+        #{tag === 'body' ? 'span' : tag}(class=`uikit-colors__font-sample-${id}`)= sample

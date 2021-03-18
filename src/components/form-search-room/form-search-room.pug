@@ -1,3 +1,4 @@
+include ../heading/heading
 include ../button/button
 include ../dropdown-quantity/dropdown-quantity
 include ../date-range/date-range
@@ -7,7 +8,8 @@ mixin form-search-room({ title } = {})
 
   form.form-search-room.js-form-search-room
     fieldset.form-search-room__fieldset
-      legend.form-search-room__title= title
+      legend.form-search-room__title
+        +heading({text: title, variant: 'first'})
       div.form-search-room__date
         +date-range({titleFirst: "Прибытие", titleSecond: "Выезд"})
       div.form-search-room__guests

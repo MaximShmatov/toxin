@@ -1,10 +1,12 @@
+include ../heading/heading
 include ../button/button
 include ../text-field/text-field
 
 mixin form-come-in({ title, caption } = {})
   form.form-come-in
     fieldset.form-come-in__fieldset
-      legend.form-come-in__title= title
+      legend.form-come-in__title
+        +heading({text: title, variant: 'first'})
       div.form-come-in__email
         +text-field({type: "email", value: "Email"})
       div.form-come-in__pass

@@ -1,3 +1,6 @@
+include ../heading/heading
+
 mixin text-field({ type, header, value, mask } = {})
-  h3.text-field__title= header
+  div.text-field__title
+    +heading({text: header, variant: 'third'})
   input.text-field.js-text-field(type=type placeholder=value data-mask=mask)

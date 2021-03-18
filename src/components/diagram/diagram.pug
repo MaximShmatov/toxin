@@ -1,10 +1,13 @@
+include ../heading/heading
+
 mixin diagram({ title, content, list } = {})
   -
     const { numeral, line } = content;
     const diagramSectors = 3;
 
   div.diagram
-    h2.diagram__title= title
+    div.diagram__title
+      +heading({text: title, variant: 'second'})
     div.diagram__wrapper
       div.diagram__circle
         - for (let i = 0; i < diagramSectors; i += 1)

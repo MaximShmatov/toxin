@@ -8,10 +8,6 @@ class FormReservation {
 
   #$payTotal;
 
-  #number;
-
-  #level;
-
   #pricePerDay;
 
   #priceService;
@@ -22,9 +18,8 @@ class FormReservation {
 
   #dateRange;
 
-  constructor($form, dataForm) {
-    this.#init($form, dataForm);
-    this.#initView($form);
+  constructor($form) {
+    this.#init($form);
     this.#calcPayment();
     this.#setHandles($form);
   }
@@ -41,44 +36,18 @@ class FormReservation {
     $component.on('datepicker.submit', this.#handleDatePickerSubmit.bind(this));
   }
 
-  #init($component, data) {
-    const {
-      number,
-      level,
-      pricePerDay,
-      priceService,
-      priceDiscount,
-      priceAdditionally,
-    } = data;
-    this.#number = number;
-    this.#level = level;
-    this.#pricePerDay = pricePerDay;
-    this.#priceService = priceService;
-    this.#priceDiscount = priceDiscount;
-    this.#priceAdditionally = priceAdditionally;
+  #init($component) {
+    const price = $component.find('.js-form-reserve__pay-days-price').text();
+    this.#pricePerDay = Number(price.slice(0, -1).replace(/ /g, ''));
+    this.#priceService = Number($component.find('.js-form-reserve__pay-services-price').text());
+    this.#priceDiscount = Number($component.find('.js-form-reserve__pay-services-amount-total').text());
+    this.#priceAdditionally = Number($component.find('.js-form-reserve__pay-other-amount-total').text());
     this.#dateRange = new DateRange($component);
     new DropdownQuantity($component);
 
     this.#$payDays = $component.find('.js-form-reserve__pay-days-quantity');
     this.#$payAmount = $component.find('.js-form-reserve__pay-amount-total');
     this.#$payTotal = $component.find('.js-form-reserve__total-amount');
-  }
-
-  #initView ($component) {
-    $component.find('.js-form-reserve__room-info-number')
-      .text(this.#number);
-    $component.find('.js-form-reserve__room-info-level')
-      .text(this.#level);
-    $component.find('.js-form-reserve__room-price-amount')
-      .text(this.formatNumberToStr(this.#pricePerDay));
-    $component.find('.js-form-reserve__pay-days-price')
-      .text(this.formatNumberToStr(this.#pricePerDay));
-    $component.find('.js-form-reserve__pay-services-price')
-      .text(this.formatNumberToStr(this.#priceDiscount));
-    $component.find('.js-form-reserve__pay-services-amount-total')
-      .text(this.formatNumberToStr(this.#priceService));
-    $component.find('.js-form-reserve__pay-other-amount-total')
-      .text(this.formatNumberToStr(this.#priceAdditionally));
   }
 
   #calcPayment() {

@@ -1,8 +1,8 @@
 {
-  "number": 888,
+  "number": "№ 888",
   "level": "люкс",
-  "pricePerDay": 9990,
-  "priceService": 0,
-  "priceDiscount": 2179,
-  "priceAdditionally": 300
+  "pricePerDay": "9 990₽",
+  "priceService": "0",
+  "priceDiscount": "2179",
+  "priceAdditionally": "300"
 }

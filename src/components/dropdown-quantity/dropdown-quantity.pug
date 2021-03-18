@@ -1,10 +1,12 @@
+include ../heading/heading
 include ../button/button
 
 mixin dropdown-quantity({ title, picker, hasActions = true } = {})
   - const { name, items, variants } = picker;
 
   div.dropdown-quantity.js-dropdown-quantity
-    h3.dropdown-quantity__title= title
+    div.dropdown-quantity__title
+      +heading({text: title, variant: 'third'})
     button.dropdown-quantity__body.js-dropdown-quantity__body(type="button" data-variants=variants)
       span.dropdown-quantity__body-caption.js-dropdown-quantity__body-caption= name
       div.dropdown-quantity__body-arrow

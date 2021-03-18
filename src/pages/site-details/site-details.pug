@@ -12,12 +12,14 @@ block page-site
     const reviewData = require('../../components/review/review.json');
     const diagramData = require('../../components/diagram/diagram.json');
     const list = require('../../components/bullet-list/bullet-list.json');
+    const formData = require('../../components/form-reservation/form-reservation.json');
 
   article.page-room
     section.page-room__preview
     section.page-room__details
       aside.page-room__details-info
-        h2.page-room__details-info-title Сведения о номере
+        div.page-room__details-info-title
+          +heading({text: 'Сведения о номере', variant: 'second'})
         div.page-room__details-info-item
           +info(infoData[0])
         div.page-room__details-info-item
@@ -28,19 +30,22 @@ block page-site
         +diagram(diagramData)
       aside.page-room__details-reviews
         div.page-room__details-reviews-header
-          h2.page-room__details-reviews-header-title Отзывы посетителей номера
+          div.page-room__details-reviews-header-title
+            +heading({text: 'Отзывы посетителей номера', variant: 'second'})
           span.page-room__details-reviews-header-quantity 2 отзыва
         div.page-room__details-reviews-item
           +review(reviewData[0])
         div.page-room__details-reviews-item
           +review(reviewData[1])
       aside.page-room__details-rules
-        h2.page-room__details-rules-title Правила
+        div.page-room__details-rules-title
+          +heading({text: 'Правила', variant: 'second'})
         +bullet-list({list})
       aside.page-room__details-cancel
-        h2.page-room__details-cancel-title Отмена
+        div.page-room__details-cancel-title
+          +heading({text: 'Отмена', variant: 'second'})
         p.page-room__details-cancel-note
         | Бесплатная отмена в течении 48 ч. После этого при отмене не позднее чем за 5 дн. до
         | прибытия вы получите полный возврат за вычетом сбора за услуги.
       aside.page-room__details-reservation
-        +form-reservation()
+        +form-reservation(formData)

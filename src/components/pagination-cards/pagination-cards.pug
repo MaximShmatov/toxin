@@ -4,7 +4,8 @@ include ../pagination/pagination
 mixin pagination-cards({ title, cards } = {})
   div.pagination-cards
     div.pagination-cards__content
-      h1.pagination-cards__content-title= title
+      div.pagination-cards__content-title
+        +heading({text: title, variant: 'first'})
       each card in cards
         aside.pagination-cards__content-card
           +card-room(card)

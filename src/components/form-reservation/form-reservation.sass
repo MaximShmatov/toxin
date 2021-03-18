@@ -13,12 +13,6 @@
     box-sizing: border-box
     border-radius: 50% 50%
 
-  @mixin font-header
-    font-size: 12px
-    font-weight: bold
-    line-height: 15px
-    text-transform: uppercase
-
   background: white
   border: 1px solid $color-primary-limpid
   box-sizing: border-box
@@ -33,39 +27,8 @@
     padding: 0
 
   &__title
-    display: flex
-    justify-content: space-between
-    align-items: flex-end
     width: 100%
     padding: 0 0 19px 0
-
-  &__room-info
-    &-num
-      @include font-header
-      color: $color-primary-opaque
-
-    &-number
-      font-size: 24px
-      font-weight: bold
-      line-height: 30px
-      color: $color-primary-opaque
-
-    &-level
-      @include font-header
-      color: $color-purple
-
-  &__room-price
-    color: $color-primary-shady
-
-    &-amount, &-rub
-      font-size: 14px
-      font-weight: bold
-      line-height: 24px
-
-    &-term
-      font-size: 12px
-      font-weight: normal
-      line-height: 15px
 
   &__date
     padding-bottom: 21px

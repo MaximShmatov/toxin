@@ -1,14 +1,14 @@
+include ../heading/heading
 include ../checkbox/checkbox
 
 mixin checkbox-list({ title, isChecked, items } = {})
-  - const id = Math.random();
-
   div.checkbox-list
-    input.checkbox-list__check(type="checkbox" id=id checked=isChecked)
-    label.checkbox-list__body(for=id)
-      h3.checkbox-list__body-title= title
-      div.checkbox-list__body-arrow
-    div.checkbox-list__picker
-      each item in items
-        div.checkbox-list__picker-item
-          +checkbox(item)
+    label.checkbox-list__body
+      input.checkbox-list__check(type="checkbox" checked=isChecked)
+      div.checkbox-list__body-title
+        +heading({text: title, variant: 'third'})
+        div.checkbox-list__body-arrow
+      div.checkbox-list__picker
+        each item in items
+          div.checkbox-list__picker-item
+            +checkbox(item)

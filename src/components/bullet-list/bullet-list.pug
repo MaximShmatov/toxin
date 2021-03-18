@@ -1,7 +1,10 @@
+include ../heading/heading
+
 mixin bullet-list({ title, list } = {})
   div.bullet-list
     - if (title)
-      h3.bullet-list__title= title
+      div.bullet-list__title
+        +heading({text: title, variant: 'third'})
     ul.bullet-list__items
       each item in list
         li.bullet-list__item= item

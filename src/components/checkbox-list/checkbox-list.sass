@@ -7,26 +7,21 @@
     opacity: 0
     z-index: -1
 
-    &:focus + label, &:hover:not(:disabled) + label
-      & h3, div:before
-        text-shadow: 0 0 5px $color-primary-shady
-
-    &:checked + label div:before
+  &__check:checked + &__body-title > &__body-arrow:before
       content: '\e902'
 
-    &:checked ~ div
-      display: block
+  &__check:checked ~ &__picker
+    display: block
 
   &__body
-    display: flex
-    justify-content: space-between
-    align-items: center
     width: 100%
-    height: 44px
     cursor: pointer
 
     &-title
-      background: transparent
+      display: flex
+      justify-content: space-between
+      align-items: center
+      height: 44px
 
     &-arrow
       display: flex
@@ -40,6 +35,9 @@
         @include font-icon
         content: '\e903'
         color: $color-primary-shady
+
+    &:hover &-title, &:hover &-arrow
+      text-shadow: 0 0 5px $color-primary-shady
 
   &__picker
     display: none

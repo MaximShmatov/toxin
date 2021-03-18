@@ -1,4 +1,5 @@
 extends ../../templates/template-main/template-main
+include ../../components/heading/heading
 
 block page
   -
@@ -19,10 +20,12 @@ block page
     }
 
   body.index
-    h1.index__header TOXIN
+    div.index__header
+      +heading({text: 'TOXIN', variant: 'first'})
     nav.index__nav
       - for (key in pages)
-        h2.index__header= `${key} pages`
+        div.index__header
+          +heading({text: `${key} pages`, variant: 'second'})
         ul.index__nav-items
           each item in pages[key]
             - const { href, text } = item;

@@ -1,0 +1,39 @@
+.heading
+  display: flex
+  justify-content: space-between
+  align-items: flex-end
+  margin: 0
+
+  &-first, &-second, &-third, &__info-number, &__info-level
+    color: $color-primary-opaque
+    margin: 0
+
+  &-first, &__info-number
+    font-size: 24px
+    line-height: 30px
+
+  &-second
+    font-size: 19px
+    line-height: 24px
+
+  &-third, &__info-level, &__info:first-letter
+    font-size: 12px
+    font-weight: bold
+    line-height: 15px
+    text-transform: uppercase
+
+  &__info-level
+    color: $color-purple
+
+  &__price
+    color: $color-primary-shady
+
+    &-amount
+      font-size: 14px
+      font-weight: bold
+      line-height: 24px
+
+    &-text
+      font-size: 12px
+      font-weight: normal
+      line-height: 15px

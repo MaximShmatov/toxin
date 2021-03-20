@@ -6,7 +6,7 @@ mixin checkbox-list({ title, isChecked, items } = {})
     label.checkbox-list__body
       input.checkbox-list__check(type="checkbox" checked=isChecked)
       div.checkbox-list__body-title
-        +heading({text: title, variant: 'third'})
+        +heading({text: title, variant: 'h3'})
         div.checkbox-list__body-arrow
       div.checkbox-list__picker
         each item in items

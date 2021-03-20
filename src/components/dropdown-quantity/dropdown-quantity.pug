@@ -6,7 +6,7 @@ mixin dropdown-quantity({ title, picker, hasActions = true } = {})
 
   div.dropdown-quantity.js-dropdown-quantity
     div.dropdown-quantity__title
-      +heading({text: title, variant: 'third'})
+      +heading({text: title, variant: 'h3'})
     button.dropdown-quantity__body.js-dropdown-quantity__body(type="button" data-variants=variants)
       span.dropdown-quantity__body-caption.js-dropdown-quantity__body-caption= name
       div.dropdown-quantity__body-arrow

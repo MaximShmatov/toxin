@@ -12,7 +12,7 @@ mixin footer({ nav, logoImg, logoCaption, subTitle, subCaption } = {})
           - const { title, items } = block;
           div.footer__nav-block
             div.footer__nav-items-title
-              +heading({text: title, variant: 'third'})
+              +heading({text: title, variant: 'h3'})
             ul.footer__nav-items
               each item in items
                 - const { href, text } = item;
@@ -20,7 +20,7 @@ mixin footer({ nav, logoImg, logoCaption, subTitle, subCaption } = {})
                   a.footer__nav-items-item-ref(href=href)= text
       section.footer__subscription
         div.footer__subscription-title
-          +heading({text: subTitle, variant: 'third'})
+          +heading({text: subTitle, variant: 'h3'})
         p.footer__subscription-caption= subCaption
         div.footer__subscription-form
           +subscription()

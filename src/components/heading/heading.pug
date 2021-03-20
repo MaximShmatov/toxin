@@ -1,13 +1,14 @@
 mixin heading({ text, variant } = {})
   -
     const variants = {
-      first: 'h1',
-      second: 'h2',
-      third: 'h3',
+      h1: 'h1',
+      h2: 'h2',
+      h3: 'h3',
       form: 'h2',
     };
+    const tag = variants[variant] ?? 'h3';
 
-  #{variants[variant]}.heading
+  #{tag}.heading
     if (variant === 'form')
       - const { number, level, price } = text;
       div.heading__info
@@ -17,4 +18,4 @@ mixin heading({ text, variant } = {})
         span.heading__price-amount= price
         span.heading__price-text &nbsp;в сутки
     else
-      span(class=`heading-${variant}`)= text
+      span(class=`heading-tag${tag}`)= text

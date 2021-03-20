@@ -4,7 +4,7 @@ include ../checkbox/checkbox
 mixin checkbox-rich({ title, items } = {})
   div.checkbox-rich
     div.checkbox-rich__title
-      +heading({text: title, variant: 'third'})
+      +heading({text: title, variant: 'h3'})
     each item in items
       - const { checkbox, info } = item;
       div.checkbox-rich__checkbox

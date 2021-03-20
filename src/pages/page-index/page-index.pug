@@ -21,11 +21,11 @@ block page
 
   body.index
     div.index__header
-      +heading({text: 'TOXIN', variant: 'first'})
+      +heading({text: 'TOXIN', variant: 'h1'})
     nav.index__nav
       - for (key in pages)
         div.index__header
-          +heading({text: `${key} pages`, variant: 'second'})
+          +heading({text: `${key} pages`, variant: 'h2'})
         ul.index__nav-items
           each item in pages[key]
             - const { href, text } = item;

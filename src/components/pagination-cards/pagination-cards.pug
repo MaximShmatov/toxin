@@ -5,7 +5,7 @@ mixin pagination-cards({ title, cards } = {})
   div.pagination-cards
     div.pagination-cards__content
       div.pagination-cards__content-title
-        +heading({text: title, variant: 'first'})
+        +heading({text: title, variant: 'h1'})
       each card in cards
         aside.pagination-cards__content-card
           +card-room(card)

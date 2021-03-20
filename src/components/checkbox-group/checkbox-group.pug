@@ -4,7 +4,7 @@ include ../checkbox/checkbox
 mixin checkbox-group({ title, items } = {})
   div.checkbox-group
     div.checkbox-group__title
-      +heading({text: title, variant: 'third'})
+      +heading({text: title, variant: 'h3'})
     each item in items
       div.checkbox-group__checkbox
         +checkbox(item)

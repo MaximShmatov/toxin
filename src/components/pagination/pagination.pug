@@ -1,15 +1,15 @@
 mixin pagination({ caption } = {})
   -
     const buttons = {
-      'first': '1',
-      'second': '2',
-      'third': '3',
-      'intermediate': '...',
-      'last': '15',
-      'next': '',
+      first: '1',
+      second: '2',
+      third: '3',
+      intermediate: '...',
+      last: '15',
+      next: '',
     }
   div.pagination
-    form.pagination__control
+    div.pagination__control
       - for (let key in buttons)
         button(type="button" class=`pagination__control-${key}`)= buttons[key]
     span.pagination__result= caption

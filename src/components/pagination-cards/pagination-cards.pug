@@ -2,10 +2,10 @@ include ../card-room/card-room
 include ../pagination/pagination
 
 mixin pagination-cards({ title, cards } = {})
-  div.pagination-cards
+  form.pagination-cards
+    legend.pagination-cards__title
+      +heading({text: title, variant: 'h1'})
     div.pagination-cards__content
-      div.pagination-cards__content-title
-        +heading({text: title, variant: 'h1'})
       each card in cards
         aside.pagination-cards__content-card
           +card-room(card)

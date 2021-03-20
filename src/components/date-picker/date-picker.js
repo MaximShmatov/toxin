@@ -1,7 +1,7 @@
 class DatePicker {
   #$picker;
 
-  #$title;
+  #$headerDate;
 
   #$bodyDates;
 
@@ -38,7 +38,7 @@ class DatePicker {
 
   #init($component) {
     this.#$picker = $component.find('.js-date-picker');
-    this.#$title = $component.find('.js-date-picker__head-title');
+    this.#$headerDate = $component.find('.js-date-picker__head-date');
     this.#$bodyRanges = $component.find('.js-date-picker__body-range');
     this.#$bodyDates = $component.find('.js-date-picker__body-date');
     this.#setPickerDate();
@@ -102,7 +102,7 @@ class DatePicker {
   }
 
   #setTitle() {
-    this.#$title.text(`${this.#months[this.#pickerDate.getMonth()]} ${this.#pickerDate.getFullYear()}`);
+    this.#$headerDate.text(`${this.#months[this.#pickerDate.getMonth()]} ${this.#pickerDate.getFullYear()}`);
   }
 
   #setRangeDate() {

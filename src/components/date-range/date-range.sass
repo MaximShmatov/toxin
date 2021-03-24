@@ -9,11 +9,12 @@
     clear: both
 
   &__head
-    &:nth-of-type(1)
-      float: left
+    @media(min-width: 320px)
+      &:nth-of-type(1)
+        float: left
 
-    &:nth-of-type(2)
-      float: right
+      &:nth-of-type(2)
+        float: right
 
     &:hover &-out, &:hover &-in, &:hover ~ .date-range__picker .date-picker
       border-color: $color-primary-shady
@@ -30,7 +31,8 @@
       justify-content: space-between
       align-items: center
       background-color: transparent
-      width: 150px
+      width: 100%
+      min-width: 150px
       height: 44px
       border: 1px solid $color-primary-light
       color: $color-primary-dark

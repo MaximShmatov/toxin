@@ -1,29 +1,34 @@
 include ../button/button
 
 mixin header({ data, name } = {})
-  - const { logo, nav } = data;
+  -
+    const { logo, nav } = data;
+    const id = Math.random();
 
-  div.header__wrapper
-    div.header
+  form.header
+    div.header__wrapper
       img.header__logo(alt="logo" src=logo)
+      input.header__checkbox(type="checkbox" id=id)
+      label.header__button(for=id)
       nav.header__menu
         ul.header__menu-items
           each menuItem in nav
             - const { hrefMenu, captionMenu, submenu } = menuItem;
             li.header__menu-item
-              a.header__menu-ref(href=hrefMenu)= captionMenu
               if(submenu)
-                button.header__submenu(type="button")
+                span.header__submenu(tabindex="-1")= captionMenu
                 ul.header__submenu-items
                   each submenuItem in submenu
                     - const { hrefSubmenu, captionSubmenu } = submenuItem;
                     li.header__submenu-item
-                      a.header__menu-ref(href=hrefSubmenu)= captionSubmenu
+                      a.header__submenu-ref(href=hrefSubmenu)= captionSubmenu
+              else
+                a.header__menu-ref(href=hrefMenu)= captionMenu
       if(name)
-        div.header__menu-separator
-        output.header__menu-user= name
+        div.header__user
+          span.header__user-name= name
       else
-        div.header__button
+        div.header__sign-in
           +button({type: "button", theme: "bordered", size: "small", text: "Войти"})
-        div.header__button
+        div.header__sign-up
           +button({type: "button", theme: "filled", size: "large", text: "Зарегистрироваться"})

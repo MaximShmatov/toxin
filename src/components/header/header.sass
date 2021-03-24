@@ -1,90 +1,179 @@
 .header
-  display: flex
-  justify-content: space-between
-  align-items: center
-  flex-wrap: wrap
-  max-width: 1160px
-  width: 100%
-  margin: 0 auto
-  padding: 15px 0
+  background-color: white
+  box-shadow: 0 10px 20px $color-primary-limpid
+  @mixin menu-item-font
+    display: inline-block
+    font-size: 17px
+    line-height: 35px
+    width: 100%
+    color: $color-primary-shady
+    text-decoration: none
+    cursor: pointer
+    @media(min-width: 992px)
+      font-size: inherit
+      line-height: inherit
 
   &__wrapper
-    background-color: white
-    box-shadow: 0 10px 20px $color-primary-limpid
+    padding: 15px
+    box-sizing: border-box
+    margin: 0 auto
+    @media(min-width: 576px)
+      display: grid
+      align-items: center
+      grid-template-columns: 1fr auto auto
+    @media (min-width: 992px)
+      grid-template-columns: auto 1fr auto auto
+      max-width: 1160px
+    @media (min-width: 1160px)
+      padding: 15px 0
 
-  &__menu
-    display: flex
-    justify-content: flex-end
-    flex-wrap: wrap
-    flex-grow: 1
+  &__logo
+    position: absolute
+    @media(min-width: 576px)
+      position: static
 
-    &-items
-      display: flex
-      flex-wrap: wrap
-      padding: 0
-      margin: 0
+  &__checkbox
+    @include hide
 
-    &-item
-      list-style: none
-      margin-left: 20px
-
-    &-item:nth-of-type(1) > a
-      color: $color-primary-dark
-      font-weight: bold
-
-    &-item:nth-of-type(2)
-      position: relative
-      display: flex
-
-    &-item:nth-of-type(5)
-      position: relative
-      display: flex
-
-    &-ref
-      color: $color-primary-shady
-      text-decoration: none
-
-    &-separator
-      height: 30px
-      width: 1px
-      margin: 0 20px
-      background: $color-primary-limpid
-
-    &-user
-      color: $color-primary-shady
-
-  &__submenu
-    border: none
-    outline: none
-    background: transparent
-    padding: 0
-    display: flex
-    align-items: flex-end
-    margin-left: 1px
-
-    &:active + &-items
+    &:checked ~ .header__menu
       display: block
+
+    &:checked + .header__button
+      background: linear-gradient(white 0%, $color-primary-limpid 60%, $color-primary-light 100%)
+
+      &:before
+        content: '\e902'
+
+  &__button
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 38px
+    height: 38px
+    border: 1px solid $color-primary-shady
+    border-radius: 5px
+    color: $color-primary-shady
+    margin-left: auto
+    cursor: pointer
+    @media(min-width: 576px)
+      display: none
 
     &::before
       @include font-icon
       content: '\e903'
-      line-height: 20px
+      font-size: 30px
+
+    &:hover
+      border-color: $color-primary-dark
+      color: $color-primary-dark
+
+  &__menu
+    display: none
+    @media(min-width: 576px)
+      grid-area: 2 / 1 / 3 / 5
+      display: block
+      margin-top: 20px
+    @media (min-width: 992px)
+      grid-area: 1 / 2 / 2 / 3
+      margin-top: 0
+      margin-left: auto
+
+    &-items
+      margin: 0
+      padding: 0
+      @media(min-width: 576px)
+        justify-content: center
+        align-items: center
+        display: flex
+
+    &-item
+      list-style: none
+      @media(min-width: 576px)
+        &:not(:first-child)
+          margin-left: 20px
+
+      &:hover
+        border-left: 2px solid $color-primary-light
+        background: $color-primary-limpid
+        font-weight: bold
+        @media(min-width: 576px)
+          border: none
+          background: inherit
+
+    &-ref
+      @include menu-item-font
+
+      &:hover
+        color: $color-primary-dark
+        padding-left: 10px
+        @media(min-width: 576px)
+          padding: 0
+
+  &__submenu
+    @include menu-item-font
+    box-sizing: border-box
+    outline: none
+
+    &::after
+      @include font-icon
+      content: '\e903'
       color: $color-primary-shady
+      line-height: 35px
+      float: right
+      @media(min-width: 992px)
+        line-height: inherit
+
+    &:focus + &-items, &-items:hover
+      display: block
+      @media(min-width: 576px)
+        position: absolute
+        background: white
+        border: 1px solid $color-primary-light
+        z-index: 1
+
+    &:hover, &:focus
+      padding-left: 10px
+      color: $color-primary-dark
+      font-weight: bold
+      @media(min-width: 576px)
+        padding: 0
 
     &-items
       display: none
-      position: absolute
-      list-style: none
-      padding: 0
-      top: 100%
-      right: 0
-      background-color: white
-      border: 1px solid $color-primary-shady
-      z-index: 1
+      white-space: nowrap
+      padding-left: 20px
+      @media(min-width: 576px)
+        padding: 10px
 
     &-item
-      white-space: nowrap
-      padding: 5px 15px
+      list-style: none
 
-  &__button
-    margin-left: 20px
+    &-ref
+      @include menu-item-font
+
+      &:hover
+        text-decoration: underline
+        color: $color-primary-dark
+
+  &__sign-in, &__sign-up, &__user
+    padding-top: 15px
+    @media(min-width: 576px)
+      padding-top: 0
+      margin-left: 20px
+
+  &__sign-in
+    min-width: 87px
+
+  &__sign-up
+    min-width: 196px
+
+  &__user
+    height: 30px
+    padding-left: 20px
+    border-left: 1px solid $color-primary-limpid
+    @media(min-width: 576px)
+      grid-area: 1 / 3 / 2 / 5
+
+    &-name
+      line-height: 30px
+      color: $color-primary-shady

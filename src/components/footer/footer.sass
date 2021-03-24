@@ -1,14 +1,16 @@
 .footer
-  display: flex
-  justify-content: space-between
-  max-width: 1160px
-  flex-wrap: wrap
-  margin: 0 auto
-  padding: 100px 0 101px
+  background-color: white
+  box-shadow: 0 1px 0 $color-primary-limpid
 
   &__wrapper
-    background-color: white
-    box-shadow: 0 1px 0 $color-primary-limpid
+    display: flex
+    justify-content: space-between
+    max-width: 1160px
+    flex-wrap: wrap
+    margin: 0 auto
+    padding: 15px
+    @media(min-width: 1160px)
+      padding: 100px 0 101px
 
   &__logo
     max-width: 260px
@@ -18,10 +20,19 @@
       margin-top: 10px
 
   &__nav
-    display: grid
-    grid-template-columns: 1fr 1fr 1fr
+    display: flex
+    flex-wrap: wrap
     padding-top: 4px
     flex-grow: 1
+    @media(min-width: 576px)
+      display: grid
+      grid-template-columns: 1fr 1fr 1fr
+
+    &-block
+      min-width: 160px
+      margin-bottom: 30px
+      @media(min-width: 1160px)
+        margin-bottom: 0
 
     &-items
       list-style: none
@@ -35,6 +46,9 @@
         &-ref
           text-decoration: none
           color: $color-primary-shady
+
+          &:hover
+            color: $color-primary-dark
 
   &__subscription
     max-width: 260px

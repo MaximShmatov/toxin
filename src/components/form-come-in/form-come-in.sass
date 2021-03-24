@@ -5,12 +5,16 @@
   box-shadow: 0 0 25px $color-primary-light
   border-radius: 4px
   max-width: 380px
+  padding: 10px 5px
+  @media(min-width: 320px)
+    padding: 0
 
   &__fieldset
     max-width: 320px
     border: none
-    margin: 39px auto 31px
     padding: 0
+    @media(min-width: 320px)
+      margin: 39px auto 31px
 
   &__email
     margin-top: 20px

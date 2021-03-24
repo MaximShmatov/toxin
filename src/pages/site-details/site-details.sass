@@ -27,7 +27,7 @@
         &:not(:last-child)::after
           content: ''
           display: block
-          width: 280px
+          max-width: 280px
           height: 1px
           background-color: $color-primary-light
           margin: 20px 0
@@ -84,7 +84,7 @@
       @media (min-width: 576px)
         grid-area: 4 / 1 / 5 / 4
         justify-self: center
-        width: 380px
+        min-width: 380px
       @media (min-width: 992px)
         grid-area: 1 / 5 / 4 / 6
         justify-self: stretch

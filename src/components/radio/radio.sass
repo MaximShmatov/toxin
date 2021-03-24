@@ -3,9 +3,7 @@
   align-items: center
 
   &__check
-    position: absolute
-    opacity: 0
-    z-index: -1
+    @include hide
 
     &:focus + div
       box-shadow: 0 0 2px 1px $color-primary-shady

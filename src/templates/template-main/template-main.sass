@@ -19,6 +19,11 @@ $color-green: #6FCF97
   font-size: 24px
   line-height: 24px
 
+@mixin hide
+  position: absolute
+  opacity: 0
+  z-index: -1
+
 html
   @include font-body
   background: #E5E5E5

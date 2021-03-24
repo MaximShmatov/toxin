@@ -2,8 +2,8 @@ include ../heading/heading
 include ../subscription/subscription
 
 mixin footer({ nav, logoImg, logoCaption, subTitle, subCaption } = {})
-  div.footer__wrapper
-    div.footer
+  div.footer
+    div.footer__wrapper
       section.footer__logo
         img.footer__logo-img(alt="logo" src=logoImg)
         p.footer__logo-caption= logoCaption

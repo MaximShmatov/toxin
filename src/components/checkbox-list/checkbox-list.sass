@@ -3,9 +3,7 @@
   background: white
 
   &__check
-    position: absolute
-    opacity: 0
-    z-index: -1
+    @include hide
 
   &__check:checked + &__body-title > &__body-arrow:before
       content: '\e902'

@@ -18,8 +18,11 @@ mixin card-room({ img, alt, number, level, pay, review, rate } = {})
           button.card-room__slider-control-left-button.js-card-room__slider-control-left-button(type="button")
         div.card-room__slider-control-right
           button.card-room__slider-control-right-button.js-card-room__slider-control-right-button(type="button")
-    div.card-room__price
-      +heading({text: {number, level, price: amount}, variant: 'form'})
+    div.card-room__title
+      +heading({text: {number, level}, variant: 'numeric'})
+      div.card-room__title-price
+        span.card-room__title-price-amount= amount
+        span.card-room__title-price-text в сутки
     div.card-room__review
       +rate-button({rate})
       div.card-room__review-quantity

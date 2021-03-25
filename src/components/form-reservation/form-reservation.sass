@@ -31,8 +31,24 @@
       margin: 40px auto 29px
 
   &__title
+    display: flex
+    justify-content: space-between
+    align-items: flex-end
     width: 100%
     padding: 0 0 19px 0
+
+    &-price
+      color: $color-primary-shady
+
+      &-amount
+        font-weight: bold
+        font-size: 14px
+        line-height: 24px
+        padding-right: 4px
+
+      &-text
+        font-size: 12px
+        line-height: 15px
 
   &__date
     padding-bottom: 21px

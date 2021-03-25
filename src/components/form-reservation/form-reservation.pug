@@ -9,7 +9,10 @@ mixin form-reservation({ number, level, pricePerDay, priceService, priceDiscount
   form.form-reserve.js-form-reserve
     fieldset.form-reserve__fieldset
       legend.form-reserve__title
-        +heading({text: {number, level, price: pricePerDay}, variant: 'form'})
+        +heading({text: {number, level}, variant: 'numeric'})
+        div.form-reserve__title-price
+          span.form-reserve__title-price-amount= pricePerDay
+          span.form-reserve__title-price-text в сутки
       div.form-reserve__date
         +date-range({titleFirst: "Прибытие", titleSecond: "Выезд"})
       div.form-reserve__guests

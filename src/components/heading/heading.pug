@@ -1,21 +1,18 @@
 mixin heading({ text, variant } = {})
   -
-    const variants = {
-      h1: 'h1',
-      h2: 'h2',
-      h3: 'h3',
-      form: 'h2',
-    };
-    const tag = variants[variant] ?? 'h3';
+    let tag = 'h3';
+    const variants = ['h1', 'h2', 'h3', 'numeric'];
+    if (variant === 'numeric') {
+      tag = 'h2';
+    } else if (variants.indexOf(variant) !== -1) {
+      tag = variant;
+    }
 
   #{tag}.heading
-    if (variant === 'form')
-      - const { number, level, price } = text;
+    if (variant === 'numeric')
+      - const { number, level } = text;
       div.heading__info
         span.heading__info-number= number
         span.heading__info-level= level
-      div.heading__price
-        span.heading__price-amount= price
-        span.heading__price-text в сутки
     else
       span(class=`heading-tag${tag}`)= text

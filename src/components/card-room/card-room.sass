@@ -100,8 +100,24 @@
       left: 0
       bottom: 0
 
-  &__price
+  &__title
+    display: flex
+    justify-content: space-between
+    align-items: flex-end
     padding: 0 17px 9px 20px
+
+    &-price
+      color: $color-primary-shady
+
+      &-amount
+        font-weight: bold
+        font-size: 14px
+        line-height: 24px
+        padding-right: 4px
+
+      &-text
+        font-size: 12px
+        line-height: 15px
 
   &__review
     display: flex

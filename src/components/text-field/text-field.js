@@ -1,4 +1,4 @@
-import 'jquery.maskedinput';
+import 'jquery.maskedinput/src/jquery.maskedinput';
 
 class TextField {
   constructor($component) {

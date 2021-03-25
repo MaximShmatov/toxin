@@ -32,7 +32,6 @@ block page-uikit
 
   article.uikit-elements
 
-    // sector-1
     section.uikit-elements__sector
       div.uikit-elements__sector-text-field-email
         span.uikit-elements__sector-element-caption Default
@@ -53,7 +52,6 @@ block page-uikit
       div.uikit-elements__sector-subscription
         +subscription({})
 
-    // sector-2
     section.uikit-elements__sector
       div.uikit-elements__sector-checkbox-group
         +checkbox-group({title: "Checkbox buttons", items: checkboxGroupItems})
@@ -79,7 +77,6 @@ block page-uikit
         +rate-button({rate: 4})
         +rate-button({rate: 5})
 
-    // sector-3
     section.uikit-elements__sector
       div.uikit-elements__sector-slider.js-uikit-elements__sector-slider
         +range-slider({title: "Range slider"})
@@ -87,27 +84,26 @@ block page-uikit
         +heading({text: 'Buttons', variant: 'h3'})
       div.uikit-elements__sector-buttons-filled
         div.uikit-elements__sector-buttons-filled-left
-          +button({type: "button", text: "Click me", theme: "filled", size: "middle"})
+          +button({type: "button", text: "Click me", theme: "filled", size: "thick"})
         div.uikit-elements__sector-buttons-filled-right
-          +button({type: "button", text: "Click me", theme: "filled", size: "middle", isDisabled: true})
+          +button({type: "button", text: "Click me", theme: "filled", size: "thick", isDisabled: true})
       div.uikit-elements__sector-buttons-bordered
         div.uikit-elements__sector-buttons-bordered-left
-          +button({type: "button", text: "Click me", theme: "bordered", size: "middle"})
+          +button({type: "button", text: "Click me", theme: "bordered", size: "thick"})
         div.uikit-elements__sector-buttons-bordered-right
-          +button({type: "button", text: "Click me", theme: "bordered", size: "middle", isDisabled: true})
+          +button({type: "button", text: "Click me", theme: "bordered", size: "thick", isDisabled: true})
       div.uikit-elements__sector-buttons-texted
         div.uikit-elements__sector-buttons-texted-left
           +button({type: "button", text: "Click me", theme: "texted"})
         div.uikit-elements__sector-buttons-texted-right
           +button({type: "button", text: "Click me", theme: "texted", isDisabled: true})
       div.uikit-elements__sector-button-large
-        +button({type: "button", text: "Перейти к оплате", theme: "arrowed", size: "huge"})
+        +button({type: "button", text: "Перейти к оплате", theme: "arrowed", size: "thick"})
       div.uikit-elements__sector-element-title
         +heading({text: 'Pagination', variant: 'h3'})
       div.uikit-elements__sector-pagination
         +pagination({caption: "1 \u2013 12 из 100+ вариантов аренды"})
 
-    // sector-4
     section.uikit-elements__sector
       div.uikit-elements__sector-dropdown-default.js-uikit-elements__sector-dropdown-default
         span.uikit-elements__sector-element-caption Default
@@ -120,27 +116,23 @@ block page-uikit
       div.uikit-elements__sector-checkbox-list-expanded
         +checkbox-list({title: "Expandable checkbox list", isChecked: true, items: checkboxListItems})
 
-    // sector-5
     section.uikit-elements__sector
       div.uikit-elements__sector-dropdown-guests.js-uikit-elements__sector-dropdown-guests
         +dropdown-quantity({title: "Dropdown", picker: dropdownData.guests})
       div.uikit-elements__sector-checkbox-rich
         +checkbox-rich({title: "Rich checkbox buttons", items: checkboxRichItems})
 
-    // sector-6
     section.uikit-elements__sector
       div.uikit-elements__sector-dropdown-guests.js-uikit-elements__sector-dropdown-guests
         +dropdown-quantity({title: "Dropdown", picker: dropdownData.guests})
       div.uikit-elements__sector-bullet-list
         +bullet-list({title: "Bullet list", list})
 
-    // sector-7
     section.uikit-elements__sector
       div.uikit-elements__sector-info-top
         +info(infoData[0])
       div.uikit-elements__sector-info-bottom
         +info(infoData[1])
 
-    // sector-8
     section.uikit-elements__sector
       +review(reviewData[0])

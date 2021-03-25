@@ -1,4 +1,5 @@
 extends ../../templates/template-uikit/template-uikit
+include ../../components/heading/heading
 
 block page-uikit
   -
@@ -31,4 +32,8 @@ block page-uikit
       each example in tags
         - const { id, tag, sample } = example
         span(class=`uikit-colors__font-${id}`)= tag
-        #{tag === 'body' ? 'span' : tag}(class=`uikit-colors__font-sample-${id}`)= sample
+        if (tag === 'body')
+          span(class=`uikit-colors__font-sample-${id}`)= sample
+        else
+          div(class=`uikit-colors__font-sample-${id}`)
+            +heading({text: sample, variant: tag})

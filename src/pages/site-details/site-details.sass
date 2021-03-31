@@ -9,13 +9,17 @@
 
   &__details
     max-width: 1160px
-    margin: 70px auto
+    padding: 30px 15px
     display: grid
+    grid-row-gap: 40px
     grid-template-columns: 1fr
     @media (min-width: 576px)
       grid-template-columns: minmax(260px, 292px) 1fr minmax(311px, 350px)
     @media (min-width: 992px)
       grid-template-columns: minmax(260px, 292px) 1fr minmax(311px, 350px) 1fr minmax(auto, 380px)
+      grid-row-gap: 0
+    @media (min-width: 1160px)
+      margin: 70px auto
 
     &-info
       grid-area: 1 / 1 / 2 / 2

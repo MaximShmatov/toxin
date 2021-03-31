@@ -10,5 +10,5 @@ mixin checkbox-list({ title, isChecked, items } = {})
         div.checkbox-list__body-arrow
       div.checkbox-list__picker
         each item in items
-          div.checkbox-list__picker-item
+          label.checkbox-list__picker-item
             +checkbox(item)

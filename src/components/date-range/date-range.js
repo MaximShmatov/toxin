@@ -13,8 +13,6 @@ class DateRange extends DatePicker {
 
   #date = new Date();
 
-  #isOutDate = false;
-
   constructor($component) {
     super($component);
     this.#init($component);
@@ -54,15 +52,21 @@ class DateRange extends DatePicker {
   }
 
   #handlePickerSelectIn() {
-    this.counter = 0;
-    this.#date.setTime(Number(this.dateComeIn));
+    const date = (this.currentDate > Number(this.dateComeIn))
+      ? this.currentDate
+      : Number(this.dateComeIn);
+    this.dateComeIn = date.toString();
+    this.#date.setTime(date);
     const dateString = `${this.#date.getDate()}.${this.#getMonth(this.#date.getMonth())}.${this.#date.getFullYear()}`;
     this.#$inDate.text(dateString);
   }
 
   #handlePickerSelectOut() {
-    this.counter = 1;
-    this.#date.setTime(Number(this.dateCheckOut));
+    const date = (Number(this.dateComeIn) < Number(this.dateCheckOut))
+      ? Number(this.dateCheckOut)
+      : Number(this.dateComeIn);
+    this.dateCheckOut = date.toString();
+    this.#date.setTime(date);
     const str = `${this.#date.getDate()}.${this.#getMonth(this.#date.getMonth())}.${this.#date.getFullYear()}`;
     this.#$outDate.text(str);
   }
@@ -91,27 +95,7 @@ class DateRange extends DatePicker {
     return month + 1;
   }
 
-  #togglePicker(evt) {
-    if (evt) {
-      if (evt.target.closest('.js-date-range__head-in')) {
-        const hidden = !this.#isOutDate || this.#$datePicker.hasClass('date-range__picker_hidden');
-        if (hidden) {
-          this.#$datePicker.toggleClass('date-range__picker_hidden');
-        }
-        this.#isOutDate = false;
-        this.counter = 0;
-        return;
-      }
-      if (evt.target.closest('.js-date-range__head-out')) {
-        const hidden = this.#isOutDate || this.#$datePicker.hasClass('date-range__picker_hidden');
-        if (hidden) {
-          this.#$datePicker.toggleClass('date-range__picker_hidden');
-        }
-        this.#isOutDate = true;
-        this.counter = 1;
-        return;
-      }
-    }
+  #togglePicker() {
     this.#$datePicker.toggleClass('date-range__picker_hidden');
   }
 }

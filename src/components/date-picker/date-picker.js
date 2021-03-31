@@ -23,11 +23,11 @@ class DatePicker {
 
   #dateCheckOutBefore;
 
-  #currentDate = this.#pickerDate.getTime();
+  currentDate = this.#pickerDate.getTime();
 
-  dateComeIn = this.#currentDate.toString();
+  dateComeIn = this.currentDate.toString();
 
-  dateCheckOut = this.#currentDate.toString();
+  dateCheckOut = this.currentDate.toString();
 
   counter = 0;
 
@@ -88,9 +88,9 @@ class DatePicker {
 
   #handlePickerButtonClearClick() {
     this.counter = 0;
-    this.#pickerDate.setTime(this.#currentDate);
-    this.dateComeIn = this.#currentDate;
-    this.dateCheckOut = this.#currentDate;
+    this.#pickerDate.setTime(this.currentDate);
+    this.dateComeIn = this.currentDate;
+    this.dateCheckOut = this.currentDate;
     this.#setTitle();
     this.#setPickerDate();
     this.#setRangeDate();
@@ -137,7 +137,7 @@ class DatePicker {
         this.#$bodyRanges.eq(i).removeAttr('data-range');
       }
 
-      if (timeStamp === String(this.#currentDate)) {
+      if (timeStamp === String(this.currentDate)) {
         $date.addClass('date-picker__body-date_current');
       } else {
         $date.removeClass('date-picker__body-date_current');

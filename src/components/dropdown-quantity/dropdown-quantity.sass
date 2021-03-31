@@ -21,6 +21,7 @@
   &__body
     @include flex-between
     font: inherit
+    white-space: nowrap
     background-color: white
     color: $color-primary-dark
     width: 100%
@@ -41,13 +42,14 @@
       color: $color-primary-dark
 
     &-caption
+      overflow: hidden
       padding: 0 14px
 
     &-arrow
       display: flex
       justify-content: center
       align-items: center
-      width: 42px
+      min-width: 42px
       height: 100%
       color: $color-primary-shady
 

@@ -69,6 +69,7 @@ class DropdownQuantity {
   #handleClearClick() {
     this.#$itemsActions.each(function () {
       $(this).find('.js-dropdown-quantity__picker-item-actions-counter').text('0');
+      $(this).find('.js-dropdown-quantity__picker-item-actions-decrement').prop('disabled', true);
     });
     this.#setCaption();
   }

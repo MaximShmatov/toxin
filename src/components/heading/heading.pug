@@ -8,11 +8,10 @@ mixin heading({ text, variant } = {})
       tag = variant;
     }
 
-  #{tag}.heading
-    if (variant === 'numeric')
-      - const { number, level } = text;
-      div.heading__info
-        span.heading__info-number= number
-        span.heading__info-level= level
-    else
-      span(class=`heading-tag${tag}`)= text
+  if (variant === 'numeric')
+    - const { number, level } = text;
+    #{tag}.heading
+      span.heading__number= number
+      span.heading__level= level
+  else
+    #{tag}.heading(class=`heading-tag${tag}`)= text

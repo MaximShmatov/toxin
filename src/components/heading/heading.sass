@@ -1,7 +1,8 @@
 .heading
+  line-height: 100%
   margin: 0
 
-  &-tagh1, &-tagh2, &-tagh3, &__info-number, &__info-level
+  &-tagh1, &-tagh2, &-tagh3, &__number, &__level
     color: $color-primary-opaque
     margin: 0
 
@@ -9,18 +10,21 @@
     font-size: 24px
     line-height: 30px
 
-  &-tagh2, &__info-number
+  &-tagh2, &__number
     font-size: 19px
     line-height: 24px
 
-  &-tagh3, &__info-level
+  &-tagh3, &__level
     font-size: 12px
     line-height: 15px
     text-transform: uppercase
 
-  &__info:first-letter
-    font-size: 14px
+  &__number
+    display: inline-block
 
-  &__info-level
+    &:first-letter
+      font-size: 14px
+
+  &__level
     padding-left: 8px
     color: $color-purple

@@ -1,17 +1,14 @@
 .pagination-cards
   &__title
     margin: 0 0 21px 0
-    width: 100%
+    padding: 0
 
   &__content
-    display: flex
-    justify-content: space-between
-    flex-wrap: wrap
-
-    &-card
-      padding-bottom: 21px
+    display: grid
+    grid-template-columns: repeat(auto-fit, 270px)
+    grid-gap: 20px 12px
 
   &__control
     display: flex
-    padding: 20px 14px 7px 0
+    padding: 40px 14px 7px 0
     justify-content: center

@@ -9,7 +9,7 @@ mixin form-reservation({ number, level, pricePerDay, priceService, priceDiscount
   form.form-reserve.js-form-reserve
     fieldset.form-reserve__fieldset
       legend.form-reserve__title
-        +heading({text: {number, level}, variant: 'numeric'})
+        +heading({text: {number, level}, variant: 'numeric-large'})
         div.form-reserve__title-price
           span.form-reserve__title-price-amount= pricePerDay
           span.form-reserve__title-price-text в сутки
@@ -35,7 +35,7 @@ mixin form-reservation({ number, level, pricePerDay, priceService, priceDiscount
           span.form-reserve__pay-services-amount-total.js-form-reserve__pay-services-amount-total= priceService
           span.form-reserve__pay-services-amount-total-end &#x20bd;
         div.form-reserve__pay-other
-          span.form-reserve__pay-other-caption Сбор за дополнительные услуги
+          span.form-reserve__pay-other-caption Сбор за доп. услуги
         div.form-reserve__pay-other-info i
         div.form-reserve__pay-other-amount
           span.form-reserve__pay-other-amount-total.js-form-reserve__pay-other-amount-total= priceAdditionally

@@ -11,5 +11,9 @@
     flex-grow: 1
 
   &__footer
-    &-copyright
-      margin-top: 1px
+    display: none
+    @media (min-width: 768px)
+      display: block
+
+  &__copyright
+    margin-top: 1px

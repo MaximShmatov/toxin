@@ -1,8 +1,8 @@
 .form-come-in
   background: white
-  border: 1px solid $color-primary-limpid
+  border: 1px solid rgba(0, 0, 0, 0.12)
   box-sizing: border-box
-  box-shadow: 0 0 25px $color-primary-light
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2)
   border-radius: 4px
   max-width: 380px
   padding: 10px
@@ -16,11 +16,14 @@
     @media(min-width: 360px)
       margin: 39px auto 31px
 
+  &__title
+    padding: 0
+
   &__email
-    margin-top: 20px
+    margin-top: 15px
 
   &__pass
-    margin-top: 10px
+    margin-top: 5px
 
   &__come
     margin-top: 20px

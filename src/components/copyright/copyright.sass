@@ -4,25 +4,30 @@
 
   &__wrapper
     display: flex
+    flex-direction: column
     align-items: center
-    justify-content: center
-    flex-grow: 1
-    flex-wrap: wrap
-    max-width: 1160px
-    margin: 0 auto
-    padding: 23px 15px
-    @media(min-width: 576px)
-      justify-content: space-between
-    @media(min-width: 1160px)
-      padding: 23px 0
-
+    padding: 30px 15px
+    @media (min-width: 380px)
+      padding: 120px 15px
+      @media (min-width: 768px)
+        flex-direction: row
+        justify-content: space-between
+        flex-grow: 1
+        max-width: 1160px
+        padding: 23px 15px
+        margin: 0 auto
 
   &__logo
-    display: none
+    display: block
+    @media (min-width: 768px)
+      display: none
 
   &__caption
-    line-height: 17px
-    margin: 0
+    text-align: center
+    margin: 21px 0 25px
+    @media (min-width: 768px)
+      line-height: 17px
+      margin: 0
 
   &__social
     display: flex
@@ -42,21 +47,3 @@
 
     &-icon:nth-child(3)
       background: url('img/copyright-instagram.png') no-repeat center center
-
-  &_theme_logotype
-    background-color: transparent
-    box-shadow: none
-
-    .copyright__wrapper
-      flex-direction: column
-      max-width: 768px
-      padding: 120px 0
-      box-shadow: 0 10px 20px $color-primary-limpid
-      background-color: white
-
-    .copyright__logo
-      display: block
-
-    .copyright__caption
-      text-align: center
-      margin: 21px 0 25px

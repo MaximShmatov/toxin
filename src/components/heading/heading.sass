@@ -2,15 +2,15 @@
   line-height: 100%
   margin: 0
 
-  &-tagh1, &-tagh2, &-tagh3, &__number, &__level
+  &-tagh1, &-tagh2, &-tagh3, &__numeric, &__numeric-large
     color: $color-primary-opaque
     margin: 0
 
-  &-tagh1
+  &-tagh1, &__numeric-large
     font-size: 24px
     line-height: 30px
 
-  &-tagh2, &__number
+  &-tagh2, &__numeric
     font-size: 19px
     line-height: 24px
 
@@ -19,7 +19,7 @@
     line-height: 15px
     text-transform: uppercase
 
-  &__number
+  &__numeric, &__numeric-large
     display: inline-block
 
     &:first-letter
@@ -27,4 +27,5 @@
 
   &__level
     padding-left: 8px
+    margin: 0
     color: $color-purple

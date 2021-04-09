@@ -1,10 +1,9 @@
-mixin copyright({ theme, content } = {})
+mixin copyright({ content } = {})
   -
-    const themes = { 'logotype': 'copyright_theme_logotype' };
     const { logo, caption, links } = content;
     const { src, alt } = logo;
 
-  div.copyright(class=themes[theme])
+  div.copyright
     div.copyright__wrapper
       img.copyright__logo(src=src alt=alt)
       p.copyright__caption= caption

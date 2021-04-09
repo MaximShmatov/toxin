@@ -19,10 +19,6 @@ class DatePicker {
 
   #months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
 
-  #dateComeInBefore;
-
-  #dateCheckOutBefore;
-
   currentDate = this.#pickerDate.getTime();
 
   dateComeIn = this.currentDate.toString();
@@ -57,23 +53,18 @@ class DatePicker {
   }
 
   #handlePickerBodyClick(evt) {
-    switch (this.counter) {
-      case 0:
-        this.#dateComeInBefore = this.dateComeIn;
-        this.dateComeIn = evt.currentTarget.getAttribute('data-timestamp');
-        this.#setRangeDate();
-        this.counter += 1;
-        this.#$picker.trigger(this.#evtSelectIn);
-        break;
-      case 1:
-        this.#dateCheckOutBefore = this.dateCheckOut;
-        this.dateCheckOut = evt.currentTarget.getAttribute('data-timestamp');
-        this.#setRangeDate();
-        this.counter -= 1;
-        this.#$picker.trigger(this.#evtSelectOut);
-        break;
-      default:
+    const date = evt.currentTarget.getAttribute('data-timestamp');
+    if (this.currentDate >= Number(date)) {
+      this.dateComeIn = this.currentDate.toString();
+      this.#$picker.trigger(this.#evtSelectIn);
+    } else if (this.dateCheckOut >= Number(date)) {
+      this.dateComeIn = date;
+      this.#$picker.trigger(this.#evtSelectIn);
+    } else {
+      this.dateCheckOut = date;
+      this.#$picker.trigger(this.#evtSelectOut);
     }
+    this.#setRangeDate();
   }
 
   #handlePickerButtonLeftClick() {

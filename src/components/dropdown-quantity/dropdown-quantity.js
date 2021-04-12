@@ -55,7 +55,7 @@ class DropdownQuantity {
     let counter = Number($counter.text());
     if (evt.target.value === '-') {
       $counter.text(counter -= 1);
-    } else {
+    } else if (evt.target.value === '+') {
       $counter.text(counter += 1);
     }
     if (counter <= 0) {

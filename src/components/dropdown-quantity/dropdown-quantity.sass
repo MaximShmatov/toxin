@@ -29,6 +29,7 @@
     padding: 0
     border: 1px solid $color-primary-light
     border-radius: 4px
+    box-sizing: border-box
     outline: none
     cursor: pointer
 
@@ -60,7 +61,7 @@
 
   &__picker
     position: absolute
-    top: 96%
+    top: 97%
     width: 100%
     z-index: 11
     border: 1px solid $color-primary-light
@@ -93,18 +94,27 @@
         @include flex-between
         width: 92px
 
+        &-counter
+          flex-grow: 1
+          text-align: center
+
         &-decrement, &-increment
-          font: inherit
           width: 30px
           height: 30px
+          font: inherit
           font-size: 18px
+          text-align: center
           color: $color-primary-shady
           background-color: white
           border: 1px solid $color-primary-light
           box-sizing: border-box
           border-radius: 50%
+          padding: 0 0 0 1px
           outline: none
           cursor: pointer
+
+        &-increment
+          line-height: 30px
 
           &:hover, &:focus
             border-color: $color-primary-shady

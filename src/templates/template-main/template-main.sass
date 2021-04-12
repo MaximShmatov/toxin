@@ -24,6 +24,12 @@ $color-green: #6FCF97
   opacity: 0
   z-index: -1
 
+@mixin no-select
+  -moz-user-select: none
+  -webkit-user-select: none
+  -ms-user-select: none
+  user-select: none
+
 html
   @include font-body
   background: #E5E5E5

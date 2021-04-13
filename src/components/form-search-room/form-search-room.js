@@ -9,7 +9,7 @@ class FormSearchRoom {
   #init($component) {
     new DateRange($component);
     new DropdownQuantity($component);
-  };
+  }
 }
 
 export default FormSearchRoom;

@@ -33,7 +33,7 @@ class CardRoom {
       }
       return true;
     });
-  };
+  }
 
   #handleButtonRightClick() {
     this.#$radio.each((index, item) => {
@@ -44,7 +44,7 @@ class CardRoom {
       }
       return true;
     });
-  };
+  }
 }
 
 export default CardRoom;

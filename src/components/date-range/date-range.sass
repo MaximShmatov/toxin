@@ -2,19 +2,16 @@
   background-color: white
   position: relative
 
-  &::after
-    content: ''
-    display: block
-    width: 100%
-    clear: both
+  &__wrapper
+    display: flex
+    justify-content: space-between
+    flex-wrap: nowrap
 
   &__head
-    @media(min-width: 360px)
-      &:nth-of-type(1)
-        float: left
-
-      &:nth-of-type(2)
-        float: right
+    max-width: 120px
+    flex: 1
+    @media (min-width: 360px)
+      max-width: 150px
 
     &:hover &-out, &:hover &-in, &:hover ~ .date-range__picker .date-picker
       border-color: $color-primary-shady
@@ -26,13 +23,12 @@
       padding-bottom: 5px
 
     &-in, &-out
-      font: inherit
       display: flex
       justify-content: space-between
       align-items: center
-      background-color: transparent
       width: 100%
-      min-width: 150px
+      font: inherit
+      background-color: transparent
       height: 44px
       border: 1px solid $color-primary-light
       color: $color-primary-dark
@@ -49,6 +45,9 @@
         color: $color-primary-dark
 
       &-date
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
         text-transform: uppercase
         padding-left: 14px
 

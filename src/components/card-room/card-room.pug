@@ -1,7 +1,7 @@
 include ../heading/heading
 include ../rate-button/rate-button
 
-mixin card-room({ img, alt, number, level, pay, review, rate } = {})
+mixin card-room({ images, alt, number, level, pay, review, rate } = {})
   -
     const name = Math.random();
     const { amount, term } = pay;
@@ -9,7 +9,7 @@ mixin card-room({ img, alt, number, level, pay, review, rate } = {})
 
   div.card-room.js-card-room
     div.card-room__slider
-      each image, index in img
+      each image, index in images
         input.card-room__slider-radio.js-card-room__slider-radio(type="radio" name=name value=index checked=(index === 3))
         div.card-room__slider-item
         img.card-room__slider-img(src=image alt=alt[index])

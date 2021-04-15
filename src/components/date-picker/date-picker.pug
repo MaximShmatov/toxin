@@ -15,7 +15,7 @@ mixin date-picker({} = {})
         span.date-picker__body-week= day
       - for (let i = 0; i < dateButtons; i += 1)
           div.date-picker__body-range.js-date-picker__body-range
-            input.date-picker__body-date.js-date-picker__body-date(type = "button")
+            input.date-picker__body-date.js-date-picker__body-date(type="button")
     div.date-picker__footer
       div.date-picker__footer-clear.js-date-picker__footer-clear
         +button({type: "button", theme: "texted", text: "Очистить"})

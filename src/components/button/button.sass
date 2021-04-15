@@ -1,6 +1,5 @@
 .button
   @include  no-select
-  $button-color-gradient: linear-gradient(180deg, $color-purple 0%, rgba(139, 164, 249, 1) 100%)
   position: relative
   display: flex
   justify-content: center
@@ -10,7 +9,7 @@
   border: none
   padding: 2px
   margin: 0
-  background: $button-color-gradient
+  background: linear-gradient(180deg, $color-purple 0%, rgba(139, 164, 249, 1) 100%)
   cursor: pointer
   outline: none
 
@@ -24,8 +23,8 @@
     opacity: .4
 
   &:disabled
-    background: $button-color-gradient
-    opacity: 0.5
+    background: linear-gradient(180deg, #BC9CFF77 0%, rgba(139, 164, 249, .5) 100%)
+    opacity: 1
 
   &__caption
     @include font-primary
@@ -47,10 +46,8 @@
 
   &_theme_bordered
     .button__caption
-      color: $color-purple
-
-    .button__caption
       background: white
+      color: $color-purple
 
   &_theme_arrowed
     .button__caption
@@ -66,16 +63,18 @@
 
   &_theme_texted
     background: white
+    padding: 0
     .button__caption
       color: $color-purple
 
     &:disabled
       background: white
-      color: $color-primary-shady
+      .button__caption
+        color: $color-primary-shady
 
   &_size_thin
     height: 34px
 
   &_size_thick
-    min-width: 100px
+    min-width: 99px
     height: 44px

@@ -1,10 +1,10 @@
 include ../heading/heading
 include ../checkbox/checkbox
 
-mixin checkbox-list({ title, isChecked, items } = {})
+mixin checkbox-list({ title, isOpened, items } = {})
   div.checkbox-list
     label.checkbox-list__body
-      input.checkbox-list__check(type="checkbox" checked=isChecked)
+      input.checkbox-list__check(type="checkbox" checked=isOpened)
       div.checkbox-list__body-title
         +heading({text: title, variant: 'h3'})
         div.checkbox-list__body-arrow

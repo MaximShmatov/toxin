@@ -112,9 +112,9 @@ block page-uikit
         span.uikit-elements__sector-element-caption Expanded
         +dropdown-quantity({title: "Dropdown", picker: dropdownData.room, hasActions: false})
       div.uikit-elements__sector-checkbox-list
-        +checkbox-list({title: "Expandable checkbox list", isChecked: false, items: checkboxListItems})
+        +checkbox-list({title: "Expandable checkbox list", isOpened: false, items: checkboxListItems})
       div.uikit-elements__sector-checkbox-list-expanded
-        +checkbox-list({title: "Expandable checkbox list", isChecked: true, items: checkboxListItems})
+        +checkbox-list({title: "Expandable checkbox list", isOpened: true, items: checkboxListItems})
 
     section.uikit-elements__sector
       div.uikit-elements__sector-dropdown-guests.js-uikit-elements__sector-dropdown-guests

@@ -30,11 +30,11 @@ class RangeSlider {
     this.$slider.on('slider-data', this.#handlePluginSliderData.bind(this));
   }
 
-  #handlePluginSliderData(evt) {
-    if (evt.detail.name === 'valueFrom') {
+  #handlePluginSliderData(event) {
+    if (event.detail.name === 'valueFrom') {
       this.#valueFrom = this.getNumberStr(this.$slider.slider('valueFrom'));
     }
-    if (evt.detail.name === 'valueTo') {
+    if (event.detail.name === 'valueTo') {
       this.#valueTo = this.getNumberStr(this.$slider.slider('valueTo'));
     }
     this.#$range.text(`${this.#valueFrom}\u2009\u20BD - ${this.#valueTo}\u2009\u20BD`);

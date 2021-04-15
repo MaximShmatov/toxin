@@ -43,12 +43,12 @@ class DateRange extends DatePicker {
     $(document).on('mouseup.daterange', this.#handleDocumentMouseup.bind(this));
   }
 
-  #handleHeadInClick(evt) {
-    this.#togglePicker(evt);
+  #handleHeadInClick(event) {
+    this.#togglePicker(event);
   }
 
-  #handleHeadOutClick(evt) {
-    this.#togglePicker(evt);
+  #handleHeadOutClick(event) {
+    this.#togglePicker(event);
   }
 
   #handlePickerSelectIn() {
@@ -71,8 +71,8 @@ class DateRange extends DatePicker {
     this.#$outDate.text(str);
   }
 
-  #handlePickerSubmit(evt) {
-    this.#togglePicker(evt);
+  #handlePickerSubmit(event) {
+    this.#togglePicker(event);
   }
 
   #handlePickerClear() {
@@ -80,8 +80,8 @@ class DateRange extends DatePicker {
     this.#$outDate.text(this.#defaultDate);
   }
 
-  #handleDocumentMouseup(evt) {
-    if (!evt.target.closest('.js-date-range')) {
+  #handleDocumentMouseup(event) {
+    if (!event.target.closest('.js-date-range')) {
       this.#$datePicker.addClass('date-range__picker_hidden');
     }
   }

@@ -49,13 +49,13 @@ class DropdownQuantity {
     this.togglePicker();
   }
 
-  #handleItemsActionsClick(evt) {
-    const $counter = $(evt.currentTarget).find('.js-dropdown-quantity__picker-item-actions-counter');
-    const $decrement = $(evt.currentTarget).find('.js-dropdown-quantity__picker-item-actions-decrement');
+  #handleItemsActionsClick(event) {
+    const $counter = $(event.currentTarget).find('.js-dropdown-quantity__picker-item-actions-counter');
+    const $decrement = $(event.currentTarget).find('.js-dropdown-quantity__picker-item-actions-decrement');
     let counter = Number($counter.text());
-    if (evt.target.value === '-') {
+    if (event.target.value === '-') {
       $counter.text(counter -= 1);
-    } else if (evt.target.value === '+') {
+    } else if (event.target.value === '+') {
       $counter.text(counter += 1);
     }
     if (counter <= 0) {
@@ -78,8 +78,8 @@ class DropdownQuantity {
     this.togglePicker();
   }
 
-  #handleDocumentClick(evt) {
-    if (!evt.target.closest('.js-dropdown-quantity')) {
+  #handleDocumentClick(event) {
+    if (!event.target.closest('.js-dropdown-quantity')) {
       this.#$picker.addClass('dropdown-quantity__picker_hidden');
     }
   }

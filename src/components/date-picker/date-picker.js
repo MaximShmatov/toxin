@@ -7,13 +7,13 @@ class DatePicker {
 
   #$bodyRanges;
 
-  #evtClear = 'datepicker.clear';
+  #eventClear = 'datepicker.clear';
 
-  #evtSubmit = 'datepicker.submit';
+  #eventSubmit = 'datepicker.submit';
 
-  #evtSelectIn = 'datepicker.select.in';
+  #eventSelectIn = 'datepicker.select.in';
 
-  #evtSelectOut = 'datepicker.select.out';
+  #eventSelectOut = 'datepicker.select.out';
 
   #pickerDate = new Date();
 
@@ -52,17 +52,17 @@ class DatePicker {
       .on('click.datepicker', this.#handlePickerButtonSubmitClick.bind(this));
   }
 
-  #handlePickerBodyClick(evt) {
-    const date = evt.currentTarget.getAttribute('data-timestamp');
+  #handlePickerBodyClick(event) {
+    const date = event.currentTarget.getAttribute('data-timestamp');
     if (this.currentDate >= Number(date)) {
       this.dateComeIn = this.currentDate.toString();
-      this.#$picker.trigger(this.#evtSelectIn);
+      this.#$picker.trigger(this.#eventSelectIn);
     } else if (this.dateCheckOut >= Number(date)) {
       this.dateComeIn = date;
-      this.#$picker.trigger(this.#evtSelectIn);
+      this.#$picker.trigger(this.#eventSelectIn);
     } else {
       this.dateCheckOut = date;
-      this.#$picker.trigger(this.#evtSelectOut);
+      this.#$picker.trigger(this.#eventSelectOut);
     }
     this.#setRangeDate();
   }
@@ -85,11 +85,11 @@ class DatePicker {
     this.#setTitle();
     this.#setPickerDate();
     this.#setRangeDate();
-    this.#$picker.trigger(this.#evtClear);
+    this.#$picker.trigger(this.#eventClear);
   }
 
   #handlePickerButtonSubmitClick() {
-    this.#$picker.trigger(this.#evtSubmit);
+    this.#$picker.trigger(this.#eventSubmit);
   }
 
   #setTitle() {
@@ -150,9 +150,9 @@ class DatePicker {
       const $date = $(item);
       dateCurrent.setDate(dateCurrent.getDate() + 1);
       if (dateCurrent.getMonth() === month) {
-        $date.addClass('date-picker__body-date_color_shady');
+        $date.addClass('date-picker__body-date_shady');
       } else {
-        $date.removeClass('date-picker__body-date_color_shady');
+        $date.removeClass('date-picker__body-date_shady');
       }
       $date.attr('data-timestamp', dateCurrent.getTime());
       $date.attr('value', dateCurrent.getDate());

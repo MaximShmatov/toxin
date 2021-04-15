@@ -53,8 +53,8 @@ class DateFilter extends DatePicker {
     this.#handlePickerSelectOut();
   }
 
-  #handleDocumentMouseup(evt) {
-    if (!evt.target.closest('.js-date-filter')) {
+  #handleDocumentMouseup(event) {
+    if (!event.target.closest('.js-date-filter')) {
       this.#$datePicker.addClass('date-filter__picker_hidden');
     }
   }

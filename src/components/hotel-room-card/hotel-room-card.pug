@@ -1,0 +1,30 @@
+include ../heading/heading
+include ../rate-button/rate-button
+
+mixin hotel-room-card({ images, alt, number, level, pay, review, rate } = {})
+  -
+    const name = Math.random();
+    const { amount, term } = pay;
+    const { numeral, text } = review;
+
+  div.hotel-room-card.js-hotel-room-card
+    div.hotel-room-card__slider
+      each image, index in images
+        input.hotel-room-card__slider-radio.js-hotel-room-card__slider-radio(type="radio" name=name value=index checked=(index === 3))
+        div.hotel-room-card__slider-item
+        img.hotel-room-card__slider-img(src=image alt=alt[index])
+      div.hotel-room-card__slider-control
+        div.hotel-room-card__slider-control-left
+          button.hotel-room-card__slider-control-left-button.js-hotel-room-card__slider-control-left-button(type="button")
+        div.hotel-room-card__slider-control-right
+          button.hotel-room-card__slider-control-right-button.js-hotel-room-card__slider-control-right-button(type="button")
+    div.hotel-room-card__title
+      +heading({text: {number, level}, variant: 'numeric'})
+      div.hotel-room-card__title-price
+        span.hotel-room-card__title-price-amount= amount
+        span.hotel-room-card__title-price-text в сутки
+    div.hotel-room-card__review
+      +rate-button({rate})
+      div.hotel-room-card__review-quantity
+        span.hotel-room-card__review-quantity-number= numeral
+        span.hotel-room-card__review-quantity-text= text

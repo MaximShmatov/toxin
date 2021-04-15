@@ -11,17 +11,14 @@ class CardRoom {
   }
 
   #init($component) {
-    this.#$radio = $component
-      .find('.js-card-room__slider-radio');
-    this.#$leftButtons = $component
-      .find('.js-card-room__slider-control-left-button');
-    this.#$rightButtons = $component
-      .find('.js-card-room__slider-control-right-button');
+    this.#$radio = $component.find('.js-hotel-room-card__slider-radio');
+    this.#$leftButtons = $component.find('.js-hotel-room-card__slider-control-left-button');
+    this.#$rightButtons = $component.find('.js-hotel-room-card__slider-control-right-button');
   }
 
   #setHandlers() {
-    this.#$leftButtons.on('click.cardroom', this.#handleButtonLeftClick.bind(this));
-    this.#$rightButtons.on('click.cardroom', this.#handleButtonRightClick.bind(this));
+    this.#$leftButtons.on('click.hotelroomcard', this.#handleButtonLeftClick.bind(this));
+    this.#$rightButtons.on('click.hotelroomcard', this.#handleButtonRightClick.bind(this));
   }
 
   #handleButtonLeftClick() {

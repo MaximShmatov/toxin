@@ -5,11 +5,11 @@ include ../../components/form-reservation/form-reservation
 include ../../components/date-picker/date-picker
 include ../../components/form-registration/form-registration
 include ../../components/form-come-in/form-come-in
-include ../../components/card-room/card-room
+include ../../components/hotel-room-card/hotel-room-card
 
 block page-uikit
   -
-    const cards = require('../../components/card-room/card-room.json');
+    const cards = require('../../components/hotel-room-card/hotel-room-card.json');
     const formData = require('../../components/form-reservation/form-reservation.json');
 
   div.uikit-cards__wrapper
@@ -25,6 +25,6 @@ block page-uikit
       section.uikit-cards__form-sign
         +form-come-in({title: "Войти", caption: "Нет аккаунта на Toxin?"})
       section.uikit-cards__form-card-top
-        +card-room(cards[0])
+        +hotel-room-card(cards[0])
       section.uikit-cards__form-card-bottom
-        +card-room(cards[1])
+        +hotel-room-card(cards[1])

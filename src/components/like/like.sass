@@ -3,8 +3,7 @@
   cursor: pointer
 
   &__hidden-input
-    position: absolute
-    opacity: 0
+    @include hide
 
     &:checked + .like__visible-input
       background: linear-gradient(180deg, $color-purple 0%, #8BA4F9 100%)

@@ -6,18 +6,16 @@
   line-height: 20px
   cursor: pointer
 
-  &__visible-input
-    position: absolute
-    width: 0
-    height: 0
+  &__hidden-input
+    @include hide
 
-    &:focus + .checkbox__hidden-input
+    &:focus + .checkbox__visible-input
       box-shadow: 0 0 2px 1px $color-primary-shady
 
-    &:hover:not(:disabled) + .checkbox__hidden-input
+    &:hover:not(:disabled) + .checkbox__visible-input
       opacity: .6
 
-    &:checked + .checkbox__hidden-input
+    &:checked + .checkbox__visible-input
       border: 1px solid $color-purple
 
       &::before, &::after
@@ -36,7 +34,7 @@
         padding: 0 4px 4px 0
         background-clip: content-box
 
-  &__hidden-input
+  &__visible-input
     position: relative
     display: flex
     align-items: center

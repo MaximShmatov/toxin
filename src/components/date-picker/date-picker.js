@@ -117,21 +117,21 @@ class DatePicker {
         || timeStamp === String(this.dateCheckOut)
       );
       if (dateSelected) {
-        $date.addClass('date-picker__body-date_selected');
+        $date.addClass('date-picker__body-date_color_purple');
         if (timeStamp === String(this.dateComeIn)) {
           this.#$bodyRanges.eq(i).attr('data-range', 'first');
         } else {
           this.#$bodyRanges.eq(i).attr('data-range', 'last');
         }
       } else {
-        $date.removeClass('date-picker__body-date_selected');
+        $date.removeClass('date-picker__body-date_color_purple');
         this.#$bodyRanges.eq(i).removeAttr('data-range');
       }
 
       if (timeStamp === String(this.currentDate)) {
-        $date.addClass('date-picker__body-date_current');
+        $date.addClass('date-picker__body-date_color_green');
       } else {
-        $date.removeClass('date-picker__body-date_current');
+        $date.removeClass('date-picker__body-date_color_green');
       }
     });
   }
@@ -150,9 +150,9 @@ class DatePicker {
       const $date = $(item);
       dateCurrent.setDate(dateCurrent.getDate() + 1);
       if (dateCurrent.getMonth() === month) {
-        $date.addClass('date-picker__body-date_day-month');
+        $date.addClass('date-picker__body-date_color_shady');
       } else {
-        $date.removeClass('date-picker__body-date_day-month');
+        $date.removeClass('date-picker__body-date_color_shady');
       }
       $date.attr('data-timestamp', dateCurrent.getTime());
       $date.attr('value', dateCurrent.getDate());

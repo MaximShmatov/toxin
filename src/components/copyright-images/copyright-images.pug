@@ -1,0 +1,6 @@
+mixin copyright-images({ items } = {})
+  div.copyright-images
+    each item in items
+      - const { src, alt, link } = item;
+      a.copyright-images__link(href=link target="_blank" rel="noopener noreferrer")
+        img.copyright-images__img(src=src alt=alt)

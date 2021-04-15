@@ -1,12 +1,14 @@
+include ../copyright-images/copyright-images
+
 mixin copyright({ content } = {})
   -
-    const { logo, caption, links } = content;
+    const items = require('../../components/copyright-images/copyright-images.json');
+    const { logo, caption } = content;
     const { src, alt } = logo;
 
   div.copyright
     div.copyright__wrapper
       img.copyright__logo(src=src alt=alt)
-      p.copyright__caption= caption
-      div.copyright__social
-        each link in links
-          a.copyright__social-icon(href=link target="_blank" rel="noopener noreferrer")
+      span.copyright__caption= caption
+      div.copyright__icons
+        +copyright-images({items})

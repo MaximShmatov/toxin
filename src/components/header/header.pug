@@ -2,7 +2,7 @@ include ../button/button
 
 mixin header({ data, name } = {})
   -
-    const { logo, nav } = data;
+    const { logo, navItems } = data;
     const id = Math.random();
 
   form.header
@@ -12,16 +12,16 @@ mixin header({ data, name } = {})
       label.header__button(for=id)
       nav.header__menu
         ul.header__menu-items
-          each menuItem in nav
-            - const { hrefMenu, captionMenu, submenu } = menuItem;
+          each menuItem in navItems
+            - const { hrefMenu, captionMenu, subMenu } = menuItem;
             li.header__menu-item
-              if(submenu)
+              if(subMenu)
                 span.header__submenu(tabindex="-1")= captionMenu
                 ul.header__submenu-items
-                  each submenuItem in submenu
-                    - const { hrefSubmenu, captionSubmenu } = submenuItem;
+                  each submenuItem in subMenu
+                    - const { href, caption } = submenuItem;
                     li.header__submenu-item
-                      a.header__submenu-ref(href=hrefSubmenu)= captionSubmenu
+                      a.header__submenu-ref(href=href)= caption
               else
                 a.header__menu-ref(href=hrefMenu)= captionMenu
       if(name)
@@ -29,6 +29,6 @@ mixin header({ data, name } = {})
           span.header__user-name= name
       else
         div.header__sign-in
-          +button({type: "button", theme: "bordered", size: "thin", text: "Войти"})
+          +button({type: "button", variant: "bordered", size: "thin", text: "Войти"})
         div.header__sign-up
-          +button({type: "button", theme: "filled", size: "thin", text: "Зарегистрироваться"})
+          +button({type: "button", variant: "filled", size: "thin", text: "Зарегистрироваться"})

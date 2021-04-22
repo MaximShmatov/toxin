@@ -4,7 +4,7 @@ include ../../components/form-search-room/form-search-room
 include ../../components/form-reservation/form-reservation
 include ../../components/date-picker/date-picker
 include ../../components/form-registration/form-registration
-include ../../components/form-come-in/form-come-in
+include ../../components/form-login/form-login
 include ../../components/hotel-room-card/hotel-room-card
 
 block page-uikit
@@ -23,7 +23,7 @@ block page-uikit
       section.uikit-cards__form-registration
         +form-registration({title: "Регистрация аккаунта", caption: "Уже есть аккаунт на Toxin"})
       section.uikit-cards__form-sign
-        +form-come-in({title: "Войти", caption: "Нет аккаунта на Toxin?"})
+        +form-login({title: "Войти", caption: "Нет аккаунта на Toxin?"})
       section.uikit-cards__form-card-top
         +hotel-room-card(cards[0])
       section.uikit-cards__form-card-bottom

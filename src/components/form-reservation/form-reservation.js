@@ -10,11 +10,11 @@ class FormReservation {
 
   #pricePerDay;
 
-  #priceService;
+  #servicePrice;
 
-  #priceDiscount;
+  #discountPrice;
 
-  #priceAdditionally;
+  #additionallyPrice;
 
   #dateRange;
 
@@ -39,9 +39,9 @@ class FormReservation {
   #init($component) {
     const price = $component.find('.js-form-reserve__pay-days-price').text();
     this.#pricePerDay = Number(price.slice(0, -1).replace(/ /g, ''));
-    this.#priceService = Number($component.find('.js-form-reserve__pay-services-price').text());
-    this.#priceDiscount = Number($component.find('.js-form-reserve__pay-services-amount-total').text());
-    this.#priceAdditionally = Number($component.find('.js-form-reserve__pay-other-amount-total').text());
+    this.#servicePrice = Number($component.find('.js-form-reserve__pay-services-price').text());
+    this.#discountPrice = Number($component.find('.js-form-reserve__pay-services-amount-total').text());
+    this.#additionallyPrice = Number($component.find('.js-form-reserve__pay-other-amount-total').text());
     this.#dateRange = new DateRange($component);
     new DropdownQuantity($component);
 
@@ -53,7 +53,7 @@ class FormReservation {
   #calcPayment() {
     const totalDays = this.#dateRange.getDateRange();
     const payForAllDays = this.#pricePerDay * totalDays;
-    const payBase = this.#priceDiscount + this.#priceAdditionally + this.#priceService;
+    const payBase = this.#discountPrice + this.#additionallyPrice + this.#servicePrice;
     const payTotal = payForAllDays - payBase;
 
     this.#$payDays.text(totalDays);

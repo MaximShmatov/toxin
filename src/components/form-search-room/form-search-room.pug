@@ -11,8 +11,8 @@ mixin form-search-room({ title } = {})
       legend.form-search-room__title
         +heading({text: title, variant: 'h1'})
       div.form-search-room__date
-        +date-range({titleFirst: "Прибытие", titleSecond: "Выезд"})
+        +date-range({firstTitle: "Прибытие", secondTitle: "Выезд"})
       div.form-search-room__guests
         +dropdown-quantity({title: "Гости", picker: dropdownData.guests})
       div.form-search-room__submit
-        +button({type: "submit", text: "Подобрать номер", theme: "arrowed", size: "thick"})
+        +button({type: "submit", text: "Подобрать номер", variant: "width-arrow", size: "thick"})

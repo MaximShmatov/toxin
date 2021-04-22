@@ -1,7 +1,7 @@
 extends ../../templates/template-site/template-site
-include ../../components/form-come-in/form-come-in
+include ../../components/form-login/form-login
 
 block page-site
   article.page-sign-in
     section.page-sign-in__form
-      +form-come-in({title: "Войти", caption: "Нет аккаунта на Toxin?"})
+      +form-login({title: "Войти", caption: "Нет аккаунта на Toxin?"})

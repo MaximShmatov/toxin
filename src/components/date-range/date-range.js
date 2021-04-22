@@ -67,8 +67,8 @@ class DateRange extends DatePicker {
       : Number(this.dateComeIn);
     this.dateCheckOut = date.toString();
     this.#date.setTime(date);
-    const str = `${this.#date.getDate()}.${this.#getMonth(this.#date.getMonth())}.${this.#date.getFullYear()}`;
-    this.#$outDate.text(str);
+    const dateString = `${this.#date.getDate()}.${this.#getMonth(this.#date.getMonth())}.${this.#date.getFullYear()}`;
+    this.#$outDate.text(dateString);
   }
 
   #handlePickerSubmit(event) {

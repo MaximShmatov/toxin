@@ -3,7 +3,7 @@ include ../date-range/date-range
 include ../dropdown-quantity/dropdown-quantity
 include ../button/button
 
-mixin form-reservation({ number, level, pricePerDay, priceService, priceDiscount, priceAdditionally } = {})
+mixin form-reservation({ number, level, pricePerDay, servicePrice, discountPrice, additionallyPrice } = {})
   - const dropdownData = require('../../components/dropdown-quantity/dropdown-quantity.json');
 
   form.form-reserve.js-form-reserve
@@ -14,7 +14,7 @@ mixin form-reservation({ number, level, pricePerDay, priceService, priceDiscount
           span.form-reserve__title-price-amount= pricePerDay
           span.form-reserve__title-price-text в сутки
       div.form-reserve__date
-        +date-range({titleFirst: "Прибытие", titleSecond: "Выезд"})
+        +date-range({firstTitle: "Прибытие", secondTitle: "Выезд"})
       div.form-reserve__guests
         +dropdown-quantity({title: "Гости", picker: dropdownData.guests})
       div.form-reserve__pay
@@ -28,17 +28,17 @@ mixin form-reservation({ number, level, pricePerDay, priceService, priceDiscount
           span.form-reserve__pay-amount-total-end &#x20bd;
         div.form-reserve__pay-services
           span.form-reserve__pay-services-begin Сбор за услуги: скидка&nbsp;
-          span.form-reserve__pay-services-price.js-form-reserve__pay-services-price= priceDiscount
+          span.form-reserve__pay-services-price.js-form-reserve__pay-services-price= discountPrice
           span.form-reserve__pay-services-end &#x20bd;
         div.form-reserve__pay-services-info i
         div.form-reserve__pay-services-amount
-          span.form-reserve__pay-services-amount-total.js-form-reserve__pay-services-amount-total= priceService
+          span.form-reserve__pay-services-amount-total.js-form-reserve__pay-services-amount-total= servicePrice
           span.form-reserve__pay-services-amount-total-end &#x20bd;
         div.form-reserve__pay-other
-          span.form-reserve__pay-other-caption Сбор за доп. услуги
+          span.form-reserve__pay-other-caption Сбор за дополнительные услуги
         div.form-reserve__pay-other-info i
         div.form-reserve__pay-other-amount
-          span.form-reserve__pay-other-amount-total.js-form-reserve__pay-other-amount-total= priceAdditionally
+          span.form-reserve__pay-other-amount-total.js-form-reserve__pay-other-amount-total= additionallyPrice
           span.form-reserve__pay-other-amount-total-end &#x20bd;
       div.form-reserve__total
         span.form-reserve__total-title Итого
@@ -47,4 +47,4 @@ mixin form-reservation({ number, level, pricePerDay, priceService, priceDiscount
           span.form-reserve__total-amount.js-form-reserve__total-amount
           span.form-reserve__total-amount-end &#x20bd;
       div.form-reserve__submit
-        +button({type: "submit", text: "Забронировать", theme: "arrowed", size: "thick"})
+        +button({type: "submit", text: "Забронировать", variant: "width-arrow", size: "thick"})

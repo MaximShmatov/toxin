@@ -1,23 +1,23 @@
 include ../heading/heading
 include ../subscription/subscription
 
-mixin footer({ nav, logoImg, logoCaption, subTitle, subCaption } = {})
+mixin footer({ navItems, logoImg, logoCaption, subTitle, subCaption } = {})
   div.footer
     div.footer__wrapper
       section.footer__logo
         img.footer__logo-img(alt="logo" src=logoImg)
         p.footer__logo-caption= logoCaption
       nav.footer__nav
-        each block in nav
-          - const { title, items } = block;
+        each block in navItems
+          - const { title, links } = block;
           div.footer__nav-block
             div.footer__nav-items-title
               +heading({text: title, variant: 'h3'})
             ul.footer__nav-items
-              each item in items
+              each item in links
                 - const { href, text } = item;
-                li.footer__nav-items-item
-                  a.footer__nav-items-item-ref(href=href)= text
+                li.footer__nav-item
+                  a.footer__nav-item-ref(href=href)= text
       section.footer__subscription
         div.footer__subscription-title
           +heading({text: subTitle, variant: 'h3'})

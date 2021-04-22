@@ -1,6 +1,6 @@
 {
   "logo": "img/template-site-logo.svg",
-  "nav": [
+  "navItems": [
     {
       "hrefMenu": "/mock-address",
       "captionMenu": "О нас"
@@ -8,14 +8,14 @@
     {
       "hrefMenu": "/mock-address",
       "captionMenu": "Услуги",
-      "submenu": [
+      "subMenu": [
         {
-          "hrefSubmenu": "/mock-address",
-          "captionSubmenu": "Услуга 1"
+          "href": "/mock-address",
+          "caption": "Услуга 1"
         },
         {
-          "hrefSubmenu": "/mock-address",
-          "captionSubmenu": "Услуга 2"
+          "href": "/mock-address",
+          "caption": "Услуга 2"
         }
       ]
     },
@@ -30,14 +30,14 @@
     {
       "hrefMenu": "/mock-address",
       "captionMenu": "Соглашения",
-      "submenu": [
+      "subMenu": [
         {
-          "hrefSubmenu": "/mock-address",
-          "captionSubmenu": "Соглашение 1"
+          "href": "/mock-address",
+          "caption": "Соглашение 1"
         },
         {
-          "hrefSubmenu": "/mock-address",
-          "captionSubmenu": "Соглашение 2"
+          "href": "/mock-address",
+          "caption": "Соглашение 2"
         }
       ]
     }

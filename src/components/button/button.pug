@@ -1,10 +1,10 @@
-mixin button({ type, text, theme, size, isDisabled } = {})
+mixin button({ type, text, variant, size, isDisabled } = {})
   -
-    const themes = {
-      'filled': 'theme_filled',
-      'bordered': 'theme_bordered',
-      'arrowed': 'theme_arrowed',
-      'texted': 'theme_texted',
+    const variants = {
+      'filled': 'variant_filled',
+      'bordered': 'variant_bordered',
+      'width-arrow': 'variant_width-arrow',
+      'texted': 'variant_texted',
     };
     const sizes = {
       'thin': 'size_thin',
@@ -12,7 +12,7 @@ mixin button({ type, text, theme, size, isDisabled } = {})
     };
     const classes = [
       'button',
-      `button_${themes[theme]}`,
+      `button_${variants[variant]}`,
       `button_${sizes[size]}`,
     ];
   button(type=type class=classes disabled=isDisabled)

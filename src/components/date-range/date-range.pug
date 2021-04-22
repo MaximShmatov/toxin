@@ -1,18 +1,18 @@
 include ../heading/heading
 include ../date-picker/date-picker
 
-mixin date-range({ titleFirst, titleSecond } = {})
+mixin date-range({ firstTitle, secondTitle } = {})
   div.date-range.js-date-range
     div.date-range__wrapper
       div.date-range__head
         div.date-range__head-title
-          +heading({text: titleFirst, variant: 'h3'})
+          +heading({text: firstTitle, variant: 'h3'})
         button.date-range__head-in.js-date-range__head-in(type="button")
           span.date-range__head-in-date.js-date-range__head-in-date дд.мм.гггг
           div.date-range__head-in-arrow
       div.date-range__head
         div.date-range__head-title
-          +heading({text: titleSecond, variant: 'h3'})
+          +heading({text: secondTitle, variant: 'h3'})
         button.date-range__head-out.js-date-range__head-out(type="button")
           span.date-range__head-out-date.js-date-range__head-out-date дд.мм.гггг
           div.date-range__head-out-arrow

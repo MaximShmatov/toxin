@@ -137,25 +137,25 @@ class DatePicker {
   }
 
   #setPickerDate() {
-    const dateCurrent = new Date(this.#pickerDate);
-    const month = dateCurrent.getMonth();
-    dateCurrent.setDate(1);
-    let weekDay = dateCurrent.getDay();
+    const currentDate = new Date(this.#pickerDate);
+    const month = currentDate.getMonth();
+    currentDate.setDate(1);
+    let weekDay = currentDate.getDay();
     if (weekDay === 0) {
       weekDay = 7;
     }
-    dateCurrent.setDate(-weekDay + 1);
+    currentDate.setDate(-weekDay + 1);
 
     this.#$bodyDates.each((i, item) => {
       const $date = $(item);
-      dateCurrent.setDate(dateCurrent.getDate() + 1);
-      if (dateCurrent.getMonth() === month) {
-        $date.addClass('date-picker__body-date_shady');
+      currentDate.setDate(currentDate.getDate() + 1);
+      if (currentDate.getMonth() === month) {
+        $date.addClass('date-picker__body-date_color_shady');
       } else {
-        $date.removeClass('date-picker__body-date_shady');
+        $date.removeClass('date-picker__body-date_color_shady');
       }
-      $date.attr('data-timestamp', dateCurrent.getTime());
-      $date.attr('value', dateCurrent.getDate());
+      $date.attr('data-timestamp', currentDate.getTime());
+      $date.attr('value', currentDate.getDate());
     });
     this.#setTitle();
     this.#setRangeDate();

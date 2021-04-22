@@ -2,7 +2,7 @@
   "number": "№ 888",
   "level": "люкс",
   "pricePerDay": "9 990₽",
-  "priceService": "0",
-  "priceDiscount": "2179",
-  "priceAdditionally": "300"
+  "servicePrice": "0",
+  "discountPrice": "2179",
+  "additionallyPrice": "300"
 }

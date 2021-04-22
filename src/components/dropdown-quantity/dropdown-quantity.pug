@@ -22,6 +22,6 @@ mixin dropdown-quantity({ title, picker, hasActions = true } = {})
       if (hasActions)
         div.dropdown-quantity__picker-actions.js-dropdown-quantity__picker-actions
           div.dropdown-quantity__picker-actions-clear.js-dropdown-quantity__picker-actions-clear
-            +button({type: "button", theme: "texted", text: "Очистить"})
+            +button({type: "button", variant: "texted", text: "Очистить"})
           div.dropdown-quantity__picker-actions-submit.js-dropdown-quantity__picker-actions-submit
-            +button({type: "button", theme: "texted", text: "Применить"})
+            +button({type: "button", variant: "texted", text: "Применить"})

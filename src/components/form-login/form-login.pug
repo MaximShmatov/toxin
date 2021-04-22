@@ -1,0 +1,19 @@
+include ../heading/heading
+include ../button/button
+include ../text-field/text-field
+
+mixin form-login({ title, caption } = {})
+  form.form-login
+    fieldset.form-login__fieldset
+      legend.form-login__title
+        +heading({text: title, variant: 'h1'})
+      div.form-login__email
+        +text-field({type: "email", value: "Email"})
+      div.form-login__password
+        +text-field({type: "password", value: "Пароль"})
+      div.form-login__login
+        +button({type: "submit", variant: "width-arrow", size: "thick", text: "Войти"})
+      div.form-login__registration
+        label.form-login__registration-caption=caption
+          div.form-login__registration-button
+            +button({type: "submit", variant: "bordered", size: "thick", text: "Создать"})

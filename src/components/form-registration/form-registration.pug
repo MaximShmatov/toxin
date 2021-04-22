@@ -13,10 +13,10 @@ mixin form-registration({ title, caption } = {})
         +text-field({type: "text", value: "Имя"})
       div.form-registration__family
         +text-field({type: "text", value: "Фамилия"})
-      div.form-registration__mw
-        div.form-registration__mw-radio
+      div.form-registration__gender
+        div.form-registration__gender-button
           +radio({name: "form-registration__mw-radio", value: "m", caption: "Мужчина", isChecked: true})
-        div.form-registration__mw-radio
+        div.form-registration__gender-button
           +radio({name: "form-registration__mw-radio", value: "w", caption: "Женщина"})
       div.form-registration__birth
         +text-field({type: "text", value: "дд.мм.гггг", mask: "99.99.9999", header: "Дата рождения"})
@@ -27,8 +27,8 @@ mixin form-registration({ title, caption } = {})
       div.form-registration__subscription
         +toggle({caption: "Получать спецпредложения"})
       div.form-registration__pay
-        +button({type: "submit", text: "Зарегистрироваться", theme: "arrowed", size: "thick"})
-      div.form-registration__come-in
-        label.form-registration__come-in-caption= caption
-          div.form-registration__come-in-button
-            +button({type: "submit", text: "Войти", theme: "bordered", size: "thick"})
+        +button({type: "submit", text: "Зарегистрироваться", variant: "width-arrow", size: "thick"})
+      div.form-registration__login
+        label.form-registration__login-caption= caption
+          div.form-registration__login-button
+            +button({type: "submit", text: "Войти", variant: "bordered", size: "thick"})

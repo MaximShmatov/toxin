@@ -1,13 +1,4 @@
-mixin pagination({ caption } = {})
-  -
-    const buttons = {
-      first: '1',
-      second: '2',
-      third: '3',
-      intermediate: '...',
-      last: '15',
-      next: '',
-    }
+mixin pagination({ caption, buttons } = {})
   div.pagination
     div.pagination__control
       - for (let key in buttons)

@@ -2,6 +2,8 @@ include ../hotel-room-card/hotel-room-card
 include ../pagination/pagination
 
 mixin pagination-cards({ title, cards } = {})
+  - const paginationData = require('../../components/pagination/pagination.json');
+
   form.pagination-cards
     legend.pagination-cards__title
       +heading({text: title, variant: 'h1'})
@@ -10,4 +12,4 @@ mixin pagination-cards({ title, cards } = {})
         aside.pagination-cards__content-card
           +hotel-room-card(card)
     div.pagination-cards__control
-      +pagination({caption: "1 \u2013 12 из 100+ вариантов аренды"})
+      +pagination(paginationData)

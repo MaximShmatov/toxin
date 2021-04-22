@@ -29,6 +29,7 @@ block page-uikit
     const checkboxListItems = require('../../components/checkbox-list/checkbox-list.json');
     const checkboxRichItems = require('../../components/checkbox-rich/checkbox-rich.json');
     const dropdownData = require('../../components/dropdown-quantity/dropdown-quantity.json');
+    const paginationData = require('../../components/pagination/pagination.json');
 
   article.uikit-elements
 
@@ -102,7 +103,7 @@ block page-uikit
       div.uikit-elements__sector-element-title
         +heading({text: 'Pagination', variant: 'h3'})
       div.uikit-elements__sector-pagination
-        +pagination({caption: "1 \u2013 12 из 100+ вариантов аренды"})
+        +pagination(paginationData)
 
     section.uikit-elements__sector
       div.uikit-elements__sector-dropdown-default.js-uikit-elements__sector-dropdown-default

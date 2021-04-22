@@ -6,10 +6,21 @@
     display: flex
     flex-direction: column
     align-items: center
-    padding: 30px 15px
-    @media (min-width: 380px)
-      padding: 120px 15px
-      @media (min-width: 768px)
+    padding: 120px 15px
+
+  &__logo
+    display: block
+
+  &__caption
+    text-align: center
+    margin: 18px 0 21px
+
+  &__icons
+    margin-right: 20px
+
+  &_variant_desktop
+    @media (min-width: 768px)
+      .copyright__wrapper
         flex-direction: row
         justify-content: space-between
         flex-grow: 1
@@ -17,18 +28,11 @@
         padding: 23px 15px
         margin: 0 auto
 
-  &__logo
-    display: block
-    @media (min-width: 768px)
-      display: none
+      .copyright__logo
+        display: none
 
-  &__caption
-    text-align: center
-    margin: 18px 0 21px
-    @media (min-width: 768px)
-      margin: 0
+      .copyright__caption
+        margin: 0
 
-  &__icons
-    margin-right: 20px
-    @media (min-width: 768px)
-      margin-right: 0
+      .copyright__icons
+        margin-right: 0

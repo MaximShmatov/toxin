@@ -146,7 +146,7 @@ class DatePicker {
     }
     currentDate.setDate(-weekDay + 1);
 
-    this.#$bodyDates.each((i, item) => {
+    this.#$bodyDates.each((_, item) => {
       const $date = $(item);
       currentDate.setDate(currentDate.getDate() + 1);
       if (currentDate.getMonth() === month) {

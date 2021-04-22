@@ -1,12 +1,16 @@
 include ../copyright-images/copyright-images
 
-mixin copyright({ content } = {})
+mixin copyright({ content, isTabletVariant } = {})
   -
     const items = require('../../components/copyright-images/copyright-images.json');
     const { logo, caption } = content;
     const { src, alt } = logo;
+    let modifier = '';
+    if (!isTabletVariant) {
+      modifier = 'copyright_variant_desktop';
+    }
 
-  div.copyright
+  div.copyright(class=modifier)
     div.copyright__wrapper
       img.copyright__logo(src=src alt=alt)
       span.copyright__caption= caption

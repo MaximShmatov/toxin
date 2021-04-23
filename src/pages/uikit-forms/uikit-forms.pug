@@ -12,19 +12,19 @@ block page-uikit
     const cards = require('../../components/hotel-room-card/hotel-room-card.json');
     const formData = require('../../components/form-reservation/form-reservation.json');
 
-  div.uikit-cards__wrapper
-    article.uikit-cards
-      section.uikit-cards__form-search
+  div.uikit-forms
+    article.uikit-forms__wrapper
+      section.uikit-forms__form-search
         +form-search-room({title: "Найдём номера под ваши пожелания"})
-      section.uikit-cards__form-reservation
+      section.uikit-forms__form-reservation
         +form-reservation(formData)
-      section.uikit-cards__form-picker.js-uikit-cards__form-picker
+      section.uikit-forms__form-picker.js-uikit-forms__form-picker
         +date-picker()
-      section.uikit-cards__form-registration
+      section.uikit-forms__form-registration
         +form-registration({title: "Регистрация аккаунта", caption: "Уже есть аккаунт на Toxin"})
-      section.uikit-cards__form-sign
+      section.uikit-forms__form-sign
         +form-login({title: "Войти", caption: "Нет аккаунта на Toxin?"})
-      section.uikit-cards__form-card-top
+      section.uikit-forms__form-card-top
         +hotel-room-card(cards[0])
-      section.uikit-cards__form-card-bottom
+      section.uikit-forms__form-card-bottom
         +hotel-room-card(cards[1])

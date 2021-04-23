@@ -19,15 +19,15 @@ block page
       ],
     }
 
-  body.index
-    div.index__header
+  body.page-index
+    div.page-index__header
       +heading({text: 'TOXIN', variant: 'h1'})
-    nav.index__nav
+    nav.page-index__nav
       - for (key in pages)
-        div.index__header
+        div.page-index__header
           +heading({text: `${key} pages`, variant: 'h2'})
-        ul.index__nav-items
+        ul.page-index__nav-items
           each item in pages[key]
             - const { href, text } = item;
-            li.index__nav-item
-              a.index__nav-item-link(href=href)= text
+            li.page-index__nav-item
+              a.page-index__nav-item-link(href=href)= text

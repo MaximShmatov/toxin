@@ -14,34 +14,34 @@ block page-site
     const list = require('../../components/bullet-list/bullet-list.json');
     const formData = require('../../components/form-reservation/form-reservation.json');
 
-  article.page-room
-    section.page-room__preview
-    section.page-room__details
-      aside.page-room__details-info
-        div.page-room__details-info-title
+  article.site-details
+    section.site-details__preview
+    section.site-details__details
+      aside.site-details__details-info
+        div.site-details__details-info-title
           +heading({text: 'Сведения о номере', variant: 'h2'})
         each infoItem in infoData
-          div.page-room__details-info-item
+          div.site-details__details-info-item
             +info(infoItem)
-      aside.page-room__details-effect
+      aside.site-details__details-effect
         +diagram(diagramData)
-      aside.page-room__details-reviews
-        div.page-room__details-reviews-header
-          div.page-room__details-reviews-header-title
+      aside.site-details__details-reviews
+        div.site-details__details-reviews-header
+          div.site-details__details-reviews-header-title
             +heading({text: 'Отзывы посетителей номера', variant: 'h2'})
-          span.page-room__details-reviews-header-quantity 2 отзыва
+          span.site-details__details-reviews-header-quantity 2 отзыва
         each reviewItem in reviewData
-          div.page-room__details-reviews-item
+          div.site-details__details-reviews-item
             +review(reviewItem)
-      aside.page-room__details-rules
-        div.page-room__details-rules-title
+      aside.site-details__details-rules
+        div.site-details__details-rules-title
           +heading({text: 'Правила', variant: 'h2'})
         +bullet-list({list})
-      aside.page-room__details-cancel
-        div.page-room__details-cancel-title
+      aside.site-details__details-cancel
+        div.site-details__details-cancel-title
           +heading({text: 'Отмена', variant: 'h2'})
-        p.page-room__details-cancel-note
+        p.site-details__details-cancel-note
         | Бесплатная отмена в течении 48 ч. После этого при отмене не позднее чем за 5 дн. до
         | прибытия вы получите полный возврат за вычетом сбора за услуги.
-      aside.page-room__details-reservation
+      aside.site-details__details-reservation
         +form-reservation(formData)

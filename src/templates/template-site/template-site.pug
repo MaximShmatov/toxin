@@ -10,12 +10,12 @@ block page
     const headerData = require('../../components/header/header.json');
     const footerData = require('../../components/footer/footer.json');
 
-  body.site-template
-    header.site-template__header
+  body.template-site
+    header.template-site__header
       +header({data: headerData})
-    main.site-template__main
+    main.template-site__main
       block page-site
-    footer.site-template__footer
+    footer.template-site__footer
       +footer(footerData)
-    section.site-template__copyright
+    section.template-site__copyright
       +copyright({content: copyrightContent})

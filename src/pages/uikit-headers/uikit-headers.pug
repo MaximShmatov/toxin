@@ -10,14 +10,14 @@ block page-uikit
     const headerData = require('../../components/header/header.json');
     const footerData = require('../../components/footer/footer.json');
 
-  article.uikit-headers-footers
-    div.uikit-headers-footers__header
+  article.uikit-headers
+    div.uikit-headers__header
       +header({data: headerData})
-    div.uikit-headers-footers__header-auth
+    div.uikit-headers__header-auth
       +header({data: headerData, name: "Юлий Цезарь"})
-    div.uikit-headers-footers__footer
+    div.uikit-headers__footer
       +footer(footerData)
-    div.uikit-headers-footers__copyright
+    div.uikit-headers__copyright
       +copyright({content: copyrightContent})
-    div.uikit-headers-footers__copyright-tablet
+    div.uikit-headers__copyright-tablet
       +copyright({content: copyrightContent, isTabletVariant: true})

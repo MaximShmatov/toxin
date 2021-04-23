@@ -7,9 +7,9 @@ block page-site
     const filterTitles = require('../../components/filter/filter.json');
     const cards = require('../../components/hotel-room-card/hotel-room-card.json');
 
-  article.page-search-room
-    section.page-search-room__filter
+  article.site-search
+    section.site-search__filter
       +filter(filterTitles)
-    section.page-search-room__pagination
+    section.site-search__pagination
       +pagination-cards({title: "Номера, которые мы для вас подобрали", cards})
-  div.page-search-room__separator
+  div.site-search__separator

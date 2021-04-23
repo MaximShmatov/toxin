@@ -20,12 +20,9 @@ block page-site
       aside.page-room__details-info
         div.page-room__details-info-title
           +heading({text: 'Сведения о номере', variant: 'h2'})
-        div.page-room__details-info-item
-          +info(infoData[0])
-        div.page-room__details-info-item
-          +info(infoData[1])
-        div.page-room__details-info-item
-          +info(infoData[2])
+        each infoItem in infoData
+          div.page-room__details-info-item
+            +info(infoItem)
       aside.page-room__details-effect
         +diagram(diagramData)
       aside.page-room__details-reviews
@@ -33,10 +30,9 @@ block page-site
           div.page-room__details-reviews-header-title
             +heading({text: 'Отзывы посетителей номера', variant: 'h2'})
           span.page-room__details-reviews-header-quantity 2 отзыва
-        div.page-room__details-reviews-item
-          +review(reviewData[0])
-        div.page-room__details-reviews-item
-          +review(reviewData[1])
+        each reviewItem in reviewData
+          div.page-room__details-reviews-item
+            +review(reviewItem)
       aside.page-room__details-rules
         div.page-room__details-rules-title
           +heading({text: 'Правила', variant: 'h2'})

@@ -39,7 +39,7 @@
     "glob": "^7.1.6",
     "html-webpack-plugin": "^5.0.0-alpha.6",
     "import-glob-loader": "^1.1.0",
-    "postcss": "^8.1.2",
+    "postcss": "^8.2.10",
     "postcss-loader": "^4.0.4",
     "pug": "^3.0.2",
     "pug-loader": "^2.4.0",
